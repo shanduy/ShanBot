@@ -4,8 +4,8 @@ const help = (prefix) => {
 
 ◪ *Información*
   ❏ Comando: 「  ${prefix}  」
-  ❏ Creador : Shan
-  ❏ instagram: https://www.instagram.com/thepavos/
+  ❏ Creador : Shanduy
+  ❏ Instagram: https://www.instagram.com/thepavos/
 
 ◪ *SOBRE*
   │
