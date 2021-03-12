@@ -1,12 +1,12 @@
 /*
-* Tambahin nama author lah
-* Author nya Radya, Farid, M.hadi.firmansya, and Nazwa
-* Tambahin ya zhayank
-* Jan numpang nama doank
-* Baca readme nya biar gk tanya tanya
+* Benito Antonio Martínez Ocasio
+* Directamente del espacio
+* Me pongo Rolex como si fueran Casio
+* Modelo de revista sin gimnasio
+* ¡Ring, ring! La calle me llamó
 
-- What's New?
-* Change Arugaz prefix & Fix Fitnah & Fix Ping
+- Que hay de nuevo?
+* Nada
 */
 
 const {
@@ -57,7 +57,7 @@ const { logomaker } = require('./database/menu/logomaker')
 const { toinmenu } = require('./src/toinmenu')
 const { menuadmin } = require('./src/menuadmin')
 const { nsfwmenu } = require('./src/nsfwmenu')
-/*const { mediamenu } = require('./database/menu/mediamenu')
+const { mediamenu } = require('./database/menu/mediamenu')
 const { educationmenu } = require('./database/menu/educationmenu')
 const { downloadermenu } = require('./database/menu/downloadermenu')
 const { mememenu } = require('./database/menu/mememenu')
@@ -76,11 +76,11 @@ const { othermenu } require('./database/menu/othermenu')*/
 /******END OF MENU INPUT******/
 
 /******LOAD OF VCARD INPUT******/
-const vcard = 'BEGIN:VCARD\n' // metadata of the contact card
-            + 'VERSION:3.0\n' 
-            + 'FN:Shan🖤\n' // full name
-            + 'ORG:Owner Bot;\n' // the organization of the contact
-            + 'TEL;type=CELL;type=VOICE;waid=556296638900:+55 (62) 9663-8900\n' // ID do WhatsApp + número de telefone
+const vcard = 'BEGIN:VCARD\n' // Tarjeta de contacto
+            + 'VERSION:10.0\n' 
+            + 'FN:ShanBot2\n' // Nombre
+            + 'ORG:Shanduy;\n' // Propietario
+            + 'TEL;type=CELL;type=VOICE;waid=593997889284:+593 99 788 9284\n' // ID de WhatsApp + número de teléfono
             + 'END:VCARD'
 /******END OF VCARD INPUT******/
 
@@ -246,7 +246,7 @@ async function starts() {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: 'Calmao weon estoy procesando 😎',
+				wait: 'Calmao gordo puto 😎',
 				success: '✔️ Listo ✔️',
                                 levelon: '❬ ✔ ❭ *Level activado*',
 				leveloff: ' ❬ X ❭  *Level desactivado*',
@@ -270,7 +270,7 @@ async function starts() {
         		const bisakah = ['Bisa','Tidak Bisa']
 		        const kapankah = ['Hari Lagi','Minggu Lagi','Bulan Lagi','Tahun Lagi']
 			const botNumber = client.user.jid
-			const ownerNumber = ["556296638900@s.whatsapp.net"] // replace this with your number
+			const ownerNumber = ["593997889284@s.whatsapp.net"] // replace this with your number
 			const nomorOwner = [ownerNumber]
 			const isGroup = from.endsWith('@g.us')
 			const totalchat = await client.chats.all()
@@ -288,9 +288,9 @@ async function starts() {
 			const isOwner = ownerNumber.includes(sender)
                         const isUser = user.includes(sender)
                         const isLevelingOn = isGroup ? _leveling.includes(groupId) : false
-                        const NomerOwner = '556296638900@s.whatsapp.net'
+                        const NomerOwner = '593997889284@s.whatsapp.net'
                         /******ApiKey Input******/
-                        const BarBarKey = 'YOUR_APIKEY'
+                        const BarBarKey = 'TU CLAVE API'
                         /******End of ApiKey Input******/
 
 			const isUrl = (url) => {
@@ -351,7 +351,7 @@ case 'timer':
 				} else if (args[1]=="jam") {var timer = args[0]+"00000"
 				} else {return reply("*pilih:*\ndetik\nmenit\njam")}
 				setTimeout( () => {
-				reply("Waktu habis")
+				reply("Se acabó el tiempo")
 				}, timer)
 				break
                 case 'bahasa':
@@ -431,7 +431,7 @@ case 'timer':
 				  case 'wame':
   client.updatePresence(from, Presence.composing) 
       options = {
-          text: `「 *SELF WHATSAPP* 」\n\n_Solicitado por_ : *@${sender.split("@s.whatsapp.net")[0]}\n\nSeu link Whatsapp : *https://wa.me/${sender.split("@s.whatsapp.net")[0]}*\n*Or ( / )*\n*https://api.whatsapp.com/send?phone=${sender.split("@")[0]}*`,
+          text: `「 *AUTO WHATSAPP* 」\n\n_Solicitado por_ : *@${sender.split("@s.whatsapp.net")[0]}\n\nSu link de Whatsapp : *https://wa.me/${sender.split("@s.whatsapp.net")[0]}*\n*Or ( / )*\n*https://api.whatsapp.com/send?phone=${sender.split("@")[0]}*`,
           contextInfo: { mentionedJid: [sender] }
     }
     client.sendMessage(from, options, text, { quoted: mek } )
@@ -443,7 +443,7 @@ case 'timer':
 				client.updatePresence(from, Presence.composing) 
                                 if (!isUser) return reply(mess.only.daftarB)
 				data = await fetchJson(`http://mhankbarbars.herokuapp.com/api/randomquotes`)
-				ez = `*➸ Author :* ${data.author}\n*➸ Quotes :* ${data.quotes}`
+				ez = `*➸ Autor :* ${data.author}\n*➸ Citas :* ${data.quotes}`
 				reply(ez)
 				break
 				case '3dtext':
@@ -1237,7 +1237,7 @@ case 'timer':
 						fs.unlinkSync(media)
 						if (err) return reply('❌ Error al convertir las pegatinas en imágenes ❌')
 						buffer = fs.readFileSync(ran)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: '>//<'})
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'No me la container'})
 						fs.unlinkSync(ran)
 					})
 					break
@@ -2020,7 +2020,7 @@ case 'timer':
                                         if (!isUser) return reply(mess.only.daftarB)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=pubg&text1=${teks1}&text2=${teks2}&apikey=BotWeA`, {method: 'get'})
                                         buffer = await getBuffer(anu.result)
-                                        client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Nih logonya kak...'})
+                                        client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Aquí esta la foto ...'})
                                         break
                                 case 'herrypotter':
                                 case 'harrypotter':
@@ -2029,7 +2029,7 @@ case 'timer':
                                         if (!isUser) return reply(mess.only.daftarB)
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=harry_potter&text=${gh}&apikey=BotWeA`, {method: 'get'})
                                         buffer = await getBuffer(anu.result)
-                                        client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Nih kak gambarnya...'})
+                                        client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Aquí esta la foto ...'})
                                         break
 			 	case 'wait':
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
