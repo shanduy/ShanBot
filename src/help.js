@@ -6,6 +6,7 @@ const help = (prefix) => {
   ❏ Comando: 「  ${prefix}  」
   ❏ Creador : Shanduy
   ❏ Instagram: https://www.instagram.com/thepavos/
+  ❏ No me la container
 
 ◪ *SOBRE*
   │
@@ -14,20 +15,24 @@ const help = (prefix) => {
   ├─ ❏ ${prefix}chatlist
   ├─ ❏ ${prefix}ping
   └─ ❏ ${prefix}bugreport
+
 ◪ *CREAR*
   │
   ├─ ❏ ${prefix}sticker
   ├─ ❏ ${prefix}stickergif
   ├─ ❏ ${prefix}toimg
   └─ ❏ ${prefix}tomp3 
+
 ◪ *DESCARGAS*
   │
   ├─ ❏ ${prefix}ytmp3
   └─ ❏ ${prefix}ytmp4
+
 ◪ *AUDIO*
   │
   ├─ ❏ ${prefix}play
   └─ ❏ ${prefix}tts
+
 ◪ *DUEÑO*
   │
   ├─ ❏ ${prefix}setprefix
@@ -36,6 +41,7 @@ const help = (prefix) => {
   ├─ ❏ ${prefix}bcgc
   ├─ ❏ ${prefix}clone
   └─ ❏ ${prefix}clearall
+
 ◪ *OTROS*
   │
   ├─ ❏ ${prefix}send
