@@ -22,11 +22,8 @@ const help = (prefix) => {
   └─ ❏ ${prefix}tomp3 
 ◪ *DESCARGAS*
   │
-  ├─ ❏ ${prefix}images
   ├─ ❏ ${prefix}ytmp3
-  ├─ ❏ ${prefix}ytmp4
-  ├─ ❏ ${prefix}tiktok
-  └─ ❏ ${prefix}joox
+  └─ ❏ ${prefix}ytmp4
 ◪ *AUDIO*
   │
   ├─ ❏ ${prefix}play
