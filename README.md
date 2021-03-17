@@ -1,5 +1,6 @@
 # ShanBot
 Pasos para instalar el bot via termux
+https://youtu.be/rfxuYsWGmQo
 
 pkg install git
 
