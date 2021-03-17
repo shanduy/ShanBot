@@ -4,9 +4,9 @@ const help = (prefix) => {
 
 ◪ *Información*
   ❏ Comando: 「  ${prefix}  」
-  ❏ Creador : Shanduy
-  ❏ Instagram: https://www.instagram.com/thepavos/
-  ❏ No me la container
+  ❏ Creador: Shanduy
+  ❏ Como instalar el bot: https://youtu.be/rfxuYsWGmQo
+  ❏ Instagram: https://www.instagram.com/thepavos?r=nametag
 
 ◪ *SOBRE*
   │
