@@ -876,7 +876,7 @@ case 'timer':
 					break
 				case 'setppbot':
 				client.updatePresence(from, Presence.composing) 
-				if (!isQuotedImage) return reply(`Envie fotos com legendas ${prefix}setbotpp ou tags de imagem que já foram enviadas`)
+				if (!isQuotedImage) return reply(`Sube fotos con subtítulos ${prefix}Ok`)
 					if (!isOwner) return reply(mess.only.ownerB)
 					enmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					media = await client.downloadAndSaveMediaMessage(enmedia)
