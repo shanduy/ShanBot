@@ -46,7 +46,7 @@ const help = (prefix) => {
   │
   ├─ ❏ ${prefix}send
   ├─ ❏ ${prefix}wame
-  ├─ ❏ ${prefix}virtex
+  ├─ ❏ ${prefix}virtex (Dead)
   ├─ ❏ ${prefix}exe
   ├─ ❏ ${prefix}qrcode
   ├─ ❏ ${prefix}afk
