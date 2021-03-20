@@ -25,7 +25,6 @@ const help = (prefix) => {
 
 ◪ *DESCARGAS*
   │
-  ├─ ❏ ${prefix}ytmp3
   └─ ❏ ${prefix}ytmp4
 
 ◪ *AUDIO*
