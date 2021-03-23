@@ -87,11 +87,11 @@ Ceko 420
 
 Chad 235
 
-Chili 56
+Chile 56
 
-Cina 86
+China 86
 
-Cina Makau 853
+China Makau 853
 
 *D*
 
@@ -103,7 +103,7 @@ Domikia 1-767
 
 *E*
 
-Ekuador 593
+Ecuador 593
 
 El Salvador 503
 
