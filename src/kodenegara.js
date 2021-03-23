@@ -1,5 +1,5 @@
 const negara = (prefix, sender) => {
-	return `*A*
+	return `*Codigos Numericos*
 
 Afganistan 93
 
