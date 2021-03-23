@@ -1,5 +1,5 @@
 const virtex = (prefix, pushname) => {
-	return `Ataque binario
+	return `No me la ZzzZzZzzZ
 
 
 
