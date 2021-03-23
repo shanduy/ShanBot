@@ -29,7 +29,6 @@ const help = (prefix) => {
 
 ◪ *AUDIO*
   │
-  ├─ ❏ ${prefix}play
   └─ ❏ ${prefix}tts
 
 ◪ *DUEÑO*
@@ -45,7 +44,7 @@ const help = (prefix) => {
   │
   ├─ ❏ ${prefix}send
   ├─ ❏ ${prefix}wame
-  ├─ ❏ ${prefix}virtex (Dead)
+  ├─ ❏ ${prefix}virtex (Hernqn)
   ├─ ❏ ${prefix}exe
   ├─ ❏ ${prefix}qrcode
   ├─ ❏ ${prefix}afk
