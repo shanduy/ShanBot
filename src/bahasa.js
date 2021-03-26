@@ -1,7 +1,7 @@
 const bahasa = (prefix, sender) => {
 	return `*Lista De Idiomas*
 
-	*Code       Bahasa*
+	*Codigp       Idioma*
     sq        Albanian
     ar        Arabic
     hy        Armenian
