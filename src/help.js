@@ -29,7 +29,11 @@ const help = (prefix) => {
 
 ◪ *AUDIO*
   │
+  ├─ ❏ ${prefix}play
+  ├─ ❏ ${prefix}bahasa
   └─ ❏ ${prefix}tts
+
+
 
 ◪ *DUEÑO*
   │
@@ -51,6 +55,8 @@ const help = (prefix) => {
   ├─ ❏ ${prefix}timer
   ├─ ❏ ${prefix}fml
   └─ ❏ ${prefix}fml2
+
+No te olvides de seguirme en instagram
 `
 }
 
