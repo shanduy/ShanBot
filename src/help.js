@@ -8,6 +8,9 @@ const help = (prefix) => {
   ❏ Como instalar el bot: https://youtu.be/rfxuYsWGmQo
   ❏ Instagram: https://www.instagram.com/thepavos?r=nametag
 
+◪ *Para usar al bot*
+  ❏ Registrate con el comando ${prefix}daftar Nombre
+
 ◪ *SOBRE*
   │
   ├─ ❏ ${prefix}info
@@ -32,8 +35,6 @@ const help = (prefix) => {
   ├─ ❏ ${prefix}play
   ├─ ❏ ${prefix}bahasa
   └─ ❏ ${prefix}tts
-
-
 
 ◪ *DUEÑO*
   │
