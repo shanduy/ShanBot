@@ -20,4 +20,4 @@ bash install.sh
 
 npm start
 
-Escaneas el QR y listo comando para activarlo  *menu
+Escaneas el QR y listo comando para activarlo  *help
