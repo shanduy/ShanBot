@@ -47,17 +47,18 @@ const help = (prefix) => {
 
 ◪ *OTROS*
   │
-  ├─ ❏ ${prefix}send
   ├─ ❏ ${prefix}wame
   ├─ ❏ ${prefix}virtex (Hernqn)
   ├─ ❏ ${prefix}exe
-  ├─ ❏ ${prefix}qrcode
-  ├─ ❏ ${prefix}afk
-  ├─ ❏ ${prefix}timer
-  ├─ ❏ ${prefix}fml
-  └─ ❏ ${prefix}fml2
+  └─ ❏ ${prefix}qrcode
+  
+◪ *NSWF*
+  │
+  └─ ❏ ${prefix}nsfwmenu
 
-No te olvides de seguirme en instagram
+     ❏ Para activar los NSFW coloque el siguiente comando ${prefix}nsfw1 y para desactivar los NSFW coloque ${prefix}nsfw0
+
+No te olvides de seguirme en instagram flaco
 `
 }
 
