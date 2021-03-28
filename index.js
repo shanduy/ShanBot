@@ -246,7 +246,7 @@ async function starts() {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: 'Calmao gordo puto 😎',
+				wait: 'Calmao gordo puto 😎 No spames 🤬',
 				success: '✔️ Listo ✔️',
                                 levelon: '❬ ✔ ❭ *Level activado*',
 				leveloff: ' ❬ X ❭  *Level desactivado*',
@@ -345,7 +345,7 @@ async function starts() {
                                         hisil = fs.readFileSync('./src/makerimg.jpg')
                                         client.sendMessage(from, hisil, image, {quoted: mek, caption: makermenu(prefix), text})
                                         break*/
-case 'timer':
+/*case 'timer':
 				if (args[1]=="detik") {var timer = args[0]+"000"
 				} else if (args[1]=="menit") {var timer = args[0]+"0000"
 				} else if (args[1]=="jam") {var timer = args[0]+"00000"
@@ -353,7 +353,7 @@ case 'timer':
 				setTimeout( () => {
 				reply("Se acabó el tiempo")
 				}, timer)
-				break
+				break*/
                 case 'bahasa':
 		client.sendMessage(from, bahasa(prefix, sender), text, {quoted: mek})
 				break
@@ -1573,7 +1573,7 @@ case 'timer':
                                         break
                                 case 'nsfwtrap':
                                         try{
-                                                if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+                                                if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
                                                 if (!isUser) return reply(mess.only.daftarB)
                                                 res = await fetchJson(`https://tobz-api.herokuapp.com/nsfwtrap?apikey=BotWeA`, {method: 'get'})
                                                 buffer = await getBuffer(res.result)
@@ -1585,7 +1585,7 @@ case 'timer':
 										break
 										case 'randomhentaio': 
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://tobz-api.herokuapp.com/api/hentai?apikey=BotWeA`, {method: 'get'})
 							buffer = await getBuffer(res.result)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Otaku que se esperaba'})
@@ -1596,7 +1596,7 @@ case 'timer':
 						break
 					case 'nsfwloli':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://api.lolis.life/random?nsfw=true`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Alto pedofilo socio'})
@@ -1607,7 +1607,7 @@ case 'timer':
 						break
 					case 'nsfwbobs': 
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/biganimetiddies`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Quiero ver tetas'})
@@ -1618,7 +1618,7 @@ case 'timer':
 						break
 					case 'nsfwblowjob':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwblowjob`, {method: 'get'})
 							buffer = await getBuffer(res.result)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'No antojen'})
@@ -1629,7 +1629,7 @@ case 'timer':
 						break
 					case 'nsfwneko':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://api.computerfreaker.cf/v1/neko`, {method: 'get'})
 							buffer = await getBuffer(res.result)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Pero que wea?'})
@@ -1640,7 +1640,7 @@ case 'timer':
 						break
 					case 'trap':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://api.computerfreaker.cf/v1/trap`, {method: 'get'})
 							buffer = await getBuffer(res.result)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Na flaco estas re enfermo'})
@@ -1651,7 +1651,7 @@ case 'timer':
 					break
 				case 'nsfwass':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`'https://meme-api.herokuapp.com/gimme/animebooty`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Ese es el culo que querías?'})
@@ -1662,7 +1662,7 @@ case 'timer':
 						break
 					case 'nsfwsidebobs':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/sideoppai`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'La vieja de gabo, tremenda puta'})
@@ -1673,7 +1673,7 @@ case 'timer':
 					    break
 					case 'nsfwahegao':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/ahegao`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Joder, quisiera follarmela'})
@@ -1684,7 +1684,7 @@ case 'timer':
 						break
 					case 'nsfwthighs':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animethighss`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Por que muslos?'})
@@ -1695,7 +1695,7 @@ case 'timer':
 						break
 					case 'nsfwfeets':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animefeets`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'MMMMM PATAS'})
@@ -1706,7 +1706,7 @@ case 'timer':
 						break
 					case 'nsfwarmpits':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animearmpits`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'A?'})
@@ -1717,7 +1717,7 @@ case 'timer':
 						break
 						case 'nsfwtoin':
 						try {
-							if (!isNsfw) return reply('❌ *NSFW Desativado* ❌')
+							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://tobz-api.herokuapp.com/nsfwtrap?apikey=BotWeA`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Bro....'})
@@ -1732,7 +1732,7 @@ case 'timer':
                                         const latensi = speed() - timestamp
                                         client.updatePresence(from, Presence.composing) 
 				        uptime = process.uptime()
-                                        client.sendMessage(from, `Velocidad: *${latensi.toFixed(4)} _Second_*\nDevice: *Black Shark 3*\nRAM: *8/128*\nData: *Smartfren*\nJaringan: *5G*\nStatus: *Di Charger*`, text, { quoted: mek})
+                                        client.sendMessage(from, `Velocidad: *${latensi.toFixed(4)} _Second_*\nDevice: *Alcatel Pixi 4*\nRAM: *8/128*\nData: *Smartfren*\nJaringan: *2G*\nStatus: *Cargando*`, text, { quoted: mek})
                                         break
                                 case 'neonlogo':
                                         var gh = body.slice(9)
