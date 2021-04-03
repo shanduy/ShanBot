@@ -246,7 +246,7 @@ async function starts() {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: 'Calmao gordo puto estoy procesando 😎👏 No spames negro del orto 🤬🤑',
+				wait: 'Calmao gordo puto estoy procesando 😎👏\`\`\`\n\n\`\`\`No spames negro del orto 🤬🤑',
 				success: '✔️ Listo ✔️',
                                 levelon: '❬ ✔ ❭ *Level activado*',
 				leveloff: ' ❬ X ❭  *Level desactivado*',
@@ -262,7 +262,7 @@ async function starts() {
 					ownerB: '[❗] Este comando solo lo usa ShanBot! ❌',
 					admin: '[❗] Este comando solo puede ser utilizado por administradores del grupo! ❌',
 					Badmin: '[❗] Este comando solo se puede usar cuando el bot se convierte en administrador! ❌',
-                                        daftarB: `── 「REGISTRATE AWEVONAO 🧐」 ──\HOLA PA!\nNo estas registrado en mi base de datos 😳 \n\nComando : ${prefix}daftar Nombre\nEjemplo : ${prefix}daftar Shanduy
+                                        daftarB: `── 「REGISTRATE AWEVONAO」\`\`\`\n\n\`\`\`\HOLA PA!\`\`\`\n\n\`\`\`nNo estas registrado en mi base de datos 😳 \n\nComando : ${prefix}daftar Nombre\nEjemplo : ${prefix}daftar Shanduy
 `,
 				}
 			}
@@ -897,7 +897,7 @@ async function starts() {
 						reply('')
 					} else {
 						for (let _ of anu) {
-							sendMess(_.jid, `*「 BROADCAST 」*\n\n${body.slice(4)}`)
+							sendMess(_.jid, `*「 Shanduy 」*\n\n${body.slice(4)}`)
 						}
 						reply('Transmisión exitosa')
 					}
@@ -1025,7 +1025,7 @@ async function starts() {
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('A marca-alvo que você quer chutar!')
+					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Marca al que vamos a funar')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) {
 						teks = 'Pedido recibido, chao pa 👋 :\n'
