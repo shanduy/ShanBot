@@ -58,6 +58,8 @@ const help = (prefix) => {
   
 ◪ *GRUPOS*
   │
+  ├─ ❏ ${prefix}ownergrup
+  ├─ Dueño del grupo
   ├─ ❏ ${prefix}closecg
   ├─ Cerrar el grupo solo admins
   ├─ ❏ ${prefix}opencg
