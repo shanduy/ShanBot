@@ -3,18 +3,15 @@ const nsfwmenu = (prefix, pushname) => {
     ◪ *NSFW*
   │
   ├─ ❏ ${prefix}nsfwbobs
-  ├─ ❏ ${prefix}randomhentaio
-  ├─ ❏ ${prefix}nsfwtrap
-  ├─ ❏ ${prefix}nsfwass
-  ├─ ❏ ${prefix}nsfwbelly
   ├─ ❏ ${prefix}nsfwsidebobs
   ├─ ❏ ${prefix}nsfwahegao
-  ├─ ❏ ${prefix}nsfwthighs
-  ├─ ❏ ${prefix}nsfwarmpits
   └─ ❏ ${prefix}nsfwfeets
 
-  _El bot nesecita admin y tener activado los NSFW_\n _Digita_\n ${prefix}*nsfw 1*`
+  _El bot nesecita admin y tener activado los NSFW_\n _Digita_\n ${prefix}*nsfw 1*
 
+Algunas funciones fueron eliminas por errores en el servidor de la India
+
+by Shanduy`
 
 
 }
