@@ -1,3 +1,16 @@
+<p align="center">
+<img src="https://mohenski.net/projects/6aVGyw" alt="GIF" width="128" height="128"/>
+</p>
+
+
+
+
+
+
+
+
+
+
 # ShanBot
 ULTIMA VERSION 2.0
 
