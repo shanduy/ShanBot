@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://media.giphy.com/media/1dJWnCZBCE7gcFwLvk/giphy.gif" alt="GIF" width="120" height="120"/>
+<img src="https://media.giphy.com/media/1dJWnCZBCE7gcFwLvk/giphy.gif" alt="GIF" width="210" height="210"/>
 </p>
 <p align="center">
 <a href="#"><img title="ShanBot" src="https://img.shields.io/badge/ShanBot -green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
