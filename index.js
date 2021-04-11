@@ -78,9 +78,9 @@ const { othermenu } require('./database/menu/othermenu')*/
 /******LOAD OF VCARD INPUT******/
 const vcard = 'BEGIN:VCARD\n' // Tarjeta de contacto
             + 'VERSION:10.0\n' 
-            + 'FN:ShanBot2\n' // Nombre
+            + 'FN:Shanduy\n' // Nombre
             + 'ORG:Shanduy;\n' // Propietario
-            + 'TEL;type=CELL;type=VOICE;waid=593997889284:+593 99 788 9284\n' // ID de WhatsApp + número de teléfono
+            + 'TEL;type=CELL;type=VOICE;waid=593967689722:+593 96 768 9722\n' // ID de WhatsApp + número de teléfono
             + 'END:VCARD'
 /******END OF VCARD INPUT******/
 
@@ -1089,7 +1089,7 @@ async function starts() {
                      const bug = body.slice(5)
                       if (pesan.length > 300) return client.sendMessage(from, 'Lo siento, el texto es demasiado largo como mi miembro viril, máximo 300 letras', msgType.text, {quoted: mek})
                         var nomor = mek.participant
-                       teks1 = `*[RELATÓRIO]*\nNúmero : @${nomor.split("@s.whatsapp.net")[0]}\nmensagem : ${pesan}`
+                       teks1 = `*[RELATÓRIO]*\nNúmero : @${nomor.split("593967689722@s.whatsapp.net")[0]}\nmensagem : ${pesan}`
                       var options = {
                          text: teks1,
                          contextInfo: {mentionedJid: [nomor]},
@@ -1135,7 +1135,7 @@ async function starts() {
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 					var nomor = mek.participant
 					const close = {
-					text: `Grupo cerrado por el administrador @${nomor.split("@s.whatsapp.net")[0]}\nagora *solo administradores* puede enviar mensajes`,
+					text: `Grupo cerrado por el administrador @${nomor.split("@s.whatsapp.net")[0]}\nAhora *solo administradores* puede enviar mensajes`,
 					contextInfo: { mentionedJid: [nomor] }
 					}
 					client.groupSettingChange (from, GroupSettingChange.messageSend, true);
@@ -1148,7 +1148,7 @@ async function starts() {
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 					open = {
-					text: `Grupo abierto por administrador @${sender.split("@")[0]}\nagora *todos los participantes* pueden enviar mensajes`,
+					text: `Grupo abierto por administrador @${sender.split("@")[0]}\nAhora *todos los participantes* pueden enviar mensajes`,
 					contextInfo: { mentionedJid: [sender] }
 					}
 					client.groupSettingChange (from, GroupSettingChange.messageSend, false)
