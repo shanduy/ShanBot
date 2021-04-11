@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://mohenski.net/projects/6aVGyw" alt="GIF" width="128" height="128"/>
+<img src="https://media.giphy.com/media/l44QvKoQuUD3xPZKg/giphy.gif" alt="GIF" width="128" height="128"/>
 </p>
 
 
