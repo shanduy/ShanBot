@@ -10,10 +10,7 @@ Disculpas por los inconvenientes 😞
   ❏ Comando: 「  ${prefix}  」
   ❏ Creador: Shanduy
   ❏ Como instalar el bot: https://youtu.be/rfxuYsWGmQo
-  ❏ Instagram: https://www.instagram.com/thepavos?r=nametag
-  
-◪ *Comunicate Conmigo*
-  ❏ Whatsapp: https://api.whatsapp.com/send/?phone=593967689722&text&app_absent=0
+  ❏ Instagram: https://www.instagram.com/thepavos
 
 ◪ *Para Usar Al Bot*
   ❏ Registrate con el comando ${prefix}daftar Nombre
