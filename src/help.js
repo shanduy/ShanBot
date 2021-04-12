@@ -11,13 +11,15 @@ const help = (prefix) => {
 ◪ *Para usar al bot*
   ❏ Registrate con el comando ${prefix}daftar Nombre
 
+◪ *Nueva Funcion*
+  │
+  ├─ ❏ ${prefix}welcome
+  └─ Para utilizarlo el bot necesita admin activalo con ${prefix}welcome 1 y desactivarlo con ${prefix}welcome 0
+
 ◪ *SOBRE*
   │
-  ├─ ❏ ${prefix}info
-  ├─ ❏ ${prefix}blocklist
-  ├─ ❏ ${prefix}chatlist
   ├─ ❏ ${prefix}ping
-  └─ ❏ ${prefix}bugreport
+  └─ Estado de tu internet "Broma"
 
 ◪ *CREAR*
   │
