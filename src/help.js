@@ -18,7 +18,7 @@ Disculpas por los inconvenientes 😞
 ◪ *Nueva Funcion*
   │
   ├─ ❏ ${prefix}welcome
-  └─ Para utilizarlo el bot necesita admin activalo con ${prefix}welcome 1 y desactivarlo con ${prefix}welcome 0 "Ojo la persona tiene que tener la foto de perfil publica ne futuras actulizaciones la mejoraremos"
+  └─ Para utilizarlo el bot necesita admin activalo con ${prefix}welcome 1 y desactivarlo con ${prefix}welcome 0 "Ojo la persona tiene que tener la foto de perfil publica en futuras actualizaciones la mejoraremos"
 
 ◪ *SOBRE*
   │
