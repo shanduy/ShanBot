@@ -9,7 +9,7 @@
 </p>
  
 <p align="center">
-<a href="#"><img title="Mis redes sociales" src="https://img.shields.io/badge/Mis redes sociales -purple?colorA=%cc33ff&colorB=%cc33ff&style=for-the-badge"></a>
+<a href="#"><img title="Redes sociales" src="https://img.shields.io/badge/Redes sociales -purple?colorA=%cc33ff&colorB=%cc33ff&style=for-the-badge"></a>
 </p>
 
 <p align='center'>
