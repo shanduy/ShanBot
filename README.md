@@ -8,8 +8,8 @@
 <a href="https://github.com/shanduy"><img title="Creador" src="https://img.shields.io/badge/Author-Shanduy-purple.svg?style=for-the-badge&logo=github"></a>
 </p>
  
-<p align="center">
-<a href="#"><img title="Redes sociales" src="https://img.shields.io/badge/Redes sociales -purple?colorA=%cc33ff&colorB=%cc33ff&style=for-the-badge"></a>
+<p algún="center">
+Mis Redes Sociales
 </p>
 
 <p align='center'>
