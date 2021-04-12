@@ -20,9 +20,11 @@ Mis Redes Sociales
 
 
 # ShanBot
-ULTIMA VERSION 2.0
+ULTIMA VERSION 2.1
 
-11 de Abril 2021
+12 de Abril 2021
+
+NUEVA FUNCION *welcome
 
 Pasos para instalar el bot via termux
 https://youtu.be/rfxuYsWGmQo
