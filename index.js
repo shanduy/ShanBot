@@ -244,7 +244,7 @@ async function starts() {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: 'Calmao gordo puto estoy procesando 😎👏\n\nNo spames negro del orto 🤬🤑\n\nSi usastes la funcion ${prefix}play asegurate de colocare bien el nombre de la cancion junto al artista 🧐',
+				wait: 'Calmao gordo puto estoy procesando 😎👏\n\nNo spames negro del orto 🤬🤑\n\nSi usastes la funcion *play asegurate de colocar bien el nombre de la cancion junto al artista 🧐',
 				success: '✔️ Listo ✔️',
                                 levelon: '❬ ✔ ❭ *Level activado*',
 				leveloff: ' ❬ X ❭  *Level desactivado*',
