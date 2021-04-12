@@ -1,4 +1,4 @@
-# ShanBot by shanduy
+# ShanBot Bot Para Whatsapp by shanduy
 
 <p align="center">
 <img src="https://media.giphy.com/media/1dJWnCZBCE7gcFwLvk/giphy.gif" alt="GIF" width="210" height="210"/>
