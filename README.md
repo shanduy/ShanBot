@@ -9,7 +9,7 @@
 </p>
  
 <p align="center">
-Mis Redes Sociales
+Mis Redes Sociales Y Resolver Tus Problemas
 </p>
 
 <p align='center'>
