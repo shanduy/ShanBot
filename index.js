@@ -194,6 +194,7 @@ async function starts() {
 			if (anu.action == 'add') {
 				num = anu.participants[0]
 				try {
+				 ppimg = await client.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
 					} catch {
 					}
 				teks = `Mi loco @${num.split('@')[0]}\nTodo bien pa bienvenido a *${mdata.subject}*\n\nUn gusto conocerte😀\n\nPara utilizar el bot registrate con el comando ${prefix}daftar y tu nombre\n\nPara ver los demas comandos utiliza ${prefix}help\n\nOjito con el spam 🧐\n\nBy Shanduy`
@@ -202,6 +203,7 @@ async function starts() {
 			} else if (anu.action == 'remove') {
 				num = anu.participants[0]
 				try {
+			         ppimg = await client.getProfilePicture(`${num.split('@')[0]}@c.us`)
 					} catch {
 					}
 				teks = `Chao pa, se nos fue un loco @${num.split('@')[0]}👋\n\nHora de quemarle codes😈😎`
