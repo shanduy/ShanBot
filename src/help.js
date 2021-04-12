@@ -29,6 +29,7 @@ Disculpas por los inconvenientes 😞
   │
   ├─ ❏ ${prefix}sticker
   ├─ ❏ ${prefix}stickergif
+  ├─ 6 segundos de video
   ├─ ❏ ${prefix}toimg
   ├─ De sticker a JPG
   ├─ ❏ ${prefix}tomp3
