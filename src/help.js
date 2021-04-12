@@ -2,6 +2,10 @@ const help = (prefix) => {
 	return `
 「 *Shan Bot* 」
 
+Hola cómo estan queridos usuarios, hemos actualizado la base de datos del bot para poner nuevas funciones 😀
+
+Disculpas por los inconvenientes 😞
+
 ◪ *Información*
   ❏ Comando: 「  ${prefix}  」
   ❏ Creador: Shanduy
