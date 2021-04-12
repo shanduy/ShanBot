@@ -8,7 +8,7 @@
 <a href="https://github.com/shanduy"><img title="Creador" src="https://img.shields.io/badge/Author-Shanduy-purple.svg?style=for-the-badge&logo=github"></a>
 </p>
  
-<p algún="center">
+<p align="center">
 Mis Redes Sociales
 </p>
 
