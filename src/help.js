@@ -43,14 +43,6 @@ const help = (prefix) => {
   ├─ ❏ ${prefix}bahasa
   └─ ❏ ${prefix}tts es
 
-◪ *DUEÑO DEL BOT*
-  │
-  ├─ ❏ ${prefix}setprefix
-  ├─ ❏ ${prefix}block
-  ├─ ❏ ${prefix}bc
-  ├─ ❏ ${prefix}bcgc
-  └─ ❏ ${prefix}clearall
-
 ◪ *OTROS*
   │
   ├─ ❏ ${prefix}wame
