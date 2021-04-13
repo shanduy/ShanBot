@@ -2,10 +2,6 @@ const help = (prefix) => {
 	return `
 「 *Shan Bot* 」
 
-Hola cómo estan queridos usuarios, hemos actualizado la base de datos del bot para poner nuevas funciones 😀
-
-Disculpas por los inconvenientes 😞
-
 ◪ *Información*
   ❏ Comando: 「  ${prefix}  」
   ❏ Creador: Shanduy
@@ -18,7 +14,7 @@ Disculpas por los inconvenientes 😞
 ◪ *Nueva Funcion*
   │
   ├─ ❏ ${prefix}welcome 1
-  └─ "Ojo la persona tiene que tener la foto de perfil publica, en futuras actualizaciones la mejoraremos"
+  └─ Ojo la persona tiene que tener la foto de perfil publica, en futuras actualizaciones la mejoraremos
 
 ◪ *SOBRE*
   │
