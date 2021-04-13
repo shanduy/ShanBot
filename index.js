@@ -1983,7 +1983,7 @@ async function starts() {
 						reply('1 para activar, 0 para desactivar')
 					}
 					break
-				case 'clone':
+				/*case 'clone':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (args.length < 1) return reply('La etiqueta de destino que desea clonar')
