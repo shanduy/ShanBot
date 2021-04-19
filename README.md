@@ -26,7 +26,7 @@ ULTIMA VERSION 2.1
 
 12 de Abril 2021
 
-NUEVA FUNCION *welcome
+NUEVA FUNCION *welcome 1
 
 Pasos para instalar el bot via termux
 https://youtu.be/rfxuYsWGmQo
