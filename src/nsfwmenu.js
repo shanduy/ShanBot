@@ -5,6 +5,7 @@ const nsfwmenu = (prefix, pushname) => {
   ├─ ❏ ${prefix}nsfwbobs
   ├─ ❏ ${prefix}nsfwsidebobs
   ├─ ❏ ${prefix}nsfwahegao
+  ├─ ❏ ${prefix}nsfwtrap NUEVO
   ├─ ❏ ${prefix}nsfwsiyuri NUEVO
   └─ ❏ ${prefix}nsfwfeets
 
