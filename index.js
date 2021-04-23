@@ -1227,7 +1227,7 @@ async function starts() {
 				case 'toimg':
 				    client.updatePresence(from, Presence.composing)
                                     if (!isUser) return reply(mess.only.daftarB)
-					if (!isQuotedSticker) return reply('❌ Solo pegatinas ❌')
+					if (!isQuotedSticker) return reply('❌ Solo stickers ❌')
 					reply(mess.wait)
 					encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					media = await client.downloadAndSaveMediaMessage(encmedia)
@@ -1236,7 +1236,7 @@ async function starts() {
 						fs.unlinkSync(media)
 						if (err) return reply('❌ Error al convertir las pegatinas en imágenes ❌')
 						buffer = fs.readFileSync(ran)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'No me la container'})
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'NEFAAAASSSSSSTOOOOOOOO'})
 						fs.unlinkSync(ran)
 					})
 					break
@@ -1637,12 +1637,12 @@ async function starts() {
 							reply('❌ *ERROR* ❌')
 						}
 						break
-					case 'trap':
+					case 'yuri':
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await fetchJson(`https://api.computerfreaker.cf/v1/trap`, {method: 'get'})
+							res = await fetchJson(`https://api.computerfreaker.cf/v1/yuri`, {method: 'get'})
 							buffer = await getBuffer(res.result)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Na flaco estas re enfermo'})
+							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'NEFASTOOOOOOO'})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌')
