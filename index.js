@@ -197,7 +197,7 @@ async function starts() {
 				 ppimg = await client.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
 					} catch {
 					}
-				teks = `Mi loco @${num.split('@')[0]}\nTodo bien pa bienvenido a *${mdata.subject}*\n\nUn gusto conocerte😀\n\nPara utilizar el bot registrate con el comando ${prefix}daftar y tu nombre\n\nPara ver los demas comandos utiliza ${prefix}help\n\nOjito con el spam 🧐\n\nBy Shanduy`
+				teks = `Mi loco @${num.split('@')[0]}\nTodo bien NEFASTO bienvenido a *${mdata.subject}*\n\nUn gusto conocerte😀\n\nPara utilizar el bot registrate con el comando ${prefix}daftar y tu nombre\n\nPara ver los demas comandos utiliza ${prefix}help\n\nOjito con el spam 🧐\n\nBy Shanduy`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
@@ -206,7 +206,7 @@ async function starts() {
 			         ppimg = await client.getProfilePicture(`${num.split('@')[0]}@c.us`)
 					} catch {
 					}
-				teks = `Chao pa, se nos fue un loco @${num.split('@')[0]}👋\n\nHora de quemarle codes😈😎`
+				teks = `NOOOO se nos fue un NEFASTO 😎 @${num.split('@')[0]}👋\n\nHora de quemarle codes😈`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			}
@@ -260,7 +260,7 @@ async function starts() {
 					ownerB: '[❗] Este comando solo lo usa ShanBot! ❌',
 					admin: '[❗] Este comando solo puede ser utilizado por administradores del grupo! ❌',
 					Badmin: '[❗] Este comando solo se puede usar cuando el bot se convierte en administrador! ❌',
-                                        daftarB: `「REGISTRATE AWEVONAO」\n\nHOLA PA!\n\nNo estas registrado en mi base de datos 😳 \n\nComando : ${prefix}daftar Nombre\nEjemplo : ${prefix}daftar Shanduy
+                                        daftarB: `「NEFASTOOOOO」\n\nHOLA PA!\n\nNo estas registrado en mi base de datos 😳 \n\nComando : ${prefix}daftar Nombre\nEjemplo : ${prefix}daftar Shanduy
 `,
 				}
 			}
@@ -1152,6 +1152,7 @@ async function starts() {
 					client.groupSettingChange (from, GroupSettingChange.messageSend, false)
 					client.sendMessage(from, open, text, {quoted: mek})
 					break
+				case 'nefasto':
 				case 'stiker':
 				case 'sticker':
 				case 'stickergif':
