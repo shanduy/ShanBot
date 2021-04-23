@@ -1272,7 +1272,7 @@ async function starts() {
 	          if (!isUser) return reply(mess.only.daftarB)
                 reply(mess.wait)
                 play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.xyz/api/ytmp3?q=${play}&apikey=apivinz`)
+                anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3/2?q=${play}&apikey=apivinz`)
                if (anu.error) return reply(anu.error)
                  infomp3 = `*Canción encontrada!!!*\nTítulo : ${anu.result.title}\nFuente : ${anu.result.source}\nTamaño : ${anu.result.size}\n\n*ESPERE ENVIANDO ARCHIVO, NO SPAMES LA CONCHA DE TU MADRE*`
                 buffer = await getBuffer(anu.result.thumbnail)
