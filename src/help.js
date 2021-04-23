@@ -70,7 +70,7 @@ const help = (prefix) => {
 
 Para usar estas funciones el bot necesita admin
   
-◪ *NSWF*
+◪ *NSWF NUEVAS FUNCIONES* 
   │
   └─ ❏ ${prefix}nsfwmenu
 
