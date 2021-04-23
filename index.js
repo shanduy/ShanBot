@@ -178,10 +178,10 @@ async function starts() {
 
 	fs.existsSync('./Nazwa.json') && client.loadAuthInfo('./Nazwa.json')
 	client.on('connecting', () => {
-		start('2', 'Connecting...')
+		start('2', 'Conectando...')
 	})
 	client.on('open', () => {
-		success('2', 'Connected')
+		success('2', 'Conectado')
 	})
 	await client.connect({timeoutMs: 30*1000})
         fs.writeFileSync('./Nazwa.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
@@ -979,7 +979,7 @@ async function starts() {
 				  case 'ownergroup':
                client.updatePresence(from, Presence.composing) 
               options = {
-          text: `El homosexual de este grupo es : @${from.split("-")[0]}`,
+          text: `El homosexual de este grupo es : @${mentioned[0].split('@')[0]}`,
           contextInfo: { mentionedJid: [from] }
            }
            client.sendMessage(from, options, text, { quoted: mek } )
@@ -1177,7 +1177,7 @@ async function starts() {
 								fs.unlinkSync(media)
 								fs.unlinkSync(ran)
 							})
-							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=20, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
 							.toFormat('webp')
 							.save(ran)
 						} else if ((isMedia && mek.message.videoMessage.seconds < 11 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
@@ -1203,7 +1203,7 @@ async function starts() {
 								fs.unlinkSync(media)
 								fs.unlinkSync(ran)
 							})
-							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=20, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
 							.toFormat('webp')
 							.save(ran)
 						}
