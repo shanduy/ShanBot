@@ -1272,7 +1272,7 @@ async function starts() {
 	          if (!isUser) return reply(mess.only.daftarB)
                 reply(mess.wait)
                 play = body.slice(5)
-                anu = await fetchJson(`https://st4rz.herokuapp.com/api/yta?q=${play}&apikey=apivinz`)
+                anu = await fetchJson(`https://st4rz.herokuapp.com/api/yta?url=${play}&apikey=apivinz`)
                if (anu.error) return reply(anu.error)
                  infomp3 = `*Canción encontrada!!!*\nTítulo : ${anu.result.title}\nFuente : ${anu.result.source}\nTamaño : ${anu.result.size}\n\n*ESPERE ENVIANDO ARCHIVO, NO SPAMES LA CONCHA DE TU MADRE*`
                 buffer = await getBuffer(anu.result.thumbnail)
