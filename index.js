@@ -979,7 +979,7 @@ async function starts() {
 				  case 'ownergroup':
                client.updatePresence(from, Presence.composing) 
               options = {
-          text: `El homosexual de este grupo es : @${mentioned[0].split('@')[0]}`, @${from.split("-")[0]}
+          text: `El homosexual de este grupo es :@${from.split("-")[0]}` 
           contextInfo: { mentionedJid: [from] }
            }
            client.sendMessage(from, options, text, { quoted: mek } )
