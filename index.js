@@ -1574,9 +1574,9 @@ async function starts() {
                                         try{
                                                 if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
                                                 if (!isUser) return reply(mess.only.daftarB)
-                                                res = await fetchJson(`https://tobz-api.herokuapp.com/nsfwtrap?apikey=BotWeA`, {method: 'get'})
+                                                res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwtrap?apikey=APIKEYLU`, {method: 'get'})
                                                 buffer = await getBuffer(res.result)
-                                                client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Estas enfermo flaco'})
+                                                client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Estas enfermo flaco NEFASTOOOOO'})
                                         } catch (e) {
                                                 console.log(`*Error* :`, color(e,'red'))
                                                 reply('❌ *ERROR* ❌')
@@ -1593,7 +1593,7 @@ async function starts() {
 							reply('❌ *ERROR* ❌')
 						}
 						break
-					case 'nsfwloli':
+					/*case 'nsfwloli':
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://api.lolis.life/random?nsfw=true`, {method: 'get'})
@@ -1603,7 +1603,7 @@ async function starts() {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌')
 						}
-						break
+						break*/
 					case 'nsfwbobs': 
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
@@ -1637,7 +1637,7 @@ async function starts() {
 							reply('❌ *ERROR* ❌')
 						}
 						break
-					case 'yuri':
+					case 'nsfwyuri':
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://api.computerfreaker.cf/v1/yuri`, {method: 'get'})
