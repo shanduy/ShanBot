@@ -5,6 +5,7 @@ const nsfwmenu = (prefix, pushname) => {
   ├─ ❏ ${prefix}nsfwbobs
   ├─ ❏ ${prefix}nsfwsidebobs
   ├─ ❏ ${prefix}nsfwahegao
+  ├─ ❏ ${prefix}nsfwsiyuri NUEVO
   └─ ❏ ${prefix}nsfwfeets
 
   _El bot nesecita admin y tener activado los NSFW_\n _Digita_\n ${prefix}*nsfw 1*
