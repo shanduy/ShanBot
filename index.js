@@ -975,15 +975,15 @@ async function starts() {
                      hasil = `Nombre completo : ${hmm.data.fullname}\nSeguidores : ${hmm.data.follower}\nSeguidos : ${hmm.data.following}\nPrivate : ${hmm.data.private}\nVerified : ${hmm.data.verified}\nBio : ${hmm.data.bio}`
                     client.sendMessage(from, buffer, image, {quoted: mek, caption: hasil})
                     break
-                    case 'ownergrup':
+                    /*case 'ownergrup':
 				  case 'ownergroup':
                client.updatePresence(from, Presence.composing) 
               options = {
-          text: `El homosexual de este grupo es : @${from.split("-")[0]}`, 
+          text: `El NEFASTO de este grupo es :@${from.split("-")[0]}`, 
           contextInfo: { mentionedJid: [from] }
            }
            client.sendMessage(from, options, text, { quoted: mek } )
-				break
+				break*/
            case 'quran':
 					anu = await fetchJson(`https://api.banghasan.com/quran/format/json/acak`, {method: 'get'})
 					quran = `${anu.acak.ar.teks}\n\n${anu.acak.id.teks}\nQ.S ${anu.surat.nama} ayat ${anu.acak.id.ayat}`
