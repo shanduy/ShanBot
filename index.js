@@ -1645,9 +1645,9 @@ async function starts() {
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'NEFASTOOOOOOO'})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')*/
+							reply('❌ *ERROR* ❌')
 						}
-					break
+					break*/
 				case 'nsfwass':
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
