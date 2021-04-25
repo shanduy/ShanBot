@@ -29,9 +29,8 @@ Mis Redes Sociales Y Resolver Tus Problemas
 # ShanBot
 ULTIMA VERSION 2.1
 
-23 de Abril 2021
-
-ERROR CON LA FUNCION *play inconvenientes con el server de la india pedimos disculpas
+25 de Abril del 2021
+LA FUNCION *play fue corregido
 
 Pasos para instalar el bot via termux
 https://youtu.be/rfxuYsWGmQo
