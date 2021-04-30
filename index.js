@@ -1153,6 +1153,7 @@ async function starts() {
 					client.groupSettingChange (from, GroupSettingChange.messageSend, false)
 					client.sendMessage(from, open, text, {quoted: mek})
 					break
+				case 'cuties':
 				case 'nefasto':
 				case 'stiker':
 				case 'sticker':
