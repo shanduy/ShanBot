@@ -368,9 +368,9 @@ async function starts() {
 					case 'troleo':
                client.sendMessage(from, virtex(prefix, sender), text, {quoted: mek})
                break
-               /*case 'kodenegara':
+               case 'kodenegara':
                client.sendMessage(from, negara(prefix, sender), text, {quoted: mek})
-               break*/
+               break
 				case 'demote':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
