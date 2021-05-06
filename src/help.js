@@ -1,6 +1,6 @@
 const help = (prefix) => {
 	return `
-「 *Shan Bot* 」
+「 *ShanBot by shanduy* 」
 
 ◪ *Información*
   ❏ Comando: 「  ${prefix}  」
@@ -9,7 +9,7 @@ const help = (prefix) => {
   ❏ Instagram: https://www.instagram.com/thepavos
 
 ◪ *Para Usar Al Bot*
-  ❏ Registrate con el comando ${prefix}daftar Nombre
+  ❏ Registrate con el comando ${prefix}daftar y tu nombre
 
 ◪ *Nueva Actualización*
   │
@@ -21,9 +21,9 @@ const help = (prefix) => {
   ├─ ❏ ${prefix}ping
   └─ Estado de tu internet "Broma"
 
-◪ *CREAR*
+◪ *CREAR STICKERS*
   │
-  ├─ ❏ ${prefix}sticker
+  ├─ ❏ ${prefix}sticker o s
   ├─ ❏ ${prefix}stickergif
   ├─ 6 segundos de video
   ├─ ❏ ${prefix}toimg
@@ -49,9 +49,9 @@ const help = (prefix) => {
   ├─ Link de Whatsapp
   ├─ ❏ ${prefix}troleo
   ├─ trolea a tus panas
-  ├─ ❏ ${prefix}exe
-  └─ ❏ ${prefix}qrcode
-  
+  ├─❏ ${prefix}qrcode
+  └─ Coloca un texto
+
 ◪ *GRUPOS*
   │
   ├─ ❏ ${prefix}welcome 1
@@ -60,7 +60,7 @@ const help = (prefix) => {
   ├─ Cerrar el grupo solo admins
   ├─ ❏ ${prefix}opencg
   ├─ Abrir grupo solo admins
-  ├─ ❏ ${prefix}kick
+  ├─ ❏ ${prefix}kick o pafuera
   ├─ Eliminar a un miembro 
   ├─ ❏ ${prefix}promote
   ├─ Dar admin a un miembro
