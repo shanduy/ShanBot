@@ -363,9 +363,10 @@ async function starts() {
 										break
 										case 'nsfwmenu':
 											client.sendMessage(from, nsfwmenu(prefix, sender), text, {quoted: mek})
-		                                                                       break
-	    case 'troleo':											
-            client.sendMessage(from, virtex(prefix, sender), text, {quoted: mek})
+													break
+               case 'virtex':
+					case 'troleo':
+               client.sendMessage(from, virtex(prefix, sender), text, {quoted: mek})
                break
                /*case 'kodenegara':
                client.sendMessage(from, negara(prefix, sender), text, {quoted: mek})
