@@ -1,5 +1,5 @@
 const virtex = (prefix, pushname) => {
-	return `Hernqn Momente
+	return `Te comistes el troleo 🤙🤪
 
 
 
