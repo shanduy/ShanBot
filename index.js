@@ -178,7 +178,7 @@ async function starts() {
 
 	fs.existsSync('./Nazwa.json') && client.loadAuthInfo('./Nazwa.json')
 	client.on('connecting', () => {
-		start('2', 'Desconectando. Utiliza npm start Para conectarte')
+		start('2', 'Desconectado. Utiliza npm start Para conectarte')
 	})
 	client.on('open', () => {
 		success('2', 'Conectado by shanduy')
