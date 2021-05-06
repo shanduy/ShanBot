@@ -47,7 +47,8 @@ const help = (prefix) => {
   │
   ├─ ❏ ${prefix}wame
   ├─ Link de Whatsapp
-  ├─ ❏ ${prefix}virtex (Hernqn)
+  ├─ ❏ ${prefix}troleo
+  ├─ trolea a tus panas
   ├─ ❏ ${prefix}exe
   └─ ❏ ${prefix}qrcode
   
