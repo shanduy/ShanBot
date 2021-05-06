@@ -178,7 +178,7 @@ async function starts() {
 
 	fs.existsSync('./Nazwa.json') && client.loadAuthInfo('./Nazwa.json')
 	client.on('connecting', () => {
-		start('2', 'Conectando. Utiliza npm start Para conectarte by shanduy')
+		start('2', 'Desconectando. Utiliza npm start Para conectarte')
 	})
 	client.on('open', () => {
 		success('2', 'Conectado by shanduy')
@@ -244,7 +244,7 @@ async function starts() {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: 'Calmao gordo puto estoy procesando 😎👏\n\nNo spames negro del orto 🤬🤑\n\nSi usastes la funcion *play asegurate de colocar bien el nombre de la cancion junto al artista 🧐',
+				wait: 'Calmao gordo puto estoy procesando 😎👏\n\nNo spames negro del orto 🤬🤑\n\nSi usastes la funcion *play asegurate de colocar bien el nombre de la cancion o el link del video 🧐\n\nFlaco los stickergif son de 6 segundos 🤢\n\nby shanduy',
 				success: '✔️ Listo ✔️',
                                 levelon: '❬ ✔ ❭ *Level activado*',
 				leveloff: ' ❬ X ❭  *Level desactivado*',
@@ -363,13 +363,12 @@ async function starts() {
 										break
 										case 'nsfwmenu':
 											client.sendMessage(from, nsfwmenu(prefix, sender), text, {quoted: mek})
-													break
-               case 'virtex':
-               client.sendMessage(from, virtex(prefix, sender), text, {quoted: mek})
+		case 'troleo':											break
+            client.sendMessage(from, virtex(prefix, sender), text, {quoted: mek})
                break
-               case 'kodenegara':
+               /*case 'kodenegara':
                client.sendMessage(from, negara(prefix, sender), text, {quoted: mek})
-               break
+               break*/
 				case 'demote':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
@@ -1153,6 +1152,7 @@ async function starts() {
 					client.groupSettingChange (from, GroupSettingChange.messageSend, false)
 					client.sendMessage(from, open, text, {quoted: mek})
 					break
+				case 's':
 				case 'cuties':
 				case 'nefasto':
 				case 'stiker':
