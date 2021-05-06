@@ -14,7 +14,7 @@ const help = (prefix) => {
 ◪ *Nueva Actualización*
   │
   ├─ ❏ ${prefix}play
-  └─ Ahora tambien funciona con links de youtube
+  └─ Ahora funciona con links de youtube
 
 ◪ *SOBRE*
   │
