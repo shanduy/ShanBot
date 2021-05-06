@@ -11,10 +11,10 @@ const help = (prefix) => {
 ◪ *Para Usar Al Bot*
   ❏ Registrate con el comando ${prefix}daftar Nombre
 
-◪ *Nueva Funcion*
+◪ *Nueva Actualización*
   │
-  ├─ ❏ ${prefix}welcome 1
-  └─ Ojo la persona tiene que tener la foto de perfil publica, en futuras actualizaciones la mejoraremos
+  ├─ ❏ ${prefix}play
+  └─ Ahora tambien funciona con links de youtube
 
 ◪ *SOBRE*
   │
@@ -53,6 +53,8 @@ const help = (prefix) => {
   
 ◪ *GRUPOS*
   │
+  ├─ ❏ ${prefix}welcome 1
+  ├─ Bienvenida a los miembros
   ├─ ❏ ${prefix}closecg
   ├─ Cerrar el grupo solo admins
   ├─ ❏ ${prefix}opencg
