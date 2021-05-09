@@ -15,7 +15,7 @@ const {
     Presence,
     Mimetype,
     GroupSettingChange
-} = require('@adiwajshing/baileys')
+} = require('@open-wa/wa-automate')
 
 /******BEGIN OF FILE INPUT******/
 const { color, bgcolor } = require('./lib/color')
