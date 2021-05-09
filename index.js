@@ -9,7 +9,7 @@
 * Nada
 */
 
-import { WAConnection } from '@adiwajshing/baileys'
+const { WAConnection } require '@adiwajshing/baileys'
 
 /******BEGIN OF FILE INPUT******/
 const { color, bgcolor } = require('./lib/color')
