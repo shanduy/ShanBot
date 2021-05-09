@@ -20,7 +20,7 @@
   "author": "Shan",
   "license": "ISC",
   "dependencies": {
-    "@adiwajshing/baileys": "github:adiwajshing/baileys",
+    "@open-wa/wa-automate": "github:@open-wa/wa-automate",
     "@kagchi/kag-api": "^1.5.5",
     "async": "^3.2.0",
     "axios": "^0.21.1",
