@@ -9,13 +9,7 @@
 * Nada
 */
 
-const {
-    WAConnection,
-    MessageType,
-    Presence,
-    Mimetype,
-    GroupSettingChange
-} = require('@adiwajshing/baileys')
+import { WAConnection } from '@adiwajshing/baileys'
 
 /******BEGIN OF FILE INPUT******/
 const { color, bgcolor } = require('./lib/color')
