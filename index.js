@@ -197,7 +197,7 @@ async function starts() {
 				 ppimg = await client.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
 					} catch {
 					}
-				teks = `Mi loco @${num.split('@')[0]}\nTodo bien NEFASTO!!!! Bienvenido a *${mdata.subject}*\n\nUn gusto conocerte😀\n\nPara utilizar el bot registrate con el comando ${prefix}daftar y tu nombre\n\nPara ver los demas comandos utiliza ${prefix}help\n\nOjito con el spam 🧐\n\nBy Shanduy`
+				teks = `Mi loco @${num.split('@')[0]}\nTodo bien NEFASTO!!!! Bienvenido a *${mdata.subject}*\n\nUn gusto conocerte😀\n\nPara utilizar el bot registrate con el comando ${prefix}daftar y tu nombre\n\nPara ver los demas comandos utiliza ${prefix}help\n\nOjito con el spam 🧐\n\nby shanduy`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
@@ -260,7 +260,7 @@ async function starts() {
 					ownerB: '[❗] Este comando solo lo usa ShanBot! ❌',
 					admin: '[❗] Este comando solo puede ser utilizado por administradores del grupo! ❌',
 					Badmin: '[❗] Este comando solo se puede usar cuando el bot se convierte en administrador! ❌',
-                                        daftarB: `「NEFASTOOOOO」\n\nPERO PA!\n\nNo estas registrado en mi base de datos 😳 \n\nComando : ${prefix}daftar Nombre\nEjemplo : ${prefix}daftar Shanduy`,
+                                        daftarB: `「NEFASTOOOOO」\n\nPERO PA!\n\nNo estas registrado en mi base de datos 😳 \n\nComando : ${prefix}daftar Nombre\nEjemplo : ${prefix}daftar shanduy`,
 				}
 			}
     			const apakah = ['Ya','Tidak']
