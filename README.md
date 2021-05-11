@@ -43,8 +43,6 @@ pkg install wget
 
 pkg install nodejs
 
-pkg install npm
-
 git clone https://github.com/shanduy/ShanBot
 
 cd ShanBot
