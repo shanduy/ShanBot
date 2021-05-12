@@ -39,9 +39,9 @@ pkg install git
 
 pkg install ffmpeg
 
-pkg install wget
-
 pkg install nodejs
+
+pkg install wget
 
 git clone https://github.com/shanduy/ShanBot
 
