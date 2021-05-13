@@ -35,7 +35,9 @@ https://www.youtube.com/watch?v=2LQSzEbpJ-M
 ## Primero Configurar termux
 Una vez descargado termux colocas el siguiente comando
 
-termux-change-repo
+```bash
+> termux-change-repo
+```
 
 Se te desplegara una venta y harás lo que esta en el video de abajo
 
