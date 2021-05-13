@@ -39,7 +39,7 @@ Una vez descargado termux colocas el siguiente comando
 > termux-change-repo
 ```
 
-Se te desplegara una venta y harás lo que esta en el video de abajo
+## Se te desplegara una venta y harás lo que esta en el video de abajo
 
 ![Output sample](https://github.com/shanduy/ShanBot/blob/main/temples/116244521-ad43a780-a770-11eb-88c6-054fb1950bfd%20(1).gif)
 
@@ -67,7 +67,7 @@ Si despues que ya instalastes tu bot y termux te salta en blanco, solo realizara
 > npm start
 ```
 
-Realizas estos pasos como en el video de acontinuacion 
+## Realizas estos pasos como en el video de acontinuacion 
 
 ![Output sample](https://github.com/shanduy/ShanBot/blob/main/temples/Screenrecorder-2021-05-12-21-09-23-978.gif)
 
@@ -75,14 +75,14 @@ Si realizaste este paso y te salio esto
 
 ![Settings](https://github.com/shanduy/ShanBot/blob/main/temples/IMG_20210513_155715.jpg)
 
-Vuelves a poner los comandos
+## Vuelves a poner los comandos
 
 ```bash
 > cd ShanBot
 > npm start
 ```
 
-Realizas este paso hasta que te salgo Conectado
+## Realizas este paso hasta que te salgo Conectado
 
 ![Settings](https://github.com/shanduy/ShanBot/blob/main/temples/IMG_20210513_155631.jpg)
 
@@ -94,7 +94,7 @@ Realizas este paso hasta que te salgo Conectado
 ![Output sample](https://github.com/shanduy/ShanBot/blob/main/temples/Screenrecorder-2021-05-13-16-12-37-825.gif)
 
 
-## Y para prender los solo colocamos
+## Y para prender el bot solo colocamos
 
 ```bash
 > npm start
@@ -103,10 +103,10 @@ Realizas este paso hasta que te salgo Conectado
 
 
 
-## Espero Te Alla Ayudado :)
+## Y Listo Ya Estara En Funcionamiento. Espero Te Alla Ayudado :)
 
 
 
-by shanduy
+## by shanduy
 
 
