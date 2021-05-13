@@ -57,5 +57,27 @@ Pasos para instalar el bot en termux
 > Y escaneas el QR con tu Whatsapp
 ```
 
+## Soluciones 
+Si despues que ya instalastes tu bot y termux te salta en blanco, solo realizaras estos pasos
+
+cd ShanBot
+npm start
+
+Realizas estos pasos como en el video de acontinuacion 
+
+![Output sample](https://github.com/shanduy/ShanBot/blob/main/temples/Screenrecorder-2021-05-12-21-09-23-978.gif)
+
+Si realizaste este paso y te salio esto
+
+![Settings](https://github.com/shanduy/ShanBot/blob/main/temples/IMG_20210513_155715.jpg)
+
+Vuelves a poner los
+cd ShanBot
+npm start
+
+
+Realizas este paso hasta que te salgo Conectado
+
+![Settings](https://github.com/shanduy/ShanBot/blob/main/temples/IMG_20210513_155631.jpg)
 
 
