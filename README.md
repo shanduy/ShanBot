@@ -39,7 +39,6 @@ Pasos para instalar el bot en termux
 
 ```bash
 > pkg install git
-> ![Output sample](https://github.com/ajasmin/camstudio-mousedown-highlight/raw/master/android_vid_test.gif)
 > pkg install ffmpeg
 > pkg install nodejs
 > pkg install wget
