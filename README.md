@@ -38,8 +38,6 @@ https://www.youtube.com/watch?v=2LQSzEbpJ-M
 Pasos para instalar el bot en termux
 
 ```bash
-> termux-change-repo
-(Se te desplegara una nueva ventada y harás esto)
 > pkg install git
 > pkg install ffmpeg
 > pkg install nodejs
