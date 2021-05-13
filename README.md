@@ -37,7 +37,7 @@ Una vez descargado termux colocas el siguiente comando
 
 termux-change-repo
 
-Se te desplegara una venta y haras los que esta en el video de abajo
+Se te desplegara una venta y harás lo que esta en el video de abajo
 
 ![Output sample](https://github.com/shanduy/ShanBot/blob/main/temples/116244521-ad43a780-a770-11eb-88c6-054fb1950bfd%20(1).gif)
 
