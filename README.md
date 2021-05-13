@@ -22,10 +22,6 @@ Mis Redes Sociales Y Resolver Tus Problemas
 
 
 
-
-
-
-
 # ShanBot
 ULTIMA VERSION 3.0
 
@@ -35,20 +31,25 @@ APIS actulizadas y mantenimiento del bot
 Pasos para instalar el bot via termux
 https://www.youtube.com/watch?v=2LQSzEbpJ-M
 
-pkg install git
 
-pkg install ffmpeg
 
-pkg install nodejs
 
-pkg install wget
+## Instalar El Bot
+Pasos para instalar el bot en termux
 
-git clone https://github.com/shanduy/ShanBot
+```bash
+> termux-change-repo
+(Se te desplegara una nueva ventada)
+> pkg install git
+> pkg install ffmpeg
+> pkg install nodejs
+> pkg install wget
+> git clone https://github.com/shanduy/ShanBot
+> cd ShanBot
+> bash install.sh
+> npm start
+> Y escaneas el QR con tu Whatsapp
+```
 
-cd ShanBot
 
-bash install.sh
 
-npm start
-
-Escaneas el QR y listo comando para activarlo  *help
