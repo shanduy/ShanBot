@@ -33,7 +33,7 @@ ULTIMA VERSION 2.1
 APIS actulizadas y mantenimiento del bot
 
 Pasos para instalar el bot via termux
-https://youtu.be/rfxuYsWGmQo
+https://www.youtube.com/watch?v=2LQSzEbpJ-M
 
 pkg install git
 
