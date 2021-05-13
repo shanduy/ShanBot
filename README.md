@@ -85,3 +85,26 @@ Realizas este paso hasta que te salgo Conectado
 ![Settings](https://github.com/shanduy/ShanBot/blob/main/temples/IMG_20210513_155631.jpg)
 
 
+## Prender Y Apagar El Bot
+
+## Para eso nos vamos a dirigir a termux y hacemos lo siguiente 
+
+![Output sample](https://github.com/shanduy/ShanBot/blob/main/temples/Screenrecorder-2021-05-13-16-12-37-825.gif)
+
+
+## Y para prender los solo colocamos
+
+```bash
+> npm start
+```
+![Output sample](https://github.com/shanduy/ShanBot/blob/main/temples/Screenrecorder-2021-05-13-16-12-49-337.gif)
+
+
+
+## Espero Te Alla Ayudado :)
+
+
+
+by shanduy
+
+
