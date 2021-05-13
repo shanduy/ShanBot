@@ -27,9 +27,9 @@ Mis Redes Sociales Y Resolver Tus Problemas
 
 
 # ShanBot
-ULTIMA VERSION 2.1
+ULTIMA VERSION 3.0
 
-6 de Mayo del 2021
+13 de Mayo del 2021
 APIS actulizadas y mantenimiento del bot
 
 Pasos para instalar el bot via termux
