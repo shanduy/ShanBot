@@ -71,7 +71,7 @@ Si despues que ya instalastes tu bot y termux te salta en blanco, solo realizara
 
 ![Output sample](https://github.com/shanduy/ShanBot/blob/main/temples/Screenrecorder-2021-05-12-21-09-23-978.gif)
 
-Si realizaste este paso y te salio esto
+## Si realizaste este paso y te salio esto
 
 ![Settings](https://github.com/shanduy/ShanBot/blob/main/temples/IMG_20210513_155715.jpg)
 
