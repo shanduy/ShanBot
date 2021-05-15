@@ -25,8 +25,8 @@ Mis Redes Sociales Y Resolver Tus Problemas
 # ShanBot
 ULTIMA VERSION 3.0
 
-13 de Mayo del 2021
-APIS actulizadas y mantenimiento del bot
+15 de Mayo del 2021
+La funcion ${prefix}welcome fue descontinuada por presentar varios errores
 
 Pasos para instalar el bot via termux
 https://www.youtube.com/watch?v=2LQSzEbpJ-M
