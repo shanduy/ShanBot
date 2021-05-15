@@ -13,8 +13,8 @@ const help = (prefix) => {
 
 ◪ *Nueva Actualización*
   │
-  ├─ ❏ ${prefix}play
-  └─ Ahora funciona con links de youtube
+  ├─ ❏ ${prefix}creador
+  └─ Resuelve tus dudas o errores
 
 ◪ *SOBRE*
   │
@@ -54,8 +54,6 @@ const help = (prefix) => {
 
 ◪ *GRUPOS*
   │
-  ├─ ❏ ${prefix}welcome 1
-  ├─ Bienvenida a los miembros
   ├─ ❏ ${prefix}closecg
   ├─ Cerrar el grupo solo admins
   ├─ ❏ ${prefix}opencg
