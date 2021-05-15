@@ -455,10 +455,10 @@ async function starts() {
                 hasil = data.result.fml
                 reply(hasil)
                 break
-              case 'owner':
+              case 'creador':
+	    case 'owner':
                 case 'creator':
-                  client.sendMessage(from, {displayname: "Shanduy", vcard: vcard}, MessageType.contact, { quoted: mek})
-               client.sendMessage(from, 'Aquí está el número de mi propietario\nhttps://wa.me/593967689722\nAqui puedes resolver tus dudas',MessageType.text, { quoted: mek} )
+                 client.sendMessage(from, 'Aquí está el número de mi propietario\n\nhttps://wa.me/593967689722\n\nAqui puedes resolver tus dudas :)\n\nby shanduy',MessageType.text, { quoted: mek} )
                 break
 	case 'hidetag':
                 client.updatePresence(from, Presence.composing) 
