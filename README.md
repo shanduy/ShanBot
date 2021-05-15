@@ -26,6 +26,7 @@ Mis Redes Sociales Y Resolver Tus Problemas
 ULTIMA VERSION 3.0
 
 15 de Mayo del 2021
+
 La funcion *welcome fue descontinuada por presentar varios errores
 
 Pasos para instalar el bot via termux
