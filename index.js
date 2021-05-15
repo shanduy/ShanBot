@@ -458,7 +458,7 @@ async function starts() {
               case 'owner':
                 case 'creator':
                   client.sendMessage(from, {displayname: "Shanduy", vcard: vcard}, MessageType.contact, { quoted: mek})
-               client.sendMessage(from, 'Aquí está el número de mi propietario, puedes guardar más tarde',MessageType.text, { quoted: mek} )
+               client.sendMessage(from, 'Aquí está el número de mi propietario\nhttps://wa.me/593967689722\nAqui puedes resolver tus dudas',MessageType.text, { quoted: mek} )
                 break
 	case 'hidetag':
                 client.updatePresence(from, Presence.composing) 
@@ -1321,7 +1321,7 @@ async function starts() {
 						fs.writeFileSync('./database/json/user.json', JSON.stringify(user))
 						client.sendMessage(from, `\`\`\`Registrado con exito flaco 👏😎🥳\`\`\`\n\n\`\`\`DNI: Fan De Cuties 🤑😎\`\`\`\n\n\`\`\`Dia ${date} ${time}\`\`\`\n\`\`\`[Usuario]: ${jeneng}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\`\`\`Para usar el bot\`\`\`\n\`\`\`Por favor\`\`\`\n\`\`\`enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários ${user.length}\`\`\``, text, {quoted: mek})
 					break
-                                case 'welcome':
+                                /*case 'welcome':
 					if (!isGroup) return reply(mess.only.group)
                                         if (!isUser) return reply(mess.only.daftarB)
 					if (!isGroupAdmins) return reply(mess.only.Badmin)
@@ -1338,7 +1338,7 @@ async function starts() {
 					} else {
 						reply('Escriba 1 para habilitar, 0 para deshabilitar la función')
 					}
-                                        break
+                                        break*/
                                 case 'fakta':
 					fakta = body.slice(1)
                                         if (!isUser) return reply(mess.only.daftarB)
