@@ -29,6 +29,8 @@ ULTIMA VERSION 3.0
 
 La funcion *welcome fue descontinuada por presentar varios errores
 
+La funcion *play está en mantenimiento
+
 Pasos para instalar el bot via termux
 https://www.youtube.com/watch?v=2LQSzEbpJ-M
 
