@@ -244,7 +244,7 @@ async function starts() {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: 'Calmao gordo puto estoy procesando 😎👏\n\nNo spames negro del orto 🤬🤑\n\nSi usastes la funcion *play asegurate de colocar bien el nombre de la cancion o el link del video 🧐\n\nFlaco los stickergif son de 6 segundos 🤢\n\nby shanduy',
+				wait: 'Calmao gordo puto estoy procesando 😎👏\n\nNo spames negro del orto 🤬🤑\n\nSi usastes la funcion *play asegurate de colocar bien el nombre de la cancion o el link del video 🧐\n\nFlaco los stickergif son de 10 segundos 🤢\n\nby shanduy',
 				success: '✔️ Listo ✔️',
                                 levelon: '❬ ✔ ❭ *Level activado*',
 				leveloff: ' ❬ X ❭  *Level desactivado*',
@@ -1160,57 +1160,46 @@ async function starts() {
 				case 'sticker':
 				case 'stickergif':
 				case 'stikergif':
-					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
-						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						const media = await client.downloadAndSaveMediaMessage(encmedia)
-                                                if (!isUser) return reply(mess.only.daftarB)
-						ran = getRandom('.webp')
-						await ffmpeg(`./${media}`)
-							.input(media)
-							.on('start', function (cmd) {
-								console.log(`Started : ${cmd}`)
-							})
-							.on('error', function (err) {
-								console.log(`Error : ${err}`)
-								fs.unlinkSync(media)
-								reply(mess.error.stick)
-							})
-							.on('end', function () {
-								console.log('Finish')
-								client.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
-								fs.unlinkSync(media)
-								fs.unlinkSync(ran)
-							})
-							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=20, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
-							.toFormat('webp')
-							.save(ran)
-						} else if ((isMedia && mek.message.videoMessage.seconds < 11 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
-						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						const media = await client.downloadAndSaveMediaMessage(encmedia)
-						ran = getRandom('.webp')
-						reply(mess.wait)
-						await ffmpeg(`./${media}`)
-							.inputFormat(media.split('.')[1])
-							.on('start', function (cmd) {
-								console.log(`Started : ${cmd}`)
-							})
-							.on('error', function (err) {
-								console.log(`Error : ${err}`)
-								fs.unlinkSync(media)
-								tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-								reply('❌ Falló en el momento de la conversión ${tipe} para pegatina')
-							})
-							.on('end', function () {
-								console.log('Finish')
-								buff = fs.readFileSync(ran)
-								client.sendMessage(from, buff, sticker)
-								fs.unlinkSync(media)
-								fs.unlinkSync(ran)
-							})
-							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=20, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
-							.toFormat('webp')
-							.save(ran)
-						}
+			       function addMetadata(packname, author) {	
+				  if (!packname) packname = 'ShanBot'; if (!author) author = 'by shanduy';	
+				  author = author.replace(/[^a-zA-Z0-9]/g, '');	
+				  let name = `${author}_${packname}`
+				  if (fs.existsSync(`./src/stickers/${name}.exif`)) return `./src/stickers/${name}.exif`
+				  const json = {	
+					  "sticker-pack-name": packname,
+					  "sticker-pack-publisher": author,
+				  }
+				  const littleEndian = Buffer.from([0x49, 0x49, 0x2A, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x41, 0x57, 0x07, 0x00])	
+				  const bytes = [0x00, 0x00, 0x16, 0x00, 0x00, 0x00]	
+  
+				  let len = JSON.stringify(json).length	
+				  let last	
+  
+				  if (len > 256) {	
+					  len = len - 256	
+					  bytes.unshift(0x01)	
+				  } else {	
+					  bytes.unshift(0x00)	
+				  }	
+  
+				  if (len < 16) {	
+					  last = len.toString(16)	
+					  last = "0" + len	
+				  } else {	
+					  last = len.toString(16)	
+				  }	
+  
+				  const buf2 = Buffer.from(last, "hex")	
+				  const buf3 = Buffer.from(bytes)	
+				  const buf4 = Buffer.from(JSON.stringify(json))	
+  
+				  const buffer = Buffer.concat([littleEndian, buf2, buf3, buf4])	
+  
+				  fs.writeFile(`./src/stickers/${name}.exif`, buffer, (err) => {	
+					  return `./src/stickers/${name}.exif`	
+				  })	
+  
+			  }
 						break
 				case 'animehug':
 					ranp = getRandom('.gif')
