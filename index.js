@@ -569,7 +569,7 @@ async function starts() {
 				case 'ytmp3':
 					if (args.length < 1) return reply('Donde esta la URL?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://mhankbarbar.tech/api/yta?url=${args[0]}&apiKey=${BarBarKey}`, {method: 'get'})
+					anu = await fetchJson(`https://st4rz.herokuapp.com/api/yta?url=${args[0]}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					teks = `❏ *Título* : ${anu.title}\n❏ *Tamaño del archivo* : ${anu.filesize}\n\nEspera un minuto bro, el audio se está enviando...`
 					thumb = await getBuffer(anu.thumb)
@@ -1936,7 +1936,7 @@ async function starts() {
 					if (args.length < 1) return reply('Donde esta la URL?')
 					if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply(mess.error.Iv)
 					reply(mess.wait)
-					anu = await fetchJson(`https://mhankbarbar.tech/api/tiktok?url=${args[0]}&apiKey=${BarBarKey}`, {method: 'get'})
+					anu = await fetchJson(`https://api.zeks.xyz/api/tiktok?apikey=apivinz&url=${args[0]}&apikey=apivinz`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, video, {quoted: mek})
