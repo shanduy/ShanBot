@@ -29,7 +29,12 @@ ULTIMA VERSION 3.0
 
 La funcion *welcome fue descontinuada por presentar varios errores
 
-La funcion *ytmp3 y *play hacen la misma funcion
+La funcion *ytmp3 y *play hacen el mismo trabajo 
+
+*ytmp3 solo con link de youtube
+*play links o nombre de la cancion
+
+*ytmp3 es una alternativa por si falla *play
 
 Pasos para instalar el bot via termux
 https://www.youtube.com/watch?v=2LQSzEbpJ-M
