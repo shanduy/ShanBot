@@ -2,24 +2,24 @@ const help = (prefix) => {
 	return `
 「 *ShanBot by shanduy* 」
 
-◪ *Información*
+◪ *INFORMACION*
   ❏ Comando: 「  ${prefix}  」
   ❏ Creador: Shanduy
   ❏ Como instalar el bot: https://www.youtube.com/watch?v=2LQSzEbpJ-M
   ❏ Instagram: https://www.instagram.com/thepavos
 
-◪ *Para Usar Al Bot*
+◪ *PARA USAR EL BOT*
   ❏ Registrate con el comando ${prefix}daftar y tu nombre
 
-◪ *Nueva Actualización*
+◪ *NUEVA ACTUALIZACION*
+  │
+  ├─ ❏ ${prefix}ytmp3
+  └─ Solo con links de YouTube :)
+
+◪ *RESUELVE TUS DUDAS*
   │
   ├─ ❏ ${prefix}creador
-  └─ Resuelve tus dudas o errores
-
-◪ *SOBRE*
-  │
-  ├─ ❏ ${prefix}ping
-  └─ Estado de tu internet "Broma"
+  └─ Dudas o problemas aqui
 
 ◪ *CREAR STICKERS*
   │
