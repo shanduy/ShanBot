@@ -25,11 +25,11 @@ Mis Redes Sociales Y Resolver Tus Problemas
 # ShanBot
 ULTIMA VERSION 3.0
 
-15 de Mayo del 2021
+18 de Mayo del 2021
 
 La funcion *welcome fue descontinuada por presentar varios errores
 
-La funcion *play está en mantenimiento
+La funcion *ytmp3 esta en funcionamiento hasta que *play salga de mantenimiento
 
 Pasos para instalar el bot via termux
 https://www.youtube.com/watch?v=2LQSzEbpJ-M
