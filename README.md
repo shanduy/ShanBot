@@ -23,6 +23,10 @@ Mis Redes Sociales Y Resolver Tus Problemas
 
 
 # ShanBot
+
+Pasos para instalar el bot via termux
+https://www.youtube.com/watch?v=2LQSzEbpJ-M
+
 ULTIMA VERSION 3.0
 
 18 de Mayo del 2021
@@ -37,8 +41,33 @@ La funcion *ytmp3 y *play hacen el mismo trabajo
 
 *ytmp3 es una alternativa por si falla *play o esta en mantenimiento
 
-Pasos para instalar el bot via termux
-https://www.youtube.com/watch?v=2LQSzEbpJ-M
+
+
+
+
+
+## Como Actualizar Tu Bot
+Para eso vas a cerrar sesión de whatsapp wed en el numero de tu bot y en termux vas a apagar el bot con el comando
+
+```bash
+> CTRL y aplastas Z en tu teclado
+```
+
+Una vez hecho eso vas a colorcar en termux los siguiientes comandos
+
+```bash
+> git clone https://github.com/shanduy/ShanBot
+> cd ShanBot
+> npm start
+```
+
+Te dara un nuevo codigo y lo escaneas con tu numero del bot y ya estara la actualizacion de tu bot
+
+
+
+
+
+
 
 
 ## Primero Configurar termux
