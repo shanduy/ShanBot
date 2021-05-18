@@ -29,7 +29,7 @@ ULTIMA VERSION 3.0
 
 La funcion *welcome fue descontinuada por presentar varios errores
 
-La funcion *ytmp3 esta en funcionamiento hasta que *play salga de mantenimiento
+La funcion *ytmp3 y *play hacen la misma funcion
 
 Pasos para instalar el bot via termux
 https://www.youtube.com/watch?v=2LQSzEbpJ-M
