@@ -11,7 +11,7 @@
 </p>
  
 <p align="center">
-Mis Redes Sociales Y Resolver Tus Problemas
+Mis Redes Sociales Y Mi Whatsapp Para Resolver Tus Problemas
 </p>
 
 <p align='center'>
