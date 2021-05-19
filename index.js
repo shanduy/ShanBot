@@ -193,12 +193,22 @@ async function starts() {
 			console.log(anu)
 			if (anu.action == 'add') {
 				num = anu.participants[0]
+				try {
+				 ppimg = await client.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
+					} catch {
+					}
 				teks = `Mi loco @${num.split('@')[0]}\nTodo bien NEFASTO!!!! Bienvenido a *${mdata.subject}*\n\nUn gusto conocerte😀\n\nPara utilizar el bot registrate con el comando ${prefix}daftar y tu nombre\n\nPara ver los demas comandos utiliza ${prefix}help\n\nOjito con el spam 🧐\n\nby shanduy`
-				client.sendMessage(mdata.id, {caption: teks, contextInfo: {"mentionedJid": [num]}})
+				let buff = await getBuffer(ppimg)
+				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
 				num = anu.participants[0]
+				try {
+			         ppimg = await client.getProfilePicture(`${num.split('@')[0]}@c.us`)
+					} catch {
+					}
 				teks = `NOOOO se nos fue un NEFASTO 😎 @${num.split('@')[0]}👋\n\nQue dios lo bendiga 😎`
-				client.sendMessage(mdata.id, {caption: teks, contextInfo: {"mentionedJid": [num]}})
+				let buff = await getBuffer(ppimg)
+				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			}
 		} catch (e) {
 			console.log('Error : %s', color(e, 'red'))
