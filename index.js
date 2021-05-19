@@ -1334,7 +1334,7 @@ async function starts() {
 						fs.writeFileSync('./src/welkom.json', JSON.stringify(welkom))
 						reply('❬ EXITO ❭ La funcion de bienvenida esta deshabilitada en este grupo')
 					} else {
-						reply('Escribe el comando 1 para activarlo y 0 para desactivarlo Ejemplo: ${prefix}welcome 1')
+						reply('Escribe el comando 1 para activarlo y 0 para desactivarlo Ejemplo: *welcome 1')
 					}
 					break
                                 case 'fakta':
