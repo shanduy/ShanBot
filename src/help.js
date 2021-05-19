@@ -13,8 +13,8 @@ const help = (prefix) => {
 
 ◪ *NUEVA ACTUALIZACION*
   │
-  ├─ ❏ ${prefix}ytmp3
-  └─ Solo con links de YouTube :)
+  ├─ ❏ ${prefix}welcome 1
+  └─ La foto del usuario debe estar publica
 
 ◪ *RESUELVE TUS DUDAS*
   │
@@ -34,6 +34,8 @@ const help = (prefix) => {
 ◪ *DESCARGAS*
   │
   ├─ ❏ ${prefix}ytmp4
+  ├─ Mas link del video de YT
+  ├─ ❏ ${prefix}ytmp3
   └─ Mas link del video de YT
 
 ◪ *AUDIO*
