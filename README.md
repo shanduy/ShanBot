@@ -31,7 +31,7 @@ ULTIMA VERSION 3.0
 
 18 de Mayo del 2021
 
-La funcion *welcome fue descontinuada por presentar varios errores
+Funcion *welcome corregida
 
 La funcion *ytmp3 y *play hacen el mismo trabajo 
 
