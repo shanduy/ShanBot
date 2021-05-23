@@ -57,7 +57,6 @@ const { logomaker } = require('./database/menu/logomaker')
 const { toinmenu } = require('./src/toinmenu')
 const { menuadmin } = require('./src/menuadmin')
 const { nsfwmenu } = require('./src/nsfwmenu')
-const instagramGetUrl = require("instagram-url-direct")
 /*const { mediamenu } = require('./database/menu/mediamenu')
 const { educationmenu } = require('./database/menu/educationmenu')
 const { downloadermenu } = require('./database/menu/downloadermenu')
@@ -479,17 +478,7 @@ async function starts() {
                 }
               await client.sendMessage(from, options, text)
                break
-      case 'insta':                         
-	obterMidiaInstagram: async(url)=>{
-        try{
-            let res = await instagramGetUrl(url)
-            return res
-        } catch(err){
-            consoleErro(err.message, "API obterMidiaInstagram")
-            throw new Error(msgs_texto.downloads.ig.erro_download)
-        }
-    break
-			        case 'tiktokstalk':
+                                 case 'tiktokstalk':
 					try {
 						if (args.length < 1) return client.sendMessage(from, 'Nombre? ', text, {quoted: mek})
                                                 if (!isUser) return reply(mess.only.daftarB)
