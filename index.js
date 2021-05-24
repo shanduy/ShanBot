@@ -696,9 +696,8 @@ async function starts() {
 					break
 				
 				case 'spotify':
-		if (!isRegistered) return reply(ind.noregis())
-		if (!isPrem) return reply('Solo links de spotify mi loco')
-                    if (args.length == 0) return reply(`Ejemplo: ${prefix + command} https://open.spotify.com/track/46lvmzK8wxAy66tjzXXSh0?si=9afdd25b46b443f4`)
+		if (!isUser) return reply(mess.only.daftarB)
+		if (args.length < 1) return reply(`Solo links de spotify\n\nEjemplo: ${prefix}spotify https://open.spotify.com/track/46lvmzK8wxAy66tjzXXSh0?si=9afdd25b46b443f4`)
                     url = args[0]
                     get_result = await fetchJson(`http://api.lolhuman.xyz/api/spotify?apikey=${apikey}&url=${url}`)
                     get_result = get_result.result
