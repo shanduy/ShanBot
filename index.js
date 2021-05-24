@@ -699,7 +699,7 @@ async function starts() {
 		if (!isUser) return reply(mess.only.daftarB)
 		if (args.length < 1) return reply(`Solo links de spotify\n\nEjemplo: ${prefix}spotify https://open.spotify.com/track/46lvmzK8wxAy66tjzXXSh0?si=9afdd25b46b443f4`)
                     url = args[0]
-                    get_result = await fetchJson(`http://api.lolhuman.xyz/api/spotify?apikey=${apikey}&url=${url}`)
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/spotify?apikey=${apikey}&url=${url}`)
                     get_result = get_result.result
                     ini_txt = `Titulo : ${get_result.title}\n`
                     ini_txt += `Artista : ${get_result.artists}\n`
