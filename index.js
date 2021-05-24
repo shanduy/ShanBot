@@ -197,7 +197,7 @@ async function starts() {
 				 ppimg = await client.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
 					} catch {
 					}
-				teks = `Mi loco @${num.split('@')[0]}\nTodo bien NEFASTO!!!! Bienvenido a *${mdata.subject}*\n\nUn gusto conocerte😀\n\nPara utilizar el bot registrate con el comando ${prefix}daftar y tu nombre\n\nPara ver los demas comandos utiliza ${prefix}help\n\nOjito con el spam 🧐\n\nby shanduy`
+				teks = `Mi loco @${num.split('@')[0]}\nTodo bien NEFASTO!!!! Bienvenido a *${mdata.subject}*\n\nUn gusto conocerte hijo de la maraca 😀\n\nPara utilizar el bot registrate con el comando ${prefix}daftar y tu nombre\n\nPara ver los demas comandos utiliza ${prefix}help\n\nOjito con el spam y sigues las reglas 🧐\n\nby shanduy`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
@@ -694,6 +694,25 @@ async function starts() {
 						fs.unlinkSync(rano)
 					})
 					break
+				
+				case 'spotify':
+		if (!isRegistered) return reply(ind.noregis())
+		if (!isPrem) return reply('Solo links de spotify mi loco')
+                    if (args.length == 0) return reply(`Ejemplo: ${prefix + command} https://open.spotify.com/track/46lvmzK8wxAy66tjzXXSh0?si=9afdd25b46b443f4`)
+                    url = args[0]
+                    get_result = await fetchJson(`http://api.lolhuman.xyz/api/spotify?apikey=${apikey}&url=${url}`)
+                    get_result = get_result.result
+                    ini_txt = `Titulo : ${get_result.title}\n`
+                    ini_txt += `Artista : ${get_result.artists}\n`
+                    ini_txt += `Duracion : ${get_result.duration}\n`
+                    ini_txt += `Popularidad : ${get_result.popularity}\n`
+                    ini_txt += `Preview : ${get_result.preview_url}\n`
+                    thumbnail = await getBuffer(get_result.thumbnail)
+                    lolteam.sendMessage(from, thumbnail, image, { quoted: lol, caption: ini_txt })
+                    get_audio = await getBuffer(get_result.link[3].link)
+                    lolteam.sendMessage(from, get_audio, audio, { mimetype: 'audio/mp4', filename: `${get_result.title}.mp3`, quoted: lol})
+                    break
+				
 				case 'neonime':
 					client.updatePresence(from, Presence.composing) 
 					data = await fetchJson(`https://docs-jojo.herokuapp.com/api/neonime_lastest`, {method: 'get'})
