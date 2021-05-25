@@ -8,6 +8,9 @@ const help = (prefix) => {
   ❏ Como instalar el bot: https://www.youtube.com/watch?v=2LQSzEbpJ-M
   ❏ Instagram: https://www.instagram.com/thepavos
 
+◪ *COMUNICADO*
+${prefix}play ${prefix}ytmp4 y ${prefix}ytmp3 estan en mantenimiento ya que los servidores estan colapsados
+
 ◪ *PARA USAR EL BOT*
   ❏ Registrate con el comando ${prefix}daftar y tu nombre
 
