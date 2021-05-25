@@ -79,7 +79,7 @@ Para activar los NSFW coloque el siguiente comando ${prefix}nsfw 1 y para desact
 
 No te olvides de seguirme en instagram flaco :)
 
-Para saber la ultima version mas actual del bot entra en 
+Para saber la ultima version mas actual del bot y errores entra en 
 https://github.com/shanduy/ShanBot
 
 by shanduy
