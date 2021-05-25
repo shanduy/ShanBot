@@ -770,8 +770,8 @@ async function starts() {
 				case 'stikergif':
 			        if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						const media = await thoth.downloadAndSaveMediaMessage(encmedia)
-						if (!isUser) return reply(mess.only.daftarB)
+						const media = await client.downloadAndSaveMediaMessage(encmedia)
+                                                if (!isUser) return reply(mess.only.daftarB)
 						ran = getRandom('.webp')
 						await ffmpeg(`./${media}`)
 							.input(media)
@@ -785,22 +785,16 @@ async function starts() {
 							})
 							.on('end', function () {
 								console.log('Finish')
-								exec(`webpmux -set exif ${addMetadata('shanduy', authorname)} ${ran} -o ${ran}`, async (error) => {
-									if (error) return reply(mess.error.stick)
-									thoth.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
-									fs.unlinkSync(media)	
-									fs.unlinkSync(ran)	
-								})
-								thoth.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
+								client.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
 								fs.unlinkSync(media)
 								fs.unlinkSync(ran)
 							})
 							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
 							.toFormat('webp')
 							.save(ran)
-					} else if ((isMedia && mek.message.videoMessage.seconds < 11 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
+						} else if ((isMedia && mek.message.videoMessage.seconds < 11 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
 						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						const media = await thoth.downloadAndSaveMediaMessage(encmedia)
+						const media = await client.downloadAndSaveMediaMessage(encmedia)
 						ran = getRandom('.webp')
 						reply(mess.wait)
 						await ffmpeg(`./${media}`)
@@ -812,72 +806,21 @@ async function starts() {
 								console.log(`Error : ${err}`)
 								fs.unlinkSync(media)
 								tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-								reply(`❌ La conversión falló ${tipe} para hacaer stiker`)
+								reply(`❌ Fallo, al momento de convertir ${tipe} a la sticker`)
 							})
 							.on('end', function () {
 								console.log('Finish')
 								exec(`webpmux -set exif ${addMetadata('shanduy', authorname)} ${ran} -o ${ran}`, async (error) => {
-									if (error) return reply(mess.error.stick)
-									thoth.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
-									fs.unlinkSync(media)
-									fs.unlinkSync(ran)
-								})
-								thoth.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
+							        buff = fs.readFileSync(ran)
+								client.sendMessage(from, buff, sticker)
 								fs.unlinkSync(media)
 								fs.unlinkSync(ran)
 							})
 							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
 							.toFormat('webp')
 							.save(ran)
-					} else if ((isMedia || isQuotedImage) && args[0] == 'nobg') {
-						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						const media = await thoth.downloadAndSaveMediaMessage(encmedia)
-						ranw = getRandom('.webp')
-						ranp = getRandom('.png')
-						reply(mess.wait)
-						keyrmbg = '3b8594f4cb11895f4084291bc655e510'
-						await removeBackgroundFromImageFile({path: media, apiKey: keyrmbg, size: 'auto', type: 'auto', ranp}).then(res => {
-							fs.unlinkSync(media)
-							let buffer = Buffer.from(res.base64img, 'base64')
-							fs.writeFileSync(ranp, buffer, (err) => {
-								if (err) return reply('Falló, se produjo un error, inténtelo de nuevo más tarde')
-							})
-							exec(`ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${ranw}`, (err) => {
-								fs.unlinkSync(ranp)
-								if (err) return reply(mess.error.stick)
-								exec(`webpmux -set exif ${addMetadata('BOT', authorname)} ${ranw} -o ${ranw}`, async (error) => {
-									if (error) return reply(mess.error.stick)
-									thoth.sendMessage(from, fs.readFileSync(ranw), sticker, {quoted: mek})
-									fs.unlinkSync(ranw)
-								})
-								thoth.sendMessage(from, fs.readFileSync(ranw), sticker, {quoted: mek})
-							})
-						})
-					} else if ((isMedia || isQuotedImage) && colors.includes(args[0])) {
-						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-						const media = await thoth.downloadAndSaveMediaMessage(encmedia)
-						ran = getRandom('.webp')
-						await ffmpeg(`./${media}`)
-							.on('start', function (cmd) {
-								console.log('Started :', cmd)
-							})
-							.on('error', function (err) {
-								fs.unlinkSync(media)
-								console.log('Error :', err)
-							})
-							.on('end', function () {
-								console.log('Finish')
-								fs.unlinkSync(media)
-								thoth.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
-								fs.unlinkSync(ran)
-							})
-							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=${args[0]}@0.0, split [a][b]; [a] palettegen=reserve_transparent=off; [b][p] paletteuse`])
-							.toFormat('webp')
-							.save(ran)
-					} else {
-						reply(`Coloque el comando ${prefix}sticker o inténtalo de nuevo`)
-					}
-					break
+						}
+						break
                                case 'toimg':
 				    client.updatePresence(from, Presence.composing)
                                     if (!isUser) return reply(mess.only.daftarB)
