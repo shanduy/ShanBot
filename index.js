@@ -441,10 +441,10 @@ async function starts() {
                 }
               await client.sendMessage(from, options, text)
                break
-                                      case 'ytmp3':
+                                case 'ytmp3':
 					if (args.length < 1) return reply('Donde esta la URL?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/yta?url=${args[0]}&apikey=BotWeA`, {method: 'get'})
+					anu = await fetchJson(`https://naufalhoster.xyz/dl/youtube?apikey=Cv5SHS-9ZxAto-HnWqLR&url=${args[0]}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					teks = `❏ *Título* : ${anu.title}\n❏ *Tamaño del archivo* : ${anu.result.size}\n\nDALE NEFASTO NO SPAMES TE ESTOY ENVIANDO EL AUDIO ESPERAME 😡`
 					thumb = await getBuffer(anu.thumb)
@@ -455,7 +455,7 @@ async function starts() {
 				case 'ytmp4':
 					if (args.length < 1) return reply('Donde esta la URL?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/ytv?url=${args[0]}&apikey=BotWeA`, {method: 'get'})
+					anu = await fetchJson(`https://mhankbarbar.tech/api/ytv?url=${args[0]}&apiKey=${BarBarApi}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					teks = `*❏ Título* : ${anu.title}\n\n*EL VIDEO SE ESTÁ ENVIANDO, NO SPAM PEDAZO DE DOWN*`
 					thumb = await getBuffer(anu.thumb)
@@ -815,7 +815,7 @@ async function starts() {
 	          if (!isUser) return reply(mess.only.daftarB)
                 reply(mess.wait)
                 play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=apivinz`)
+                anu = await fetchJson(`https://naufalhoster.xyz/dl/youtube?apikey=${play}&apikey=${VthearApi}`, {method: 'get'})
                if (anu.error) return reply(anu.error)
                  infomp3 = `*Canción encontrada!!!*\nTítulo : ${anu.result.title}\nFuente : ${anu.result.source}\nTamaño : ${anu.result.size}\n\n*ESPERE ENVIANDO ARCHIVO, NO SPAMES LA CONCHA DE TU MADRE*`
                 buffer = await getBuffer(anu.result.thumbnail)
