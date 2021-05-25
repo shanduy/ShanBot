@@ -19,7 +19,7 @@ const help = (prefix) => {
 ◪ *RESUELVE TUS DUDAS*
   │
   ├─ ❏ ${prefix}creador
-  └─ Dudas o problemas aqui
+  └─ Dudas o problemas aqui. NO SOY UN BOT
 
 ◪ *CREAR STICKERS*
   │
