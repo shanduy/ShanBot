@@ -29,7 +29,9 @@ https://www.youtube.com/watch?v=2LQSzEbpJ-M
 
 ULTIMA VERSION 3.0
 
-18 de Mayo del 2021
+25 de Mayo del 2021
+
+*play *ytmp4 y *ytmp3 estan en mantenimiento ya que los servidores estan colapsados 
 
 Funcion *welcome corregida
 
