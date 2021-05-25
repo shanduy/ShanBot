@@ -14,7 +14,7 @@ const help = (prefix) => {
 ◪ *NUEVA ACTUALIZACION*
   │
   ├─ ❏ ${prefix}welcome 1
-  └─ La foto del usuario debe estar publica
+  └─ Da la bienvenida a los nuevos
 
 ◪ *RESUELVE TUS DUDAS*
   │
