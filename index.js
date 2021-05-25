@@ -791,9 +791,9 @@ async function starts() {
 									fs.unlinkSync(media)	
 									fs.unlinkSync(ran)	
 								})
-								/*thoth.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
+								thoth.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
 								fs.unlinkSync(media)
-								fs.unlinkSync(ran)*/
+								fs.unlinkSync(ran)
 							})
 							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
 							.toFormat('webp')
@@ -822,9 +822,9 @@ async function starts() {
 									fs.unlinkSync(media)
 									fs.unlinkSync(ran)
 								})
-								/*thoth.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
+								thoth.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
 								fs.unlinkSync(media)
-								fs.unlinkSync(ran)*/
+								fs.unlinkSync(ran)
 							})
 							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
 							.toFormat('webp')
@@ -850,10 +850,10 @@ async function starts() {
 									thoth.sendMessage(from, fs.readFileSync(ranw), sticker, {quoted: mek})
 									fs.unlinkSync(ranw)
 								})
-								//thoth.sendMessage(from, fs.readFileSync(ranw), sticker, {quoted: mek})
+								thoth.sendMessage(from, fs.readFileSync(ranw), sticker, {quoted: mek})
 							})
 						})
-					/*} else if ((isMedia || isQuotedImage) && colors.includes(args[0])) {
+					} else if ((isMedia || isQuotedImage) && colors.includes(args[0])) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						const media = await thoth.downloadAndSaveMediaMessage(encmedia)
 						ran = getRandom('.webp')
