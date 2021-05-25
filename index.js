@@ -873,7 +873,7 @@ async function starts() {
 							})
 							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=${args[0]}@0.0, split [a][b]; [a] palettegen=reserve_transparent=off; [b][p] paletteuse`])
 							.toFormat('webp')
-							.save(ran)*/
+							.save(ran)
 					} else {
 						reply(`Coloque el comando ${prefix}sticker o inténtalo de nuevo`)
 					}
