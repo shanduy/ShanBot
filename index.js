@@ -33,7 +33,6 @@ const moment = require('moment-timezone')
 const { exec } = require('child_process')
 const kagApi = require('@kagchi/kag-api')
 const fetch = require('node-fetch')
-const rugaapi = require('./rugaApi')
 /*const tiktod = require('tiktok-scraper')*/
 const ffmpeg = require('fluent-ffmpeg')
 const { removeBackgroundFromImageFile } = require('remove.bg')
@@ -463,32 +462,28 @@ async function starts() {
                 }
               await client.sendMessage(from, options, text)
                break
-            case 'ytmp3':
-            if (args.length == 0) return aruga.reply(from, `Para descargar canciones de youtube\nEscriba: ${prefix}ytmp3 mas el link de youtube`, id)
-            const linkmp3 = args[0].replace('https://youtu.be/','').replace('https://www.youtube.com/watch?v=','')
-			rugaapi.ytmp3(`https://youtu.be/${linkmp3}`)
-            .then(async(res) => {
-				if (res.error) return aruga.sendFileFromUrl(from, `${res.url}`, '', `${res.error}`)
-				await aruga.sendFileFromUrl(from, `${res.result.thumb}`, '', `Canción encontrada!!!\n\nTítulo: ${res.result.title}\nDesc: ${res.result.desc}\nPaciencia flaco se esta enviando el archivo 🥴`, id)
-				await aruga.sendFileFromUrl(from, `${res.result.url}`, '', '', id)
-				.catch(() => {
-					aruga.reply(from, `Esta URL ${args[0]} se ha descargado antes.\nLa URL se restablecerá después de 1 hora / 60 minutos.`, id)
-				})
-			})
-            break
-        case 'ytmp4':
-            if (args.length == 0) return aruga.reply(from, `Para descargar videos de youtube\nEscriba: ${prefix}ytmp4 mas el link de youtube`, id)
-            const linkmp4 = args[0].replace('https://youtu.be/','').replace('https://www.youtube.com/watch?v=','')
-			rugaapi.ytmp4(`https://youtu.be/${linkmp4}`)
-            .then(async(res) => {
-				if (res.error) return aruga.sendFileFromUrl(from, `${res.url}`, '', `${res.error}`)
-				await aruga.sendFileFromUrl(from, `${res.result.thumb}`, '', `Video encontrado!!!\n\nTitulo: ${res.result.title}\nDesc: ${res.result.desc}\nPaciencia flaco se esta enviando el archivo 🥴`, id)
-				await aruga.sendFileFromUrl(from, `${res.result.url}`, '', '', id)
-				.catch(() => {
-					aruga.reply(from, `Esta URL ${args[0]} se ha descargado antes.\nLa URL se restablecerá después de 1 hora / 60 minutos.`, id)
-				})
-			})
-            break
+                                case 'ytmp3':
+					if (args.length < 1) return reply('Donde esta la URL?')
+					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
+					anu = await fetchJson(`https://api.zeks.xyz/api/ytmp3?apikey=${args[0]}`, {method: 'get'})
+					if (anu.error) return reply(anu.error)
+					teks = `❏ *Título* : ${anu.title}\n❏ *Tamaño del archivo* : ${anu.result.size}\n\nDALE NEFASTO NO SPAMES TE ESTOY ENVIANDO EL AUDIO ESPERAME 😡`
+					thumb = await getBuffer(anu.thumb)
+					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
+					buffer = await getBuffer(anu.result)
+					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
+					break
+				case 'ytmp4':
+					if (args.length < 1) return reply('Donde esta la URL?')
+					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
+					anu = await fetchJson(`https://st4rz.herokuapp.com/api/ytv2?url=${args[0]}`, {method: 'get'})
+					if (anu.error) return reply(anu.error)
+					teks = `*❏ Título* : ${anu.title}\n\n*EL VIDEO SE ESTÁ ENVIANDO, NO SPAM PEDAZO DE DOWN*`
+					thumb = await getBuffer(anu.thumb)
+					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
+					buffer = await getBuffer(anu.result)
+					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
+					break
 	                        case 'tts':
 				   client.updatePresence(from, Presence.recording) 
 				   if (args.length < 1) return client.sendMessage(from, 'Cual es el código de idioma?', text, {quoted: mek})
