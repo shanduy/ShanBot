@@ -57,9 +57,9 @@ ${prefix}play ${prefix}ytmp4 y ${prefix}ytmp3 estan en mantenimiento ya que los 
 
 ◪ *GRUPOS*
   │
-  ├─ ❏ ${prefix}closecg
+  ├─ ❏ ${prefix}closegc
   ├─ Cerrar el grupo solo admins
-  ├─ ❏ ${prefix}opencg
+  ├─ ❏ ${prefix}opengc
   ├─ Abrir grupo solo admins
   ├─ ❏ ${prefix}kick o pafuera
   ├─ Eliminar a un miembro 
