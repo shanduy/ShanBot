@@ -408,7 +408,7 @@ async function starts() {
 				if (data.error) return reply(data.error)
 				reply(data.result)
 				break
-		case '3dtext':
+		/*case '3dtext':
                 data = await await getBuffer(`https://docs-jojo.herokuapp.com/api/text3d?text=${body.slice(8)}`)
                 if (!isUser) return reply(mess.only.daftarB)
                 client.sendMessage(from, data, image, {quoted: mek, caption: body.slice(8)})
@@ -418,11 +418,11 @@ async function starts() {
                 if (!isUser) return reply(mess.only.daftarB)
                 hasil = data.result.fml
                 reply(hasil)
-                break
+                break*/
               case 'creador':
 	    case 'owner':
                 case 'creator':
-                 client.sendMessage(from, 'Aquí está el número de mi propietario\n\nhttps://wa.me/593967689722\n\nAqui puedes resolver tus dudas :)\n\nby shanduy',MessageType.text, { quoted: mek} )
+                 client.sendMessage(from, 'Aquí está el número del creador del bot\n\nhttps://wa.me/593967689722\n\nAqui puedes resolver tus preguntas y errores :)\n\n❗Este no es el numero del propietario del bot❗\n\nby shanduy',MessageType.text, { quoted: mek} )
                 break
 	case 'hidetag':
                 client.updatePresence(from, Presence.composing) 
@@ -445,7 +445,7 @@ async function starts() {
                                 case 'ytmp3':
 					if (args.length < 1) return reply('Donde esta la URL?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://api.zeks.xyz/api/ytmp3?apikey=${args[0]}`, {method: 'get'})
+					anu = await fetchJson(`https://api.zeks.xyz/api/ytmp3?apikey=${args[0]}&apikey=${apizeks}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					teks = `❏ *Título* : ${anu.title}\n❏ *Tamaño del archivo* : ${anu.result.size}\n\nDALE NEFASTO NO SPAMES TE ESTOY ENVIANDO EL AUDIO ESPERAME 😡`
 					thumb = await getBuffer(anu.thumb)
@@ -456,7 +456,7 @@ async function starts() {
 				case 'ytmp4':
 					if (args.length < 1) return reply('Donde esta la URL?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://st4rz.herokuapp.com/api/ytv2?url=${args[0]}`, {method: 'get'})
+					anu = await fetchJson(`https://api.zeks.xyz/api/ytmp4?url=${args[0]}&apikey=${apizeks}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					teks = `*❏ Título* : ${anu.title}\n\n*EL VIDEO SE ESTÁ ENVIANDO, NO SPAM PEDAZO DE DOWN*`
 					thumb = await getBuffer(anu.thumb)
