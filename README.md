@@ -101,7 +101,7 @@ Pasos para instalar el bot en termux
 
 
 
-## ❗Advertencia❗ NUNCA CIERRES LA SECION DE WHATSAPP WEB 🚫
+## ❗Advertencia❗ NUNCA CIERRES LA SESION DE WHATSAPP WEB 🚫
 
 
 
