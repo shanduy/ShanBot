@@ -99,7 +99,14 @@ Pasos para instalar el bot en termux
 > Y escaneas el QR con tu Whatsapp
 ```
 
-## Soluciones 
+
+
+## ❗Advertencia❗ NUNCA CIERRES LA SECION DE WHATSAPP WEB 🚫
+
+
+
+
+## Soluciones A Errores
 Si despues que ya instalastes tu bot y termux te salta en blanco, solo realizaras estos pasos
 
 ```bash
