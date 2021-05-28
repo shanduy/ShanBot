@@ -695,15 +695,7 @@ async function starts() {
                 buff = await getBuffer(`https://api.qrserver.com/v1/create-qr-code/?data=${body.slice(8)}&size=1080%C3%971080`)
 				client.sendMessage(from, buff, image, {quoted: mek})
 				break
-		           
-		case 'besar':
-		    case 'kiss':
-			if (!isGroup && args.length == 1 && mentionedJid.length !== 0) {
-				await sendGiphyAsSticker(from, 'https://media.giphy.com/media/1wmtU5YhqqDKg/giphy.gif')
-				await sendTextWithMentions(from, `Oh Dios Mio!!!! @${author.replace('@c.us', '')} beso a ${arqs[1]}!`)
-			} else return await reply(from, 'Comando solo para grupos, marcando al que quires besar')
-			break
-				
+		          		
 			case 'closegc':
 					client.updatePresence(from, Presence.composing) 
 					if (!isGroup) return reply(mess.only.group)
