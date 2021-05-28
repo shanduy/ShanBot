@@ -698,10 +698,10 @@ async function starts() {
 		           
 		case 'besar':
 		    case 'kiss':
-			if (!isGroup && args.length == 1 && mentionedJidList.length !== 0) {
+			if (!isGroup && args.length == 1 && mentionedJid.length !== 0) {
 				await sendGiphyAsSticker(from, 'https://media.giphy.com/media/1wmtU5YhqqDKg/giphy.gif')
 				await sendTextWithMentions(from, `Oh Dios Mio!!!! @${author.replace('@c.us', '')} beso a ${arqs[1]}!`)
-			} else return await reply(from, 'Comando solo para grupos, marcando al que quires besar', id)
+			} else return await reply(from, 'Comando solo para grupos, marcando al que quires besar')
 			break
 				
 			case 'closegc':
