@@ -445,7 +445,7 @@ async function starts() {
                                 case 'ytmp3':
 					if (args.length < 1) return reply('Donde esta la URL?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://api.zeks.xyz/api/ytmp3?apikey=${args[0]}&apikey=${ZeksApi}`, {method: 'get'})
+					anu = await fetchJson(`https://api.vhtear.com/ytdl?link=${args[0]}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					teks = `❏ *Título* : ${anu.title}\n❏ *Tamaño del archivo* : ${anu.result.size}\n\nDALE NEFASTO NO SPAMES TE ESTOY ENVIANDO EL AUDIO ESPERAME 😡`
 					thumb = await getBuffer(anu.thumb)
