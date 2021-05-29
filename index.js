@@ -31,6 +31,7 @@ const { recognize } = require('./lib/ocr')
 const fs = require('fs')
 const moment = require('moment-timezone')
 const { exec } = require('child_process')
+const kill = require('./src/kill')
 const kagApi = require('@kagchi/kag-api')
 const fetch = require('node-fetch')
 /*const tiktod = require('tiktok-scraper')*/
