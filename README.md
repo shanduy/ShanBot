@@ -29,9 +29,13 @@ https://www.youtube.com/watch?v=2LQSzEbpJ-M
 
 ULTIMA VERSION 3.0
 
-25 de Mayo del 2021
+30 de Mayo del 2021
 
-*play *ytmp4 y *ytmp3 estan en mantenimiento ya que los servidores estan colapsados 
+*play fue restablecido pero tiene un limite de tiempo
+El límite es 2000 se restablecerá cada 00.00 o 12.00 a. m.
+Asi que no abusen del *play :)
+
+*ytmp4 y *ytmp3 estan en mantenimiento ya que los servidores estan colapsados 
 
 Funcion *welcome corregida
 
