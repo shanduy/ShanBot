@@ -107,7 +107,7 @@ Pasos para instalar el bot en termux
 
 
 ## Soluciones A Errores
-Si despues que ya instalastes tu bot y termux te salta en blanco, solo realizaras estos pasos
+Si despues que ya instalastes tu bot y termux te salta en blanco, se fue tu internet o reiniciaste tu celular, solo realizaras estos pasos
 
 ```bash
 > cd ShanBot
