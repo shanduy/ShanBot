@@ -9,7 +9,7 @@ const help = (prefix) => {
   ❏ Instagram: https://www.instagram.com/thepavos
 
 ◪ *COMUNICADO*
-${prefix}play ${prefix}ytmp4 y ${prefix}ytmp3 estan en mantenimiento ya que los servidores estan colapsados
+${prefix}ytmp4 y ${prefix}ytmp3 estan en mantenimiento ya que los servidores estan colapsados
 
 ◪ *PARA USAR EL BOT*
   ❏ Registrate con el comando ${prefix}daftar y tu nombre
@@ -36,15 +36,14 @@ ${prefix}play ${prefix}ytmp4 y ${prefix}ytmp3 estan en mantenimiento ya que los 
 
 ◪ *DESCARGAS*
   │
-  ├─ ❏ ${prefix}ytmp4
-  ├─ Mas link del video de YT
-  ├─ ❏ ${prefix}ytmp3
-  └─ Mas link del video de YT
+  ├─ ❏ ${prefix}play
+  └─ Mas nombre y artista o link del video de YT
+El límite es 2000 se restablecerá cada 00.00 o 12.00 a. m.
+Asi que no abusen del ${prefix}play :)
 
 ◪ *AUDIO*
   │
   ├─ ❏ ${prefix}play
-  ├─ Mas nombre y artista
   ├─ ❏ ${prefix}bahasa
   └─ ❏ ${prefix}tts es
 
