@@ -38,7 +38,7 @@ ${prefix}ytmp4 y ${prefix}ytmp3 estan en mantenimiento ya que los servidores est
   │
   ├─ ❏ ${prefix}play
   └─ Mas nombre y artista o link del video de YT
-El límite es 2000 se restablecerá cada 00.00 o 12.00 a. m.
+El límite es 2000 canciones se restablecerá cada 00.00 o 12.00 a. m.
 Asi que no abusen del ${prefix}play :)
 
 ◪ *AUDIO*
