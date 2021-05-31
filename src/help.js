@@ -8,6 +8,10 @@ const help = (prefix) => {
   ❏ Como instalar el bot: https://www.youtube.com/watch?v=2LQSzEbpJ-M
   ❏ Instagram: https://www.instagram.com/thepavos
 
+◪ *ShanBot Con Insultos O Quitarlos🤷‍♂️?*
+Responde esto en la siguiente encuesta
+https://docs.google.com/forms/u/0/d/e/1FAIpQLSeKUqhDGlBerp-R6-SWqXpR8pnaw5Lt7_zfim3e154KIjdfQg/formResponse
+
 ◪ *COMUNICADO*
 ${prefix}ytmp4 y ${prefix}ytmp3 estan en mantenimiento ya que los servidores estan colapsados
 
