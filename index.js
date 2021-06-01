@@ -408,8 +408,13 @@ async function starts() {
 				if (data.error) return reply(data.error)
 				reply(data.result)
 				break
-		case '3dtext':
+		case 'neontext':
                 data = await await getBuffer(`https://api.zeks.xyz/api/text3dbox?apikey=hshanduyr&text=${body.slice(8)}`)
+                if (!isUser) return reply(mess.only.daftarB)
+                client.sendMessage(from, data, image, {quoted: mek, caption: body.slice(8)})
+                break
+		case 'matrixtext':
+                data = await await getBuffer(`https://api.zeks.xyz/api/matrix?apikey=hshanduyr&text=${body.slice(8)}`)
                 if (!isUser) return reply(mess.only.daftarB)
                 client.sendMessage(from, data, image, {quoted: mek, caption: body.slice(8)})
                 break
