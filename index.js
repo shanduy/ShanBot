@@ -22,7 +22,7 @@ const { color, bgcolor } = require('./lib/color')
 const { bahasa } = require('./src/bahasa')
 const { negara } = require('./src/kodenegara')
 const { virtex } = require('./src/virtex')
-const { wait, wait2, wait3, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
+const { wait, pegatinas, musica, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
 const { fetchJson } = require('./lib/fetcher')
 const { recognize } = require('./lib/ocr')
 /******END OF FILE INPUT******/
