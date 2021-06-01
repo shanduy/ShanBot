@@ -864,7 +864,7 @@ async function starts() {
 						fs.writeFileSync('./database/json/welkom.json', JSON.stringify(welkom))
 						reply('❬ EXITO ❭ La funcion de bienvenida esta habilitada en este grupo')
 					} else if (Number(args[0]) === 0) {
-						welkom.splice(from, 0)
+						welkom.splice(from, 1)
 						fs.writeFileSync('./database/json/welkom.json', JSON.stringify(welkom))
 						reply('❬ EXITO ❭ La funcion de bienvenida esta deshabilitada en este grupo')
 					} else {
