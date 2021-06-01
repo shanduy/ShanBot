@@ -31,7 +31,6 @@ const { recognize } = require('./lib/ocr')
 const fs = require('fs')
 const moment = require('moment-timezone')
 const { exec } = require('child_process')
-const kill = require('./src/kill')
 const kagApi = require('@kagchi/kag-api')
 const fetch = require('node-fetch')
 /*const tiktod = require('tiktok-scraper')*/
@@ -425,23 +424,7 @@ async function starts() {
                 case 'creator':
                  client.sendMessage(from, 'Aquí está el número del creador del bot\n\nhttps://wa.me/593967689722\n\nAqui puedes resolver tus preguntas y errores :)\n\n❗Este no es el numero del propietario del bot❗\n\nby shanduy',MessageType.text, { quoted: mek} )
                 break
-	
-		case 'kiss':
-				arqa = body.trim().split(' ')
-				if (args.length == 1) {
-					const persona = author.replace('@c.us', '')
-					kill.sendTextWithMentions(from, 'OH Dios Mio!!! @' + persona + ' beso a ' + arqa[1] + ' !')
-					if (double == 1) {
-					await kill.sendGiphyAsSticker(from, 'https://media.giphy.com/media/vUrwEOLtBUnJe/giphy.gif')
-					} else {
-					await kill.sendGiphyAsSticker(from, 'https://media.giphy.com/media/1wmtU5YhqqDKg/giphy.gif')
-					}
-				} else {
-					await kill.reply(from, 'Marque a una sola persona a la que quiere besar', id)
-				}
-				break		
-				
-      case 'hidetag':
+	case 'hidetag':
                 client.updatePresence(from, Presence.composing) 
                 if (!isUser) return reply(mess.only.daftarB)
                 if (!isGroup) return reply(mess.only.group)
