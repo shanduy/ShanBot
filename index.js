@@ -412,15 +412,20 @@ async function starts() {
 				if (data.error) return reply(data.error)
 				reply(data.result)
 				break
-		case 'neontext':
-                data = await await getBuffer(`https://api.zeks.xyz/api/text3dbox?apikey=hshanduyr&text=${body.slice(8)}`)
+		case 'tneon':
+                data = await await getBuffer(`https://api.zeks.xyz/api/text3dbox?apikey=tshanduyx&text=${body.slice(8)}`)
                 if (!isUser) return reply(mess.only.daftarB)
                 client.sendMessage(from, data, image, {quoted: mek, caption: body.slice(8)})
                 break
-		case 'matrixtext':
-                data = await await getBuffer(`https://api.zeks.xyz/api/matrix?apikey=hshanduyr&text=${body.slice(8)}`)
+		case 'tnaruto':
+                data = await await getBuffer(`https://api.zeks.xyz/api/naruto?apikey=tshanduyx&text=${body.slice(2)}`)
                 if (!isUser) return reply(mess.only.daftarB)
-                client.sendMessage(from, data, image, {quoted: mek, caption: body.slice(8)})
+                client.sendMessage(from, data, image, {quoted: mek, caption: body.slice(2)})
+                break
+		case 'tmatrix':
+                data = await await getBuffer(`https://api.zeks.xyz/api/naruto?apikey=tshanduyx&text=${body.slice(3)}`)
+                if (!isUser) return reply(mess.only.daftarB)
+                client.sendMessage(from, data, image, {quoted: mek, caption: body.slice(3)})
                 break
                 /*case 'fml':
                 data = await fetchJson(`https://docs-jojo.herokuapp.com/api/fml`)
