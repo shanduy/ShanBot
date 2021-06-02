@@ -412,22 +412,12 @@ async function starts() {
 				if (data.error) return reply(data.error)
 				reply(data.result)
 				break
-		case 'tneon':
+		/*case 'tneon':
                 data = await await getBuffer(`https://api.zeks.xyz/api/text3dbox?apikey=tshanduyx&text=${body.slice(8)}`)
                 if (!isUser) return reply(mess.only.daftarB)
                 client.sendMessage(from, data, image, {quoted: mek, caption: body.slice(8)})
                 break
-		case 'tnaruto':
-                data = await await getBuffer(`https://api.zeks.xyz/api/naruto?apikey=tshanduyx&text=${body.slice(2)}`)
-                if (!isUser) return reply(mess.only.daftarB)
-                client.sendMessage(from, data, image, {quoted: mek, caption: body.slice(2)})
-                break
-		case 'tmatrix':
-                data = await await getBuffer(`https://api.zeks.xyz/api/naruto?apikey=tshanduyx&text=${body.slice(3)}`)
-                if (!isUser) return reply(mess.only.daftarB)
-                client.sendMessage(from, data, image, {quoted: mek, caption: body.slice(3)})
-                break
-                /*case 'fml':
+		case 'fml':
                 data = await fetchJson(`https://docs-jojo.herokuapp.com/api/fml`)
                 if (!isUser) return reply(mess.only.daftarB)
                 hasil = data.result.fml
