@@ -17,7 +17,7 @@ const {
     GroupSettingChange
 } = require('@adiwajshing/baileys');
 
-/******BEGIN OF FILE INPUT******/
+/******COMIENZO DE LA ENTRADA DEL ARCHIVO******/
 const { color, bgcolor } = require('./lib/color')
 const { bahasa } = require('./src/bahasa')
 const { negara } = require('./src/kodenegara')
@@ -25,9 +25,9 @@ const { virtex } = require('./src/virtex')
 const { wait, pegatinas, musica, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
 const { fetchJson } = require('./lib/fetcher')
 const { recognize } = require('./lib/ocr')
-/******END OF FILE INPUT******/
+/******FIN DE ENTRADA DE ARCHIVO******/
 
-/******BEGIN OF NPM PACKAGE INPUT******/
+/******COMIENZO DE LA ENTRADA DEL PAQUETE NPM******/
 const fs = require('fs')
 const moment = require('moment-timezone')
 const { exec } = require('child_process')
@@ -40,18 +40,18 @@ const imgbb = require('imgbb-uploader')
 const lolis = require('lolis.life')
 const loli = new lolis()
 const speed = require('performance-now')
-/******END OF NPM PACKAGE INPUT******/
+/******FIN DE ENTRADA DEL PAQUETE NPM******/
 
-/******BEGIN OF JSON INPUT******/
+/******COMIENZO DE LA ENTRADA JSON******/
 const welkom = JSON.parse(fs.readFileSync('./database/json/welkom.json'))
 const nsfw = JSON.parse(fs.readFileSync('./database/json/nsfw.json'))
 const samih = JSON.parse(fs.readFileSync('./database/json/simi.json'))
 const user = JSON.parse(fs.readFileSync('./database/json/user.json'))
 const _leveling = JSON.parse(fs.readFileSync('./database/json/leveling.json'))
 const _level = JSON.parse(fs.readFileSync('./database/json/level.json'))
-/******END OF JSON INPUT******/
+/******FIN DE ENTRADA JSON******/
 
-/******BEGIN OF MENU INPUT******/
+/******INICIO DE LA ENTRADA DEL MENÚ******/
 const { help } = require('./src/help')
 const { logomaker } = require('./database/menu/logomaker')
 const { toinmenu } = require('./src/toinmenu')
@@ -73,21 +73,21 @@ const { informationmenu } = require('./database/menu/informationmenu')
 const { 18+menu } require('./database/menu/18+menu')
 const { ownermenu } require('./database/menu/ownermenu')
 const { othermenu } require('./database/menu/othermenu')*/
-/******END OF MENU INPUT******/
+/******FIN DE ENTRADA DEL MENÚ******/
 
-/******LOAD OF VCARD INPUT******/
+/******CARGA DE ENTRADA VCARD******/
 const vcard = 'BEGIN:VCARD\n' // Tarjeta de contacto
-            + 'VERSION:10.0\n' 
-            + 'FN:Shanduy\n' // Nombre
+            + 'VERSION:3.0\n' 
+            + 'FN:Shan\n' // Nombre
             + 'ORG:Shanduy;\n' // Propietario
             + 'TEL;type=CELL;type=VOICE;waid=593967689722:+593 96 768 9722\n' // ID de WhatsApp + número de teléfono
             + 'END:VCARD'
-/******END OF VCARD INPUT******/
+/******FIN DE ENTRADA VCARD******/
 
 prefix = '*'
 blocked = []
 
-/******BEGIN OF FUNCTIONS INPUT******/
+/******INICIO DE FUNCIONES ENTRADA******/
 const getLevelingXp = (userId) => {
             let position = false
             Object.keys(_level).forEach((i) => {
@@ -165,7 +165,7 @@ function kyun(seconds){
   var seconds = Math.floor(seconds % 60);
 
   //return pad(hours) + ':' + pad(minutes) + ':' + pad(seconds)
-  return `${pad(hours)} Hora ${pad(minutes)} Minuto ${pad(seconds)} Segundo`
+  return `${pad(hours)} Horas ${pad(minutes)} Minutos ${pad(seconds)} Segundos`
 }
 
 async function starts() {
@@ -173,7 +173,7 @@ async function starts() {
 	client.logger.level = 'warn'
 	console.log(banner.string)
 	client.on('qr', () => {
-		console.log(color('[','white'), color('!','red'), color(']','white'), color(' Escanea el codigo QR no te tardes '))
+		console.log(color('[','white'), color('!','red'), color(']','white'), color(' Escanea el codigo QR es temporal no te tardes Rapido!!!  '))
 	})
 
 	fs.existsSync('./Nazwa.json') && client.loadAuthInfo('./Nazwa.json')
@@ -225,8 +225,8 @@ async function starts() {
 			const from = mek.key.remoteJid
 			const type = Object.keys(mek.message)[0]
 			const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
-			const time = moment.tz('Asia/Jakarta').format('DD/MM HH:mm:ss')
-			const date = moment.tz('Asia/Jakarta').format('DD,MM,YY')
+			const time = moment.tz('America/Guayaquil').format('DD/MM HH:mm:ss')
+			const date = moment.tz('America/Guayaquil').format('DD,MM,YY')
 			body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption.startsWith(prefix) ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption.startsWith(prefix) ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text.startsWith(prefix) ? mek.message.extendedTextMessage.text : ''
 			budy = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
 			const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
@@ -280,9 +280,9 @@ async function starts() {
                         const isUser = user.includes(sender)
                         const isLevelingOn = isGroup ? _leveling.includes(groupId) : false
                         const NomerOwner = '593997889284@s.whatsapp.net'
-                        /******ApiKey Input******/
-                        const BarBarKey = 'TU CLAVE API'
-                        /******End of ApiKey Input******/
+                        /******Entrada ApiKey******/
+                        const BarBarKey = 'Mn2Bf58QHQ8kABoLq80g'
+                        /******Fin de la entrada de ApiKey******/
 
 			const isUrl = (url) => {
 			    return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
@@ -297,7 +297,7 @@ async function starts() {
 				(id == null || id == undefined || id == false) ? client.sendMessage(from, teks.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
 			}
 
-	        //function leveling
+	        //nivelación de funciones
             if (isGroup && isLevelingOn) {
             const currentLevel = getLevelingLevel(sender)
             const checkId = getLevelingId(sender)
@@ -326,7 +326,7 @@ async function starts() {
 			if (isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32mEXEC\x1b[1;37m]', time, color(command), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
 			if (!isCmd && isGroup) console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;31mRECV\x1b[1;37m]', time, color('Message'), 'from', color(sender.split('@')[0]), 'in', color(groupName), 'args :', color(args.length))
  
-       /******END OF FUNCTIONS INPUT******/
+       /******ENTRADA FIN DE FUNCIONES******/
 			switch(command) {
 				case 'help':
 				case 'menu':
@@ -416,17 +416,12 @@ async function starts() {
                 data = await await getBuffer(`https://api.zeks.xyz/api/text3dbox?apikey=tshanduyx&text=${body.slice(8)}`)
                 if (!isUser) return reply(mess.only.daftarB)
                 client.sendMessage(from, data, image, {quoted: mek, caption: body.slice(8)})
-                break
-		case 'fml':
-                data = await fetchJson(`https://docs-jojo.herokuapp.com/api/fml`)
-                if (!isUser) return reply(mess.only.daftarB)
-                hasil = data.result.fml
-                reply(hasil)
                 break*/
-              case 'creador':
+	case 'creador':
 	    case 'owner':
                 case 'creator':
-                 client.sendMessage(from, 'Aquí está el número del creador del bot\n\nhttps://wa.me/593967689722\n\nAqui puedes resolver tus preguntas y errores :)\n\n❗Este no es el numero del propietario del bot❗\n\nby shanduy',MessageType.text, { quoted: mek} )
+                client.sendMessage(from, {displayname: "Shan", vcard: vcard}, MessageType.contact, { quoted: mek})
+		client.sendMessage(from, 'Aquí está el número del creador del bot\n\nhttps://wa.me/593967689722\n\nAqui puedes resolver tus preguntas y errores :)\n\n❗Este no es el numero del propietario del bot❗\n\nby shanduy',MessageType.text, { quoted: mek} )
                 break
 	case 'hidetag':
                 client.updatePresence(from, Presence.composing) 
@@ -449,7 +444,7 @@ async function starts() {
                                 case 'ytmp3':
 					if (args.length < 1) return reply('Donde esta la URL?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/ytmp3?url=${args[0]}`, {method: 'get'})
+					anu = await fetchJson(`https://mhankbarbar.moe/api/yta?url=${args[0]}&apiKey=${Mn2Bf58QHQ8kABoLq80g}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					teks = `❏ *Título* : ${anu.title}\n❏ *Tamaño del archivo* : ${anu.result.size}\n\nDALE NEFASTO NO SPAMES TE ESTOY ENVIANDO EL AUDIO ESPERAME 😡`
 					thumb = await getBuffer(anu.thumb)
@@ -581,11 +576,6 @@ async function starts() {
 					var pesan = pc.split("|")[1];
 					client.sendMessage(nomor+'@s.whatsapp.net', pesan, text)
 					break
-					case 'quotesnime':
-					nimek = await fetchJson('https://animechanapi.xyz/api/quotes/random')
-					hasil = `anime : ${nimek.data.anime}\nCharacter : ${nimek.data.character}\n${nimek.data.quote}`
-					reply(hasil)
-					break
 				case 'setppbot':
 				client.updatePresence(from, Presence.composing) 
 				if (!isQuotedImage) return reply(`Sube fotos con subtítulos ${prefix}Ok`)
@@ -604,7 +594,7 @@ async function starts() {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						buff = await client.downloadMediaMessage(encmedia)
 						for (let _ of anu) {
-							client.sendMessage(_.jid, buff, image, {caption: `*「 BROADCAST 」*\n\n${body.slice(4)}`})
+							client.sendMessage(_.jid, buff, image, {caption: `*「 TRANSMISIÓN 」*\n\n${body.slice(4)}`})
 						}
 						reply('')
 					} else {
@@ -622,7 +612,7 @@ async function starts() {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						buff = await client.downloadMediaMessage(encmedia)
 						for (let _ of groupMembers) {
-							client.sendMessage(_.jid, buff, image, {caption: `*「 BC GROUP 」*\n*Group* : ${groupName}\n\n${body.slice(6)}`})
+							client.sendMessage(_.jid, buff, image, {caption: `*「 GRUPO BC 」*\n*Grupo* : ${groupName}\n\n${body.slice(6)}`})
 						}
 						reply('')
 					} else {
