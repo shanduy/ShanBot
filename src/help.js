@@ -13,7 +13,9 @@ Responde esto en la siguiente encuesta
 https://forms.gle/4zzqRpV21CMGwsF57
 
 ◪ *NUEVOS MENUS*
-${prefix}desmenu
+- ${prefix}desmenu
+- ${prefix}version
+Conoce la versión de tu bot
 
 ◪ *PARA USAR EL BOT*
   ❏ Registrate con el comando ${prefix}daftar y tu nombre
