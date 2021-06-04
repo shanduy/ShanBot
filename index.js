@@ -58,7 +58,7 @@ const { toinmenu } = require('./src/toinmenu')
 const { menuadmin } = require('./src/menuadmin')
 const { nsfwmenu } = require('./src/nsfwmenu')
 const { desmenu } = require('./src/desmenu')
-const { versión } = require('./src/versión')
+const { version } = require('./src/version')
 /*const { mediamenu } = require('./database/menu/mediamenu')
 const { educationmenu } = require('./database/menu/educationmenu')
 const { downloadermenu } = require('./database/menu/downloadermenu')
@@ -394,8 +394,7 @@ async function starts() {
 											                client.sendMessage(from, desmenu(prefix, sender), text, {quoted: mek})
 													                  break
 					                                                                case 'version':
-				                                                                        case 'versión':
-											                client.sendMessage(from, versión(prefix, sender), text, {quoted: mek})
+				                                                                        client.sendMessage(from, version(prefix, sender), text, {quoted: mek})
 													                  break
                /*case 'virtex':
 	       case 'troleo':
