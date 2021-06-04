@@ -1,4 +1,4 @@
-const versión = (prefix, pushname) => {
+const version = (prefix, pushname) => {
     return `
 *ShanBot*
 
@@ -15,4 +15,4 @@ by shanduy
 
 }
 
-exports.versión = versión
+exports.version = version
