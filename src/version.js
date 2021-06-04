@@ -6,7 +6,7 @@ const version = (prefix, pushname) => {
 *Versión actual:* 2.1
 *Ofrecida por:* shanduy
 
-Para conocer la ultima version de ShanBot entra al siguiente blog
+Para conocer la ultima versión de ShanBot entra al siguiente blog
 
 https://github.com/shanduy/ShanBot
 
