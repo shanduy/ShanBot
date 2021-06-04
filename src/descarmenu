@@ -1,6 +1,6 @@
 const descarmenu = (prefix, pushname) => {
     return `◪ *Comandos De Descargas*
-    │
+    
     ├─ ❏ ${prefix}play
     ├─ Coloca el nombre de la cancion o el link del video YT
     ├─ ❏ ${prefix}ytmp3
