@@ -11,7 +11,7 @@ const nsfwmenu = (prefix, pushname) => {
 
 Algunas funciones fueron eliminas por errores en el servidor de la India
 
-by Shanduy`
+by shanduy`
 
 }
 
