@@ -488,7 +488,7 @@ async function starts() {
                                 case 'ytmp3':
 					if (args.length < 1) return reply('Donde esta la URL?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://st4rz.herokuapp.com/api/yta?url=${args[0]}`, {method: 'get'})
+					anu = await fetchJson(`https://st4rz.herokuapp.com/api/yta2?url=${args[0]}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					teks = `❏ *Título* : ${anu.title}\n❏ *Tamaño del archivo* : ${anu.result.size}\n\nDALE NEFASTO NO SPAMES TE ESTOY ENVIANDO EL AUDIO ESPERAME 😡`
 					thumb = await getBuffer(anu.thumb)
