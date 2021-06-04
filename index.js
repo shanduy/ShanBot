@@ -258,7 +258,7 @@ async function starts() {
 				}
 			}
     			const apakah = ['Si','No']
-        		const bisakah = ['Puedo','No puedo']
+        		const gay = ['Eres 15% Gay','Eres 0% Gay 😱','Eres 20% Gay','Eres 78% Gay','Eres 62% Gay','Eres 0.1% Gay','Eres 100% Gay 😬','Eres 6% Gay','Eres 96% Gay','Eres 21% Gay','Eres 50% Gay','Eres 99.99% Gay','Eres 12% Gay','Eres 88% Gay','ERES INFINITAMENTE GAY 🤯','Eres 75% Gay','Eres 19% Gay','Eres Fan De Cuties 🤬','Eres 44% Gay','Eres 84% Gay']
 		        const kapankah = ['Otro día','Otra semana','Otro mes','Otro año']
 			const botNumber = client.user.jid
 			const ownerNumber = ["593997889284@s.whatsapp.net"] // replace this with your number
@@ -400,6 +400,11 @@ async function starts() {
 						client.groupMakeAdmin(from, mentioned)
 					}
 					break
+	      case 'gay':
+                client.updatePresence(from, Presence.composing) 
+              if (!isUser) return reply(mess.only.daftarB)
+                random = gay[Math.floor(Math.random() * (gay.length))]
+	      break
 				  case 'wa.me':
 				  case 'wame':
   client.updatePresence(from, Presence.composing) 
