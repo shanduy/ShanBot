@@ -2,9 +2,10 @@ const desmenu = (prefix, pushname) => {
     return `◪ *Comandos De Descargas*
     │
     ├─ ❏ ${prefix}play
-    ├─ Coloca el nombre de la cancion o el link del video YT
+    │  Coloca el nombre de la cancion. 
+    │  O el link del video YT
     ├─ ❏ ${prefix}ytmp3
-    ├─ Coloca el link del video YT
+    │  Coloca el link del video YT
     ├─❏ ${prefix}ytmp4
     └─ Coloca el link del video YT
     
