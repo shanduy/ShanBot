@@ -1,6 +1,6 @@
-const descarmenu = (prefix, pushname) => {
+const desmenu = (prefix, pushname) => {
     return `◪ *Comandos De Descargas*
-    
+    │
     ├─ ❏ ${prefix}play
     ├─ Coloca el nombre de la cancion o el link del video YT
     ├─ ❏ ${prefix}ytmp3
@@ -10,8 +10,7 @@ const descarmenu = (prefix, pushname) => {
     
     _*play tiene un limite de 2000 canciones si llega a su limite se restablecera dentro de 24 horas_
      
-     by shanduy
-     `
+     by shanduy`
 }
 
-exports.descarmenu = descarmenu
+exports.desmenu = desmenu
