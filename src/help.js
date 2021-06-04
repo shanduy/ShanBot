@@ -13,7 +13,7 @@ Responde esto en la siguiente encuesta
 https://forms.gle/4zzqRpV21CMGwsF57
 
 ◪ *NUEVOS MENUS*
-${prefix}descarmenu
+${prefix}desmenu
 
 ◪ *PARA USAR EL BOT*
   ❏ Registrate con el comando ${prefix}daftar y tu nombre
@@ -32,18 +32,13 @@ ${prefix}descarmenu
   │
   ├─ ❏ ${prefix}sticker o s
   ├─ ❏ ${prefix}stickergif
-  ├─ 6 segundos de video
+  └─ 6 segundos de video
+
+◪ *CONVERTIDORES*
   ├─ ❏ ${prefix}toimg
   ├─ De sticker a JPG
   ├─ ❏ ${prefix}tomp3
   └─ De video a MP3
-
-◪ *DESCARGAS*
-  │
-  ├─ ❏ ${prefix}play
-  └─ Mas nombre y artista o link del video de YT
-El límite es 2000 canciones se restablecerá cada 00.00 o 12.00 a. m.
-Asi que no abusen del ${prefix}play :)
 
 ◪ *AUDIO*
   │
@@ -76,7 +71,7 @@ Asi que no abusen del ${prefix}play :)
 
 Para usar estas funciones el bot necesita admin
   
-◪ *NSWF NUEVAS FUNCIONES* 
+◪ *NSWF* 
   │
   └─ ❏ ${prefix}nsfwmenu
 
