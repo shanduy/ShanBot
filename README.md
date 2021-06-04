@@ -23,33 +23,12 @@ Mis Redes Sociales Y Mi Whatsapp Para Resolver Tus Problemas
 
 
 # ShanBot
+ULTIMA VERSION 2.1
+*Actualizado:* 4 de junio de 2021
+
 
 Pasos para instalar el bot via termux
 https://www.youtube.com/watch?v=2LQSzEbpJ-M
-
-ULTIMA VERSION 3.0
-
-30 de Mayo del 2021
-
-*play fue restablecido pero tiene un limite de tiempo
-El límite es 2000 se restablecerá cada 00.00 o 12.00 a. m.
-Asi que no abusen del *play :)
-
-*ytmp4 y *ytmp3 estan en mantenimiento ya que los servidores estan colapsados 
-
-Funcion *welcome corregida
-
-La funcion *ytmp3 y *play hacen el mismo trabajo 
-
-*ytmp3 solo con link de youtube
-
-*play links o nombre de la cancion
-
-*ytmp3 es una alternativa por si falla *play o esta en mantenimiento
-
-
-
-
 
 
 ## 🔄 Como Actualizar Tu Bot 🔄
