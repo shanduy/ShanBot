@@ -388,8 +388,8 @@ async function starts() {
 										case 'nsfwmenu':
 											client.sendMessage(from, nsfwmenu(prefix, sender), text, {quoted: mek})
 													break
-					                                                                case 'descarmenu':
-											                client.sendMessage(from, descarmenu(prefix, sender), text, {quoted: mek})
+					                                                                case 'desmenu':
+											                client.sendMessage(from, desmenu(prefix, sender), text, {quoted: mek})
 													                  break
                /*case 'virtex':
 	       case 'troleo':
