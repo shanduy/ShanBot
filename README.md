@@ -24,6 +24,7 @@ Mis Redes Sociales Y Mi Whatsapp Para Resolver Tus Problemas
 
 # ShanBot
 ULTIMA VERSION 2.1
+
 *Actualizado:* 4 de junio de 2021
 
 
