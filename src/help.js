@@ -12,8 +12,8 @@ const help = (prefix) => {
 Responde esto en la siguiente encuesta
 https://forms.gle/4zzqRpV21CMGwsF57
 
-◪ *COMUNICADO*
-${prefix}ytmp4 y ${prefix}ytmp3 estan en mantenimiento ya que los servidores estan colapsados
+◪ *NUEVOS MENUS*
+${prefix}descarmenu
 
 ◪ *PARA USAR EL BOT*
   ❏ Registrate con el comando ${prefix}daftar y tu nombre
@@ -47,7 +47,6 @@ Asi que no abusen del ${prefix}play :)
 
 ◪ *AUDIO*
   │
-  ├─ ❏ ${prefix}play
   ├─ ❏ ${prefix}bahasa
   └─ ❏ ${prefix}tts es
 
