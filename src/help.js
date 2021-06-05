@@ -1,6 +1,6 @@
 const help = (prefix) => {
 	return `
-「 *ShanBot by shanduy* 」
+「 *ShanBot 🤖 by shanduy* 」
 
 ◪ *INFORMACION*
   ❏ Comando: 「  ${prefix}  」
@@ -22,7 +22,7 @@ Conoce la versión de tu bot
 
 ◪ *NUEVA ACTUALIZACION*
   │
-  ├─ ❏ ${prefix}welcome 1
+  ├─ ❏ ${prefix}welcomemenu
   └─ Da la bienvenida a los nuevos
 
 ◪ *RESUELVE TUS DUDAS*
@@ -32,7 +32,7 @@ Conoce la versión de tu bot
 
 ◪ *CREAR STICKERS*
   │
-  ├─ ❏ ${prefix}sticker o s
+  ├─ ❏ ${prefix}sticker
   ├─ ❏ ${prefix}stickergif
   └─ 6 segundos de video
 
@@ -80,9 +80,6 @@ Para usar estas funciones el bot necesita admin
 Para activar los NSFW coloque el siguiente comando ${prefix}nsfw 1 y para desactivar los NSFW coloque ${prefix}nsfw 0
 
 No te olvides de seguirme en instagram flaco :)
-
-Para saber la ultima version mas actual del bot y errores entra en 
-https://github.com/shanduy/ShanBot
 
 by shanduy
 `
