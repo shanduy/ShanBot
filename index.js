@@ -508,7 +508,7 @@ async function starts() {
                 }
                 await client.sendFileFromUrl(from, resp.result, `igeh${ext}, ''`)
             } catch {
-                client.reply(from, mess.error.Ig)
+                client.sendMessage(from, mess.error.Ig)
                 }
             break
 				case 'ytmp3':
