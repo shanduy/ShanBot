@@ -247,7 +247,9 @@ async function starts() {
 				levelnol: '*Nivel* 0 ',
 				error: {
 					stick: '[❗] Falló, se produjo un error al convertir la imagen en una pegatina ❌',
-					Iv: '❌ Link inválido ❌'
+					Iv: '❌ Link inválido ❌',
+					Ig: [❗] 'Ocurrió un error, tal vez porque la cuenta es privada'
+				
 				},
 				only: {
 					group: '[❗] Este comando es solo para grupos! ❌',
@@ -256,6 +258,7 @@ async function starts() {
 					admin: '[❗] Este comando solo puede ser utilizado por administradores del grupo! ❌',
 					Badmin: '[❗] Este comando solo se puede usar cuando el bot se convierte en administrador! ❌',
                                         pegatina: 'Calma crack estoy haciendo tu sticker👏\n\n*Recuerda los stickersgif son de 6 segundos❗*\nby shanduy',
+					insta: 'Tranquilo nefasto 🥴\n\n*Estoy descargando tu imagen o video 🔄*\n\nby shanduy',
 					imgs: 'Recuerda solo sirve para stickers❗\n\n*Convirtiendo de sticker a imagen🔄*\n\nby shanduy',
 					mpcancion: 'Calmaoooo estoy procesando😎\n\n*Convirtiendo de MP4 a MP3🔄*\n\nby shanduy',
 					mpa: 'Euu flaco 🥴\n\n*Estoy decargando tu cancion 🔄*\n\nAguarde un momento, por favor\n\nby shanduy',
