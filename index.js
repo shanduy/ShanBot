@@ -787,6 +787,7 @@ async function starts() {
 					})
 					break
 				case 's':
+				case 'tucson':
 				case 'cuties':
 				case 'nefasto':
 				case 'stiker':
