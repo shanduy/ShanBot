@@ -32,7 +32,7 @@ Pasos para instalar el bot via termux
 https://www.youtube.com/watch?v=2LQSzEbpJ-M
 
 
-## 🔄 Como Actualizar Tu Bot 🔄
+## Como Actualizar Tu Bot 🔄
 Para eso vas a cerrar sesión de whatsapp wed en el numero de tu bot y en termux vas a apagar el bot con el comando
 
 ```bash
