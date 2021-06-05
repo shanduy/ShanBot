@@ -4,6 +4,8 @@
 * shanduy se reserva todos los derechos de autor
 * © 2021 shanduy, INC.
 
+Cualquier copia que utilize mi ApiKey sera dado de baja
+
 - Que hay de nuevo?
 * Nada
 */
