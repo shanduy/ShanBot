@@ -1,5 +1,5 @@
 const desmenu = (prefix, pushname) => {
-    return `◪ *Comandos De Descargas*
+    return `◪ *Comandos De Descargas ✅*
     │
     ├─ ❏ ${prefix}play
     │  Coloca el nombre de la cancion. 
