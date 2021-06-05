@@ -247,9 +247,7 @@ async function starts() {
 				levelnol: '*Nivel* 0 ',
 				error: {
 					stick: '[❗] Falló, se produjo un error al convertir la imagen en una pegatina ❌',
-					Iv: '❌ Link inválido ❌',
-					Ig: [❗] 'Ocurrió un error, tal vez porque la cuenta es privada'
-				
+					Iv: '❌ Link inválido ❌'
 				},
 				only: {
 					group: '[❗] Este comando es solo para grupos! ❌',
@@ -258,7 +256,6 @@ async function starts() {
 					admin: '[❗] Este comando solo puede ser utilizado por administradores del grupo! ❌',
 					Badmin: '[❗] Este comando solo se puede usar cuando el bot se convierte en administrador! ❌',
                                         pegatina: 'Calma crack estoy haciendo tu sticker👏\n\n*Recuerda los stickersgif son de 6 segundos❗*\nby shanduy',
-					insta: 'Tranquilo nefasto 🥴\n\n*Estoy descargando tu imagen o video 🔄*\n\nby shanduy',
 					imgs: 'Recuerda solo sirve para stickers❗\n\n*Convirtiendo de sticker a imagen🔄*\n\nby shanduy',
 					mpcancion: 'Calmaoooo estoy procesando😎\n\n*Convirtiendo de MP4 a MP3🔄*\n\nby shanduy',
 					mpa: 'Euu flaco 🥴\n\n*Estoy decargando tu cancion 🔄*\n\nAguarde un momento, por favor\n\nby shanduy',
@@ -498,7 +495,23 @@ async function starts() {
                 }
               await client.sendMessage(from, options, text)
                break
-                                case 'ytmp3':
+            case 'ig':
+            if (args.length < 1) return reply('Donde esta el link??')
+            if (!isUrl(args[0]) && !args[0].includes('instagram.com')) return reply(mess.error.Iv)
+            try {
+                reply(mess.only.insta)
+                const resp = await get.get(`https://st4rz.herokuapp.com/api/ig?url=${args[0]}`, {method: 'get'})
+                if (resp.result.includes('.mp4')) {
+                    var ext = '.mp4'
+                } else {
+                    var ext = '.jpg'
+                }
+                await client.sendFileFromUrl(from, resp.result, `igeh${ext}, ''`)
+            } catch {
+                client.reply(from, mess.error.Ig)
+                }
+            break
+				case 'ytmp3':
 					if (args.length < 1) return reply('Donde esta la URL?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
 					reply(mess.only.mpa)
