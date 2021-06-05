@@ -16,14 +16,11 @@ https://forms.gle/4zzqRpV21CMGwsF57
 - ${prefix}desmenu
 - ${prefix}version
 Conoce la versión de tu bot
+- ${prefix}welmenu
+Comandos de bienvedia a grupos
 
 ◪ *PARA USAR EL BOT*
   ❏ Registrate con el comando ${prefix}daftar y tu nombre
-
-◪ *NUEVA ACTUALIZACION*
-  │
-  ├─ ❏ ${prefix}welcomemenu
-  └─ Da la bienvenida a los nuevos
 
 ◪ *RESUELVE TUS DUDAS*
   │
