@@ -237,7 +237,6 @@ async function starts() {
 			const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
 			const args = body.trim().split(/ +/).slice(1)
 			let authorname = client.contacts[from] != undefined ? client.contacts[from].vname || client.contacts[from].notify : undefined
-			if (authorname != undefined) { } else { authorname = groupName }
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
