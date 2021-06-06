@@ -1,6 +1,6 @@
 const help = (prefix) => {
 	return `
- ⌜*ShanBot 🤖 by shanduy*⌟  
+ ⌜ *ShanBot 🤖 by shanduy* ⌟  
 
 ◉ *INFORMACION*
   ○ Comando: ⌜ ${prefix} ⌟
