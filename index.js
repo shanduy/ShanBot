@@ -241,20 +241,20 @@ async function starts() {
 			mess = {
 				wait: 'Calmao pa estoy procesando😎\n\n❗Por favor no hacer spam👏❗\n\nby shanduy',
 				success: '✔️ Listo ✔️',
-                                levelon: '❬ ✔ ❭ *Level activado*',
-				leveloff: ' ❬ X ❭  *Level desactivado*',
-				levelnoton: '❬ X ❭ *Level no esta activado*',
+                                levelon: '❬ ✅ ❭ *Level activado*',
+				leveloff: ' ❬ ✅ ❭  *Level desactivado*',
+				levelnoton: '❬ ❎ ❭ *Level no esta activado*',
 				levelnol: '*Nivel* 0 ',
 				error: {
-					stick: '[❗] Falló, se produjo un error al convertir la imagen en una pegatina ❌',
+					stick: '[❎] Falló, se produjo un error al convertir la imagen en una pegatina',
 					Iv: '❌ Link inválido ❌'
 				},
 				only: {
-					group: '[❗] Este comando es solo para grupos! ❌',
-					ownerG: '[❗] Este comando solo puede ser utilizado por un admin del grupo! ❌',
-					ownerB: '[❗] Este comando solo lo usa ShanBot! ❌',
-					admin: '[❗] Este comando solo puede ser utilizado por administradores del grupo! ❌',
-					Badmin: '[❗] Este comando solo se puede usar cuando el bot se convierte en administrador! ❌',
+					group: '[❗] Este comando es solo para grupos!',
+					ownerG: '[❗] Este comando solo puede ser utilizado por un admin del grupo!',
+					ownerB: '[❗] Este comando solo lo usa ShanBot!',
+					admin: '[❗] Este comando solo puede ser utilizado por administradores del grupo!',
+					Badmin: '[❗] Este comando solo se puede usar cuando el bot se convierte en administrador!',
                                         pegatina: 'Calma crack estoy haciendo tu sticker👏\n\n*Recuerda los stickersgif son de 6 segundos❗*\nby shanduy',
 					imgs: 'Recuerda solo sirve para stickers❗\n\n*Convirtiendo de sticker a imagen🔄*\n\nby shanduy',
 					mpcancion: 'Calmaoooo estoy procesando😎\n\n*Convirtiendo de MP4 a MP3🔄*\n\nby shanduy',
@@ -419,13 +419,13 @@ async function starts() {
 					if (mentioned.length > 1) {
 						teks = ''
 						for (let _ of mentioned) {
-							teks += `Ok pa, quitando cargo de admin :\n`
+							teks += `Pedido recibido✅\n\nRetirando cargo como administrador :\n`
 							teks += `@_.split('@')[0]`
 						}
 						mentions(teks, mentioned, true)
 						client.groupDemoteAdmin(from, mentioned)
 					} else {
-						mentions(`Ok pa, retirado del puesto de administrador @${mentioned[0].split('@')[0]}\n*${groupMetadata.subject}*_`, mentioned, true)
+						mentions(`Pedido recibido✅\n\nRetirando cargo como administrador @${mentioned[0].split('@')[0]}\n*${groupMetadata.subject}*_`, mentioned, true)
 						client.groupDemoteAdmin(from, mentioned)
 					}
 					break
@@ -438,14 +438,14 @@ async function starts() {
 					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('¡La etiqueta de destino que desea promocionar!')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) {
-						teks = 'Pedido recibido, agregando cargo como administrador :\n'
+						teks = 'Pedido recibido✅\n\nAgregando cargo como administrador :\n'
 						for (let _ of mentioned) {
 							teks += `@${_.split('@')[0]}\n`
 						}
 						mentions(teks, mentioned, true)
 						client.groupMakeAdmin(from, mentioned)
 					} else {
-						mentions(`Pedido recibido, agregando cargo como administrador : @${mentioned[0].split('@')[0]}`, mentioned, true)
+						mentions(`Pedido recibido✅\n\nAgregando cargo como administrador : @${mentioned[0].split('@')[0]}`, mentioned, true)
 						client.groupMakeAdmin(from, mentioned)
 					}
 					break
@@ -915,13 +915,13 @@ async function starts() {
                                 case 'daftar':
 					client.updatePresence(from, Presence.composing)
 					if (isUser) return reply('Ya estas registrado gordo trolo 🧐')
-					if (args.length < 1) return reply(`Incorrecto \nCommand : ${prefix}daftar Nombre\nComando : ${prefix}daftar Shanduy`)
+					if (args.length < 1) return reply(`Incorrecto \nCommand : ${prefix}daftar Nombre\nComando : ${prefix}daftar shanduy`)
 					var reg = body.slice(8)
 					var jeneng = reg.split("|")[0];
 					var umure = reg.split("|")[1];
 						user.push(sender)
 						fs.writeFileSync('./database/json/user.json', JSON.stringify(user))
-						client.sendMessage(from, `\`\`\`Registrado con exito flaco 👏😎🥳\`\`\`\n\n\`\`\`DNI: Ciudadano De Palestina 🇵🇸🤪👏\`\`\`\n\n\`\`\`Dia ${date} ${time}\`\`\`\n\`\`\`[Usuario]: ${jeneng}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\`\`\`Para usar el bot\`\`\`\n\`\`\`Por favor\`\`\`\n\`\`\`enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários ${user.length}\`\`\``, text, {quoted: mek})
+						client.sendMessage(from, `\`\`\`Registrado con exito flaco ✅\`\`\`\n\n\`\`\`DNI: Hijo De Cristo Rey 🙌\`\`\`\n\n\`\`\`Fecha: ${date}\`\`\`\n\`\`\`[Usuario]: ${jeneng}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\`\`\`Para usar el bot\`\`\`\n\`\`\`Por favor\`\`\`\n\`\`\`enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários ${user.length}\`\`\``, text, {quoted: mek})
 					break
                                 case 'welcome':
 					if (!isGroup) return reply(mess.only.group)
@@ -932,11 +932,11 @@ async function starts() {
 						if (isWelkom) return reply('Ya esta activada!!!')
 						welkom.push(from)
 						fs.writeFileSync('./database/json/welkom.json', JSON.stringify(welkom))
-						reply('❬ EXITO ❭ La funcion de bienvenida esta habilitada en este grupo')
+						reply('❬ ✅ ❭ La funcion de bienvenida esta habilitada en este grupo')
 					} else if (Number(args[0]) === 0) {
 						welkom.splice(from, 1)
 						fs.writeFileSync('./database/json/welkom.json', JSON.stringify(welkom))
-						reply('❬ EXITO ❭ La funcion de bienvenida esta deshabilitada en este grupo')
+						reply('❬ ✅ ❭ La funcion de bienvenida esta deshabilitada en este grupo')
 					} else {
 						reply('Escribe el comando 1 para activarlo y 0 para desactivarlo Ejemplo: *welcome 1')
 					}
@@ -958,14 +958,14 @@ async function starts() {
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (args.length < 1) return reply('Digita 1 para activar los NSFW')
 					if (Number(args[0]) === 1) {
-						if (isNsfw) return reply('Recursos Activados')
+						if (isNsfw) return reply('Recursos Activados ✅')
 						nsfw.push(from)
 						fs.writeFileSync('./database/json/nsfw.json', JSON.stringify(nsfw))
 						reply('❬ EXITO ❭ La funcion NSFW esta habilitado en este grupo')
 					} else if (Number(args[0]) === 0) {
 						nsfw.splice(from, 1)
 						fs.writeFileSync('./database/json/nsfw.json', JSON.stringify(nsfw))
-						reply('❬ EXITO ❭ La funcion NSFW esta deshabilitado en este grupo')
+						reply('❬ ✅ ❭ La funcion NSFW esta deshabilitado en este grupo')
 					} else {
 						reply('Digite 1 para activarlo, 0 para desactivarlo')
 					}
