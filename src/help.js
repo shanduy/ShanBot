@@ -3,10 +3,10 @@ const help = (prefix) => {
  ⌜ *ShanBot 🤖 by shanduy* ⌟  
 
 ◉ *INFORMACION*
-○ Comando: ⌜ ${prefix} ⌟
-○ Creador: shanduy™ 
-○ Como instalar el bot: https://www.youtube.com/watch?v=2LQSzEbpJ-M
-○ Instagram: https://www.instagram.com/thepavos
+   ○ Comando: ⌜ ${prefix} ⌟
+   ○ Creador: shanduy™ 
+   ○ Como instalar el bot: https://www.youtube.com/watch?v=2LQSzEbpJ-M
+   ○ Instagram: https://www.instagram.com/thepavos
 
 ◉ *ShanBot Con Insultos O Quitarlos🤷‍♂️?*
 Responde esto en la siguiente encuesta
