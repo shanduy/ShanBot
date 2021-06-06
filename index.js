@@ -834,7 +834,7 @@ async function starts() {
 							})
 							.on('end', function () {
 								console.log('Finish')
-								exec(`webpmux -set exif ${addMetadata('ShanBot', authorname)} ${ran} -o ${ran}`, async (error) => {
+								exec(`webpmux -set exif ${addMetadata('BOT', authorname)} ${ran} -o ${ran}`, async (error) => {
 							        client.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: mek})
 								fs.unlinkSync(media)
 								fs.unlinkSync(ran)
@@ -861,7 +861,7 @@ async function starts() {
 							.on('end', function () {
 								console.log('Finish')
 				                                buff = fs.readFileSync(ran)
-								exec(`webpmux -set exif ${addMetadata('ShanBot', authorname)} ${ran} -o ${ran}`, async (error) => {
+								exec(`webpmux -set exif ${addMetadata('BOT', authorname)} ${ran} -o ${ran}`, async (error) => {
 							        client.sendMessage(from, buff, sticker)
 								fs.unlinkSync(media)
 								fs.unlinkSync(ran)
