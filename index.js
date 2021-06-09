@@ -902,11 +902,10 @@ async function starts() {
 					if (isUser) return reply('Ya estas registrado gordo trolo 🧐')
 					if (args.length < 1) return reply(`Incorrecto \nCommand : ${prefix}daftar Nombre\nComando : ${prefix}daftar shanduy`)
 					var reg = body.slice(8)
-					var jeneng = reg.split("|")[0];
-					var umure = reg.split("|")[1];
-						user.push(sender)
+					var nombre = reg.split("|")[0];
+                                                user.push(sender)
 						fs.writeFileSync('./database/json/user.json', JSON.stringify(user))
-						client.sendMessage(from, `\`\`\`Registrado con exito flaco ✅\`\`\`\n\n\`\`\`DNI: Hijo De Cristo Rey 🙌\`\`\`\n\n\`\`\`Fecha: ${date}\`\`\`\n\`\`\`[Usuario]: ${jeneng}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\`\`\`Para usar el bot\`\`\`\n\`\`\`Por favor\`\`\`\n\`\`\`enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários ${user.length}\`\`\``, text, {quoted: mek})
+						client.sendMessage(from, `\`\`\`Registrado con exito flaco ✅\`\`\`\n\n\`\`\`DNI: Hijo De Cristo Rey 🙌\`\`\`\n\n\`\`\`Hora: ${time}\`\`\`\n\`\`\`\`\`\`\n\n\`\`\`Fecha: ${date}\`\`\`\n\`\`\`[Usuario]: ${nombre}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\`\`\`Para usar el bot\`\`\`\n\`\`\`Por favor\`\`\`\n\`\`\`enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários ${user.length}\`\`\``, text, {quoted: mek})
 					break
                                 case 'welcome':
 					if (!isGroup) return reply(mess.only.group)
@@ -985,7 +984,7 @@ async function starts() {
                 const userXp = getLevelingXp(sender)
                 if (userLevel === undefined && userXp === undefined) return reply(mess.levelnol)
                 sem = sender.replace('@s.whatsapp.net','')
-                resul = `◪ *LEVEL*\n  ├─ ❏ *Nombre* : ${sem}\n  ├─ ❏ *XP* : ${userXp}\n  └─ ❏ *Level* : ${userLevel}`
+                resul = `◪ *⬆LEVEL⬆*\n  ├─ ❏ *Nombre* : ${sem}\n  ├─ ❏ *XP* : ${userXp}\n  └─ ❏ *Level* : ${userLevel}`
                client.sendMessage(from, resul, text, { quoted: mek})
                 .catch(async (err) => {
                         console.error(err)
