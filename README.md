@@ -28,9 +28,11 @@ Mis Redes Sociales Y Mi Whatsapp Para Resolver Tus Problemas
 
 
 # ShanBot
-ULTIMA VERSION 2.1
+ULTIMA VERSION 2.2
 
-*Actualizado:* 4 de junio de 2021
+*Actualizado:* 9 de junio de 2021
+
+Cambio de apikey y server en *play
 
 
 Pasos para instalar el bot via termux
