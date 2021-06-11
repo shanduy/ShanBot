@@ -12,6 +12,10 @@ const help = (prefix) => {
 Responde esto en la siguiente encuesta
 https://forms.gle/4zzqRpV21CMGwsF57
 
+◉ *NUEVO COMANDO*
+- ${prefix}attp
+Envia el comando mas un texto
+
 ◉ *NUEVOS MENUS*
 - ${prefix}desmenu
 Descargar musica y videos de YT
