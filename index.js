@@ -557,6 +557,11 @@ async function starts() {
 						})
 					})
 					break
+				                case 'attp':
+						if (args.length < 1) return reply(`¿Dónde está el texto?\n*Ejemplo:* ${prefix}attp shanduy`)
+						attp2 = await getBuffer(`https://api.xteam.xyz/attp?file&text=${body.slice(6)}`)
+						client.sendMessage(from, attp2, MessageType.sticker, {quoted: mek})
+						break
 				case 'listadmins':
 				case 'adminlist':
 					client.updatePresence(from, Presence.composing) 
