@@ -28,9 +28,11 @@ Mis Redes Sociales Y Mi Whatsapp Para Resolver Tus Problemas
 
 
 # ShanBot
-ULTIMA VERSION 2.2
+ULTIMA VERSION 2.3
 
-*Actualizado:* 9 de junio de 2021
+*Actualizado:* 11 de junio de 2021
+
+Nuevo comando *attp
 
 Cambio de apikey y server en *play
 
