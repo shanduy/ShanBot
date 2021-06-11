@@ -257,6 +257,7 @@ async function starts() {
 					admin: '[❗] Este comando solo puede ser utilizado por administradores del grupo!',
 					Badmin: '[❗] Este comando solo se puede usar cuando el bot se convierte en administrador!',
                                         pegatina: 'Calma crack estoy haciendo tu sticker👏\n\n*Recuerda los stickersgif son de 6 segundos❗*\n\nby shanduy',
+					attp: 'Calma crack estoy haciendo tu texto a sticker👏\n\n*Esto puede demorar unos minutos*\n\nby shanduy',
 					imgs: 'Recuerda solo sirve para stickers❗\n\n*Convirtiendo de sticker a imagen🔄*\n\nby shanduy',
 					mpcancion: 'Calmaoooo estoy procesando😎\n\n*Convirtiendo de MP4 a MP3🔄*\n\nby shanduy',
 					mpa: 'Euu flaco 🥴\n\n*Estoy decargando tu cancion 🔄*\n\nAguarde un momento, por favor\n\nby shanduy',
@@ -557,12 +558,7 @@ async function starts() {
 						})
 					})
 					break
-				                case 'attp':
-						if (args.length < 1) return reply(`¿Dónde está el texto?\n*Ejemplo:* ${prefix}attp shanduy`)
-						attp2 = await getBuffer(`https://api.xteam.xyz/attp?file&text=${body.slice(6)}`)
-						client.sendMessage(from, attp2, MessageType.sticker, {quoted: mek})
-						break
-				case 'listadmins':
+                                case 'listadmins':
 				case 'adminlist':
 					client.updatePresence(from, Presence.composing) 
                                         if (!isUser) return reply(mess.only.daftarB)
@@ -794,26 +790,13 @@ async function starts() {
 					client.groupSettingChange (from, GroupSettingChange.messageSend, false)
 					client.sendMessage(from, open, text, {quoted: mek})
 					break
-				case 'tstiker':
-				case 'tsticker':
-					if (args.length < 1) return reply('Donde esta el texto?\nEjemplo *tsticker hola')
-					ranp = getRandom('.png')
-					rano = getRandom('.webp')
-					teks = body.slice(9).trim()
-					anu = await fetchJson(`https://mhankbarbar.moe/api/text2image?text=${teks}&apiKey=${apiKey}`, {method: 'get'})
-					if (anu.error) return reply(anu.error)
-					exec(`wget ${anu.result} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
-						fs.unlinkSync(ranp)
-						if (err) return reply(mess.error.stick)
-						exec(`webpmux -set exif ${addMetadata('Shanduy', authorname)} ${rano} -o ${rano}`, async (error) => {
-							if (error) return reply(mess.error.stick)
-							client.sendMessage(from, fs.readFileSync(rano), sticker, {quoted: mek})
-							fs.unlinkSync(rano)
-						})
-						/*client.sendMessage(from, fs.readFileSync(rano), sticker, {quoted: mek})
-						fs.unlinkSync(rano)*/
-					})
-					break
+				                case 'attp':
+						if (!isUser) return reply(mess.only.daftarB)
+					        if (args.length < 1) return reply(`¿Dónde está el texto?\n*Ejemplo:* ${prefix}attp shanduy`)
+						reply(mess.only.attp)
+					        attp2 = await getBuffer(`https://api.xteam.xyz/attp?file&text=${body.slice(6)}`)
+						client.sendMessage(from, attp2, MessageType.sticker, {quoted: mek})
+						break
 				case 's':
 				case 'tucson':
 				case 'cuties':
