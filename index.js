@@ -26,8 +26,6 @@ const { negara } = require('./src/kodenegara')
 const { virtex } = require('./src/virtex')
 const { wait, pegatinas, musica, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
 const { fetchJson } = require('./lib/fetcher')
-const { webp2mp4File } = require('./lib/webp2mp4')
-const { yta, ytv, igdl, upload } = require('./lib/ytdl')
 const { recognize } = require('./lib/ocr')
 /******FIN DE ENTRADA DE ARCHIVO******/
 
@@ -95,36 +93,6 @@ prefix = '*'
 blocked = []
 
 /******INICIO DE FUNCIONES ENTRADA******/
-const sendMediaURL = async(to, url, text="", mids=[]) =>{
-                if(mids.length > 0){
-                    text = normalizeMention(to, text, mids)
-                }
-                const fn = Date.now() / 10000;
-                const filename = fn.toString()
-                let mime = ""
-                var download = function (uri, filename, callback) {
-                    request.head(uri, function (err, res, body) {
-                        mime = res.headers['content-type']
-                        request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
-                    });
-                };
-                download(url, filename, async function () {
-                    console.log('done');
-                    let media = fs.readFileSync(filename)
-                    let type = mime.split("/")[0]+"Message"
-                    if(mime === "image/gif"){
-                        type = MessageType.video
-                        mime = Mimetype.gif
-                    }
-                    if(mime.split("/")[0] === "audio"){
-                        mime = Mimetype.mp4Audio
-                    }
-                    client.sendMessage(to, media, type, { quoted: mek, mimetype: mime, caption: text,contextInfo: {"mentionedJid": mids}})
-                    
-                    fs.unlinkSync(filename)
-                });
-            } 
-
 const getLevelingXp = (userId) => {
             let position = false
             Object.keys(_level).forEach((i) => {
@@ -293,15 +261,13 @@ async function starts() {
 					imgs: 'Recuerda solo sirve para stickers❗\n\n*Convirtiendo de Sticker a Imagen 🔄*\n\nby shanduy',
 					mpcancion: 'Calmaoooo estoy procesando 😎\n\n*Convirtiendo de MP4 a MP3 🔄*\n\nby shanduy',
 					mpa: 'Euu flaco 🥴\n\n*Estoy decargando tu cancion 🔄*\n\nAguarde un momento, por favor\n\nby shanduy',
-					tompv: 'Calmaoooo estoy procesando 😎\n\n*Convirtiendo de Stickergif a MP4 🔄*\n\nby shanduy',
-					mpv: 'Calmao pa 😎\n\n*Estoy descargando tu video 🔄*\n\nAguarde un momento, por favor\n\nby shanduy',
+                                        mpv: 'Calmao pa 😎\n\n*Estoy descargando tu video 🔄*\n\nAguarde un momento, por favor\n\nby shanduy',
 					musica: 'Calmao pa estoy bucando tu canción 😎\n\n*Recuerda colocar bien el nombre de la cancion o el link del video de youtube ❗*\n\nby shanduy',
 					daftarB: `「NEFASTOOOOO」\n\nPERO PAAAAAAAAAA!\n\nNo estas registrado en mi base de datos 😳 \n\nComando : ${prefix}daftar Nombre\nEjemplo : ${prefix}daftar shanduy`,
 				}
 			}
     			const apakah = ['Si','No']
-        		const gay = ['Eres 15% Gay','Eres 0% Gay 😱','Eres 20% Gay','Eres 78% Gay','Eres 62% Gay','Eres 0.1% Gay','Eres 100% Gay 😬','Eres 6% Gay','Eres 96% Gay','Eres 21% Gay','Eres 50% Gay','Eres 99.99% Gay','Eres 12% Gay','Eres 88% Gay','ERES INFINITAMENTE GAY 🤯','Eres 75% Gay','Eres 19% Gay','Eres Fan De Cuties 🤬','Eres 44% Gay','Eres 84% Gay']
-		        const kapankah = ['Otro día','Otra semana','Otro mes','Otro año']
+                        const kapankah = ['Otro día','Otra semana','Otro mes','Otro año']
 			const botNumber = client.user.jid
 			const ownerNumber = ["593997889284@s.whatsapp.net"] // replace this with your number
 			const nomorOwner = [ownerNumber]
@@ -890,21 +856,7 @@ async function starts() {
 							.save(ran)
 						}
 						break
-            case 'tomp4':
-            if (!isUser) return reply(mess.only.daftarB)
-	    if ((isMedia && !mek.message.videoMessage || isQuotedSticker) && args.length == 0) {
-            reply(mess.only.tompv)
-            ger = isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
-            owgi = await client.downloadAndSaveMediaMessage(ger)
-            webp2mp4File(owgi).then(res=>{
-            sendMediaURL(from,res.result,'Done')
-            })
-            }else {
-            reply('Responde con el comando ${prefix}tomp4 a un stickergif')
-            }
-            fs.unlinkSync(owgi)
-            break
-		        case 'tomp3':
+			case 'tomp3':
                 	client.updatePresence(from, Presence.composing) 
                         if (!isUser) return reply(mess.only.daftarB)
 					if (!isQuotedVideo) return reply('❌ Solo videos ❌')
