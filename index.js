@@ -286,13 +286,14 @@ async function starts() {
 					ownerB: '[❗] Este comando solo lo usa ShanBot!',
 					admin: '[❗] Este comando solo puede ser utilizado por administradores del grupo!',
 					Badmin: '[❗] Este comando solo se puede usar cuando el bot se convierte en administrador!',
-                                        pegatina: 'Calma crack estoy haciendo tu sticker👏\n\n*Recuerda los stickersgif son de 6 segundos❗*\n\nby shanduy',
-					attp: 'Calma crack estoy haciendo tu texto a sticker👏\n\n*Esto puede demorar unos minutos*\n\nby shanduy',
-					imgs: 'Recuerda solo sirve para stickers❗\n\n*Convirtiendo de sticker a imagen🔄*\n\nby shanduy',
-					mpcancion: 'Calmaoooo estoy procesando😎\n\n*Convirtiendo de MP4 a MP3🔄*\n\nby shanduy',
+                                        pegatina: 'Calma crack estoy haciendo tu sticker 👏\n\n*Recuerda los stickersgif son de 6 segundos ❗*\n\nby shanduy',
+					attp: 'Calma crack estoy haciendo tu texto a sticker 👏\n\n*Esto puede demorar unos minutos*\n\nby shanduy',
+					imgs: 'Recuerda solo sirve para stickers❗\n\n*Convirtiendo de Sticker a Imagen 🔄*\n\nby shanduy',
+					mpcancion: 'Calmaoooo estoy procesando 😎\n\n*Convirtiendo de MP4 a MP3 🔄*\n\nby shanduy',
 					mpa: 'Euu flaco 🥴\n\n*Estoy decargando tu cancion 🔄*\n\nAguarde un momento, por favor\n\nby shanduy',
-					mpv: 'Calmao pa😎\n\n*Estoy descargando tu video 🔄*\n\nAguarde un momento, por favor\n\nby shanduy',
-					musica: 'Calmao pa estoy bucando tu canción😎\n\n*Recuerda colocar bien el nombre de la cancion o el link del video de youtube❗*\n\nby shanduy',
+					tompv: 'Calmaoooo estoy procesando 😎\n\n*Convirtiendo de Stickergif a MP4 🔄*\n\nby shanduy',
+					mpv: 'Calmao pa 😎\n\n*Estoy descargando tu video 🔄*\n\nAguarde un momento, por favor\n\nby shanduy',
+					musica: 'Calmao pa estoy bucando tu canción 😎\n\n*Recuerda colocar bien el nombre de la cancion o el link del video de youtube ❗*\n\nby shanduy',
 					daftarB: `「NEFASTOOOOO」\n\nPERO PAAAAAAAAAA!\n\nNo estas registrado en mi base de datos 😳 \n\nComando : ${prefix}daftar Nombre\nEjemplo : ${prefix}daftar shanduy`,
 				}
 			}
@@ -888,14 +889,16 @@ async function starts() {
 						}
 						break
             case 'tomp4':
-            if ((isMedia && !mek.message.videoMessage || isQuotedSticker) && args.length == 0) {
+            if (!isUser) return reply(mess.only.daftarB)
+	    if ((isMedia && !mek.message.videoMessage || isQuotedSticker) && args.length == 0) {
+            reply(mess.only.tompv)
             ger = isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
             owgi = await client.downloadAndSaveMediaMessage(ger)
             webp2mp4File(owgi).then(res=>{
             sendMediaURL(from,res.result,'Done')
             })
             }else {
-            reply('Responde a un stickergif')
+            reply('Responde con el comando ${prefix}tomp4 a un stickergif')
             }
             fs.unlinkSync(owgi)
             break
