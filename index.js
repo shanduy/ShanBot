@@ -258,7 +258,7 @@ async function starts() {
 					Badmin: '[❗] Este comando solo se puede usar cuando el bot se convierte en administrador!',
                                         pegatina: 'Calma crack estoy haciendo tu sticker 👏\n\n*Recuerda los stickersgif son de 6 segundos ❗*\n\nby shanduy',
 					attp: 'Calma crack estoy haciendo tu texto a sticker 👏\n\n*Esto puede demorar unos minutos*\n\nby shanduy',
-					imgs: 'Recuerda solo sirve para stickers❗\n\n*Convirtiendo de Sticker a Imagen 🔄*\n\nby shanduy',
+					imgs: 'Euu flaco 🥴\n\n*Convirtiendo tu Sticker a Imagen 🔄*\n\nby shanduy',
 					mpcancion: 'Calmaoooo estoy procesando 😎\n\n*Convirtiendo de MP4 a MP3 🔄*\n\nby shanduy',
 					mpa: 'Euu flaco 🥴\n\n*Estoy decargando tu cancion 🔄*\n\nAguarde un momento, por favor\n\nby shanduy',
                                         mpv: 'Calmao pa 😎\n\n*Estoy descargando tu video 🔄*\n\nAguarde un momento, por favor\n\nby shanduy',
@@ -856,17 +856,33 @@ async function starts() {
 							.save(ran)
 						}
 						break
-			case 'tomp3':
+			            case 'toimg':
+				    client.updatePresence(from, Presence.composing)
+                                    if (!isUser) return reply(mess.only.daftarB)
+					if (!isQuotedSticker) return reply('❌ Solo stickers')
+					reply(mess.only.imgs)
+					encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+					media = await client.downloadAndSaveMediaMessage(encmedia)
+					ran = getRandom('.png')
+					exec(`ffmpeg -i ${media} ${ran}`, (err) => {
+						fs.unlinkSync(media)
+						if (err) return reply('❌ No se pudo convertir el sticker en imágenes')
+						buffer = fs.readFileSync(ran)
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: '*⌈ Imagen convertida ✅ ⌉*\n\nby shanduy'})
+						fs.unlinkSync(ran)
+					})
+					break
+                        case 'tomp3':
                 	client.updatePresence(from, Presence.composing) 
                         if (!isUser) return reply(mess.only.daftarB)
-					if (!isQuotedVideo) return reply('❌ Solo videos ❌')
+					if (!isQuotedVideo) return reply('❌ Solo videos')
 					reply(mess.only.mpcancion)
 					encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					media = await client.downloadAndSaveMediaMessage(encmedia)
 					ran = getRandom('.mp4')
 					exec(`ffmpeg -i ${media} ${ran}`, (err) => {
 						fs.unlinkSync(media)
-						if (err) return reply('❌ No se pudo convertir el video a mp3 ❌')
+						if (err) return reply('❌ No se pudo convertir el video a mp3')
 						buffer = fs.readFileSync(ran)
 						client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', quoted: mek})
 						fs.unlinkSync(ran)
@@ -878,7 +894,7 @@ async function starts() {
                 play = body.slice(5)
                 anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=shanduytf`)
                if (anu.error) return reply(anu.error)
-                 infomp3 = `*Canción encontrada!!!*\nTítulo : ${anu.result.title}\nFuente : ${anu.result.source}\nTamaño : ${anu.result.size}\n\n*ESPERE ENVIANDO ARCHIVO, NO SPAMES LA CONCHA DE TU MADRE*`
+                 infomp3 = `*⌈ Canción Encontrada ✅ ⌉*\nTítulo : ${anu.result.title}\nFuente : ${anu.result.source}\nTamaño : ${anu.result.size}\n\n*ESPERE ENVIANDO ARCHIVO, NO SPAMES LA CONCHA DE TU MADRE*`
                 buffer = await getBuffer(anu.result.thumbnail)
                 lagu = await getBuffer(anu.result.url_audio)
                 client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
@@ -892,7 +908,7 @@ async function starts() {
 					var nombre = reg.split("|")[0];
                                                 user.push(sender)
 						fs.writeFileSync('./database/json/user.json', JSON.stringify(user))
-						client.sendMessage(from, `\`\`\`Registrado con exito flaco ✅\`\`\`\n\n\`\`\`DNI: Tucson 🤙🤪\`\`\`\n\n\`\`\`Hora: ${time}\`\`\`\n\n\`\`\`Fecha: ${date}\`\`\`\n\n\`\`\`[Usuario]: ${nombre}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\`\`\`Para usar el bot\`\`\`\n\`\`\`Por favor\`\`\`\n\`\`\`enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários ${user.length}\`\`\``, text, {quoted: mek})
+						client.sendMessage(from, `\`\`\`*⌜Registrado con exito flaco ✅⌟*\`\`\`\n\n\`\`\`DNI: Tucson 🤙🤪\`\`\`\n\n\`\`\`Hora: ${time}\`\`\`\n\n\`\`\`Fecha: ${date}\`\`\`\n\n\`\`\`[Usuario]: ${nombre}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\`\`\`Para usar el bot\`\`\`\n\`\`\`Por favor\`\`\`\n\`\`\`enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários ${user.length}\`\`\``, text, {quoted: mek})
 					break
                                 case 'welcome':
 					if (!isGroup) return reply(mess.only.group)
@@ -991,12 +1007,12 @@ async function starts() {
                 if (!isGroup) return reply(mess.only.group)
                 if (!isGroupAdmins) return reply(mess.only.admin)
                 if (args.length < 1) return reply('Digita 1 para ativar el recurso')
-                if (args[0] === '1') {
+                if (args[0] === 1) {
                     if (isLevelingOn) return reply('*La función de nivel ya estaba activa*')
                     _leveling.push(groupId)
                     fs.writeFileSync('./database/json/leveling.json', JSON.stringify(_leveling))
                      reply(mess.levelon)
-                } else if (args[0] === '0') {
+                } else if (args[0] === 0) {
                     _leveling.splice(groupId, 1)
                     fs.writeFileSync('./database/json/leveling.json', JSON.stringify(_leveling))
                      reply(mess.leveloff)
