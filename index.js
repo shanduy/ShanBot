@@ -26,6 +26,7 @@ const { negara } = require('./src/kodenegara')
 const { virtex } = require('./src/virtex')
 const { wait, pegatinas, musica, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
 const { fetchJson } = require('./lib/fetcher')
+const { webp2mp4File } = require('./lib/webp2mp4')
 const { recognize } = require('./lib/ocr')
 /******FIN DE ENTRADA DE ARCHIVO******/
 
