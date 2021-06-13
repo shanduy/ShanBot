@@ -528,23 +528,7 @@ async function starts() {
                 }
               await client.sendMessage(from, options, text)
                break
-            case 'ig':
-            if (args.length < 1) return reply('Donde esta el link??')
-            if (!isUrl(args[0]) && !args[0].includes('instagram.com')) return reply(mess.error.Iv)
-            try {
-                reply(mess.only.insta)
-                const resp = await get.get(`https://st4rz.herokuapp.com/api/ig?url=${args[0]}`, {method: 'get'})
-                if (resp.result.includes('.mp4')) {
-                    var ext = '.mp4'
-                } else {
-                    var ext = '.jpg'
-                }
-                await client.sendFileFromUrl(from, resp.result, `igeh${ext}, ''`)
-            } catch {
-                client.sendMessage(from, mess.error.Ig)
-                }
-            break
-				case 'ytmp3':
+               		       case 'ytmp3':
 					if (args.length < 1) return reply('Donde esta la URL?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
 					reply(mess.only.mpa)
