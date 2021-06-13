@@ -34,8 +34,6 @@ const fs = require('fs')
 const moment = require('moment-timezone')
 const { exec } = require('child_process')
 const kagApi = require('@kagchi/kag-api')
-const Fb = require('fb-video-downloader')
-const ig = require('insta-fetcher')
 const fetch = require('node-fetch')
 /*const tiktod = require('tiktok-scraper')*/
 const ffmpeg = require('fluent-ffmpeg')
@@ -95,36 +93,6 @@ prefix = '*'
 blocked = []
 
 /******INICIO DE FUNCIONES ENTRADA******/
-const sendMediaURL = async(to, url, text="", mids=[]) =>{
-                if(mids.length > 0){
-                    text = normalizeMention(to, text, mids)
-                }
-                const fn = Date.now() / 10000;
-                const filename = fn.toString()
-                let mime = ""
-                var download = function (uri, filename, callback) {
-                    request.head(uri, function (err, res, body) {
-                        mime = res.headers['content-type']
-                        request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
-                    });
-                };
-                download(url, filename, async function () {
-                    console.log('done');
-                    let media = fs.readFileSync(filename)
-                    let type = mime.split("/")[0]+"Message"
-                    if(mime === "image/gif"){
-                        type = MessageType.video
-                        mime = Mimetype.gif
-                    }
-                    if(mime.split("/")[0] === "audio"){
-                        mime = Mimetype.mp4Audio
-                    }
-                    client.sendMessage(to, media, type, { quoted: mek, mimetype: mime, caption: text,contextInfo: {"mentionedJid": mids}})
-                    
-                    fs.unlinkSync(filename)
-                });
-            }   
-
 const getLevelingXp = (userId) => {
             let position = false
             Object.keys(_level).forEach((i) => {
@@ -552,39 +520,7 @@ async function starts() {
 					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
 					break
-	case 'ig':
-        if (!isUrl(args[0]) && !args[0].includes('instagram.com')) return reply(mess.Iv)
-        if (!q) return reply('Donde esta el link de la publicación instagram?')
-        reply(mess.wait)
-	    igdl(args[0])
-	    .then(async(result) => {
-            for (let ink of result.url_list)	{
-            if (ink.includes('.mp4')){
-            const igvdl = await getBuffer(ink)	
-	    client.sendMessage(from,igvdl,video,{mimetype:'video/mp4',quoted:mek,caption:'Etto.UvU'})
-            } else if (ink.includes('.jpg')){
-            const igpdl = await getBuffer(ink)
-            client.sendMessage(from,igpdl,image,{mimetype:'image/jpeg',quoted:mek,caption:'Etto UvU'})
-	    }
-            }
-	    })
-	    break
-	case 'fb':
-            if (!q) return reply('Donde esta el link de facebook?')
-            if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(mess.Iv)
-            reply(mess.wait)
-            te = args.join(' ')
-            Fb.getInfo(`${te}`)
-            .then(G => {
-            ten = `${G.download.sd}`
-            tek = `${G.title}`
-            sendMediaURL(from,ten,`*DESCARGA EXITOSA ✅*\n*◉ Título* : ${tek}\n\n*Link* : ${ten}`)
-           .catch((error) => {
-            reply('Error pa 😔\nLa publicación es privada y no se puede descargar:('); 
-            })
-})
-            break 
-	                           case 'tts':
+                                 case 'tts':
 				   client.updatePresence(from, Presence.recording) 
 				   if (args.length < 1) return client.sendMessage(from, 'Cual es el código de idioma?\n\nPara saber el codigo de idioma coloque el comando ${prefix}idioma', text, {quoted: mek})
                                    if (!isUser) return reply(mess.only.daftarB)
