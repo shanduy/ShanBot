@@ -193,15 +193,6 @@ const getLevelingId = (userId) => {
             fs.writeFileSync('./database/json/level.json', JSON.stringify(_level))
         }
 
-function igdl(url_media) {
-    return new Promise((resolve,reject)=>{
-        url_media = url_media.replace("reel", "p")
-        var url = "https://igram.io/i/"
-        const requestBody = {
-            url: url_media.replace("reel", "p"),
-            lang_code: "en"
-        }
-
 function kyun(seconds){
   function pad(s){
     return (s < 10 ? '0' : '') + s;
