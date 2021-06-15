@@ -222,9 +222,8 @@ function kyun(seconds){
 }
 
 async function starts() {
-	const client = new WAConnection();
-	conn.version = [2, 2119, 6]
-	client.logger.level = 'warn'
+	const client = new WAConnection()
+        client.logger.level = 'warn'
 	console.log(banner.string)
 	client.on('qr', () => {
 		console.log(color('[','white'), color('!','red'), color(']','white'), color(' Escanea el codigo QR es temporal no te tardes Rapido!!!  '))
