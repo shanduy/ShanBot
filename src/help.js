@@ -71,7 +71,7 @@ Registrate con el comando ${prefix}daftar y tu nombre
   ╠ Quitar el admin
   ╠ ○ ${prefix}linkgc
   ╠ Link del grupo
-  ╠ ○ ${prefix}tagall
+  ╠ ○ ${prefix}todos
   ╚ Nombra a todos los del grupo
 
 Para usar estas funciones el bot necesita admin
