@@ -28,9 +28,13 @@ Mis Redes Sociales Y Mi Whatsapp Para Resolver Tus Problemas
 
 
 # ShanBot
-ULTIMA VERSION 2.3
+ULTIMA VERSION 2.4
 
-*Actualizado:* 11 de junio de 2021
+*Actualizado:* 15 de junio de 2021
+
+Actualizacion de la version @adiwajshing/baileys a la mas estable
+
+Nuevo motor WAConnection :)
 
 Nuevo comando *attp
 
