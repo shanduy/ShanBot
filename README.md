@@ -1,7 +1,7 @@
 # ShanBot Bot Para Whatsapp by shanduy
 
 <p align="center">
-<img src="https://media.giphy.com/media/l3UcrZHrGW2CjHXqM/giphy.gif" alt="GIF" width="500" height="281"/>
+<img src="https://github.com/shanduy/ShanBot/blob/main/temples/ezgif-4-5e4fce2c4bbe.gif" alt="GIF" width="500" height="281"/>
 </p>
 <p align="center">
 <a href="#"><img title="ShanBot" src="https://img.shields.io/badge/ShanBot -purple?colorA=%cc33ff&colorB=%cc33ff&style=for-the-badge"></a>
