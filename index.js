@@ -1239,7 +1239,7 @@ async function starts() {
         const none = fs.readFileSync('./mp3/gaspi7.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
-	if (budy.startsWith(`me quiero sucidar`)) {
+	if (budy.startsWith(`me quiero suicidar`)) {
         const none = fs.readFileSync('./mp3/gaspi8.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
