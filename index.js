@@ -1194,7 +1194,40 @@ async function starts() {
 						fs.unlinkSync(rano)
 					})
 					break
-                                /*case 'clone':
+                default:
+		if (budy.includes(`todo bien`)) {
+                  reply(`si amigo todo bien vite`)
+                  }
+
+		if (budy.includes(`bot`)) {
+                  reply(`que queres boludo que queres fiunba`)
+                  }
+
+		if (budy.includes(`bot gay`)) {
+                  reply(`Miren a este boludito`)
+                  }
+
+		if (budy.includes(`Gracias`)) {
+                  reply(`De nada padre`)
+                  }
+
+		if (budy.includes(`hola`)) {
+                  reply(`hola`)
+                  }
+                 
+        if (budy.startsWith(`bot`)) {
+        	
+               reply(`sexo`)  
+        const none = fs.readFileSync('./mp3/sound1.mp3');
+		akira.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
+                  
+                 if (budy.startsWith(`nefasto`)) {
+        const none = fs.readFileSync('./mp3/gaspi1.mp3');
+		akira.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  })
+				
+					/*case 'clone':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (args.length < 1) return reply('La etiqueta de destino que desea clonar')
