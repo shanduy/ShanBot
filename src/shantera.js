@@ -25,6 +25,9 @@ const shantera = (prefix, pushname) => {
 
 _Ojito escribe tal y como esta en el mensaje_
 
+Déjame tus sugerencias
+https://forms.gle/RaBygTZD65C1F8Jz9
+
 by shanduy`
 
 }
