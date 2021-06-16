@@ -11,7 +11,7 @@ const shantera = (prefix, pushname) => {
 - gaspi me saludas
 - gaspi y las minitas
 - gaspi todo bien
-- me quiero sucidar
+- me quiero suicidar
 - gaspi ya no aguanto
 - contate algo bot
 - sexo
