@@ -1218,12 +1218,12 @@ async function starts() {
         	
                reply(`sexo`)  
         const none = fs.readFileSync('./mp3/sound1.mp3');
-		akira.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
                   
                  if (budy.startsWith(`nefasto`)) {
         const none = fs.readFileSync('./mp3/gaspi1.mp3');
-		akira.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
 				
 					/*case 'clone':
