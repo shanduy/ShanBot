@@ -322,6 +322,7 @@ async function starts() {
 			const botNumber = client.user.jid
 			const ownerNumber = ["593997889284@s.whatsapp.net"] // replace this with your number
 			const nomorOwner = [ownerNumber]
+			const mesejAnti = tas.slice(0).trim().split(/ +/).shift().toLowerCase()
 			const isGroup = from.endsWith('@g.us')
 			const totalchat = await client.chats.all()
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
@@ -341,7 +342,8 @@ async function starts() {
                         const isLevelingOn = isGroup ? _leveling.includes(groupId) : false
                         const NomerOwner = '593997889284@s.whatsapp.net'
                         /******Entrada ApiKey******/
-                        const BarBarKey = 'Mn2Bf58QHQ8kABoLq80g'
+                        const shanbot = 'ShanBot'
+			const BarBarKey = 'Mn2Bf58QHQ8kABoLq80g'
                         /******Fin de la entrada de ApiKey******/
 
 			const isUrl = (url) => {
@@ -357,7 +359,7 @@ async function starts() {
 				(id == null || id == undefined || id == false) ? client.sendMessage(from, teks.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
 			}
 
-	        //nivelación de funciones
+	        //FUNCION DE LEVEL
             if (isGroup && isLevelingOn) {
             const currentLevel = getLevelingLevel(sender)
             const checkId = getLevelingId(sender)
@@ -375,7 +377,32 @@ async function starts() {
                 console.error(err)
             }
         }
-
+// FUNCION ANTILINK PARA GRUPOS
+                if (mesejAnti.includes("://chat.whatsapp.com/")){
+		        if (!isGroup) return
+		        if (!isAntiLink) return
+		        if (isGroupAdmins) return reply('Solo administradores 🤚')
+		        client.updatePresence(from, Presence.composing)
+		        if (mesejAnti.includes(",permitir")) return reply("Flaco deja de hacer spam")
+		        var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		        reply(`Sorry bro ${sender.split("@")[0]} pero te tengo que sarcar del grupo`)
+		        setTimeout( () => {
+			        client.groupRemove(from, [kic]).catch((e)=>{reply(`*${shanbot} DEBES SER ADMINISTRADOR*`)})
+		        }, 3000)
+		        setTimeout( () => {
+			        client.updatePresence(from, Presence.composing)
+			        reply("Preparando")
+		        }, 2000)
+		        setTimeout( () => {
+			        client.updatePresence(from, Presence.composing)
+			        reply("Buenas")
+		        }, 1000)
+		        setTimeout( () => {
+			        client.updatePresence(from, Presence.composing)
+			        reply("Chao")
+		        }, 0)
+		  }
+			
 			colors = ['red','white','black','blue','yellow','green']
 			const isMedia = (type === 'imageMessage' || type === 'videoMessage')
 			const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
@@ -476,7 +503,7 @@ async function starts() {
 						antilink.push(from)
 						fs.writeFileSync('./database/group/antilink.json', JSON.stringify(antilink))
 						reply('❬ ✅ ❭ antilink activado en el grupo')
-						client.sendMessage(from,`ALERTA ⚠\n\nSi no eres administrador, no envíes el enlace de otros grupos grupo`, text)
+						client.sendMessage(from,`ALERTA ⚠\n\nSi no eres administrador, no envíes el enlace de otros grupos`, text)
 					} else if (Number(args[0]) === 0) {
 						if (!isAntiLink) return reply('Mi loco para desactivado utliza *antilink 0')
 						var ini = anti.botLangsexOf(from)
