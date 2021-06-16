@@ -1225,7 +1225,7 @@ async function starts() {
                  if (budy.startsWith(`nefasto`)) {
         const none = fs.readFileSync('./mp3/gaspi1.mp3');
 		akira.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  })
+                  }
 				
 					/*case 'clone':
 					if (!isGroup) return reply(mess.only.group)
