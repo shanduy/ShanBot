@@ -1194,8 +1194,7 @@ async function starts() {
 						fs.unlinkSync(rano)
 					})
 					break
-                default:
-		if (budy.includes(`todo bien`)) {
+                if (budy.includes(`todo bien`)) {
                   reply(`si amigo todo bien vite`)
                   }
 
