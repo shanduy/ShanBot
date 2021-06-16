@@ -47,7 +47,7 @@ Registrate con el comando ${prefix}daftar y tu nombre
 
 ◉ *AUDIO*
   ║
-  ╠ ○ ${prefix}bahasa
+  ╠ ○ ${prefix}idioma
   ╚ ○ ${prefix}tts es (mas texto)
 
 ◉ *OTROS*
