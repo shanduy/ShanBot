@@ -1194,7 +1194,8 @@ async function starts() {
 						fs.unlinkSync(rano)
 					})
 					break
-                if (budy.includes(`todo bien`)) {
+                default:
+		if (budy.includes(`todo bien`)) {
                   reply(`si amigo todo bien vite`)
                   }
 
@@ -1225,25 +1226,7 @@ async function starts() {
         const none = fs.readFileSync('./mp3/gaspi1.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
-				
-					/*case 'clone':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (args.length < 1) return reply('La etiqueta de destino que desea clonar')
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag cvk')
-					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
-					let { jid, id, notify } = groupMembers.find(x => x.jid === mentioned)
-					try {
-						pp = await client.getProfilePicture(id)
-						buffer = await getBuffer(pp)
-						client.updateProfilePicture(botNumber, buffer)
-						mentions(`La foto de perfil se actualizó correctamente con la foto de perfil @${id.split('@')[0]}`, [jid], true)
-					} catch (e) {
-						reply('Fallido mi pana')
-					}
-					break*/
-                              default:
-					if (isGroup && isSimi && budy != undefined) {
+				if (isGroup && isSimi && budy != undefined) {
 						console.log(budy)
 						muehe = await simih(budy)
 						console.log(muehe)
