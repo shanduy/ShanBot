@@ -1,6 +1,6 @@
 const help = (prefix) => {
 	return `
-wew = fs.readFileSync(`./temples/ezgif-4-5e4fce2c4bbe.gif`)
+wew = fs.readFileSync(`./temples/ezgif-4-5e4fce2c4bbe.gif`);
 
 ⌜ *ShanBot 🤖 by shanduy* ⌟  
 
