@@ -48,6 +48,7 @@ const speed = require('performance-now')
 const welkom = JSON.parse(fs.readFileSync('./database/json/welkom.json'))
 const nsfw = JSON.parse(fs.readFileSync('./database/json/nsfw.json'))
 const samih = JSON.parse(fs.readFileSync('./database/json/simi.json'))
+const antilink = JSON.parse(fs.readFileSync('./database/group/antilink.json'))
 const user = JSON.parse(fs.readFileSync('./database/json/user.json'))
 const _leveling = JSON.parse(fs.readFileSync('./database/json/leveling.json'))
 const _level = JSON.parse(fs.readFileSync('./database/json/level.json'))
@@ -331,6 +332,7 @@ async function starts() {
 			const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
 			const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
 			const isGroupAdmins = groupAdmins.includes(sender) || false
+			const isAntiLink = isGroup ? antilink.includes(from) : false
 			const isWelkom = isGroup ? welkom.includes(from) : false
 			const isNsfw = isGroup ? nsfw.includes(from) : false
 			const isSimi = isGroup ? samih.includes(from) : false
@@ -464,7 +466,28 @@ async function starts() {
 	       case 'troleo':
                client.sendMessage(from, virtex(prefix, sender), text, {quoted: mek})
                break*/
-                                 case 'demote':
+                                 case 'antilink':
+					if (!isGroup) return reply(mess.only.group)
+					if (!isGroupAdmins) return reply(mess.only.admin)
+					if (!isBotGroupAdmins) return reply(mess.only.Badmin)					
+					if (args.length < 1) return reply('Mi loco no esta activado utliza *antilink 1 para activarlo')
+					if (Number(args[0]) === 1) {
+						if (isAntiLink) return reply('Ya está activado el antilink')
+						antilink.push(from)
+						fs.writeFileSync('./database/group/antilink.json', JSON.stringify(antilink))
+						reply('❬ ✅ ❭ antilink activado en el grupo')
+						client.sendMessage(from,`ALERTA ⚠\n\nSi no eres administrador, no envíes el enlace de otros grupos grupo`, text)
+					} else if (Number(args[0]) === 0) {
+						if (!isAntiLink) return reply('Mi loco para desactivado utliza *antilink 0')
+						var ini = anti.botLangsexOf(from)
+						antilink.splice(ini, 1)
+						fs.writeFileSync('./database/group/antilink.json', JSON.stringify(antilink))
+						reply('❬ ✅ ❭ antilink desactivado en el grupo')
+					} else {
+						reply('Para activar esta funcion utiliza *antilink 1 y para desactivarlo *antilink 0')
+					}
+					break
+				case 'demote':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
