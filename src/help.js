@@ -1,6 +1,8 @@
 const help = (prefix) => {
 	return `
- ⌜ *ShanBot 🤖 by shanduy* ⌟  
+wew = fs.readFileSync(`./temples/ezgif-4-5e4fce2c4bbe.gif`)
+
+⌜ *ShanBot 🤖 by shanduy* ⌟  
 
 ◉ *INFORMACION*
    ○ Comando: ⌜ ${prefix} ⌟
