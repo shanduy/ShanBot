@@ -13,8 +13,8 @@ Responde esto en la siguiente encuesta
 https://forms.gle/4zzqRpV21CMGwsF57
 
 ◉ *NUEVO COMANDO*
-- ${prefix}attp
-Envia el comando mas un texto
+- ${prefix}shantera
+Interactua con el bot
 
 ◉ *NUEVOS MENUS*
 - ${prefix}desmenu
@@ -35,6 +35,8 @@ Registrate con el comando ${prefix}daftar y tu nombre
 ◉ *CREAR STICKERS*
   ║
   ╠ ○ ${prefix}sticker
+  ╠ ○ ${prefix}attp
+  ╠ Mas un texto corto
   ╠ ○ ${prefix}stickergif
   ╚ 6 segundos de video
 
