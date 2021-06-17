@@ -32,6 +32,8 @@ ULTIMA VERSION 2.5
 
 *Actualizado:* 16 de junio de 2021
 
+*Play:* Actualizado 17 de junio 2021
+
 Actualizacion de la version @adiwajshing/baileys a la mas estable
 
 Nuevo motor WAConnection :)
