@@ -28,11 +28,11 @@ Mis Redes Sociales Y Mi Whatsapp Para Resolver Tus Problemas
 
 
 # ShanBot
-ULTIMA VERSION 2.5
+ULTIMA VERSION 2.6
 
 *Actualizado:* 16 de junio de 2021
 
-*Play:* Actualizado 17 de junio 2021
+*Play:* Actualizado 18 de junio 2021
 
 Actualizacion de la version @adiwajshing/baileys a la mas estable
 
