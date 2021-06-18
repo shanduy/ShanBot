@@ -1231,6 +1231,10 @@ async function starts() {
 		if (budy.includes(`fua`)) {
                   reply(`el diegote pa`)
                   }
+	if (budy.startsWith(`pasen sexo`)) {
+        const none = fs.readFileSync('./mp3/fernan.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
 	if (budy.startsWith(`paraguayo`)) {
         const none = fs.readFileSync('./mp3/gaspi11.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
