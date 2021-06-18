@@ -889,16 +889,7 @@ async function starts() {
 						fs.unlinkSync(ran)
 					})
 					break
-               case 'letra':
-			if (args.length == 0) return reply(from, 'Ingrese el nombre de su canción')
-			try {
-				const liric = await axios.get(`https://some-random-api.ml/lyrics?title=${body.slice(7)}`)
-				await client.sendFileFromUrl(from, liric.data.thumbnail.genius, '', `*Titulo:*\n\n${liric.data.title}\n\n*Letra:*\n\n${liric.data.lyrics}`)
-			} catch (error) {
-				await reply(from, 'Lo siento, no encontré tu canción')
-			}
-			break
-		case 'play':   
+                case 'play':   
 	        if (!isUser) return reply(mess.only.daftarB)
                 reply(mess.only.musica)
                 play = body.slice(5)
@@ -987,8 +978,7 @@ async function starts() {
 					case 'del':
 					if (!isGroup)return reply(mess.only.group)
                                         if (!isUser) return reply(mess.only.daftarB)
-					if (!isGroupAdmins)return reply(mess.only.admin)
-					client.deleteMessage(from, { id: mek.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from, fromMe: true })
+		                        client.deleteMessage(from, { id: mek.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from, fromMe: true })
 					break
                  case 'level':
                 if (!isLevelingOn) return reply(mess.levelnoton)
