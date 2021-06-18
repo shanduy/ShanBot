@@ -63,6 +63,7 @@ const { desmenu } = require('./src/desmenu')
 const { version } = require('./src/version')
 const { shantera } = require('./src/shantera')
 const { welmenu } = require('./src/welmenu')
+const { otak } = require('./src/otak')
 /*const { mediamenu } = require('./database/menu/mediamenu')
 const { educationmenu } = require('./database/menu/educationmenu')
 const { downloadermenu } = require('./database/menu/downloadermenu')
@@ -426,39 +427,38 @@ async function starts() {
 
 			}
 			switch(command) {
-				case 'help':
-				case 'menu':
-					client.sendMessage(from, help(prefix), text)
-					break
-                                /*case 'makermenu':
-                                        hisil = fs.readFileSync('./src/makerimg.jpg')
-                                        client.sendMessage(from, hisil, image, {quoted: mek, caption: makermenu(prefix), text})
-                                        break*/
+		case 'help':
+		case 'menu':
+		client.sendMessage(from, help(prefix), text)
+		break
+                case 'otak':
+		client.sendMessage(from, otak(prefix, sender), text, {quoted: mek})
+		break
 		case 'idioma':
 		client.sendMessage(from, bahasa(prefix, sender), text, {quoted: mek})
-				break
-				case 'shanmenu':
-					client.sendMessage(from, toinmenu(prefix, sender), text, {quoted: mek})
-							break
-							case 'menuadmin':
-								client.sendMessage(from, menuadmin(prefix, sender), text, {quoted: mek})
-										break
-										case 'nsfwmenu':
-											client.sendMessage(from, nsfwmenu(prefix, sender), text, {quoted: mek})
-													break
-					                                                                case 'desmenu':
-											                client.sendMessage(from, desmenu(prefix, sender), text, {quoted: mek})
-													                  break
-					                                                                                  case 'versión':
-				                                                                                          case 'version':
-				                                                                                          client.sendMessage(from, version(prefix, sender), text, {quoted: mek})
-													                                 break
-                                                                                                                                         case 'welmenu':
-				                                                                                                         client.sendMessage(from, welmenu(prefix, sender), text, {quoted: mek})
-													                                 break
-					                                                                                                 case 'shantera':
-				                                                                                                         client.sendMessage(from, shantera(prefix, sender), text, {quoted: mek})
-													                                 break
+		break
+		case 'shanmenu':
+		client.sendMessage(from, toinmenu(prefix, sender), text, {quoted: mek})
+		break
+		case 'menuadmin':
+		client.sendMessage(from, menuadmin(prefix, sender), text, {quoted: mek})
+		break
+		case 'nsfwmenu':
+		client.sendMessage(from, nsfwmenu(prefix, sender), text, {quoted: mek})
+		break
+		case 'desmenu':
+		client.sendMessage(from, desmenu(prefix, sender), text, {quoted: mek})
+		break
+		case 'versión':
+		case 'version':
+		client.sendMessage(from, version(prefix, sender), text, {quoted: mek})
+		break
+                case 'welmenu':
+		client.sendMessage(from, welmenu(prefix, sender), text, {quoted: mek})
+		break
+		case 'shantera':
+		client.sendMessage(from, shantera(prefix, sender), text, {quoted: mek})
+		break
 					
 		/*case 'virtex':
 	       case 'troleo':
@@ -1230,6 +1230,22 @@ async function starts() {
                  
 		if (budy.includes(`fua`)) {
                   reply(`el diegote pa`)
+                  }
+	if (budy.startsWith(`quien es tu sempai botsito`)) {
+        const none = fs.readFileSync('./anishan/anime4.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
+	if (budy.startsWith(`me gimes 7u7`)) {
+        const none = fs.readFileSync('./anishan/anime3.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
+	if (budy.startsWith(`te amo botsito uwu`)) {
+        const none = fs.readFileSync('./anishan/anime2.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
+	if (budy.startsWith(`onichan`)) {
+        const none = fs.readFileSync('./anishan/anime1.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
 	if (budy.startsWith(`pasen sexo`)) {
         const none = fs.readFileSync('./mp3/fernan.mp3');
