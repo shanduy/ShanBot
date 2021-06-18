@@ -14,6 +14,8 @@ Responde esto en la siguiente encuesta
 https://forms.gle/4zzqRpV21CMGwsF57
 
 ◉ *NUEVO COMANDO*
+- ${prefix}otak
+Monas chinas
 - ${prefix}shantera
 Interactua con el bot
 
