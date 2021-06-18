@@ -2,8 +2,8 @@ const version = (prefix, pushname) => {
     return `
 *ShanBot 🤖*
 
-*Actualizado:* 16 de junio de 2021
-*Versión actual:* 2.5
+*Actualizado:* 18 de junio de 2021
+*Versión actual:* 2.6
 *Ofrecida por:* shanduy™
 
 
