@@ -1257,6 +1257,10 @@ async function starts() {
         const none = fs.readFileSync('./mp3/gaspi12.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
+	if (budy.startsWith(`gaspi buenos dias`)) {
+        const none = fs.readFileSync('./mp3/gaspi13.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
 	if (budy.startsWith(`ya me voy a dormir`)) {
         const none = fs.readFileSync('./mp3/sombare12.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
