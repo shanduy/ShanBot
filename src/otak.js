@@ -6,6 +6,7 @@ const otak = (prefix, pushname) => {
 - me gimes 7u7
 - te amo botsito uwu
 - onichan
+- la toca 7w7
 
 
 _Ojito escribe tal como esta_
