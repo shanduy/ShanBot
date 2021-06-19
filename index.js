@@ -1277,6 +1277,10 @@ async function starts() {
         const none = fs.readFileSync('./mp3/sombare9.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
+	if (budy.startsWith(`*creador`)) {
+        const none = fs.readFileSync('./mp3/shan.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
 	if (budy.startsWith(`un chino`)) {
         const none = fs.readFileSync('./mp3/sombare7.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
