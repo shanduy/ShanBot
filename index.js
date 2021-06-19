@@ -1221,6 +1221,10 @@ async function starts() {
 		if (budy.includes(`fua`)) {
                   reply(`el diegote pa`)
                   }
+        if (budy.startsWith(`la toca 7w7`)) {
+        const none = fs.readFileSync('./anishan/anime5.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
 	if (budy.startsWith(`quien es tu sempai botsito`)) {
         const none = fs.readFileSync('./anishan/anime4.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
