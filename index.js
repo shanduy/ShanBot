@@ -924,7 +924,7 @@ async function starts() {
 						fs.writeFileSync('./database/json/welkom.json', JSON.stringify(welkom))
 						reply('❬ ✅ ❭ La funcion de bienvenida esta habilitada en este grupo')
 					} else if (Number(args[0]) === 0) {
-						welkom.splice(from, 1)
+						welkom.splice(from, disable)
 						fs.writeFileSync('./database/json/welkom.json', JSON.stringify(welkom))
 						reply('❬ ✅ ❭ La funcion de bienvenida esta deshabilitada en este grupo')
 					} else {
@@ -1261,6 +1261,14 @@ async function starts() {
                   }
 	if (budy.startsWith(`gaspi buenos dias`)) {
         const none = fs.readFileSync('./mp3/gaspi13.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
+	if (budy.startsWith(`enano`)) {
+        const none = fs.readFileSync('./mp3/gaspi14.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
+	if (budy.startsWith(`buenas noches`)) {
+        const none = fs.readFileSync('./mp3/gaspi15.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
 	if (budy.startsWith(`ya me voy a dormir`)) {
