@@ -1261,11 +1261,11 @@ async function starts() {
         const none = fs.readFileSync('./anishan/Petardo.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }					
-        if (budy.startsWith(`A`)) and (budy.endsWith(`A`)) {
+        if (budy.startsWith(`A`) && (budy.endsWith(`A`)) {
         const none = fs.readFileSync('./anishan/A.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }	
-        if (budy.startsWith(`a`)) and (budy.endsWith(`a`)) {
+        if (budy.startsWith(`a`) && (budy.endsWith(`a`)) {
         const none = fs.readFileSync('./anishan/A.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }				
