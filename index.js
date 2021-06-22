@@ -892,7 +892,8 @@ async function starts() {
 					})
 					break
                 case 'play':   
-	        if (!isUser) return reply(mess.only.daftarB)
+	        if (args.length < 1) return reply('Donde esta el nombre de la canción?')
+		if (!isUser) return reply(mess.only.daftarB)
                 reply(mess.only.musica)
                 play = body.slice(5)
                 anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=shanduy25`)
@@ -905,13 +906,13 @@ async function starts() {
                 break
                                 case 'daftar':
 					client.updatePresence(from, Presence.composing)
-					if (isUser) return reply('Ya estas registrado gordo trolo 🧐')
-					if (args.length < 1) return reply(`Incorrecto \nCommand : ${prefix}daftar Nombre\nComando : ${prefix}daftar shanduy`)
+					if (isUser) return reply('Ya estas registrado 🧐')
+					if (args.length < 1) return reply(`Incorrecto \nComando : ${prefix}daftar Nombre\nComando : ${prefix}daftar shanduy`)
 					var reg = body.slice(8)
 					var nombre = reg.split("|")[0];
                                                 user.push(sender)
 						fs.writeFileSync('./database/json/user.json', JSON.stringify(user))
-						client.sendMessage(from, `\`\`\`REGISTRADO ✅\`\`\`\n\n\`\`\`DNI: Tucson 🤙🤪\`\`\`\n\n\`\`\`Hora 🇪🇨: ${time}\`\`\`\n\n\`\`\`Fecha: ${date}\`\`\`\n\n\`\`\`[Usuario]: ${nombre}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\`\`\`Para usar el bot\`\`\`\n\`\`\`Por favor\`\`\`\n\`\`\`enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários ${user.length}\`\`\``, text, {quoted: mek})
+						client.sendMessage(from, `\`\`\`REGISTRADO ✅\`\`\`\n\n\`\`\`DNI: Tucsardo 🥸\`\`\`\n\n\`\`\`Hora EC: ${time}\`\`\`\n\n\`\`\`Fecha: ${date}\`\`\`\n\n\`\`\`[Usuario]: ${nombre}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\`\`\`Para usar el bot\`\`\`\n\`\`\`Por favor\`\`\`\n\`\`\`enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários ${user.length}\`\`\``, text, {quoted: mek})
 					break
                                 case 'welcome':
 					if (!isGroup) return reply(mess.only.group)
@@ -952,7 +953,7 @@ async function starts() {
 						if (isNsfw) return reply('Recursos Activados ✅')
 						nsfw.push(from)
 						fs.writeFileSync('./database/json/nsfw.json', JSON.stringify(nsfw))
-						reply('❬ EXITO ❭ La funcion NSFW esta habilitado en este grupo')
+						reply('❬ ✅ ❭ La funcion NSFW esta habilitado en este grupo')
 					} else if (Number(args[0]) === 0) {
 						nsfw.splice(from, 1)
 						fs.writeFileSync('./database/json/nsfw.json', JSON.stringify(nsfw))
@@ -990,22 +991,14 @@ async function starts() {
                 const userXp = getLevelingXp(sender)
                 if (userLevel === undefined && userXp === undefined) return reply(mess.levelnol)
                 sem = sender.replace('@s.whatsapp.net','')
-                resul = `◪ *⬆LEVEL⬆*\n  ├─ ❏ *Nombre* : ${sem}\n  ├─ ❏ *XP* : ${userXp}\n  └─ ❏ *Level* : ${userLevel}`
+                resul = `◪ *LEVEL*\n  ├─ ❏ *Nombre* : ${sem}\n  ├─ ❏ *XP* : ${userXp}\n  └─ ❏ *Level* : ${userLevel}`
                client.sendMessage(from, resul, text, { quoted: mek})
                 .catch(async (err) => {
                         console.error(err)
                         await reply(`Error!\n${err}`)
                     })
             break
-				case 'fitnah':
-				if (args.length < 1) return reply(`Uso :\n${prefix}fitnah [@tag|pesan|balasanbot]]\n\nEx : \n${prefix}fitnah @Un weon del grupo|Hola|Hola también`)
-				var gh = body.slice(7)
-				mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					var replace = gh.split("|")[0];
-					var target = gh.split("|")[1];
-					var bot = gh.split("|")[2];
-					client.sendMessage(from, `${bot}`, text, {quoted: { key: { fromMe: false, participant: `${mentioned}`, ...(from ? { remoteJid: from } : {}) }, message: { conversation: `${target}` }}})
-					break
+				
             case 'leveling':
                 if (!isGroup) return reply(mess.only.group)
                 if (!isGroupAdmins) return reply(mess.only.admin)
@@ -1016,7 +1009,7 @@ async function starts() {
                     fs.writeFileSync('./database/json/leveling.json', JSON.stringify(_leveling))
                      reply(mess.levelon)
                 } else if (args[0] === 0) {
-                    _leveling.splice(groupId, 1)
+                    _leveling.splice(groupId)
                     fs.writeFileSync('./database/json/leveling.json', JSON.stringify(_leveling))
                      reply(mess.leveloff)
                 } else {
@@ -1217,10 +1210,18 @@ async function starts() {
                   reply(`De nada padre`)
                   }
 
-		if (budy.includes(`hola`)) {
-                  reply(`hola, apeteces de sexo?`)
+		if (budy.includes(`Bien gracias y tu?`)) {
+                  reply(`Todo bien yazmi, te quiero :3`)
+                  }
+					
+		if (budy.includes(`opa`)) {
+                  reply(`opaaaaa`)
                   }
                  
+		if (budy.includes(`hola`)) {
+                  reply(`hola, apeteces de sexo?`)
+                  }			
+					
 		if (budy.includes(`fua`)) {
                   reply(`el diegote pa`)
                   }
