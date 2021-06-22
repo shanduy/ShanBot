@@ -1222,7 +1222,7 @@ async function starts() {
                   reply(`Uhm zi, fuaaa!`)
                   }
 
-        if (budy.startsWith(`A mimir`)) {
+        if (budy.includes(`A mimir`)) {
         const none = fs.readFileSync('./anishan/A mimir.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }					
@@ -1261,11 +1261,11 @@ async function starts() {
         const none = fs.readFileSync('./anishan/Petardo.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }					
-        if (budy.startsWith(`A`)) {
+        if (budy.startsWith(`A`)) and (budy.endWith(`A`) {
         const none = fs.readFileSync('./anishan/A.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }	
-        if (budy.startsWith(`a`)) {
+        if (budy.startsWith(`a`)) and (budy.endWith(`A`) {
         const none = fs.readFileSync('./anishan/A.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }				
