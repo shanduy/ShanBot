@@ -1,20 +1,23 @@
 const otak = (prefix, pushname) => {
     return `*Palabras especificas para que el bot interactue con ustedes mis queridos otakus*
 
-
-- Quien es tu sempai botsito
-- Me gimes?
-- Te amo botsito uwu
-- Dime onichan
-- La toca :3
-- Acm1pt
-- Yamete kudasai
-- hentai
-- Petardo
 - A
+- Acm1pt
+- A mimir
+- Dime onichan
+- Feliz jueves
+- Gambare
+- Hentai
+- La toca :3
+- Me gimes?
+- Nya
 - Pasa pack
+- Petardo
 - Pete
-- Yamete
+- Quien es tu sempai botsito
+- Te amo botsito uwu
+- Yamete 
+- Yamete kudasai
 
 
 _Ojito escribe tal como esta_
