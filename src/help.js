@@ -1,12 +1,18 @@
 const help = (prefix) => {
 	return `
 
-⌜ *ShanBot 🤖 by Lalelilolu* ⌟  
+⌜ *ShanBot 🤖 by shanduy* ⌟  
 
 ◉ *INFORMACION*
    ○ Comando: ⌜ ${prefix} ⌟
    ○ Creador: shanduy™ 
-----------------------------
+   ○ Como instalar el bot: https://www.youtube.com/watch?v=2LQSzEbpJ-M
+   ○ Instagram: https://www.instagram.com/thepavos
+
+◉ *ShanBot Con Insultos O Quitarlos🤷‍♂️?*
+Responde esto en la siguiente encuesta
+https://forms.gle/4zzqRpV21CMGwsF57
+
 ◉ *NUEVO COMANDO*
 - ${prefix}otak
 Monas chinas
