@@ -249,11 +249,11 @@ async function starts() {
 			console.log(anu)
 			if (anu.action == 'add') {
 				num = anu.participants[0]
-				teks = `Mi loco @${num.split('@')[0]}\nTodo bien NEFASTO!!!! Bienvenido a *${mdata.subject}* el mejor grupo una locura 👉😎👈\n\nUn gusto conocerte hijo de la maraca 😀\n\nOjito sigue las reglas del grupo si no, pa fuera mi loco los admins te eliminan 🧐\n\nPara utilizar el bot registrate con el comando ${prefix}daftar y tu nombre\n\nPara ver los demas comandos utiliza ${prefix}help\n\nOjito con el spam 🧐\n\nby shanduy`
+				teks = `Mi loco @${num.split('@')[0]}\nTodo bien NEFASTO!!!! Bienvenido a *${mdata.subject}* el mejor grupo 👉😎👈\n\nPara utilizar el bot registrate con el comando ${prefix}daftar y tu nombre\n\nPara ver los demas comandos utiliza ${prefix}help\n\nOjito con el spam 🧐\n\nby Lalelilolu`
                           client.sendMessage(mdata.id, teks, MessageType.text, { contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
 				num = anu.participants[0]
-				teks = `NOOOO se nos fue un NEFASTO 😎 @${num.split('@')[0]}👋\n\nQue dios lo bendiga 😎`
+				teks = `NOOOO, se nos fué un putit@ 😎 @${num.split('@')[0]}👋\n\nNadie te extrañará 😎`
 				client.sendMessage(mdata.id, teks, MessageType.text, {contextInfo: {"mentionedJid": [num]}})
 			}
 		} catch (e) {
@@ -291,7 +291,7 @@ async function starts() {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: 'Calmao pa estoy procesando😎\n\n❗Por favor no hacer spam👏❗\n\nby shanduy',
+				wait: 'Relaja la raja😎\n\n❗Loading...❗\n\nby lalelilolu',
 				success: '✔️ Listo ✔️',
                                 levelon: '❬ ✅ ❭ *Level activado*',
 				leveloff: ' ❬ ✅ ❭  *Level desactivado*',
@@ -307,14 +307,14 @@ async function starts() {
 					ownerB: '[❗] Este comando solo lo usa ShanBot!',
 					admin: '[❗] Este comando solo puede ser utilizado por administradores del grupo!',
 					Badmin: '[❗] Este comando solo se puede usar cuando el bot se convierte en administrador!',
-                                        pegatina: 'Calma crack estoy haciendo tu sticker 👏\n\n*Recuerda los stickersgif son de 6 segundos ❗*\n\nby shanduy',
-					attp: 'Calma crack estoy haciendo tu texto a sticker 👏\n\n*Esto puede demorar unos minutos*\n\nby shanduy',
-					imgs: 'Euu flaco 🥴\n\n*Convirtiendo tu Sticker a Imagen 🔄*\n\nby shanduy',
+                                        pegatina: 'Relaja la raja, load... 👏\n\n*Stickersgif son de 6 segundos ❗*\n\nby Lalelilolu',
+					attp: 'Calma crack estoy haciendo tu texto a sticker 👏\n\n*Loading...*\n\nby Lalelilolu',
+					imgs: 'Euu flaco 🥴\n\n*Convirtiendo tu Sticker a Imagen 🔄*\n\nby Lalelilolu',
 					mpcancion: 'Calmaoooo estoy procesando 😎\n\n*Convirtiendo de MP4 a MP3 🔄*\n\nby shanduy',
-					mpa: 'Euu flaco 🥴\n\n*Estoy decargando tu cancion 🔄*\n\nAguarde un momento, por favor\n\nby shanduy',
+					mpa: 'Euu flaco 🥴\n\n*Estoy decargando tu cancion 🔄*\n\nAguarde un momento, por favor\n\nby Lalelilolu',
                                         mpv: 'Calmao pa 😎\n\n*Estoy descargando tu video 🔄*\n\nAguarde un momento, por favor\n\nby shanduy',
-					musica: 'Calmao pa estoy bucando tu canción 😎\n\n*Recuerda colocar bien el nombre de la cancion o el link del video de youtube ❗*\n\nby shanduy',
-					daftarB: `「NEFASTOOOOO」\n\nPERO PAAAAAAAAAA!\n\nNo estas registrado en mi base de datos 😳 \n\nComando : ${prefix}daftar Nombre\nEjemplo : ${prefix}daftar shanduy`,
+					/**musica: 'Calmao pa estoy bucando tu canción 😎\n\n*Recuerda colocar bien el nombre de la cancion o el link del video de youtube ❗*\n\nby shanduy',**/
+					daftarB: `「NEFASTOOOOO」\n\nPERO PAAAAA!\n\nNo estas registrado en mi base de datos 😳 \n\nComando : ${prefix}daftar Nombre\nEjemplo : ${prefix}daftar ...`,
 				}
 			}
     			const apakah = ['Si','No']
@@ -525,14 +525,14 @@ async function starts() {
                 if (!isUser) return reply(mess.only.daftarB)
                 client.sendMessage(from, data, image, {quoted: mek, caption: body.slice(8)})
                 break*/
-	case 'creador':
+	/**case 'creador':
 	    case 'owner':
                 case 'creator':
                 client.sendMessage(from, {displayname: "Shan", vcard: vcard}, MessageType.contact, { quoted: mek})
 		client.sendMessage(from, 'Arriba está el número del creador del bot <ShanBot>\n\nNO SOY UN BOT LPM 🥸\n\nAhi puedes resolver tus preguntas y errores :)\n\nEste no es el numero del propietario del bot que estas usando, si no del creador de la base de datos del bot❗\n\nby shanduy',MessageType.text, { quoted: mek} )
                 const none = fs.readFileSync('./mp3/shan.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                break
+                break**/
 	case 'hidetag':
                 client.updatePresence(from, Presence.composing) 
                 if (!isUser) return reply(mess.only.daftarB)
@@ -719,9 +719,9 @@ async function starts() {
 						mentions(teks, mentioned, true)
 						client.groupRemove(from, mentioned)
 					} else {
-						mentions(`Pedido recibido, chao pa 👋 : @${mentioned[0].split('@')[0]}`, mentioned, true)
+						mentions(`Pedido recibido, chao putit@ 👋 : @${mentioned[0].split('@')[0]}`, mentioned, true)
 						client.groupRemove(from, mentioned)
-					client.sendMessage(mentioned, 'Chao puta gorda', text)
+					client.sendMessage(mentioned, 'Chao put@ gord@', text)
 					}
 					break
 				case 'exe':
@@ -779,7 +779,7 @@ async function starts() {
 					break
 				                case 'attp':
 						if (!isUser) return reply(mess.only.daftarB)
-					        if (args.length < 1) return reply(`¿Dónde está el texto?\n*Ejemplo:* ${prefix}attp shanduy`)
+					        if (args.length < 1) return reply(`¿Dónde está el texto?\n*Ejemplo:* ${prefix}attp Lalelilolu`)
 						reply(mess.only.attp)
 					        attp2 = await getBuffer(`https://api.xteam.xyz/attp?file&text=${body.slice(6)}`)
 						client.sendMessage(from, attp2, MessageType.sticker, {quoted: mek})
@@ -871,7 +871,7 @@ async function starts() {
 						fs.unlinkSync(media)
 						if (err) return reply('❌ No se pudo convertir el sticker en imágenes')
 						buffer = fs.readFileSync(ran)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: '*⌈ Imagen convertida ✅ ⌉*\n\nby shanduy'})
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: '*⌈ Imagen convertida ✅ ⌉*\n\nby lalelilolu'})
 						fs.unlinkSync(ran)
 					})
 					break
@@ -912,7 +912,7 @@ async function starts() {
 					var nombre = reg.split("|")[0];
                                                 user.push(sender)
 						fs.writeFileSync('./database/json/user.json', JSON.stringify(user))
-						client.sendMessage(from, `\`\`\`REGISTRADO ✅\`\`\`\n\n\`\`\`DNI: Tucsardo 🥸\`\`\`\n\n\`\`\`Hora EC: ${time}\`\`\`\n\n\`\`\`Fecha: ${date}\`\`\`\n\n\`\`\`[Usuario]: ${nombre}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\`\`\`Para usar el bot\`\`\`\n\`\`\`Por favor\`\`\`\n\`\`\`enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários ${user.length}\`\`\``, text, {quoted: mek})
+						client.sendMessage(from, `\`\`\`REGISTRADO ✅\`\`\`\n\n\`\`\`Hora EC: ${time}\`\`\`\n\n\`\`\`Fecha: ${date}\`\`\`\n\n\`\`\`[Usuario]: ${nombre}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\`\`\`Para usar el bot\`\`\`\n\`\`\`Por favor\`\`\`\n\`\`\`enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários ${user.length}\`\`\``, text, {quoted: mek})
 					break
                                 case 'welcome':
 					if (!isGroup) return reply(mess.only.group)
@@ -1028,21 +1028,21 @@ async function starts() {
                                                 reply('❌ *ERROR* ❌')
                                         }
 										break*/
-										case 'randomhentaio': 
+				case 'randomhentai': 
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await fetchJson(`https://tobz-api.herokuapp.com/api/hentai?apikey=BotWeA`, {method: 'get'})
-							buffer = await getBuffer(res.result)
+							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/hentai`, {method: 'get'})
+							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Otaku que se esperaba'})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌')
 						}
 						break
-					/*case 'nsfwloli':
+					case 'nsfwloli':
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await fetchJson(`https://api.lolis.life/random?nsfw=true`, {method: 'get'})
+							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/lolis`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Alto pedofilo socio'})
 						} catch (e) {
@@ -1064,8 +1064,8 @@ async function starts() {
 					case 'nsfwblowjob':
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwblowjob`, {method: 'get'})
-							buffer = await getBuffer(res.result)
+							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/blowjob`, {method: 'get'})
+							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'No antojen'})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
@@ -1075,8 +1075,8 @@ async function starts() {
 					case 'nsfwneko':
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await fetchJson(`https://api.computerfreaker.cf/v1/neko`, {method: 'get'})
-							buffer = await getBuffer(res.result)
+							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/neko`, {method: 'get'})
+							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Pero que wea?'})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
@@ -1127,7 +1127,7 @@ async function starts() {
 							reply('❌ *ERROR* ❌')
 						}
 						break
-					case 'nsfwthighs':
+					/**case 'nsfwthighs':
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animethighss`, {method: 'get'})
@@ -1137,7 +1137,7 @@ async function starts() {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌')
 						}
-						break
+						break**/
 					case 'nsfwfeets':
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
@@ -1160,7 +1160,7 @@ async function starts() {
 							reply('❌ *ERROR* ❌')
 						}
 						break
-						case 'nsfwtoin':
+					case 'nsfwtoin':
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://tobz-api.herokuapp.com/nsfwtrap?apikey=BotWeA`, {method: 'get'})
@@ -1195,14 +1195,14 @@ async function starts() {
 					break
                 default:
 		if (budy.includes(`Todo bien`)) {
-                  reply(`Si amigo todo bien, bien mal xd`)
+                  reply(`Si amig@ todo bien 🙄`)
                   }
 
-		if (budy.includes(`Buenos dias`)) {
+		if (budy.includes(`Buenos días`)) {
                   reply(`Buenos Dias trolos de mierda`)
                   }
 
-		if (budy.includes(`Buenos noches`)) {
+		if (budy.includes(`Buenas noches`)) {
                   reply(`Te violaré mientras duermas xd`)
                   }
 
@@ -1211,15 +1211,15 @@ async function starts() {
                   }
 
 		if (budy.includes(`Gracias`)) {
-                  reply(`De nada putit@`)
+                  reply(`De nada putit@ xd`)
                   }
 
 		if (budy.includes(`Hola`)) {
-                  reply(`Hola, apeteces de sexo? xd`)
+                  reply(`Hola putit@ 🤭`)
                   }
                  
-		if (budy.includes(`Fua`)) {
-                  reply(`Uhm zi, fuaaa!`)
+		if (budy.includes(`Uff`)) {
+                  reply(`Uhm zi, ufff 🥵!`)
                   }
 
         if (budy.includes(`A mimir`)) {
@@ -1321,7 +1321,7 @@ async function starts() {
         const none = fs.readFileSync('./mp3/gaspi12.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
-	if (budy.startsWith(`Gaspi buenos dias`)) {
+	if (budy.startsWith(`Gaspi buenos días`)) {
         const none = fs.readFileSync('./mp3/gaspi13.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
