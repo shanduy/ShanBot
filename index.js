@@ -1179,7 +1179,7 @@ async function starts() {
 				        uptime = process.uptime()
                                         client.sendMessage(from, `Velocidad: *${latensi.toFixed(4)} _Second_*\nDevice: *Alcatel Pixi 4*\nRAM: *6Mb*\nData: *10GB*\nJaringan: *2G*\nStatus: *Bateria Baja*`, text, { quoted: mek})
                                         break
-                                case 'ttp':
+                                case 'attp':
 					if (args.length < 1) return reply('Y el texto flaco?')
 					ranp = getRandom('.png')
 					rano = getRandom('.webp')
@@ -1261,18 +1261,16 @@ async function starts() {
         const none = fs.readFileSync('./anishan/Petardo.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }					
-        if (budy.startsWith(`A`)){
-		if (budy.endsWith(`A`)) {
+        if (budy.startsWith(`A`) and (budy.endsWith(`A`)) {
         	const none = fs.readFileSync('./anishan/A.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
-		}
-        if (budy.startsWith(`a`)){
-		if (budy.endsWith(`a`)) {
+	
+        if (budy.startsWith(`a`) and (budy.endsWith(`a`)) {
         	const none = fs.readFileSync('./anishan/A.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }	
-		}
+		
         if (budy.startsWith(`Pasa pack`)) {
         const none = fs.readFileSync('./anishan/Pasa pack.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
