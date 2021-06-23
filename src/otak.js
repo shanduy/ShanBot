@@ -14,7 +14,7 @@ const otak = (prefix, pushname) => {
 - Pasa pack
 - Petardo
 - Pete
-- Quien es tu sempai botsito
+- Quien es tu sempai 
 - Te amo botsito
 - Yamete 
 - Yamete kudasai
