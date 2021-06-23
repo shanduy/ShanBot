@@ -1289,7 +1289,7 @@ async function starts() {
         const none = fs.readFileSync('./anishan/anime5.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
-	if (budy.startsWith(`Quien es tu sempai botsito`)) {
+	if (budy.startsWith(`Quien es tu sempai`)) {
         const none = fs.readFileSync('./anishan/anime4.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
@@ -1297,7 +1297,7 @@ async function starts() {
         const none = fs.readFileSync('./anishan/anime3.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
-	if (budy.startsWith(`Te amo botsito uwu`)) {
+	if (budy.startsWith(`Te amo botsito`)) {
         const none = fs.readFileSync('./anishan/anime2.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
