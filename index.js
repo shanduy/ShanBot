@@ -580,7 +580,7 @@ async function starts() {
 					if (args.length < 1) return reply('Donde esta la URL del video de insta?')
 					if(!isUrl(args[0]) && !args[0].includes('instagram')) return reply(mess.error.Iv)
 					reply(mess.only.insta)
-					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/instagram-post?url=${args[0]}`, {method: 'get'})
+					anu = await fetchJson(`https://api.xteam.xyz/dl/ig?url=${args[0]}&APIKEY=APIKEYMU`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					teks = `*DESCARGA EXITOSA ✅*`
 					buffer = await getBuffer(anu.result)
