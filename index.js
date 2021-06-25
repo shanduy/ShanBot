@@ -506,6 +506,7 @@ Registrate con el comando ${prefix}daftar y tu nombre
   ╠ Link del grupo
   ╠ ○ ${prefix}todos
   ╚ Nombra a todos los del grupo
+
 Para usar estas funciones el bot necesita admin
   
 ◉ *NSWF* 
@@ -513,6 +514,8 @@ Para usar estas funciones el bot necesita admin
   ╚ ○ ${prefix}nsfwmenu
 
 Para activar los NSFW coloque el siguiente comando ${prefix}nsfw 1 y para desactivar los NSFW coloque ${prefix}nsfw 0
+
+
 No te olvides de seguirme en instagram flaco ;)
 
 
