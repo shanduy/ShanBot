@@ -430,7 +430,7 @@ async function starts() {
 			switch(command) {
 		case 'help':
 		case 'menu':
-		wew = fs.readFileSync(`./banner/shanba.gif`)
+		wew = fs.readFileSync(`./banner/shanbot.jpg`)
                     databaseuhy = ` 
 ⌜ *ShanBot 🤖 by shanduy* ⌟  
 ◉ *INFORMACION*
