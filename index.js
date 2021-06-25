@@ -668,17 +668,7 @@ by shanduy
 					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
 					break
-			       case 'ig':
-					if (args.length < 1) return reply('Donde esta la URL del video de insta?')
-					if(!isUrl(args[0]) && !args[0].includes('instagram')) return reply(mess.error.Iv)
-					reply(mess.only.insta)
-					anu = await fetchJson(`https://api.xteam.xyz/dl/ig?url=${args[0]}&APIKEY=APIKEYMU`, {method: 'get'})
-					if (anu.error) return reply(anu.error)
-					teks = `*DESCARGA EXITOSA ✅*`
-					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
-					break
-                                 case 'tts':
+			        case 'tts':
 				   client.updatePresence(from, Presence.recording) 
 				   if (args.length < 1) return client.sendMessage(from, 'Cual es el código de idioma?\n\nPara saber el codigo de idioma coloque el comando ${prefix}idioma', text, {quoted: mek})
                                    if (!isUser) return reply(mess.only.daftarB)
