@@ -433,19 +433,20 @@ async function starts() {
 		wew = fs.readFileSync(`./banner/shanbot.jpg`)
                     databaseuhy = ` 
 ⌜ *ShanBot 🤖 by shanduy* ⌟  
+
 ◉ *INFORMACION*
    ○ Comando: ⌜ ${prefix} ⌟
    ○ Creador: shanduy™ 
    ○ Como instalar el bot: https://www.youtube.com/watch?v=2LQSzEbpJ-M
    ○ Instagram: https://www.instagram.com/thepavos
-◉ *ShanBot Con Insultos O Quitarlos🤷‍♂️?*
-Responde esto en la siguiente encuesta
-https://forms.gle/4zzqRpV21CMGwsF57
+
+
 ◉ *NUEVO COMANDO*
 - ${prefix}otak
 Monas chinas
 - ${prefix}shantera
 Interactua con el bot
+
 ◉ *NUEVOS MENUS*
 - ${prefix}desmenu
 Descargar musica y videos de YT
@@ -453,12 +454,15 @@ Descargar musica y videos de YT
 Conoce la versión de tu bot
 - ${prefix}welmenu
 Comandos de bienvedia a grupos
+
 ◉ *PARA USAR EL BOT*
 Registrate con el comando ${prefix}daftar y tu nombre
+
 ◉ *RESUELVE TUS DUDAS*
   ║
   ╠ ○ ${prefix}creador
   ╚ Dudas o problemas aqui
+
 ◉ *CREAR STICKERS*
   ║
   ╠ ○ ${prefix}sticker
@@ -466,22 +470,26 @@ Registrate con el comando ${prefix}daftar y tu nombre
   ╠ Mas un texto corto
   ╠ ○ ${prefix}stickergif
   ╚ 6 segundos de video
+
 ◉ *CONVERTIDORES*
   ║
   ╠ ○ ${prefix}toimg
   ╠ De sticker a JPG
   ╠ ○ ${prefix}tomp3
   ╚ De video a MP3
+
 ◉ *AUDIO*
   ║
   ╠ ○ ${prefix}idioma
   ╚ ○ ${prefix}tts es (mas texto)
+
 ◉ *OTROS*
   ║
   ╠ ○ ${prefix}wame
   ╠ Link de Whatsapp
   ╠ ○ ${prefix}qrcode
   ╚ Coloca un texto
+
 ◉ *GRUPOS*
   ║
   ╠ ○ ${prefix}closegc
@@ -503,12 +511,18 @@ Para usar estas funciones el bot necesita admin
 ◉ *NSWF* 
   ║
   ╚ ○ ${prefix}nsfwmenu
+
 Para activar los NSFW coloque el siguiente comando ${prefix}nsfw 1 y para desactivar los NSFW coloque ${prefix}nsfw 0
 No te olvides de seguirme en instagram flaco ;)
+
+
 by shanduy
+
+
 ⌜ *ごきげんよう :)* ⌟ 
 `
-client.sendMessage(from, wew, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc ", "mimetype": "image/jpg", "caption": "[ShanBot by shanduy]", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpgThumbnail": fs.readFileSync('banner/shanbot.jpg')} } }, caption: databaseuhy})
+
+		client.sendMessage(from, wew, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc ", "mimetype": "image/jpg", "caption": "[ShanBot by shanduy]", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpgThumbnail": fs.readFileSync('banner/shanlogo.jpg')} } }, caption: databaseuhy})
 		break
                 case 'otak':
 		client.sendMessage(from, otak(prefix, sender), text, {quoted: mek})
@@ -636,7 +650,7 @@ client.sendMessage(from, wew, image, {quoted: { key: { fromMe: false, participan
 					reply(mess.only.mpa)
 					anu = await fetchJson(`https://st4rz.herokuapp.com/api/yta2?url=${args[0]}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					teks = `*DESCARGA EXITOSA ✅*\n◉ *Título* : ${anu.title}\n\nDALE NEFASTO NO SPAMES TE ESTOY ENVIANDO EL AUDIO ESPERAME 😡`
+					teks = `*DESCARGA EXITOSA ✅*\n◉ *Título* : ${anu.title}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*`
 					thumb = await getBuffer(anu.thumb)
 					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
 					buffer = await getBuffer(anu.result)
@@ -648,7 +662,7 @@ client.sendMessage(from, wew, image, {quoted: { key: { fromMe: false, participan
 					reply(mess.only.mpv)
 					anu = await fetchJson(`https://st4rz.herokuapp.com/api/ytv2?url=${args[0]}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					teks = `*DESCARGA EXITOSA ✅*\n◉ *Título* : ${anu.title}\n\n*EL VIDEO SE ESTÁ ENVIANDO, NO SPAM PEDAZO DE DOWN*`
+					teks = `*DESCARGA EXITOSA ✅*\n◉ *Título* : ${anu.title}\n\n*ESPERE ENVIANDO SU ARCHIVO MP4 ⚠*`
 					thumb = await getBuffer(anu.thumb)
 					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
 					buffer = await getBuffer(anu.result)
@@ -987,7 +1001,7 @@ client.sendMessage(from, wew, image, {quoted: { key: { fromMe: false, participan
                 play = body.slice(5)
                 anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=shanduy25`)
                if (anu.error) return reply(anu.error)
-                 infomp3 = `*⌈ Canción Encontrada ✅ ⌉*\n◉ *Título* : ${anu.result.title}\nFuente : ${anu.result.source}\nTamaño : ${anu.result.size}\n\n*ESPERE ENVIANDO ARCHIVO, NO SPAMES LA CONCHA DE TU MADRE*`
+                 infomp3 = `*⌈ Canción Encontrada ✅ ⌉*\n◉ *Título* : ${anu.result.title}\nFuente : ${anu.result.source}\nTamaño : ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*`
                 buffer = await getBuffer(anu.result.thumbnail)
                 lagu = await getBuffer(anu.result.url_audio)
                 client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
