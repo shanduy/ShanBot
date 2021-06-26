@@ -599,11 +599,17 @@ by shanduy
 						client.groupMakeAdmin(from, mentioned)
 					}
 					break
-	      case 'gay':
-                client.updatePresence(from, Presence.composing) 
-              if (!isUser) return reply(mess.only.daftarB)
-                random = gay[Math.floor(Math.random() * (gay.length))]
-	      break
+case 'gay':
+if (!isUser) return reply(mess.only.daftarB)
+rate = body.slice(5)
+client.updatePresence(from, Presence.composing) 
+random = `${Math.floor(Math.random() * 100)}`
+boiola = random
+if (boiola < 20 ) {bo = 'Usted 100% hetero 🤪🤙'} else if (boiola == 21 ) {bo = '+/- boiola'} else if (boiola == 23 ) {bo = '+/- boiola'} else if (boiola == 24 ) {bo = '+/- boiola'} else if (boiola == 25 ) {bo = '+/- boiola'} else if (boiola == 26 ) {bo = '+/- boiola'} else if (boiola == 27 ) {bo = '+/- boiola'} else if (boiola == 28 ) {bo = '+/- boiola'} else if (boiola == 29 ) {bo = '+/- boiola'} else if (boiola == 30 ) {bo = '+/- boiola'} else if (boiola == 31 ) {bo = 'Tengo mi desconfianza ... 😑'} else if (boiola == 32 ) {bo = 'Tengo mi desconfianza ... 😑'} else if (boiola == 33 ) {bo = 'Tengo mi desconfianza ... 😑'} else if (boiola == 34 ) {bo = 'Tengo mi desconfianza ... 😑'} else if (boiola == 35 ) {bo = 'Tengo mi desconfianza ... 😑'} else if (boiola == 36 ) {bo = 'Tengo mi desconfianza ... 😑'} else if (boiola == 37 ) {bo = 'Tengo mi desconfianza ... 😑'} else if (boiola == 38 ) {bo = 'Tengo mi desconfianza ... 😑'} else if (boiola == 39 ) {bo = 'Tengo mi desconfianza ... 😑'} else if (boiola == 40 ) {bo = 'Tengo mi desconfianza ... 😑'} else if (boiola == 41 ) {bo = 'Tengo razon? 😏'} else if (boiola == 42 ) {bo = 'Tengo razon? 😏'} else if (boiola == 43 ) {bo = 'Tengo razon? 😏'} else if (boiola == 44 ) {bo = 'Tengo razon? 😏'} else if (boiola == 45 ) {bo = 'Tengo razon? 😏'} else if (boiola == 46 ) {bo = 'Tengo razon? 😏'} else if (boiola == 47 ) {bo = 'Tengo razon? 😏'} else if (boiola == 48 ) {bo = 'Tengo razon? 😏'} else if (boiola == 49 ) {bo = 'Tengo razon? 😏'} else if (boiola == 50 ) {bo = 'Eres o no? 🧐'} else if (boiola > 51) {bo = 'Usted es gay 🥸'
+}
+hasil = `${rate} Usted es ${random}% gay\n\n${bo}`
+reply(hasil)
+break
 				  case 'wa.me':
 				  case 'wame':
   client.updatePresence(from, Presence.composing) 
