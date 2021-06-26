@@ -651,7 +651,7 @@ by shanduy
 					if (args.length < 1) return reply('Donde esta la URL?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
 					reply(mess.only.mpa)
-					anu = await fetchJson(`https://api.zeks.xyz/api/ytmp3?=${args[0]}&apikey=tshanduyx`, {method: 'get'})
+					anu = await fetchJson(`https://api.zeks.xyz/api/ytmp3?url=${args[0]}&apikey=tshanduyx`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					teks = `*DESCARGA EXITOSA ✅*\n◉ *Título* : ${anu.title}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*`
 					thumb = await getBuffer(anu.thumb)
@@ -663,7 +663,7 @@ by shanduy
 					if (args.length < 1) return reply('Donde esta la URL?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
 					reply(mess.only.mpv)
-					anu = await fetchJson(`https://api.zeks.xyz/api/ytmp4?=${args[0]}&apikey=tshanduyx`, {method: 'get'})
+					anu = await fetchJson(`https://api.zeks.xyz/api/ytmp4?url=${args[0]}&apikey=tshanduyx`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					teks = `*DESCARGA EXITOSA ✅*\n◉ *Título* : ${anu.title}\n\n*ESPERE ENVIANDO SU ARCHIVO MP4 ⚠*`
 					thumb = await getBuffer(anu.thumb)
