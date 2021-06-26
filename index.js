@@ -61,6 +61,7 @@ const { menuadmin } = require('./src/menuadmin')
 const { nsfwmenu } = require('./src/nsfwmenu')
 const { desmenu } = require('./src/desmenu')
 const { version } = require('./src/version')
+const { juegos } = require('./src/juegos')
 const { shantera } = require('./src/shantera')
 const { welmenu } = require('./src/welmenu')
 const { otak } = require('./src/otak')
@@ -430,8 +431,8 @@ async function starts() {
 			switch(command) {
 		case 'help':
 		case 'menu':
-		wew = fs.readFileSync(`./banner/shanbot.jpg`)
-                    databaseuhy = ` 
+		wew = fs.readFileSync(`./banner/shanbaner.jpeg`)
+                databaseuhy = ` 
 ⌜ *ShanBot 🤖 by shanduy* ⌟  
 
 ◉ *INFORMACION*
@@ -442,17 +443,19 @@ async function starts() {
 
 
 ◉ *NUEVO COMANDO*
-- ${prefix}otak
+○ ${prefix}otak
 Monas chinas
-- ${prefix}shantera
+○ ${prefix}shantera
 Interactua con el bot
 
 ◉ *NUEVOS MENUS*
-- ${prefix}desmenu
+○ ${prefix}juegos
+Divierte con tus amigos :)
+○ ${prefix}desmenu
 Descargar musica y videos de YT
-- ${prefix}version
+○ ${prefix}version
 Conoce la versión de tu bot
-- ${prefix}welmenu
+○ ${prefix}welmenu
 Comandos de bienvedia a grupos
 
 ◉ *PARA USAR EL BOT*
@@ -525,10 +528,13 @@ by shanduy
 ⌜ *ごきげんよう :)* ⌟ 
 `
 
-		client.sendMessage(from, wew, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc ", "mimetype": "image/jpeg", "caption": "[ShanBot by shanduy]", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('banner/shanlogo.jpg')} } }, caption: databaseuhy})
+client.sendMessage(from, wew, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc ", "mimetype": "image/jpeg", "caption": "[ShanBot by shanduy]", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('banner/shanlogo.jpeg')} } }, caption: databaseuhy})
 		break
                 case 'otak':
 		client.sendMessage(from, otak(prefix, sender), text, {quoted: mek})
+		break
+		case 'juegos':
+		client.sendMessage(from, juegos(prefix, sender), text, {quoted: mek})
 		break
 		case 'idioma':
 		client.sendMessage(from, bahasa(prefix, sender), text, {quoted: mek})
@@ -605,9 +611,20 @@ rate = body.slice(5)
 client.updatePresence(from, Presence.composing) 
 random = `${Math.floor(Math.random() * 100)}`
 boiola = random
-if (boiola < 20 ) {bo = 'Usted 100% hetero 🤪🤙'} else if (boiola == 21 ) {bo = '+/- boiola'} else if (boiola == 23 ) {bo = '+/- boiola'} else if (boiola == 24 ) {bo = '+/- boiola'} else if (boiola == 25 ) {bo = '+/- boiola'} else if (boiola == 26 ) {bo = '+/- boiola'} else if (boiola == 27 ) {bo = '+/- boiola'} else if (boiola == 28 ) {bo = '+/- boiola'} else if (boiola == 29 ) {bo = '+/- boiola'} else if (boiola == 30 ) {bo = '+/- boiola'} else if (boiola == 31 ) {bo = 'Tengo mi desconfianza ... 😑'} else if (boiola == 32 ) {bo = 'Tengo mi desconfianza ... 😑'} else if (boiola == 33 ) {bo = 'Tengo mi desconfianza ... 😑'} else if (boiola == 34 ) {bo = 'Tengo mi desconfianza ... 😑'} else if (boiola == 35 ) {bo = 'Tengo mi desconfianza ... 😑'} else if (boiola == 36 ) {bo = 'Tengo mi desconfianza ... 😑'} else if (boiola == 37 ) {bo = 'Tengo mi desconfianza ... 😑'} else if (boiola == 38 ) {bo = 'Tengo mi desconfianza ... 😑'} else if (boiola == 39 ) {bo = 'Tengo mi desconfianza ... 😑'} else if (boiola == 40 ) {bo = 'Tengo mi desconfianza ... 😑'} else if (boiola == 41 ) {bo = 'Tengo razon? 😏'} else if (boiola == 42 ) {bo = 'Tengo razon? 😏'} else if (boiola == 43 ) {bo = 'Tengo razon? 😏'} else if (boiola == 44 ) {bo = 'Tengo razon? 😏'} else if (boiola == 45 ) {bo = 'Tengo razon? 😏'} else if (boiola == 46 ) {bo = 'Tengo razon? 😏'} else if (boiola == 47 ) {bo = 'Tengo razon? 😏'} else if (boiola == 48 ) {bo = 'Tengo razon? 😏'} else if (boiola == 49 ) {bo = 'Tengo razon? 😏'} else if (boiola == 50 ) {bo = 'Eres o no? 🧐'} else if (boiola > 51) {bo = 'Usted es gay 🥸'
+if (boiola < 20 ) {bo = 'Usted es hetero 🤪🤙'} else if (boiola == 21 ) {bo = 'Mas o menos 🤔'} else if (boiola == 23 ) {bo = 'Mas o menos 🤔'} else if (boiola == 24 ) {bo = 'Mas o menos 🤔'} else if (boiola == 25 ) {bo = 'Mas o menos 🤔'} else if (boiola == 26 ) {bo = 'Mas o menos 🤔'} else if (boiola == 27 ) {bo = 'Mas o menos 🤔'} else if (boiola == 28 ) {bo = 'Mas o menos 🤔'} else if (boiola == 29 ) {bo = 'Mas o menos 🤔'} else if (boiola == 30 ) {bo = 'Mas o menos 🤔'} else if (boiola == 31 ) {bo = 'Tengo mi dudas 😑'} else if (boiola == 32 ) {bo = 'Tengo mi dudas 😑'} else if (boiola == 33 ) {bo = 'Tengo mi dudas 😑'} else if (boiola == 34 ) {bo = 'Tengo mi dudas 😑'} else if (boiola == 35 ) {bo = 'Tengo mi dudas 😑'} else if (boiola == 36 ) {bo = 'Tengo mi dudas 😑'} else if (boiola == 37 ) {bo = 'Tengo mi dudas 😑'} else if (boiola == 38 ) {bo = 'TTengo mi dudas 😑'} else if (boiola == 39 ) {bo = 'Tengo mi dudas 😑'} else if (boiola == 40 ) {bo = 'Tengo mi dudas 😑'} else if (boiola == 41 ) {bo = 'Tengo razon? 😏'} else if (boiola == 42 ) {bo = 'Tengo razon? 😏'} else if (boiola == 43 ) {bo = 'Tengo razon? 😏'} else if (boiola == 44 ) {bo = 'Tengo razon? 😏'} else if (boiola == 45 ) {bo = 'Tengo razon? 😏'} else if (boiola == 46 ) {bo = 'Tengo razon? 😏'} else if (boiola == 47 ) {bo = 'Tengo razon? 😏'} else if (boiola == 48 ) {bo = 'Tengo razon? 😏'} else if (boiola == 49 ) {bo = 'Tengo razon? 😏'} else if (boiola == 50 ) {bo = 'Eres o no? 🧐'} else if (boiola > 51) {bo = 'Usted es gay 🥸'
 }
-hasil = `${rate} Usted es ${random}% gay\n\n${bo}`
+hasil = `${rate}Usted es ${random}% gay\n\n${bo}`
+reply(hasil)
+break
+case 'cuties':
+if (!isUser) return reply(mess.only.daftarB)
+rate = body.slice(5)
+client.updatePresence(from, Presence.composing) 
+random = `${Math.floor(Math.random() * 100)}`
+boiola = random
+if (boiola < 20 ) {bo = 'Mi loco usted va para el cielo 👏'} else if (boiola == 21 ) {bo = 'Te salvaste ramirez 😎'} else if (boiola == 23 ) {bo = 'Te salvaste ramirez 😎'} else if (boiola == 24 ) {bo = 'Te salvaste ramirez 😎'} else if (boiola == 25 ) {bo = 'Te salvaste ramirez 😎'} else if (boiola == 26 ) {bo = 'Te salvaste ramirez 😎'} else if (boiola == 27 ) {bo = 'Te salvaste ramirez 😎'} else if (boiola == 28 ) {bo = 'Te salvaste ramirez 😎'} else if (boiola == 29 ) {bo = 'Te salvaste ramirez 😎'} else if (boiola == 30 ) {bo = 'Te salvaste ramirez 😎'} else if (boiola == 31 ) {bo = 'Ramirez que hace viendo cuties 🤔'} else if (boiola == 32 ) {bo = 'Ramirez que hace viendo cuties 🤔'} else if (boiola == 33 ) {bo = 'Ramirez que hace viendo cuties 🤔'} else if (boiola == 34 ) {bo = 'Ramirez que hace viendo cuties 🤔'} else if (boiola == 35 ) {bo = 'Ramirez que hace viendo cuties 🤔'} else if (boiola == 36 ) {bo = 'Ramirez que hace viendo cuties 🤔'} else if (boiola == 37 ) {bo = 'Ramirez que hace viendo cuties 🤔'} else if (boiola == 38 ) {bo = 'Ramirez que hace viendo cuties 🤔'} else if (boiola == 39 ) {bo = 'Ramirez que hace viendo cuties 🤔'} else if (boiola == 40 ) {bo = 'Ramirez que hace viendo cuties 🤔'} else if (boiola == 41 ) {bo = 'Mmm sospechoso ramirez 🧐'} else if (boiola == 42 ) {bo = 'Mmm sospechoso ramirez 🧐'} else if (boiola == 43 ) {bo = 'Mmm sospechoso ramirez 🧐'} else if (boiola == 44 ) {bo = 'Mmm sospechoso ramirez 🧐'} else if (boiola == 45 ) {bo = 'Mmm sospechoso ramirez 🧐'} else if (boiola == 46 ) {bo = 'Mmm sospechoso ramirez 🧐'} else if (boiola == 47 ) {bo = 'Mmm sospechoso ramirez 🧐'} else if (boiola == 48 ) {bo = 'Mmm sospechoso ramirez 🧐'} else if (boiola == 49 ) {bo = 'Mmm sospechoso ramirez 🧐'} else if (boiola == 50 ) {bo = 'Mmm sospechoso ramirez 🧐'} else if (boiola > 51) {bo = 'Señores un autentico FAN DE CUTIES esta en el grupo 🥸'
+}
+hasil = `${rate}Usted es ${random}% fan de cuties 😱\n\n${bo}`
 reply(hasil)
 break
 				  case 'wa.me':
@@ -888,7 +905,8 @@ break
 						break
 				case 's':
 				case 'tucson':
-				case 'cuties':
+				case 'opa':
+				case 'shan':
 				case 'nefasto':
 				case 'stiker':
 				case 'sticker':
