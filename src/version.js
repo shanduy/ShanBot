@@ -1,19 +1,10 @@
 const version = (prefix, pushname) => {
     return `
-*ShanBot 🤖*
+*ShanBot 🤖 by shanduy*
 
-*Actualizado:* 18 de junio de 2021
-*Versión actual:* 2.6
+*Actualizado:* 26 de junio de 2021
+*Versión actual:* 2.8
 *Ofrecida por:* shanduy™
-
-
-*NOVEDADES*
-
-Bot interactivo
-
-Actualizacion de la version @adiwajshing/baileys a la mas estable
-
-Nuevo motor WAConnection :)
 
 
 *INFORME*
