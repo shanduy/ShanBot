@@ -521,7 +521,7 @@ break
 
 case 'cuties':
 if (!isUser) return reply(mess.only.daftarB)
-rate = body.slice(5)
+rate = body.slice(9)
 client.updatePresence(from, Presence.composing) 
 random = `${Math.floor(Math.random() * 100)}`
 cuties = random
