@@ -103,6 +103,12 @@ const {
 } = settingan
 
 /******INICIO DE FUNCIONES ENTRADA******/
+
+/******ARCHIVOS ANTILINK POR SHANDUY******/
+const antilink = JSON.parse(fs.readFileSync('./src/antilink.json'))
+
+/******FIN ARCHIVOS ANTILINK POR SHANDUY******/
+
 const getLevelingXp = (userId) => {
             let position = false
             Object.keys(_level).forEach((i) => {
@@ -329,6 +335,7 @@ async function starts() {
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
 			const groupName = isGroup ? groupMetadata.subject : ''
+			const isAntiLink = isGroup ? antilink.includes(from) : false
 			const groupId = isGroup ? groupMetadata.jid : ''
 			const groupMembers = isGroup ? groupMetadata.participants : ''
 			const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
@@ -357,8 +364,24 @@ async function starts() {
 			const mentions = (teks, memberr, id) => {
 				(id == null || id == undefined || id == false) ? client.sendMessage(from, teks.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
 			}
-
-	        //FUNCION DE LEVEL
+           //FUNCION ANTILINK
+	        if (budy.includes("://chat.whatsapp.com/")){
+		if (!isGroup) return
+		if (!isAntiLink) return
+		if (isGroupAdmins) return reply('Eres administrador del grupo, así que no te prohibiré el uso de enlaces :)')
+		client.updatePresence(from, Presence.composing)
+		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		reply(`Link Detectado ${sender.split("@")[0]} Usted será expulsado del grupo`)
+		setTimeout( () => {
+			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
+		}, 0)
+		setTimeout( () => {
+			client.updatePresence(from, Presence.composing)
+			reply("Adios")
+		}, 0)
+	}
+		
+		//FUNCION DE LEVEL
             if (isGroup && isLevelingOn) {
             const currentLevel = getLevelingLevel(sender)
             const checkId = getLevelingId(sender)
@@ -756,7 +779,29 @@ break
 		           }
 	           })
                   break
-                 case 'linkgroup':
+                                        case 'antilink':
+                                        if (!isGroup) return reply(mess.only.group)
+					if (!isUser) return reply(mess.only.daftarB)
+					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+					if (!isGroupAdmins) return reply(mess.only.Badmin)
+					if (args.length < 1) return reply('Digite antilink 1 para ativar')
+					if (Number(args[0]) === 1) {
+						if (isAntiLink) return reply('El antilink ya esta activo')
+						antilink.push(from)
+						fs.writeFileSync('./src/antilink.json', JSON.stringify(antilink))
+						reply('❬ ✅ ❭ La funcion de antilink esta habilitada en este grupo')
+						client.sendMessage(from,`Atención a todos los miembros activos de este grupo\n\nEl antilink esta activo, y si envían un enlace de otro grupo serán expulsados de este grupo de inmediato`, text)
+					} else if (Number(args[0]) === 0) {
+						if (!isantilink) return reply('El antilink esta deshabilitado')
+						var ini = anti.clientOf(from)
+						antilink.splice(ini, 1)
+						fs.writeFileSync('./src/antilink.json', JSON.stringify(antilink))
+						reply('❬ ✅ ❭ La funcion de antilink esta deshabilitada en este grupo')
+					} else {
+						reply('Coloque *antimenu para ver los comandos')
+					}
+					break
+			        case 'linkgroup':
 				case 'linkgrup':
 				case 'linkgc':
 				    client.updatePresence(from, Presence.composing) 
