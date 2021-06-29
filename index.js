@@ -63,6 +63,7 @@ const { desmenu } = require('./src/desmenu')
 const { version } = require('./src/version')
 const { juegos } = require('./src/juegos')
 const { shantera } = require('./src/shantera')
+const { antimenu } = require('./src/antimenu')
 const { welmenu } = require('./src/welmenu')
 const { otak } = require('./src/otak')
 /*const { mediamenu } = require('./database/menu/mediamenu')
@@ -309,11 +310,11 @@ async function starts() {
 					Iv: '❌ Link inválido ❌'
 				},
 				only: {
-					group: '[❗] Este comando es solo para grupos!',
-					ownerG: '[❗] Este comando solo puede ser utilizado por un admin del grupo!',
-					ownerB: '[❗] Este comando solo lo usa ShanBot!',
-					admin: '[❗] Este comando solo puede ser utilizado por administradores del grupo!',
-					Badmin: '[❗] Este comando solo se puede usar cuando el bot se convierte en administrador!',
+					group: '[❗] Este comando es solo para grupos',
+					ownerG: '[❗] Este comando solo puede ser utilizado por un admin del grupo',
+					ownerB: '[❗] Este comando solo lo usa ShanBot',
+					admin: '[❗] Este comando solo puede ser utilizado por administradores del grupo',
+					Badmin: '[❗] Este comando solo se puede usar cuando el bot se convierte en administrador',
                                         pegatina: 'Calma crack estoy haciendo tu sticker 👏\n\n*Recuerda los stickersgif son de 6 segundos ❗*\n\nby shanduy',
 					attp: 'Calma crack estoy haciendo tu texto a sticker 👏\n\n*Esto puede demorar unos minutos*\n\nby shanduy',
 					imgs: 'Euu flaco 🥴\n\n*Convirtiendo tu Sticker a Imagen 🔄*\n\nby shanduy',
@@ -480,6 +481,9 @@ async function starts() {
 		case 'versión':
 		case 'version':
 		client.sendMessage(from, version(prefix, sender), text, {quoted: mek})
+		break
+		case 'antimenu':
+		client.sendMessage(from, antimenu(prefix, sender), text, {quoted: mek})
 		break
                 case 'welmenu':
 		client.sendMessage(from, welmenu(prefix, sender), text, {quoted: mek})
@@ -784,15 +788,15 @@ break
 					if (!isUser) return reply(mess.only.daftarB)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 					if (!isGroupAdmins) return reply(mess.only.Badmin)
-					if (args.length < 1) return reply('Digite antilink 1 para ativar')
+					if (args.length < 1) return reply('Coloque *antimenu para ver los comandos')
 					if (Number(args[0]) === 1) {
 						if (isAntiLink) return reply('El antilink ya esta activo')
 						antilink.push(from)
 						fs.writeFileSync('./src/antilink.json', JSON.stringify(antilink))
 						reply('❬ ✅ ❭ La funcion de antilink esta habilitada en este grupo')
-						client.sendMessage(from,`Atención a todos los miembros activos de este grupo\n\nEl antilink esta activo, y si envían un enlace de otro grupo serán expulsados de este grupo de inmediato`, text)
+						client.sendMessage(from,`Atención a todos los miembros activos de este grupo 📣\n\nEl antilink esta activo, y si envían un enlace de otro grupo serán expulsados de este grupo de inmediato`, text)
 					} else if (Number(args[0]) === 0) {
-						if (!isantilink) return reply('El antilink esta deshabilitado')
+						if (!isantilink) return reply('El antilink ya esta deshabilitado')
 						var ini = anti.clientOf(from)
 						antilink.splice(ini, 1)
 						fs.writeFileSync('./src/antilink.json', JSON.stringify(antilink))
