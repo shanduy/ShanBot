@@ -10,7 +10,9 @@ const help = (prefix) => {
    ○ Instagram: https://www.instagram.com/thepavos
 
 
-◉ *NUEVO COMANDO*
+◉ *NUEVOs COMANDOs*
+○ ${prefix}antimenu
+Su nombre lo dice todo (antilink)
 ○ ${prefix}otak
 Monas chinas
 ○ ${prefix}shantera
