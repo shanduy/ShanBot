@@ -796,9 +796,7 @@ break
 						reply('❬ ✅ ❭ La funcion de antilink esta habilitada en este grupo')
 						client.sendMessage(from,`Atención a todos los miembros activos de este grupo 📣\n\nEl antilink esta activo, y si envían un enlace de otro grupo serán expulsados de este grupo de inmediato`, text)
 					} else if (Number(args[0]) === 0) {
-						if (isAntiLink) return reply('El antilink ya esta deshabilitado')
-						var ini = anti.clientOf(from)
-						antilink.splice(ini, 1)
+						antilink.splice(from)
 						fs.writeFileSync('./src/antilink.json', JSON.stringify(antilink))
 						reply('❬ ✅ ❭ La funcion de antilink esta deshabilitada en este grupo')
 					} else {
