@@ -607,6 +607,8 @@ break
                     reply(mess.only.xn)
 		    get_result = await fetchJson(`http://lolhuman.herokuapp.com/api/xnxx?apikey=3ff2400e460286d996384cb2&url=${query}`)
                     get_result = get_result.result
+                    ini_txt = ""
+                    for (var x of get_result) {
                     ini_txt += `Titulo : ${get_result.title}\n`
                     ini_txt += `Duración : ${get_result.duration}\n`
                     ini_txt += `Vistas : ${get_result.view}\n`
