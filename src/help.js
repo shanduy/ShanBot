@@ -10,7 +10,7 @@ const help = (prefix) => {
    ○ Instagram: https://www.instagram.com/thepavos
 
 
-◉ *NUEVOs COMANDOs*
+◉ *NUEVOS COMANDOS*
 ○ ${prefix}antimenu
 Su nombre lo dice todo (antilink)
 ○ ${prefix}otak
