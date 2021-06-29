@@ -320,7 +320,8 @@ async function starts() {
 					imgs: 'Euu flaco 🥴\n\n*Convirtiendo tu Sticker a Imagen 🔄*\n\nby shanduy',
 					mpcancion: 'Calmaoooo estoy procesando 😎\n\n*Convirtiendo de MP4 a MP3 🔄*\n\nby shanduy',
 					mpa: 'Euu flaco 🥴\n\n*Estoy decargando tu cancion 🔄*\n\nAguarde un momento, por favor\n\nby shanduy',
-                                        mpv: 'Calmao pa 😎\n\n*Estoy descargando tu video 🔄*\n\nAguarde un momento, por favor\n\nby shanduy',
+                                        xn: 'Calmao pa 😎\n\n*Estoy descargando tu video 🔄*\n\nAguarde un momento, por favor\n\nby shanduy',
+					mpv: 'Calma ✋🥸🤚\n\n*Estoy descargando tu video 🔄*\n\nAguarde un momento, por favor\n\nby shanduy',
 					insta: 'Calmao 😎\n\n*Estoy descargando tu post 🔄*\n\nAguarde un momento, por favor\n\nby shanduy',
 					musica: 'Calmao pa estoy bucando tu canción 😎\n\n*Recuerda colocar bien el nombre de la cancion o el link del video de youtube ❗*\n\nby shanduy',
 					daftarB: `「NEFASTOOOOO」\n\nPERO PAAAAAAAAAA!\n\nNo estas registrado en mi base de datos 😳 \n\nComando : ${prefix}daftar Nombre\nEjemplo : ${prefix}daftar shanduy`,
@@ -599,7 +600,26 @@ break
                 }
               await client.sendMessage(from, options, text)
                break
-               		       case 'ytmp3':
+                    case 'xnxx':
+                    if (!isNsfw) return reply('❌ *NSFW NO ESTA ACTIVADO* ❌')
+                    if (!isUser) return reply(mess.only.daftarB)
+		    reply(mess.only.xn)
+                    if (args.length == 0) return reply(`Donde esta el titulo?\n\nExemplo: ${prefix}xnxx Japonesas`)
+                    query = args.join(" ")
+                    get_result = await fetchJson(`http://lolhuman.herokuapp.com/api/xnxxsearch?apikey=3ff2400e460286d996384cb2&query=${query}`)
+                    get_result = get_result.result
+                    ini_txt = ""
+                    for (var x of get_result) {
+                        ini_txt += `Titulo : ${x.title}\n`
+                        ini_txt += `Vistas : ${x.views}\n`
+                        ini_txt += `Duración : ${x.duration}\n`
+                        ini_txt += `Subido : ${x.uploader}\n`
+                        ini_txt += `Link : ${x.link}\n`
+                        ini_txt += `Miniatura : ${x.thumbnail}\n\n`
+                    }
+                    reply(ini_txt)
+                    break
+				case 'ytmp3':
 					if (args.length < 1) return reply('Donde esta la URL?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
 					reply(mess.only.mpa)
@@ -1004,7 +1024,7 @@ break
 					break
                                case 'nsfwneko':
 				    try{
-						if (!isNsfw) return reply('❌ *NSFW NO ESTA ATIVADO* ❌')
+						if (!isNsfw) return reply('❌ *NSFW NO ESTA ACTIVADO* ❌')
                                                 if (!isUser) return reply(mess.only.daftarB)
 						res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwneko?apikey=BotWeA`, {method: 'get'})
 						buffer = await getBuffer(res.result)
