@@ -600,28 +600,7 @@ break
                 }
               await client.sendMessage(from, options, text)
                break
-                    case 'xnxx':              
-                    if (!isUser) return reply(mess.only.daftarB)
-		    if (args.length == 0) return reply(`Donde esta el URL del video?\n\nExemplo: ${prefix}xnxx https://www.xnxx.com/video-uy5a73b/mom_is_horny_-_brooklyn`)
-                    query = args.join(" ")
-                    reply(mess.only.xn)
-		    get_result = await fetchJson(`http://lolhuman.herokuapp.com/api/xnxx?apikey=3ff2400e460286d996384cb2&url=${query}`)
-                    get_result = get_result.result
-                    ini_txt = ""
-                    for (var x of get_result) {
-                    ini_txt += `Titulo : ${get_result.title}\n`
-                    ini_txt += `Duración : ${get_result.duration}\n`
-                    ini_txt += `Vistas : ${get_result.view}\n`
-                    ini_txt += "Link : \n"
-                    ini_link = get_result.link
-                    for (var x of ini_link) {
-                        ini_txt += `${x.type} - ${x.link}\n\n`
-                    }
-                    thumbnail = await getBuffer(get_result.thumbnail)
-                    client.sendMessage(from, thumbnail, image, { quoted: mek, caption: ini_txt })
-                    break
-				
-			       case 'ytmp3':
+                                case 'ytmp3':
 					if (args.length < 1) return reply('Donde esta la URL?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
 					reply(mess.only.mpa)
