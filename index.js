@@ -1276,7 +1276,7 @@ break
                   reply(`Miren a este boludito`)
                   }
 
-		if (budy.includes(`gracias`)) {
+		if (budy.includes(`Gracias`)) {
                   reply(`De nada padre`)
                   }
 
@@ -1429,6 +1429,10 @@ break
                   }			
 		if (budy.startsWith(`nefasto`)) {
         const none = fs.readFileSync('./mp3/gaspi1.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
+		if (budy.startsWith(`chica lgante`)) {
+        const none = fs.readFileSync('./mp3/chica lgante.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
 				if (isGroup && isSimi && budy != undefined) {
