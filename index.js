@@ -1435,7 +1435,11 @@ break
         const none = fs.readFileSync('./mp3/chica lgante.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
-				if (isGroup && isSimi && budy != undefined) {
+		if (budy.startsWith(`bienvenida gaspi`)) {		
+        const nome = fs.readFileSync('./mp3/bienvenida wey.mp3');
+                client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }             
+                                   if (isGroup && isSimi && budy != undefined) {
 						console.log(budy)
 						muehe = await simih(budy)
 						console.log(muehe)
