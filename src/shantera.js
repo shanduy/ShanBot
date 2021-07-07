@@ -35,6 +35,7 @@ un chino
 no funciona
 boliviano
 enano
+bienvenida gaspi
 
 
 _*Ojito escribe tal y como esta en el mensaje*_
