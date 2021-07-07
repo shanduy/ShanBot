@@ -107,6 +107,7 @@ const {
 
 /******ARCHIVOS ANTILINK POR SHANDUY******/
 const antilink = JSON.parse(fs.readFileSync('./src/antilink.json'))
+const antispam = JSON.parse(fs.readFileSync('./src/antispam.json')
 
 /******FIN ARCHIVOS ANTILINK POR SHANDUY******/
 
@@ -338,7 +339,8 @@ async function starts() {
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
 			const groupName = isGroup ? groupMetadata.subject : ''
 			const isAntiLink = isGroup ? antilink.includes(from) : false
-			const groupId = isGroup ? groupMetadata.jid : ''
+			const isAntiSpam = isGroup ? antispam.includes(from) : false
+                        const groupId = isGroup ? groupMetadata.jid : ''
 			const groupMembers = isGroup ? groupMetadata.participants : ''
 			const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
 			const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
@@ -383,6 +385,23 @@ async function starts() {
 		}, 0)
 	}
 		
+
+           //FUNCION ANTISPAM
+                if (budy.includes("://chat.whatsapp.com/")){
+		if (!isGroup) return
+		if (!isAntiSpam) return
+		if (isGroupAdmins) return reply('Eres administrador del grupo, así que no te prohibiré el spam :)')
+		client.updatePresence(from, Presence.composing)
+		var kic = `${sender.split("@")[10]}@s.whatsapp.net`
+		reply(`Spam Detectado ${sender.split("@")[10]} Usted será expulsado del grupo`)
+		setTimeout( () => {
+			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
+		}, 0)
+		setTimeout( () => {
+			client.updatePresence(from, Presence.composing)
+			reply("Adios")
+		}, 0)
+	}
 		//FUNCION DE LEVEL
             if (isGroup && isLevelingOn) {
             const currentLevel = getLevelingLevel(sender)
@@ -557,7 +576,18 @@ if (cuties < 20 ) {cu = 'Mi loco usted va para el cielo 👏'} else if (cuties =
 hasil = `${rate}Resultado ${random}% fan de cuties\n\n${cu}`
 reply(hasil)
 break
-				  case 'wa.me':
+
+case 'cornu':
+if (!isUser) return reply(mess.only.daftarB)
+rate = body.slice(5)
+client.updatePresence(from, Presence.composing) 
+random = `${Math.floor(Math.random() * 100)}`
+gay = random
+if (cornu < 20 ) {ga = 'Le es fiel 🤪🤙'} else if (cornu == 21 ) {co = 'Mas o menos 🤔'} else if (cornu == 23 ) {co = 'Mas o menos 🤔'} else if (cornu == 24 ) {co = 'Mas o menos 🤔'} else if (cornu == 25 ) {co = 'Mas o menos 🤔'} else if (cornu == 26 ) {co = 'Mas o menos 🤔'} else if (cornu == 27 ) {co = 'Mas o menos 🤔'} else if (cornu == 28 ) {co = 'Mas o menos 🤔'} else if (cornu == 29 ) {co = 'Mas o menos 🤔'} else if (cornu == 30 ) {co = 'Mas o menos 🤔'} else if (cornu == 31 ) {co = 'Tengo mi dudas 😑'} else if (cornu == 32 ) {co = 'Tengo mi dudas 😑'} else if (cornu == 33 ) {co = 'Tengo mi dudas 😑'} else if (cornu == 34 ) {co = 'Tengo mi dudas 😑'} else if (cornu == 35 ) {co = 'Tengo mi dudas 😑'} else if (cornu == 36 ) {co = 'Tengo mi dudas 😑'} else if (cornu == 37 ) {co = 'Tengo mi dudas 😑'} else if (cornu == 38 ) {co = 'TTengo mi dudas 😑'} else if (cornu == 39 ) {co = 'Tengo mi dudas 😑'} else if (cornu == 40 ) {co = 'Tengo mi dudas 😑'} else if (cornu == 41 ) {co = 'Tengo razon? 😏'} else if (cornu == 42 ) {co = 'Tengo razon? 😏'} else if (cornu == 43 ) {co = 'Tengo razon? 😏'} else if (cornu == 44 ) {co = 'Tengo razon? 😏'} else if (cornu == 45 ) {co = 'Tengo razon? 😏'} else if (cornu == 46 ) {co = 'Tengo razon? 😏'} else if (cornu == 47 ) {co = 'Tengo razon? 😏'} else if (cornu == 48 ) {co = 'Tengo razon? 😏'} else if (cornu == 49 ) {co = 'Tengo razon? 😏'} else if (cornu == 50 ) {co = 'Eres o no? 🧐'} else if (cornu > 51) {co = 'Usted es cachudo papi 🥸'}
+hasil = `${rate}Usted es ${random}% cachudo papi\n\n${ga}`
+reply(hasil)
+break				  
+                                  case 'wa.me':
 				  case 'wame':
   client.updatePresence(from, Presence.composing) 
       options = {
@@ -658,7 +688,7 @@ break
 					}
 					mentions(teks, groupAdmins, true)
 					break
-			case 'setprefix':
+			        case 'setprefix':
 					client.updatePresence(from, Presence.composing) 
 					if (args.length < 1) return
 					if (!isOwner) return reply(mess.only.ownerB)
@@ -803,7 +833,26 @@ break
 					} else {
 						reply('Coloque *antimenu para ver los comandos')
 					}
-					break
+					case 'antispam':
+                                        if (!isGroup) return reply(mess.only.group)
+					if (!isUser) return reply(mess.only.daftarB)
+					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+					if (!isGroupAdmins) return reply(mess.only.Badmin)
+					if (args.length < 10) return reply('Coloque *antimenu para ver los comandos')
+					if (Number(args[10]) === 20) {
+						if (isAntiSpam) return reply('El antispam ya esta activo')
+						antispam.push(from)
+						fs.writeFileSync('./src/antispam.json', JSON.stringify(antispam))
+						reply('❬ ✅ ❭ La funcion de antispam esta habilitada en este grupo')
+						client.sendMessage(from,`Atención a todos los miembros activos de este grupo 📣\n\nEl antispam esta activo\n\nY solo los admins de este grupo podran haser spam\n\nSi algun participante que no se admin envía un spam sera expulsados de este grupo de inmediato`, text)
+					} else if (Number(args[10]) === 20) {
+						antispam.splice(from)
+						fs.writeFileSync('./src/antispam.json', JSON.stringify(antilink))
+						reply('❬ ✅ ❭ La funcion de antispam esta deshabilitada en este grupo')
+					} else {
+						reply('Coloque *antimenu para ver los comandos')
+					}
+                                        break
 			        case 'linkgroup':
 				case 'linkgrup':
 				case 'linkgc':
@@ -1436,7 +1485,7 @@ break
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
 		if (budy.startsWith(`bienvenida gaspi`)) {		
-        const nome = fs.readFileSync('./mp3/bienvenida wey.mp3');
+        const nome = fs.readFileSync('./mp3/Bienvenido wey.mp3');
                 client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }             
                                    if (isGroup && isSimi && budy != undefined) {
