@@ -28,20 +28,7 @@ Mis Redes Sociales Y Mi Whatsapp Para Resolver Tus Problemas
 
 
 # ShanBot
-ULTIMA VERSION 2.
-
-*Actualizado:* 26 de junio de 2021
-
-*Play:* Actualizado 18 de junio 2021
-
-Actualizacion de la version @adiwajshing/baileys a la mas estable
-
-Nuevo motor WAConnection :)
-
-Nuevo comando *attp
-
-Cambio de apikey y server en *play
-
+ULTIMA VERSION 3.0
 
 Pasos para instalar el bot via termux
 https://www.youtube.com/watch?v=2LQSzEbpJ-M
