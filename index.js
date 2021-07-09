@@ -105,11 +105,6 @@ const {
 
 /******INICIO DE FUNCIONES ENTRADA******/
 
-const { isGroupMsg, mentionedJidList } = message
-	let { body } = message
-	const ownerNumber = config.owner
-
-
 /******ARCHIVOS ANTILINK POR SHANDUY******/
 const antilink = JSON.parse(fs.readFileSync('./src/antilink.json'))
 
