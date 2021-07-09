@@ -105,6 +105,11 @@ const {
 
 /******INICIO DE FUNCIONES ENTRADA******/
 
+const { id, isGroupMsg, mentionedJidList } = message
+	let { body } = message
+	const ownerNumber = config.owner
+
+
 /******ARCHIVOS ANTILINK POR SHANDUY******/
 const antilink = JSON.parse(fs.readFileSync('./src/antilink.json'))
 
@@ -341,6 +346,8 @@ async function starts() {
 			const isAntiLink = isGroup ? antilink.includes(from) : false
 			const groupId = isGroup ? groupMetadata.jid : ''
 			const groupMembers = isGroup ? groupMetadata.participants : ''
+			const groupId = isGroupMsg ? chat.groupMetadata.id : ''
+			const isGroupOwner = isGroupMsg && user === chat.groupMetadata.id
 			const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
 			const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
 			const isGroupAdmins = groupAdmins.includes(sender) || false
@@ -580,8 +587,17 @@ reply('Hubo un error intentalo nuevamente :/')
 }
 break				
 				
-		
-				  case 'wa.me':
+case 'kiss':
+if (!isUser) return reply(mess.only.daftarB)
+if (!isGroup) return reply(mess.only.group)
+if (isGroupMsg && args.length == 1 && mentionedJidList.length !== 0) {
+await client.sendGiphyAsSticker(from, 'https://media.giphy.com/media/G3va31oEEnIkM/giphy.gif')
+await client.sendTextWithMentions(from, `Ohhhh :0! @${author.replace('@c.us', '')} le dio un beso a ${arqs[1]}!`)
+} else return await reply(from, 'Etiqueta a la persona que quieres besar', id)
+break		
+				  
+				
+				case 'wa.me':
 				  case 'wame':
   client.updatePresence(from, Presence.composing) 
       options = {
