@@ -537,6 +537,9 @@ async function starts() {
 						client.groupMakeAdmin(from, mentioned)
 					}
 					break
+
+/******JUEGOS SHANDUY LA PUTA MADRE NO TE OLVIDES******/
+					
 case 'gay':
 if (!isUser) return reply(mess.only.daftarB)
 rate = body.slice(5)
@@ -558,6 +561,27 @@ if (cuties < 20 ) {cu = 'Mi loco usted va para el cielo 👏'} else if (cuties =
 hasil = `${rate}Resultado ${random}% fan de cuties\n\n${cu}`
 reply(hasil)
 break
+				  
+case 'rankgay':
+try{
+if (!isUser) return reply(mess.only.daftarB)
+if (!isGroup) return reply(mess.only.group)
+d = []
+teks = 'Top 5 de los mas gays del grupo\n'
+for(i = 0; i < 5; i++) {
+r = Math.floor(Math.random() * groupMetadata.participants.length + 0)
+teks += `🏳️‍🌈➥ @${groupMembers[r].jid.split('@')[0]}\n`
+d.push(groupMembers[r].jid)
+}
+mentions(teks, d, true)
+} catch (e) {
+console.log(e)
+reply('Hubo un error intentalo nuevamente :/')
+}
+break				
+				
+case 'besar'				
+				
 				  case 'wa.me':
 				  case 'wame':
   client.updatePresence(from, Presence.composing) 
