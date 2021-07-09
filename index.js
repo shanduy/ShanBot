@@ -580,17 +580,9 @@ reply('Hubo un error intentalo nuevamente :/')
 }
 break				
 				
-case 'kiss':
-if (!isUser) return reply(mess.only.daftarB)
-if (!isGroup) return reply(mess.only.group)
-if (!isGroup && args.length == 1 && mentionedJidList.length !== 0) {
-await client.sendGiphyAsSticker(from, 'https://media.giphy.com/media/G3va31oEEnIkM/giphy.gif')
-await client.sendTextWithMentions(from, `Ohhhh :0! @${author.replace('@c.us', '')} le dio un beso a ${arqs[1]}!`)
-} else return await reply(from, 'Etiqueta a la persona que quieres besar')
-break		
+	
 				  
-				
-				case 'wa.me':
+       				case 'wa.me':
 				  case 'wame':
   client.updatePresence(from, Presence.composing) 
       options = {
