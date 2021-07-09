@@ -570,7 +570,7 @@ d = []
 teks = 'Top 5 de los mas gays del grupo\n'
 for(i = 0; i < 5; i++) {
 r = Math.floor(Math.random() * groupMetadata.participants.length + 0)
-teks += `🏳️‍🌈➥ @${groupMembers[r].jid.split('@')[0]}\n`
+teks += `➔ @${groupMembers[r].jid.split('@')[0]}\n`
 d.push(groupMembers[r].jid)
 }
 mentions(teks, d, true)
