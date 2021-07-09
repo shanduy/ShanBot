@@ -580,8 +580,7 @@ reply('Hubo un error intentalo nuevamente :/')
 }
 break				
 				
-case 'besar'				
-				
+		
 				  case 'wa.me':
 				  case 'wame':
   client.updatePresence(from, Presence.composing) 
