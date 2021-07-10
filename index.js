@@ -111,6 +111,7 @@ const antilink = JSON.parse(fs.readFileSync('./src/antilink.json'))
 
 /******Fake******/
 
+
 const faketokoforwaded = (teks) => {
 	anu = {
 	  key: {
@@ -143,8 +144,7 @@ const faketokoforwaded = (teks) => {
 
 
 
-
-/******FIN ARCHIVOS ANTILINK POR SHANDUY******/
+/******FIN******/
 
 const getLevelingXp = (userId) => {
             let position = false
@@ -493,22 +493,9 @@ async function starts() {
 			switch(command) {
 		case 'help':
 		case 'menu':
-    let i = []
-    let giid = []
-    for (mem of totalchat){
-      i.push(mem.jid)
-    }
-    for (id of i){
-      if (id && id.includes('g.us')){
-        giid.push(id)
-      }
-    }
-    let timestampi = speed();
-    let sepid = speed() - timestampi
-    anu = process.uptime()
-    runtem = `${kyun(anu)}`
-					
+// 
 var menu = `
+
 ⌜ *ShanBot 🤖 by shanduy* ⌟  
 
 ◉ *INFORMACION*
