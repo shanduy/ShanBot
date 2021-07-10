@@ -493,6 +493,20 @@ async function starts() {
 			switch(command) {
 		case 'help':
 		case 'menu':
+    let i = []
+    let giid = []
+    for (mem of totalchat){
+      i.push(mem.jid)
+    }
+    for (id of i){
+      if (id && id.includes('g.us')){
+        giid.push(id)
+      }
+    }
+    let timestampi = speed();
+    let sepid = speed() - timestampi
+    anu = process.uptime()
+    runtem = `${kyun(anu)}`
 // 
 var menu = `
 
