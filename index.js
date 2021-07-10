@@ -132,7 +132,7 @@ const faketokoforwaded = (teks) => {
 		}
 	}
 }
-	pato.sendMessage(from, teks, text, {
+	client.sendMessage(from, teks, text, {
 	  quoted: anu,
 	  contextInfo:{
 	    "forwardingScore": 999, "isForwarded": true
@@ -493,7 +493,7 @@ async function starts() {
 			switch(command) {
 		case 'help':
 		case 'menu':
-`
+var menu = `
 ⌜ *ShanBot 🤖 by shanduy* ⌟  
 
 ◉ *INFORMACION*
@@ -571,6 +571,7 @@ Registrate con el comando ${prefix}daftar y tu nombre
   ╠ Link del grupo
   ╠ ○ ${prefix}todos
   ╚ Nombra a todos los del grupo
+
 Para usar estas funciones el bot necesita admin
   
 ◉ *NSWF* 
