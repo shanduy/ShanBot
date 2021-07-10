@@ -122,7 +122,7 @@ const faketokoforwaded = (teks) => {
 				"product": {
 					"productImage":{
 						"mimetype": "image/jpeg",
-						"jpegThumbnail": fs.readFileSync(`./stik/thumb.jpeg`)
+						"jpegThumbnail": fs.readFileSync(`./banner/shanlogo.jpeg`)
 					},
 					"title": `ShanBot by shanduy`,
 					"retailerId": "ShanBot",
@@ -132,7 +132,7 @@ const faketokoforwaded = (teks) => {
 		}
 	}
 }
-	pato.sendMessage(from, teks, text, {
+	client.sendMessage(from, teks, text, {
 	  quoted: anu,
 	  contextInfo:{
 	    "forwardingScore": 999, "isForwarded": true
