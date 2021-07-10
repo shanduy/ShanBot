@@ -122,7 +122,7 @@ const faketokoforwaded = (teks) => {
 				"product": {
 					"productImage":{
 						"mimetype": "image/jpeg",
-						"jpegThumbnail": fs.readFileSync(`./banner/shanlogo.jpeg`)
+						"jpegThumbnail": fs.readFileSync(`./stik/thumb.jpeg`)
 					},
 					"title": `ShanBot by shanduy`,
 					"retailerId": "ShanBot",
@@ -132,7 +132,7 @@ const faketokoforwaded = (teks) => {
 		}
 	}
 }
-	client.sendMessage(from, teks, text, {
+	pato.sendMessage(from, teks, text, {
 	  quoted: anu,
 	  contextInfo:{
 	    "forwardingScore": 999, "isForwarded": true
@@ -493,7 +493,22 @@ async function starts() {
 			switch(command) {
 		case 'help':
 		case 'menu':
-`
+    let i = []
+    let giid = []
+    for (mem of totalchat){
+      i.push(mem.jid)
+    }
+    for (id of i){
+      if (id && id.includes('g.us')){
+        giid.push(id)
+      }
+    }
+    let timestampi = speed();
+    let sepid = speed() - timestampi
+    anu = process.uptime()
+    runtem = `${kyun(anu)}`
+					
+var menu = `
 ⌜ *ShanBot 🤖 by shanduy* ⌟  
 
 ◉ *INFORMACION*
@@ -586,7 +601,7 @@ by shanduy
 
 ⌜ *ごきげんよう :)* ⌟ 
 ` 
-faketokoforwaded(menu)
+                faketokoforwaded(menu)
 		break
                 case 'otak':
 		client.sendMessage(from, otak(prefix, sender), text, {quoted: mek})
