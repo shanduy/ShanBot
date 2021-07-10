@@ -493,7 +493,7 @@ async function starts() {
 			switch(command) {
 		case 'help':
 		case 'menu':
-var menu = `
+`
 ⌜ *ShanBot 🤖 by shanduy* ⌟  
 
 ◉ *INFORMACION*
