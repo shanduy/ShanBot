@@ -131,7 +131,13 @@ const faketokoforwaded = (teks) => {
 		}
 	}
 }
-
+	client.sendMessage(from, teks, text, {
+	  quoted: anu,
+	  contextInfo:{
+	    "forwardingScore": 999, "isForwarded": true
+	  }
+	})
+}
 const getLevelingXp = (userId) => {
             let position = false
             Object.keys(_level).forEach((i) => {
@@ -479,7 +485,10 @@ async function starts() {
 			switch(command) {
 		case 'help':
 		case 'menu':   
-	menu = `
+	anu = process.uptime()
+    runtem = `${kyun(anu)}`
+//
+    menu = `
 ⌜ *ShanBot 🤖 by shanduy* ⌟  
 
 ◉ *INFORMACION*
