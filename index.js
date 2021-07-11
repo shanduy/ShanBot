@@ -131,13 +131,6 @@ const faketokoforwaded = (teks) => {
 		}
 	}
 }
-	client.sendMessage(from, teks, text, {
-	  quoted: anu,
-	  contextInfo:{
-	    "forwardingScore": 999, "isForwarded": true
-	  }
-	})
-}
 
 const getLevelingXp = (userId) => {
             let position = false
