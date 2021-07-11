@@ -110,34 +110,6 @@ const antilink = JSON.parse(fs.readFileSync('./src/antilink.json'))
 
 /******FIN DE ARCHIVOS ANTILINK POR SHANDUY******/
 
-const faketokoforwaded = (teks) => {
-	anu = {
-	  key: {
-			fromMe: false,
-			participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
-		},
-		message: {
-			"productMessage": {
-				"product": {
-					"productImage":{
-						"mimetype": "image/jpeg",
-						"jpegThumbnail": fs.readFileSync(`./banner/shanlogo.jpg`)
-					},
-					"title": `ѕнαηвσт ву ѕнαη∂υу`,
-					"retailerId": "ѕнαηвσт",
-					"productImageCount": 1
-				},
-				"businessOwnerJid": `0@s.whatsapp.net`
-		}
-	}
-}
-	client.sendMessage(from, teks, text, {
-	  quoted: anu,
-	  contextInfo:{
-	    "forwardingScore": 999, "isForwarded": true
-	  }
-	})
-}
 const getLevelingXp = (userId) => {
             let position = false
             Object.keys(_level).forEach((i) => {
@@ -485,104 +457,9 @@ async function starts() {
 			switch(command) {
 		case 'help':
 		case 'menu':   
-	anu = process.uptime()
-    runtem = `${kyun(anu)}`
-//
-    menu = `
-⌜ *ShanBot 🤖 by shanduy* ⌟  
-
-◉ *INFORMACION*
-○ Comando: ⌜ ${prefix} ⌟
-○ Creador: shanduy™ 
-○ Como instalar el bot: https://www.youtube.com/watch?v=2LQSzEbpJ-M
-○ Instagram: https://www.instagram.com/thepavos
-
-◉ *NUEVOS COMANDOS*
-○ ${prefix}antimenu
-Su nombre lo dice todo (antilink)
-○ ${prefix}otak
-Monas chinas
-○ ${prefix}shantera
-Interactua con el bot
-
-◉ *NUEVOS MENUS*
-○ ${prefix}juegos
-Menu de juegos
-○ ${prefix}desmenu
-Menu de descargas MP3 Y MP4
-○ ${prefix}version
-Conoce la versión de tu bot
-○ ${prefix}welmenu
-Menu de bienvenida
-
-◉ *PARA USAR EL BOT*
-Registrate con el comando ${prefix}daftar y tu nombre
-
-◉ *RESUELVE TUS DUDAS*
-  ║
-  ╠ ○ ${prefix}creador
-  ╚ Dudas o problemas aqui
-
-◉ *CREAR STICKERS*
-  ║
-  ╠ ○ ${prefix}sticker
-  ╠ ○ ${prefix}attp
-  ╠ Mas un texto corto
-  ╠ ○ ${prefix}stickergif
-  ╚ 6 segundos de video
-
-◉ *CONVERTIDORES*
-  ║
-  ╠ ○ ${prefix}toimg
-  ╠ De sticker a JPG
-  ╠ ○ ${prefix}tomp3
-  ╚ De video a MP3
-
-◉ *AUDIO*
-  ║
-  ╠ ○ ${prefix}idioma
-  ╚ ○ ${prefix}tts es (mas texto)
-
-◉ *OTROS*
-  ║
-  ╠ ○ ${prefix}wame
-  ╠ Link de Whatsapp
-  ╠ ○ ${prefix}qrcode
-  ╚ Coloca un texto
-
-◉ *GRUPOS*
-  ║
-  ╠ ○ ${prefix}closegc
-  ╠ Cerrar el grupo solo admins
-  ╠ ○ ${prefix}opengc
-  ╠ Abrir grupo solo admins
-  ╠ ○ ${prefix}kick o pafuera
-  ╠ Eliminar a un miembro 
-  ╠ ○ ${prefix}promote
-  ╠ Dar admin a un miembro
-  ╠ ○ ${prefix}demote
-  ╠ Quitar el admin
-  ╠ ○ ${prefix}linkgc
-  ╠ Link del grupo
-  ╠ ○ ${prefix}todos
-  ╚ Nombra a todos los del grupo
-
-Para usar estas funciones el bot necesita admin
-  
-◉ *NSWF* 
-  ║
-  ╚ ○ ${prefix}nsfwmenu
-Para activar los NSFW coloque el siguiente comando ${prefix}nsfw 1 y para desactivar los NSFW coloque ${prefix}nsfw 0
-
-No te olvides de seguirme en instagram flaco ;)
-
-by shanduy
-
-
-⌜ *ごきげんよう :)* ⌟ 
-` 
-                faketokoforwaded(menu)
-           	break
+wew = fs.readFileSync('./banner/shanbaner.jpg')
+           	client.sendMessage(from, wew, image, {quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": "ѕнαηвσт ву ѕнαη∂υу", "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('./banner/shanlogo.jpg')} } }, caption: help(prefix) })
+				  break
                 case 'otak':
 		client.sendMessage(from, otak(prefix, sender), text, {quoted: mek})
 		break
