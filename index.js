@@ -93,7 +93,7 @@ const vcard = 'BEGIN:VCARD\n' // Tarjeta de contacto
             + 'END:VCARD'
 /******FIN DE ENTRADA VCARD******/
 
-prefix = '*'
+prefix = '.'
 blocked = []
 
 /******CONFIGURACION DE CARGA******/
@@ -109,6 +109,11 @@ const {
 const antilink = JSON.parse(fs.readFileSync('./src/antilink.json'))
 
 /******FIN DE ARCHIVOS ANTILINK POR SHANDUY******/
+
+/******ARCHIVOS ANTISPAM POR SHANDUY******/
+const antispam = JSON.parse(fs.readFileSync('./src/antispam.json'))
+
+/******FIN DE ARCHIVOS ANTISPAM POR SHANDUY******/
 
 const getLevelingXp = (userId) => {
             let position = false
@@ -375,6 +380,23 @@ async function starts() {
 		client.updatePresence(from, Presence.composing)
 		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
 		reply(`Link Detectado ${sender.split("@")[0]} Usted será expulsado del grupo`)
+		setTimeout( () => {
+			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
+		}, 0)
+		setTimeout( () => {
+			client.updatePresence(from, Presence.composing)
+			reply("Adios mi loco")
+		}, 0)
+	}
+		
+           //FUNCION ANTISPAM
+	        if (budy.includes("://chat.whatsapp.com/")){
+		if (!isGroup) return
+		if (!isAntiSpam) return
+		if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el spam :)')
+		client.updatePresence(from, Presence.composing)
+		var kic = `${sender.split("@")[10]}@s.whatsapp.net`
+		reply(`Spam Detectado ${sender.split("@")[10]} Usted será expulsado del grupo`)
 		setTimeout( () => {
 			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
 		}, 0)
@@ -674,9 +696,26 @@ reply('Hubo un error intentalo nuevamente :/')
 }
 break				
 				
+case 'rankcornu':
+try{
+if (!isUser) return reply(mess.only.daftarB)
+if (!isGroup) return reply(mess.only.group)
+d = []
+teks = 'Top 5 de los mas cornu del grupo\n\n'
+for(i = 0; i < 5; i++) {
+r = Math.floor(Math.random() * groupMetadata.participants.length + 0)
+teks += `➔ @${groupMembers[r].jid.split('@')[0]}\n`
+d.push(groupMembers[r].jid)
+}
+mentions(teks, d, true)
+} catch (e) {
+console.log(e)
+reply('Hubo un error intentalo nuevamente :/')
+}
+break				
+				
 	
-				  
-       				case 'wa.me':
+				         				case 'wa.me':
 				  case 'wame':
   client.updatePresence(from, Presence.composing) 
       options = {
@@ -919,6 +958,25 @@ break
 						antilink.splice(from)
 						fs.writeFileSync('./src/antilink.json', JSON.stringify(antilink))
 						reply('❬ ✅ ❭ La funcion de antilink esta deshabilitada en este grupo')
+					} else {
+						reply('Coloque *antimenu para ver los comandos')
+					}
+                                        case 'antispam':
+                                        if (!isGroup) return reply(mess.only.group)
+					if (!isUser) return reply(mess.only.daftarB)
+					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+					if (!isGroupAdmins) return reply(mess.only.Badmin)
+					if (args.length < 1) return reply('Coloque *antimenu para ver los comandos')
+					if (Number(args[0]) === 1) {
+						if (isAntiLink) return reply('El antispam ya esta activo')
+						antilink.push(from)
+						fs.writeFileSync('./src/antispam.json', JSON.stringify(antispam))
+						reply('❬ ✅ ❭ La funcion de antispam esta habilitada en este grupo')
+						client.sendMessage(from,`Atención a todos los miembros activos de este grupo 📣\n\nEl antispam esta activo\n\nY solo los admins de este grupo tienen permitido el spam\n\nSi algun participante que no se admin cree spam sera expulsado de este grupo de inmediato`, text)
+					} else if (Number(args[0]) === 0) {
+						antilink.splice(from)
+						fs.writeFileSync('./src/antispam.json', JSON.stringify(antispam))
+						reply('❬ ✅ ❭ La funcion de antispam esta deshabilitada en este grupo')
 					} else {
 						reply('Coloque *antimenu para ver los comandos')
 					}
@@ -1567,7 +1625,11 @@ break
         const none = fs.readFileSync('./mp3/chica lgante.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
-				if (isGroup && isSimi && budy != undefined) {
+		if (budy.startsWith(`bienvenida gaspi`)) {
+        const none = fs.readFileSync('./mp3/Bienvenido wey.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }		
+                                        if (isGroup && isSimi && budy != undefined) {
 						console.log(budy)
 						muehe = await simih(budy)
 						console.log(muehe)
