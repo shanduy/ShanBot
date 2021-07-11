@@ -3,13 +3,13 @@ const juegos = (prefix, pushname) => {
 *Comandos De Juegos 👾*
  
 ${prefix}rankgay
-Conoce a el top de los mas gays del grupo
+Conoce el top de los mas gays del grupo
 ${prefix}gay
 Conoce que tan gay eres 😎
 ${prefix}cuties
 Prueba tu suerte en el medidor de fan de cuties 😱
-${prefix}cornu
-conoce que tan infiel te son las chicas 😵
+${prefix}rankcornu
+conoce el top de los mas cornu del grupo 
 
 _*En futuras versiones colocare mas juegos :)*_
      
