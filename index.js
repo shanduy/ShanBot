@@ -578,22 +578,12 @@ hasil = `${rate}Resultado ${random}% fan de cuties\n\n${cu}`
 reply(hasil)
 break
 
-case 'cornu':
-if (!isUser) return reply(mess.only.daftarB)
-rate = body.slice(5)
-client.updatePresence(from, Presence.composing) 
-random = `${Math.floor(Math.random() * 100)}`
-gay = random
-if (cornu < 20 ) {ga = 'Le es fiel 🤪🤙'} else if (cornu == 21 ) {co = 'Mas o menos 🤔'} else if (cornu == 23 ) {co = 'Mas o menos 🤔'} else if (cornu == 24 ) {co = 'Mas o menos 🤔'} else if (cornu == 25 ) {co = 'Mas o menos 🤔'} else if (cornu == 26 ) {co = 'Mas o menos 🤔'} else if (cornu == 27 ) {co = 'Mas o menos 🤔'} else if (cornu == 28 ) {co = 'Mas o menos 🤔'} else if (cornu == 29 ) {co = 'Mas o menos 🤔'} else if (cornu == 30 ) {co = 'Mas o menos 🤔'} else if (cornu == 31 ) {co = 'Tengo mi dudas 😑'} else if (cornu == 32 ) {co = 'Tengo mi dudas 😑'} else if (cornu == 33 ) {co = 'Tengo mi dudas 😑'} else if (cornu == 34 ) {co = 'Tengo mi dudas 😑'} else if (cornu == 35 ) {co = 'Tengo mi dudas 😑'} else if (cornu == 36 ) {co = 'Tengo mi dudas 😑'} else if (cornu == 37 ) {co = 'Tengo mi dudas 😑'} else if (cornu == 38 ) {co = 'TTengo mi dudas 😑'} else if (cornu == 39 ) {co = 'Tengo mi dudas 😑'} else if (cornu == 40 ) {co = 'Tengo mi dudas 😑'} else if (cornu == 41 ) {co = 'Tengo razon? 😏'} else if (cornu == 42 ) {co = 'Tengo razon? 😏'} else if (cornu == 43 ) {co = 'Tengo razon? 😏'} else if (cornu == 44 ) {co = 'Tengo razon? 😏'} else if (cornu == 45 ) {co = 'Tengo razon? 😏'} else if (cornu == 46 ) {co = 'Tengo razon? 😏'} else if (cornu == 47 ) {co = 'Tengo razon? 😏'} else if (cornu == 48 ) {co = 'Tengo razon? 😏'} else if (cornu == 49 ) {co = 'Tengo razon? 😏'} else if (cornu == 50 ) {co = 'Eres o no? 🧐'} else if (cornu > 51) {co = 'Usted es cachudo papi 🥸'}
-hasil = `${rate}Usted es ${random}% cachudo papi\n\n${ga}`
-reply(hasil)
-break				  
                                   case 'wa.me':
 				  case 'wame':
   client.updatePresence(from, Presence.composing) 
       options = {
           text: `「 *LINK WHATSAPP* 」\n\n_Solicitado por_ : *@${sender.split("@s.whatsapp.net")[0]}\n\nSu link de Whatsapp : *https://wa.me/${sender.split("@s.whatsapp.net")[0]}*\n*O ( / )*\n*https://api.whatsapp.com/send?phone=${sender.split("@")[0]}*`,
-          contextInfo: { mentionedJid: [sender] }
+          contextInfo: { mentionedJid: [sende
     }
     client.sendMessage(from, options, text, { quoted: mek } )
 				break
