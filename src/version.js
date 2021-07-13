@@ -2,7 +2,7 @@ const version = (prefix, pushname) => {
     return `
 *ShanBot 🤖 by shanduy*
 
-*Actualizado:* 8 de julio de 2021
+*Actualizado:* 12 de julio de 2021
 *Versión actual:* 3.0
 *Ofrecida por:* shanduy™
 
@@ -17,7 +17,7 @@ Si vez a alguien que robo mi bot comunicate conmigo con el comando *creador
 
 *BLOG DE SHANBOT*
 
-https://github.com/shanduy/ShanBot
+https://github.com/Axel-bytu/ShanBot
 
 by shanduy
 `
