@@ -17,25 +17,16 @@
 <p align="center">
 <a href="https://github.com/shanduy"><img title="Creador" src="https://img.shields.io/badge/Author-Shanduy-purple.svg?style=for-the-badge&logo=github"></a>
 </p>
-
+<p align="center">
+<a href="https://github.com/Axel-bytu"><img title="Collaborator" src="https://img.shields.io/badge/Colaborador-axel-bytu-purple.svg?style=for-the-badge&logo=github"></a>
+</p>
 <p align="center">
   <a href="https://www.youtube.com/channel/UCbNOLyHAy-SL4D9iz9Oi0lw"><img src="https://img.shields.io/badge/YouTube-thepavos-ff0000?style=for-the-badge&logo=youtube&logoColor=ff0000&lihttps://youtu.be/n9fUrhPf5-8-8" /></a>
   <a name=hendra759&label=VIEWS&style=flat-square&color=orange" />
 
-<p align="center">
-Mis Redes Sociales Y Mi Whatsapp Para Resolver Tus Problemas
-</p>
-
-<p align='center'>
-   <a href="https://www.instagram.com/thepavos/"><img height="30" src="https://github.com/shanduy/ShanBot/blob/main/temples/580b57fcd9996e24bc43c521.png?raw=true"></a>&nbsp;&nbsp;
-   <a href="https://www.youtube.com/watch?v=2LQSzEbpJ-M"><img height="30" src="https://github.com/shanduy/ShanBot/blob/main/temples/youtube-logo-6-2.png?raw=true"></a>&nbsp;&nbsp;
-   <a href="https://wa.me/593967689722"><img height="30" src="https://github.com/shanduy/ShanBot/blob/main/temples/d9d97d48264770f85d35c208f279152c.png?raw=true"></a>
-</P>
-
-
 
 # ShanBot
-ULTIMA VERSION 3.0
+ULTIMA VERSION 3.1
 
 Pasos para instalar el bot via termux
 https://www.youtube.com/watch?v=2LQSzEbpJ-M
@@ -107,46 +98,11 @@ Si despues que ya instalastes tu bot y termux te salta en blanco, se fue tu inte
 > npm start
 ```
 
-## Realizas estos pasos como en el video de acontinuacion 
-
-![Output sample](https://github.com/shanduy/ShanBot/blob/main/temples/Screenrecorder-2021-05-12-21-09-23-978.gif)
-
-## Si realizaste este paso y te salio esto
-
-![Settings](https://github.com/shanduy/ShanBot/blob/main/temples/IMG_20210513_155715.jpg)
-
-## Vuelves a poner los comandos
-
-```bash
-> cd ShanBot
-> npm start
-```
-
-## Realizas este paso hasta que te salgo Conectado
-
-![Settings](https://github.com/shanduy/ShanBot/blob/main/temples/IMG_20210513_155631.jpg)
-
-
-## Prender Y Apagar El Bot
-
-## Para eso nos vamos a dirigir a termux y hacemos lo siguiente 
-
-![Output sample](https://github.com/shanduy/ShanBot/blob/main/temples/Screenrecorder-2021-05-13-16-12-37-825.gif)
-
-
-## Y para prender el bot solo colocamos
-
-```bash
-> npm start
-```
-![Output sample](https://github.com/shanduy/ShanBot/blob/main/temples/Screenrecorder-2021-05-13-16-12-49-337.gif)
-
-
 
 ## Y Listo Ya Estara En Funcionamiento. Espero Te Alla Ayudado :)
 
 
 
-## by shanduy
-
+## ⚡by shanduy⚡
+## ⚡bytu⚡
 
