@@ -1,18 +1,19 @@
 const help = (prefix) => {
 	return `
 
-⌜ *ShanBot 🤖 by shanduy* ⌟  
+⌜⚡ShanBot 🤖 by shanduy⚡⌟  
 
 ◉ *INFORMACION*
-   ○ Comando: ⌜ ${prefix} ⌟
-   ○ Creador: shanduy™ 
-   ○ Como instalar el bot: https://www.youtube.com/watch?v=2LQSzEbpJ-M
-   ○ Instagram: https://www.instagram.com/thepavos
+  ┠○ Comando: ⌜ ${prefix} ⌟
+  ┠○ Creador: shanduy™ 
+  ┠○ Colaborador: bytu™
+  ┠○ Como instalar el bot: https://www.youtube.com/watch?v=2LQSzEbpJ-M
+  ┠○ Instagram: https://www.instagram.com/thepavos
 
 
 ◉ *NUEVOS COMANDOS*
 ○ ${prefix}antimenu
-Su nombre lo dice todo (antilink)
+Pu nombre lo dice todo (antilink)
 ○ ${prefix}otak
 Monas chinas
 ○ ${prefix}shantera
