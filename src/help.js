@@ -1,8 +1,5 @@
 const help = (prefix) => {
 	return `
-<p align="center">
-<img banner="https://raw.githubusercontent.com/Axel-bytu/ShanBot/main/banner/bytubaner.jpg"/>
-</p>
 
 ⌜⚡ShanBot 🤖 by shanduy⚡⌟  
 
