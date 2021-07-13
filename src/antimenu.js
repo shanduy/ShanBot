@@ -10,7 +10,7 @@ ${prefix}antilink 0
 
 _Para activar este comando el bot necesita tener admin y esta funcion solo la activan los admins del grupo_
 
-by shanduy
+ву ѕнαη∂υу
 `
 
 }
