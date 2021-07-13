@@ -11,7 +11,7 @@ la toca 7w7
 
 _Ojito escribe tal como esta_
 
-by shanduy`
+ву ѕнαη∂υу`
 
 }
 
