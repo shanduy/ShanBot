@@ -44,7 +44,7 @@ Para eso vas a cerrar sesión de whatsapp wed en el numero de tu bot y en termux
 Una vez hecho eso vas a colorcar en termux los siguientes comandos
 
 ```bash
-> git clone https://github.com/shanduy/ShanBot
+> git clone https://github.com/Axel-bytu/ShanBot
 > cd ShanBot
 > npm start
 ```
@@ -78,7 +78,7 @@ Pasos para instalar el bot en termux
 > pkg install ffmpeg
 > pkg install nodejs
 > pkg install wget
-> git clone https://github.com/shanduy/ShanBot
+> git clone https://github.com/Axel-bytu/ShanBot
 > cd ShanBot
 > bash install.sh
 > npm start
