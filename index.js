@@ -110,11 +110,6 @@ const antilink = JSON.parse(fs.readFileSync('./src/antilink.json'))
 
 /******FIN DE ARCHIVOS ANTILINK POR SHANDUY******/
 
-/******ARCHIVOS ANTISPAM POR SHANDUY******/
-const antispam = JSON.parse(fs.readFileSync('./src/antispam.json'))
-
-/******FIN DE ARCHIVOS ANTISPAM POR SHANDUY******/
-
 const getLevelingXp = (userId) => {
             let position = false
             Object.keys(_level).forEach((i) => {
@@ -391,7 +386,7 @@ async function starts() {
 		}, 0)
 	}
 		
-           //FUNCION ANTISPAM
+           ///FUNCION ANTISPAM
 	        if (budy.includes("://chat.whatsapp.com/")){
 		if (!isGroup) return
 		if (!isAntiSpam) return
@@ -406,7 +401,7 @@ async function starts() {
 			client.updatePresence(from, Presence.composing)
 			reply("Adios mi loco")
 		}, 0)
-	}
+	}/
 		
 		//FUNCION DE LEVEL
             if (isGroup && isLevelingOn) {
@@ -869,7 +864,7 @@ break
 					} else {
 						reply('Coloque *antimenu para ver los comandos')
 					}
-                                        case 'antispam':
+                                        /case 'antispam':
                                         if (!isGroup) return reply(mess.only.group)
 					if (!isUser) return reply(mess.only.daftarB)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
@@ -886,8 +881,7 @@ break
 						fs.writeFileSync('./src/antispam.json', JSON.stringify(antispam))
 						reply('❬ ✅ ❭ La funcion de antispam esta deshabilitada en este grupo')
 					} else {
-						reply('Coloque *antimenu para ver los comandos')
-					}
+						reply('Coloque *antimenu para ver los comandos')/
 					break
 			        case 'linkgroup':
 				case 'linkgrup':
