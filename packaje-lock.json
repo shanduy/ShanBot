@@ -1,0 +1,11 @@
+{
+  " requiere " : verdadero ,
+  " lockfileVersion " : 1 ,
+  " dependencias " : {
+    " revel.js " : {
+      " versión " : " 3.9.2 " ,
+      " resuelto " : " https://registry.npmjs.org/reveal.js/-/reveal.js-3.9.2.tgz " ,
+      " integridad " : " sha512-Dvv2oA9FrtOHE2DWj5js8pMRfwq ++ Wmvsn1EyAdYLC80lBjTphns + tPsB652Bnvep9AVviuVS / b4XoVY9rXHLA == "
+    }
+  }
+}
