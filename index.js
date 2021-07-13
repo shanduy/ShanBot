@@ -386,23 +386,6 @@ async function starts() {
 		}, 0)
 	}
 		
-           ///FUNCION ANTISPAM
-	        if (budy.includes("://chat.whatsapp.com/")){
-		if (!isGroup) return
-		if (!isAntiSpam) return
-		if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el spam :)')
-		client.updatePresence(from, Presence.composing)
-		var kic = `${sender.split("@")[10]}@s.whatsapp.net`
-		reply(`Spam Detectado ${sender.split("@")[10]} Usted será expulsado del grupo`)
-		setTimeout( () => {
-			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
-		}, 0)
-		setTimeout( () => {
-			client.updatePresence(from, Presence.composing)
-			reply("Adios mi loco")
-		}, 0)
-	}/
-		
 		//FUNCION DE LEVEL
             if (isGroup && isLevelingOn) {
             const currentLevel = getLevelingLevel(sender)
@@ -863,26 +846,7 @@ break
 						reply('❬ ✅ ❭ La funcion de antilink esta deshabilitada en este grupo')
 					} else {
 						reply('Coloque *antimenu para ver los comandos')
-					}
-                                        /case 'antispam':
-                                        if (!isGroup) return reply(mess.only.group)
-					if (!isUser) return reply(mess.only.daftarB)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (!isGroupAdmins) return reply(mess.only.Badmin)
-					if (args.length < 1) return reply('Coloque *antimenu para ver los comandos')
-					if (Number(args[0]) === 1) {
-						if (isAntiLink) return reply('El antispam ya esta activo')
-						antilink.push(from)
-						fs.writeFileSync('./src/antispam.json', JSON.stringify(antispam))
-						reply('❬ ✅ ❭ La funcion de antispam esta habilitada en este grupo')
-						client.sendMessage(from,`Atención a todos los miembros activos de este grupo 📣\n\nEl antispam esta activo\n\nY solo los admins de este grupo tienen permitido el spam\n\nSi algun participante que no se admin cree spam sera expulsado de este grupo de inmediato`, text)
-					} else if (Number(args[0]) === 0) {
-						antilink.splice(from)
-						fs.writeFileSync('./src/antispam.json', JSON.stringify(antispam))
-						reply('❬ ✅ ❭ La funcion de antispam esta deshabilitada en este grupo')
-					} else {
-						reply('Coloque *antimenu para ver los comandos')/
-					break
+				        }
 			        case 'linkgroup':
 				case 'linkgrup':
 				case 'linkgc':
