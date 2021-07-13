@@ -359,6 +359,7 @@ async function starts() {
                         const NomerOwner = '593997889284@s.whatsapp.net'
                         /******Entrada ApiKey******/
                         const BarBarKey = 'Mn2Bf58QHQ8kABoLq80g'
+                        const apixteamxyz = '07b550ff483327cb'
                         /******Fin de la entrada de ApiKey******/
 
 			const isUrl = (url) => {
