@@ -458,7 +458,7 @@ async function starts() {
 			switch(command) {
 		case 'help':
 		case 'menu':   
-           	client.sendMessage(from, help(prefix, sender), text, {quoted: mek}<img banner="https://raw.githubusercontent.com/Axel-bytu/ShanBot/main/banner/bytubaner.jpg"/>)
+                client.sendMessage(from, help(prefix, sender), text, {quoted: mek})
 		break
                 case 'otak':
 		client.sendMessage(from, otak(prefix, sender), text, {quoted: mek})
