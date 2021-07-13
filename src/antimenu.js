@@ -8,11 +8,6 @@ ${prefix}antilink 1
 *PARA DESACTIVAR EL ANTILINK*
 ${prefix}antilink 0
 
-*PARA ACTIVAR EL ANTISPAM*
-${prefix}antispam 1
-
-*PARA DESACTIVAR EL ANTISPAM*
-${prefix}antispam 0
 
 _Para activar estos comando el bot necesita tener admin y esta funcion solo la activan los admins del grupo_
 
