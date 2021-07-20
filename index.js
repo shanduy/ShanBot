@@ -1326,14 +1326,20 @@ break
                   reply(`opaaaaa`)
                   }
                  
-		if (budy.includes(`hola`)) {
-                  reply(`hola, apeteces de sexo?`)
-                  }			
-					
 		if (budy.includes(`fua`)) {
                   reply(`el diegote pa`)
                   }
-        if (budy.startsWith(`la toca 7w7`)) {
+        
+	if (budy.startsWith(`:v`)) {
+        const none = fs.readFileSync('./mp3/viejo1.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
+	if (budy.startsWith(`hola`)) {
+	if (budy.startsWith(`Hola`)) {
+        const none = fs.readFileSync('./mp3/dylan1.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
+	if (budy.startsWith(`la toca 7w7`)) {
         const none = fs.readFileSync('./anishan/anime5.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
