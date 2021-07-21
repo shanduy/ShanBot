@@ -609,7 +609,7 @@ break
                 break
 	case 'kickmenu':
                 client.sendMessage(from, '*Comando De Banear 📤*\n\nPara usar esta funcion el bot necesita admin\n\nComando: *kick + la personas que deseas eliminar\nEjemplo: *kick @xxxxxx\n\n*⚠ADVERTENCIA⚠*\nNUNCA COLOCAR MAS DE DOS PERSONAS PARA QUE LAS ELIMINE\nEjemplo: *kick @xxxxxx @xxxxx\nYa que el numero del bot se ira a soporte\nQuedas advertido :)\n\nву ѕнαη∂υу',MessageType.text, { quoted: mek} )
-                const none = fs.readFileSync('./mp3/kick1.mp3');
+                const none = fs.readFileSync('./mp3/eliminar.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                 break
 	case 'hidetag':
