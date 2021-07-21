@@ -69,7 +69,7 @@ Registrate con el comando ${prefix}daftar y tu nombre
   ╠ Cerrar el grupo solo admins
   ╠ ○ ${prefix}opengc
   ╠ Abrir grupo solo admins
-  ╠ ○ ${prefix}kick o pafuera
+  ╠ ○ ${prefix}kickmenu
   ╠ Eliminar a un miembro 
   ╠ ○ ${prefix}promote
   ╠ Dar admin a un miembro
