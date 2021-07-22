@@ -792,7 +792,9 @@ break
 						teks = 'Pedido recibido, chao nefastooo 👋 :\n'
 						for (let _ of mentioned) {
 							teks += `@${_.split('@')[0]}\n`
-						}
+				        const none = fs.readFileSync('./mp3/baneado.mp3');
+		                        client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                                                }
 						mentions(teks, mentioned, true)
 						client.groupRemove(from, mentioned)
 					} else {
@@ -1332,15 +1334,7 @@ break
 		if (budy.includes(`fua`)) {
                   reply(`el diegote pa`)
                   }
-        if (budy.startsWith(`*pafuera`)) {
-        const none = fs.readFileSync('./mp3/baneado.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`*kick`)) {
-        const none = fs.readFileSync('./mp3/baneado.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`:v`)) {
+        if (budy.startsWith(`:v`)) {
         const none = fs.readFileSync('./mp3/viejo1.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
