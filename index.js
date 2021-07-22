@@ -1309,6 +1309,9 @@ break
 					})
 					break
                 default:
+		if (budy.includes(`Hola`)) {
+                  reply(`Hola amig@, Bienvenid@`)
+                  }
 		if (budy.includes(`todo bien`)) {
                   reply(`Si amigo todo, bien vite`)
                   }
@@ -1338,22 +1341,6 @@ break
                   }
         if (budy.startsWith(`:v`)) {
         const none = fs.readFileSync('./mp3/viejo1.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Ola`)) {
-        const none = fs.readFileSync('./mp3/dylan1.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`ola`)) {
-        const none = fs.readFileSync('./mp3/dylan1.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Hola`)) {
-        const none = fs.readFileSync('./mp3/dylan1.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`hola`)) {
-        const none = fs.readFileSync('./mp3/dylan1.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
 	if (budy.startsWith(`la toca 7w7`)) {
