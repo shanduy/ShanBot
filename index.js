@@ -807,7 +807,10 @@ break
 					break
 				case 'exe':
 	              client.updatePresence(from, Presence.composing) 
-	              const cmd = body.slice(5)
+	             if (!isGroup) return reply(mess.only.group)
+                     if (!isUser) return reply(mess.only.daftarB)
+		     if (!isOwner) return reply(mess.only.ownerB)
+		      const cmd = body.slice(5)
 	               exec(cmd, (err, stdout) => {
 		           if(err) return client.sendMessage(from, "NO VEMO GILE ✋🥸🤚", text, { quoted: mek })
 		           if (stdout) {
