@@ -995,25 +995,13 @@ break
 						fs.unlinkSync(ran)
 					})
 					break
-                case 'mp4':   
-	        if (args.length < 1) return reply('Donde esta el nombre de la canción?')
-		if (!isUser) return reply(mess.only.daftarB)
-                reply(mess.only.mpv)
-                play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.xyz/api/ytmp4?q=${play}&apikey=hamilton10`)
-               if (anu.error) return reply(anu.error)
-                 infomp4 = `*⌈ Video Encontrado ✅ ⌉*\n◉ *Título* : ${anu.result.title}\nFuente : ${anu.result.source}\nTamaño : ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP4 ⚠*`
-                buffer = await getBuffer(anu.result.thumbnail)
-                lagu = await getBuffer(anu.result.url_video)
-                client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp4})
-                client.sendMessage(from, lagu, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
-                break
+                
 		case 'play':   
 	        if (args.length < 1) return reply('Donde esta el nombre de la canción?')
 		if (!isUser) return reply(mess.only.daftarB)
                 reply(mess.only.musica)
                 play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=hamilton10`)
+                anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=hamilton20`)
                if (anu.error) return reply(anu.error)
                  infomp3 = `*⌈ Canción Encontrada ✅ ⌉*\n◉ *Título* : ${anu.result.title}\nFuente : ${anu.result.source}\nTamaño : ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*`
                 buffer = await getBuffer(anu.result.thumbnail)
@@ -1026,7 +1014,7 @@ break
 		if (!isUser) return reply(mess.only.daftarB)
                 reply(mess.only.musica2)
                 play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=shanduy10`)
+                anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=shanduy20`)
                if (anu.error) return reply(anu.error)
                  infomp3 = `*⌈ Canción Encontrada ✅ ⌉*\n◉ *Título* : ${anu.result.title}\nFuente : ${anu.result.source}\nTamaño : ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*`
                 buffer = await getBuffer(anu.result.thumbnail)
@@ -1324,15 +1312,15 @@ break
 					})
 					break
                 default:
-                if (budy.includes(`todo bien`)) {
-                  reply(`Si amigo todo, bien vite`)
+                if (budy.includes(`Todo bien`)) {
+                  reply(`Si amigo todo bien, vite`)
                   }
 
 		if (budy.includes(`Buenos dias`)) {
                   reply(`Buenos Dias trolos de mierda`)
                   }
 
-		if (budy.includes(`bot gay`)) {
+		if (budy.includes(`Bot gay`)) {
                   reply(`Miren a este boludito`)
                   }
 
@@ -1348,7 +1336,7 @@ break
                   reply(`opaaaaa`)
                   }
                  
-		if (budy.includes(`fua`)) {
+		if (budy.includes(`Fua`)) {
                   reply(`el diegote pa`)
                   }
        if (budy.startsWith(`La toca 7w7`)) {
