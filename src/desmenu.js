@@ -28,7 +28,7 @@ ESTAS FUNCIONES ESTAN EN MANTENIMIENTO
 ESTATE ATENTO A LA ACTUALIZACION QUE LANZARE PRONTO
 
 Coloca *version
-Para conocer tu version y checar la actulizacion mas reciente de tu bot
+Para conocer tu version y checar la actualizacion mas reciente de tu bot
 
 ══════════════
     
