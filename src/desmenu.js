@@ -12,22 +12,23 @@ Una alternativa por si *play llego a su limite de canciones
 ${prefix}play
 Coloca el nombre de la cancion, o el link del video YT
 
-${prefix}ytmp3
-Coloca el link del video YT
-
 *Ejemplo*
 
-${prefix}ytmp3 https://www.youtube.com/xxxxxxxxxxxxx
+${prefix}play https://www.youtube.com/xxxxxxxxxxxxx
 
 ══════════════
 
-*VIDEO*
-${prefix}ytmp4
-Coloca el link del video YT
+*EN MANTENIMIENTO 🛠*
 
-*Ejemplo*
+~${prefix}ytmp3~ EN MANTENIMIENTO
 
-${prefix}ytmp4 https://www.youtube.com/xxxxxxxxxxxxx
+~${prefix}ytmp4~ EN MANTENIMIENTO
+
+ESTAS FUNCIONES ESTAN EN MANTENIMIENTO
+ESTATE ATENTO A LA ACTUALIZACION QUE LANZARE PRONTO
+
+Coloca *version
+Para conocer tu version y checar la actulizacion mas reciente de tu bot
 
 ══════════════
     
