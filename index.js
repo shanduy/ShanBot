@@ -1312,7 +1312,10 @@ break
 					})
 					break
                 default:
-                if (budy.includes(`Todo bien`)) {
+                if (budy.includes(`Hola`)) {
+                  reply(`wtf y este random?`)
+                  }
+		if (budy.includes(`Todo bien`)) {
                   reply(`Si amigo todo bien, vite`)
                   }
 
@@ -1329,7 +1332,7 @@ break
                   }
 
 		if (budy.includes(`Bien gracias y tu?`)) {
-                  reply(`Todo bien yazmi te quiero mucho pero deja de hacer spam la puta madre con cariño shanduy :)`)
+                  reply(`wtf y esta random?`)
                   }
 					
 		if (budy.includes(`opa`)) {
@@ -1339,7 +1342,11 @@ break
 		if (budy.includes(`Fua`)) {
                   reply(`el diegote pa`)
                   }
-       if (budy.startsWith(`La toca 7w7`)) {
+       if (budy.startsWith(`:v`)) {
+        const none = fs.readFileSync('./mp3/viejo1.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
+	if (budy.startsWith(`La toca 7w7`)) {
         const none = fs.readFileSync('./anishan/anime5.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
