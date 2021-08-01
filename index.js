@@ -368,7 +368,58 @@ async function starts() {
 			const mentions = (teks, memberr, id) => {
 				(id == null || id == undefined || id == false) ? client.sendMessage(from, teks.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
 			}
-           //FUNCION ANTILINK
+           
+			
+//FUNCION YTMP4			
+	
+function ytv(url) {
+    return new Promise((resolve, reject) => {
+        if (ytIdRegex.test(url)) {
+            let ytId = ytIdRegex.exec(url)
+            url = 'https://youtu.be/' + ytId[1]
+            post('https://www.y2mate.com/mates/en60/analyze/ajax', {
+                url,
+                q_auto: 0,
+                ajax: 1
+            })
+                .then(res => res.json())
+                .then(res => {
+                    document = (new JSDOM(res.result)).window.document
+                    yaha = document.querySelectorAll('td')
+                    filesize = yaha[yaha.length - 23].innerHTML
+                    id = /var k__id = "(.*?)"/.exec(document.body.innerHTML) || ['', '']
+                    thumb = document.querySelector('img').src
+                    title = document.querySelector('b').innerHTML
+
+                    post('https://www.y2mate.com/mates/en60/convert', {
+                        type: 'youtube',
+                        _id: id[1],
+                        v_id: ytId[1],
+                        ajax: '1',
+                        token: '',
+                        ftype: 'mp4',
+                        fquality: 360
+                    })
+                        .then(res => res.json())
+                        .then(res => {
+                            let KB = parseFloat(filesize) * (1000 * /MB$/.test(filesize))
+                            resolve({
+                                dl_link: /<a.+?href="(.+?)"/.exec(res.result)[1],
+                                thumb,
+                                title,
+                                filesizeF: filesize,
+                                filesize: KB
+                            })
+                        }).catch(reject)
+                }).catch(reject)
+        } else reject('URL INVALID')
+    })
+} 		
+			
+			
+//FIN DE LA FUNCION			
+			
+//FUNCION ANTILINK
 	        if (budy.includes("://chat.whatsapp.com/")){
 		if (!isGroup) return
 		if (!isAntiLink) return
@@ -631,7 +682,7 @@ break
               await client.sendMessage(from, options, text)
                break
                     case 'ytmp4':
-			if (args.length === 0) return reply(`Donde esta el link de youtube?\n\nEjemplo *${prefix}ytmp4 [linkYt]*`)
+			if (args.length === 0) return reply(`Donde esta el link de youtube?\n\nEjemplo *${prefix}ytmp4 www.youtube.com/xxxxxxx*`)
 			let isLinks2 = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
 			if (!isLinks2) return reply(mess.error.Iv)
 				try {
@@ -1460,6 +1511,10 @@ break
                   }
                if (budy.startsWith(`Sexo`)) { 
         const none = fs.readFileSync('./mp3/sexo.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
+	if (budy.startsWith(`Pongan cuties`)) { 
+        const none = fs.readFileSync('./mp3/neymar1.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
                  if (budy.startsWith(`Momento epico`)) {
