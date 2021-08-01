@@ -612,7 +612,8 @@ break
                break
 	case 'hidetag':
                 client.updatePresence(from, Presence.composing) 
-                if (!isUser) return reply(mess.only.daftarB)
+                if (!isGroupAdmins) return reply(mess.only.Badmin)
+		if (!isUser) return reply(mess.only.daftarB)
                 if (!isGroup) return reply(mess.only.group)
                 teks = body.slice(9)
                 group = await client.groupMetadata(from);
