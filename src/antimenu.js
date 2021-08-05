@@ -1,6 +1,11 @@
 const antimenu = (prefix, pushname) => {
     return `
-*Comandos Para Activar El Antilink ⚠*
+
+*Comandos Para Activar Los Antilinks 📢*
+
+══════════════
+
+_*Antilink De Grupos De Whatsapp*_
 
 *PARA ACTIVAR EL ANTILINK*
 ${prefix}antilink 1
@@ -8,7 +13,49 @@ ${prefix}antilink 1
 *PARA DESACTIVAR EL ANTILINK*
 ${prefix}antilink 0
 
-_Para activar este comando el bot necesita tener admin y esta funcion solo la activan los admins del grupo_
+══════════════
+
+_*Antilink De Instagram*_
+
+*PARA ACTIVAR EL ANTILINK*
+${prefix}antilink 1
+
+*PARA DESACTIVAR EL ANTILINK*
+${prefix}antilink 0
+
+══════════════
+
+_*Antilink De Facebook*_
+
+*PARA ACTIVAR EL ANTILINK*
+${prefix}antilink 1
+
+*PARA DESACTIVAR EL ANTILINK*
+${prefix}antilink 0
+
+══════════════
+
+_*Antilink De Tik Tok*_
+
+*PARA ACTIVAR EL ANTILINK*
+${prefix}antilink 1
+
+*PARA DESACTIVAR EL ANTILINK*
+${prefix}antilink 0
+
+══════════════
+
+_*Antilink De Youtube*_
+
+*PARA ACTIVAR EL ANTILINK*
+${prefix}antilink 1
+
+*PARA DESACTIVAR EL ANTILINK*
+${prefix}antilink 0
+
+
+_Para activar estos comandos el bot necesita tener admin en el grupo y esta funcion solo la activan los admins del grupo_
+
 
 ву ѕнαη∂υу
 `
