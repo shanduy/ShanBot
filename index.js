@@ -107,7 +107,12 @@ const {
 /******INICIO DE FUNCIONES ENTRADA******/
 
 /******ARCHIVOS ANTILINK POR SHANDUY******/
+
 const antilink = JSON.parse(fs.readFileSync('./src/antilink.json'))
+const antiface = JSON.parse(fs.readFileSync('./src/antiface.json'))
+const antitube = JSON.parse(fs.readFileSync('./src/antitube.json'))
+const antitik = JSON.parse(fs.readFileSync('./src/antitik.json'))
+const antiinsta = JSON.parse(fs.readFileSync('./src/antiinsta.json'))
 
 /******FIN DE ARCHIVOS ANTILINK POR SHANDUY******/
 
@@ -370,13 +375,78 @@ async function starts() {
 			}
            
 //FUNCION ANTILINK
-	        if (budy.includes("://chat.whatsapp.com/")){
+	     	
+	if (budy.includes("https://www.facebook.com/")){
+		if (!isGroup) return
+		if (!isAntiFace) return
+                if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
+		client.updatePresence(from, Presence.composing)
+		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		reply(`*LINK DE FACEBOOK DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
+		setTimeout( () => {
+			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
+		}, 0)
+		setTimeout( () => {
+			client.updatePresence(from, Presence.composing)
+			reply("Adios mi loco")
+		}, 0)
+	}	
+			
+	if (budy.includes("https://youtu.be/")){
+		if (!isGroup) return
+		if (!isAntiTube) return
+	        if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
+		client.updatePresence(from, Presence.composing)
+		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		reply(`*LINK DE YOUTUBE DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
+		setTimeout( () => {
+			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
+		}, 0)
+		setTimeout( () => {
+			client.updatePresence(from, Presence.composing)
+			reply("Adios mi loco")
+		}, 0)
+	}
+	
+	if (budy.includes("https://www.instagram.com/")){
+		if (!isGroup) return
+		if (!isAntiInsta) return
+	        if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
+		client.updatePresence(from, Presence.composing)
+		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		reply(`*LINK DE INSTAGRAM DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
+		setTimeout( () => {
+			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
+		}, 0)
+		setTimeout( () => {
+			client.updatePresence(from, Presence.composing)
+			reply("Adios mi loco")
+		}, 0)
+	}		
+	
+	if (budy.includes("https://vm.tiktok.com/")){
+		if (!isGroup) return
+		if (!isAntiTik) return
+                if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
+		client.updatePresence(from, Presence.composing)
+		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		reply(`*LINK DE TIK TOK DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
+		setTimeout( () => {
+			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
+		}, 0)
+		setTimeout( () => {
+			client.updatePresence(from, Presence.composing)
+			reply("Adios mi loco")
+		}, 0)
+	}
+	
+       if (budy.includes("://chat.whatsapp.com/")){
 		if (!isGroup) return
 		if (!isAntiLink) return
 		if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
 		client.updatePresence(from, Presence.composing)
 		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		reply(`Link Detectado ${sender.split("@")[0]} Usted será expulsado del grupo`)
+		reply(`*LINK DE WHATSAPP DETECTADO 📢* ${sender.split("@")[0]} Usted será expulsado del grupo`)
 		setTimeout( () => {
 			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
 		}, 0)
@@ -823,7 +893,92 @@ break
 		           }
 	           })
                   break
-                                        case 'antilink':
+                                       
+				case 'antiinsta':
+                                        if (!isGroup) return reply(mess.only.group)
+					if (!isUser) return reply(mess.only.daftarB)
+					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+					if (!isGroupAdmins) return reply(mess.only.Badmin)
+					if (args.length < 1) return reply('Coloque *antimenu para ver los comandos de antilinks')
+					if (Number(args[0]) === 1) {
+						if (isAntiInsta) return reply('El antilink de Instagram ya esta activo')
+						antiisnta.push(from)
+						fs.writeFileSync('./src/antiinsta.json', JSON.stringify(antiisnta))
+						reply('❬ ✅ ❭ La funcion de antilink de Instagram esta habilitada en este grupo')
+						client.sendMessage(from,`Atención a todos los miembros activos de este grupo 📣\n\nDesde ahora cualquier particpiante que envia un link de *Instagram* o de su perfil para pedir likes a este grupo sera expulsado de inmediato\n\n*_Razones: Spam*_`, text)
+					} else if (Number(args[0]) === 0) {
+						antiinsta.splice(from)
+						fs.writeFileSync('./src/antiinsta.json', JSON.stringify(antiisnta))
+						reply('❬ ✅ ❭ La funcion de antilink de Instagram esta deshabilitada en este grupo')
+					} else {
+						reply('Coloque *antimenu para ver los demas comandos de antilinks')
+					}
+					break
+				
+				  case 'antitik':
+                                        if (!isGroup) return reply(mess.only.group)
+					if (!isUser) return reply(mess.only.daftarB)
+					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+					if (!isGroupAdmins) return reply(mess.only.Badmin)
+					if (args.length < 1) return reply('Coloque *antimenu para ver los comandos de antilinks')
+					if (Number(args[0]) === 1) {
+						if (isAntiTik) return reply('El antilink de Tik Tok ya esta activo')
+						antitik.push(from)
+						fs.writeFileSync('./src/antitik.json', JSON.stringify(antitik))
+						reply('❬ ✅ ❭ La funcion de antilink de Tik Tok esta habilitada en este grupo')
+						client.sendMessage(from,`Atención a todos los miembros activos de este grupo 📣\n\nDesde ahora cualquier particpiante que envia un link de *Tik Tok* o de su perfil a este grupo sera expulsado de inmediato\n\n*_Razones: Spam*_`, text)
+					} else if (Number(args[0]) === 0) {
+						antitik.splice(from)
+						fs.writeFileSync('./src/antitik.json', JSON.stringify(antitik))
+						reply('❬ ✅ ❭ La funcion de antilink de Tik Tok esta deshabilitada en este grupo')
+					} else {
+						reply('Coloque *antimenu para ver los demas comandos de antilinks')
+					}
+					break 
+				
+				case 'antitube':
+                                        if (!isGroup) return reply(mess.only.group)
+					if (!isUser) return reply(mess.only.daftarB)
+					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+					if (!isGroupAdmins) return reply(mess.only.Badmin)
+					if (args.length < 1) return reply('Coloque *antimenu para ver los comandos de antilinks')
+					if (Number(args[0]) === 1) {
+						if (isAntiTube) return reply('El antilink de facebook ya esta activo')
+						antitube.push(from)
+						fs.writeFileSync('./src/antitube.json', JSON.stringify(antitube))
+						reply('❬ ✅ ❭ La funcion de antilink de YouTube esta habilitada en este grupo')
+						client.sendMessage(from,`Atención a todos los miembros activos de este grupo 📣\n\nDesde ahora cualquier particpiante que envia un link de *YouTube* o de su canal a este grupo sera expulsado de inmediato\n\n*_Razones: Spam*_`, text)
+					} else if (Number(args[0]) === 0) {
+						antitube.splice(from)
+						fs.writeFileSync('./src/antitube.json', JSON.stringify(antitube))
+						reply('❬ ✅ ❭ La funcion de antilink de YouTube esta deshabilitada en este grupo')
+					} else {
+						reply('Coloque *antimenu para ver los demas comandos de antilinks')
+					}
+					break
+				
+				case 'antiface':
+                                        if (!isGroup) return reply(mess.only.group)
+					if (!isUser) return reply(mess.only.daftarB)
+					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+					if (!isGroupAdmins) return reply(mess.only.Badmin)
+					if (args.length < 1) return reply('Coloque *antimenu para ver los comandos de antilinks')
+					if (Number(args[0]) === 1) {
+						if (isAntiFace) return reply('El antilink de facebook ya esta activo')
+						antiface.push(from)
+						fs.writeFileSync('./src/antiface.json', JSON.stringify(antiface))
+						reply('❬ ✅ ❭ La funcion de antilink de Facebook esta habilitada en este grupo')
+						client.sendMessage(from,`Atención a todos los miembros activos de este grupo 📣\n\nDesde ahora cualquier particpiante que envia un link de *Facebook* de su publicaciones para pedir likes o grupos a este grupo sera expulsado de inmediato\n\n*_Razones: Spam*_`, text)
+					} else if (Number(args[0]) === 0) {
+						antiface.splice(from)
+						fs.writeFileSync('./src/antiface.json', JSON.stringify(antiface))
+						reply('❬ ✅ ❭ La funcion de antilink de Facebook esta deshabilitada en este grupo')
+					} else {
+						reply('Coloque *antimenu para ver los demas comandos de antilinks')
+					}
+					break
+				        
+			       case 'antilink':
                                         if (!isGroup) return reply(mess.only.group)
 					if (!isUser) return reply(mess.only.daftarB)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
@@ -833,14 +988,14 @@ break
 						if (isAntiLink) return reply('El antilink ya esta activo')
 						antilink.push(from)
 						fs.writeFileSync('./src/antilink.json', JSON.stringify(antilink))
-						reply('❬ ✅ ❭ La funcion de antilink esta habilitada en este grupo')
+						reply('❬ ✅ ❭ La funcion de antilink de Grupos De Whatsapp esta habilitada en este grupo')
 						client.sendMessage(from,`Atención a todos los miembros activos de este grupo 📣\n\nEl antilink esta activo\n\nY solo los admins de este grupo podran pasar el enlace\n\nSi algun participante que no se admin envía un enlace de este grupo u otro grupo sera expulsado de este grupo de inmediato`, text)
 					} else if (Number(args[0]) === 0) {
 						antilink.splice(from)
 						fs.writeFileSync('./src/antilink.json', JSON.stringify(antilink))
-						reply('❬ ✅ ❭ La funcion de antilink esta deshabilitada en este grupo')
+						reply('❬ ✅ ❭ La funcion de antilink de Grupos De Whatsapp esta deshabilitada en este grupo')
 					} else {
-						reply('Coloque *antimenu para ver los comandos')
+						reply('Coloque *antimenu para ver los demas comandos de antilinks')
 					}
 					break
 			        case 'linkgroup':
