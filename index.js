@@ -345,6 +345,10 @@ async function starts() {
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
 			const groupName = isGroup ? groupMetadata.subject : ''
 			const isAntiLink = isGroup ? antilink.includes(from) : false
+			const isAntiTube = isGroup ? antitube.includes(from) : false
+			const isAntiInsta = isGroup ? antiinsta.includes(from) : false
+			const isAntiTik = isGroup ? antitik.includes(from) : false
+			const isAntiFace = isGroup ? antiface.includes(from) : false
 			const groupId = isGroup ? groupMetadata.jid : ''
 			const groupMembers = isGroup ? groupMetadata.participants : ''
                         const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
