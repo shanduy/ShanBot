@@ -907,12 +907,12 @@ break
 					if (Number(args[0]) === 1) {
 						if (isAntInsta) return reply('El antilink de Instagram ya esta activo')
 						antisnta.push(from)
-						fs.writeFileSync('./src/antinsta.json', JSON.stringify(antisnta))
+						fs.writeFileSync('./src/antinsta.json', JSON.stringify(antinsta))
 						reply('❬ ✅ ❭ La funcion de antilink de Instagram esta habilitada en este grupo')
 						client.sendMessage(from,`Atención a todos los miembros activos de este grupo 📣\n\nDesde ahora cualquier particpiante que envia un link de *Instagram* o de su perfil para pedir likes a este grupo sera expulsado de inmediato\n\n_*Razones: Spam*_`, text)
 					} else if (Number(args[0]) === 0) {
 						antinsta.splice(from)
-						fs.writeFileSync('./src/antiinsta.json', JSON.stringify(antisnta))
+						fs.writeFileSync('./src/antinsta.json', JSON.stringify(antinsta))
 						reply('❬ ✅ ❭ La funcion de antilink de Instagram esta deshabilitada en este grupo')
 					} else {
 						reply('Coloque *antimenu para ver los demas comandos de antilinks')
