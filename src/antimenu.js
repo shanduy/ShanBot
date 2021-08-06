@@ -18,40 +18,40 @@ ${prefix}antilink 0
 _*Antilink De Instagram*_
 
 *PARA ACTIVAR EL ANTILINK*
-${prefix}antilink 1
+${prefix}antinsta 1
 
 *PARA DESACTIVAR EL ANTILINK*
-${prefix}antilink 0
+${prefix}antinsta 0
 
 ══════════════
 
 _*Antilink De Facebook*_
 
 *PARA ACTIVAR EL ANTILINK*
-${prefix}antilink 1
+${prefix}antiface 1
 
 *PARA DESACTIVAR EL ANTILINK*
-${prefix}antilink 0
+${prefix}antiface 0
 
 ══════════════
 
 _*Antilink De Tik Tok*_
 
 *PARA ACTIVAR EL ANTILINK*
-${prefix}antilink 1
+${prefix}antitik 1
 
 *PARA DESACTIVAR EL ANTILINK*
-${prefix}antilink 0
+${prefix}antitik 0
 
 ══════════════
 
 _*Antilink De Youtube*_
 
 *PARA ACTIVAR EL ANTILINK*
-${prefix}antilink 1
+${prefix}antitube 1
 
 *PARA DESACTIVAR EL ANTILINK*
-${prefix}antilink 0
+${prefix}antitube 0
 
 
 _Para activar estos comandos el bot necesita tener admin en el grupo y esta funcion solo la activan los admins del grupo_
