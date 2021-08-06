@@ -1,5 +1,5 @@
 {
-  "name": "shanbot",
+  "name": "A3 FF",
   "version": "0.0.2",
   "description": "Only termux",
   "main": "index.js",
@@ -17,7 +17,7 @@
     "whatsapp",
     "bot"
   ],
-  "author": "Shan",
+  "author": "A3 FF YT",
   "license": "ISC",
   "dependencies": {
     "@adiwajshing/baileys": "^3.5.1",
@@ -38,10 +38,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shanduy/ShanBot.git"
+    "url": "git+https://github.com/a3ff"
   },
   "bugs": {
-    "url": "https://github.com/shanduy/ShanBot.git"
+    "url": "https://github.com/a3ff"
   },
-  "homepage": "https://github.com/shanduy/ShanBot#readme"
+  "homepage": "https://github.com/a3ff#readme"
 }
