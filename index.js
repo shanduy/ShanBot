@@ -112,7 +112,7 @@ const antilink = JSON.parse(fs.readFileSync('./src/antilink.json'))
 const antiface = JSON.parse(fs.readFileSync('./src/antiface.json'))
 const antitube = JSON.parse(fs.readFileSync('./src/antitube.json'))
 const antitik = JSON.parse(fs.readFileSync('./src/antitik.json'))
-const antiinsta = JSON.parse(fs.readFileSync('./src/antiinsta.json'))
+const antinsta = JSON.parse(fs.readFileSync('./src/antinsta.json'))
 
 /******FIN DE ARCHIVOS ANTILINK POR SHANDUY******/
 
@@ -346,7 +346,7 @@ async function starts() {
 			const groupName = isGroup ? groupMetadata.subject : ''
 			const isAntiLink = isGroup ? antilink.includes(from) : false
 			const isAntiTube = isGroup ? antitube.includes(from) : false
-			const isAntiInsta = isGroup ? antiinsta.includes(from) : false
+			const isAntInsta = isGroup ? antinsta.includes(from) : false
 			const isAntiTik = isGroup ? antitik.includes(from) : false
 			const isAntiFace = isGroup ? antiface.includes(from) : false
 			const groupId = isGroup ? groupMetadata.jid : ''
@@ -414,7 +414,7 @@ async function starts() {
 	
 	if (budy.includes("https://www.instagram.com/")){
 		if (!isGroup) return
-		if (!isAntiInsta) return
+		if (!isAntInsta) return
 	        if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
 		client.updatePresence(from, Presence.composing)
 		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
@@ -905,14 +905,14 @@ break
 					if (!isGroupAdmins) return reply(mess.only.Badmin)
 					if (args.length < 1) return reply('Coloque *antimenu para ver los comandos de antilinks')
 					if (Number(args[0]) === 1) {
-						if (isAntiInsta) return reply('El antilink de Instagram ya esta activo')
-						antiisnta.push(from)
-						fs.writeFileSync('./src/antiinsta.json', JSON.stringify(antiisnta))
+						if (isAntInsta) return reply('El antilink de Instagram ya esta activo')
+						antisnta.push(from)
+						fs.writeFileSync('./src/antinsta.json', JSON.stringify(antisnta))
 						reply('❬ ✅ ❭ La funcion de antilink de Instagram esta habilitada en este grupo')
 						client.sendMessage(from,`Atención a todos los miembros activos de este grupo 📣\n\nDesde ahora cualquier particpiante que envia un link de *Instagram* o de su perfil para pedir likes a este grupo sera expulsado de inmediato\n\n_*Razones: Spam*_`, text)
 					} else if (Number(args[0]) === 0) {
-						antiinsta.splice(from)
-						fs.writeFileSync('./src/antiinsta.json', JSON.stringify(antiisnta))
+						antinsta.splice(from)
+						fs.writeFileSync('./src/antiinsta.json', JSON.stringify(antisnta))
 						reply('❬ ✅ ❭ La funcion de antilink de Instagram esta deshabilitada en este grupo')
 					} else {
 						reply('Coloque *antimenu para ver los demas comandos de antilinks')
