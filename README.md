@@ -10,7 +10,7 @@ El servidor de canciones esta en mantenimiento asi que no puede enviar muchas ca
 </p>
 
 
-Lo mas pronto lo solucionare con el dueño de https://zeks.xyz/ 
+Solucionare el error lo mas pronto con el dueño de https://zeks.xyz/ 
 
 Gracias por ser pacientes :,)
 
