@@ -85,6 +85,24 @@ const { ownermenu } require('./database/menu/ownermenu')
 const { othermenu } require('./database/menu/othermenu')*/
 /******FIN DE ENTRADA DEL MENÚ******/
 
+const fakekontak = (teks) => {
+client.sendMessage(from, teks, MessageType.text, {
+quoted: {
+key: {
+fromMe: false,
+ participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: `0@s.whatsapp.net` } : {})
+ },
+message: {
+ 'contactMessage': {
+ 'displayName': `${pushname}`,
+'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${ucapanWaktu},;;;\nFN:${ucapanWaktu},\nitem1.TEL;waid=${sender.split('@')[0]}:${sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`,
+ 'jpegThumbnail': fs.readFileSync('./stik/thumb.jpeg')
+}
+}
+                }
+            })
+        }
+
 /******CARGA DE ENTRADA VCARD******/
 const vcard = 'BEGIN:VCARD\n' // Tarjeta de contacto
             + 'VERSION:3.0\n' 
@@ -459,9 +477,21 @@ async function starts() {
 			reply("Adios mi loco")
 		}, 0)
 	}
+
+//FIN DE ANTI LINKS 
 		
-		//FUNCION DE LEVEL
-            if (isGroup && isLevelingOn) {
+
+//LEVEL UP
+const levelup = (pushname, sender, getLevelingXp,  getLevel, getLevelingLevel, role) => {
+	fakekontak(`\n*「 FELICIDADES 🥳 」*\n┌ *NOMBRE* : ${pushname}\n├ *NUMERO* : wa.me/${sender.split("@")[0]}\n├  *XP* : ${getLevelingXp(sender)}\n├ *RANGO*: ${role}\n└  *NIVEL* : ${getLevel} ⟿ ${getLevelingLevel(sender)}`)
+}
+			
+//FIN DE LEVEL UP
+
+
+//FUNCION DE LEVEL
+            
+     if (isGroup && isLevelingOn) {
             const currentLevel = getLevelingLevel(sender)
             const checkId = getLevelingId(sender)
             try {
@@ -472,13 +502,104 @@ async function starts() {
                 addLevelingXp(sender, amountXp)
                 if (requiredXp <= getLevelingXp(sender)) {
                     addLevelingLevel(sender, 1)
-                    await reply(`*「 LEVEL UP 」*\n\n➸ *Nombre*: ${sender}\n➸ *XP*: ${getLevelingXp(sender)}\n➸ *Level*: ${getLevel} -> ${getLevelingLevel(sender)}\n\nFelicidades weon!! 🎉🎉`)
+                    await fakestatus(levelup(pushname, sender, getLevelingXp,  getLevel, getLevelingLevel, role))
                 }
             } catch (err) {
                 console.error(err)
             }
         }
 
+//FIN DE FUNCION DE LEVEL
+			
+//RANGOS DE NIVELES
+	
+const levelRole = getLevelingLevel(sender)
+   	     var role = 'Nuevo'
+   	     if (levelRole <= 3) {
+   	         role = 'Novato'
+        } else if (levelRole <= 4) {
+            role = 'Iron I'
+        } else if (levelRole <= 6) {
+            role = 'Iron II'
+        } else if (levelRole <= 8) {
+            role = 'Iron III'
+        } else if (levelRole <= 10) {
+            role = 'Iron IV'
+        } else if (levelRole <= 12) {
+            role = 'Bronze I'
+        } else if (levelRole <= 14) {
+            role = 'Bronze II'
+        } else if (levelRole <= 16) {
+            role = 'Bronze III'
+        } else if (levelRole <= 18) {
+            role = 'Bronze IV'
+        } else if (levelRole <= 20) {
+            role = 'Bronze V'
+        } else if (levelRole <= 22) {
+            role = 'Silver I'
+        } else if (levelRole <= 24) {
+            role = 'Silver II'
+        } else if (levelRole <= 26) {
+            role = 'Silver III'
+        } else if (levelRole <= 28) {
+            role = 'Silver IV'
+        } else if (levelRole <= 30) {
+            role = 'Silver V'
+        } else if (levelRole <= 32) {
+            role = 'Silver VI'
+        } else if (levelRole <= 34) {
+            role = 'Silver VII'
+        } else if (levelRole <= 36) {
+            role = 'Silver VIII'
+        } else if (levelRole <= 38) {
+            role = 'Silver XI'
+        } else if (levelRole <= 40) {
+            role = 'Silver X'
+        } else if (levelRole <= 42) {
+            role = 'Oro I'
+        } else if (levelRole <= 44) {
+            role = 'Oro II'
+        } else if (levelRole <= 46) {
+            role = 'Oro III'
+        } else if (levelRole <= 48) {
+            role = 'Oro IV'
+        } else if (levelRole <= 50) {
+            role = 'Oro V'
+        } else if (levelRole <= 60) {
+            role = 'Diamante I'
+        } else if (levelRole <= 70) {
+            role = 'Diamante II'
+        } else if (levelRole <= 80) {
+            role = 'Diamante III'
+        } else if (levelRole <= 90) {
+            role = 'Diamante IV'
+        } else if (levelRole <= 100) {
+            role = 'Diamante V'
+        } else if (levelRole <= 210) {
+            role = 'Diamante VI'
+        } else if (levelRole <= 320) {
+            role = 'Platino I'
+        } else if (levelRole <= 430) {
+            role = 'Platino II'
+        } else if (levelRole <= 540) {
+            role = 'Platino III'
+        } else if (levelRole <= 650) {
+            role = 'Platino IV'
+        } else if (levelRole <= 760) {
+            role = 'Platino V'
+        } else if (levelRole <= 870) {
+            role = 'Platino VI'
+        } else if (levelRole <= 980) {
+            role = 'Platino VII'
+        } else if (levelRole <= 1010) {
+            role = '⚜INMORTAL⚜'
+        }
+			
+			
+	// FIN DE RANGO DE NIVELES		
+			
+			
+			
 			colors = ['red','white','black','blue','yellow','green']
 			const isMedia = (type === 'imageMessage' || type === 'videoMessage')
 			const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
