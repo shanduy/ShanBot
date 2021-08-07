@@ -1413,7 +1413,7 @@ break
                     fs.writeFileSync('./database/json/leveling.json', JSON.stringify(_leveling))
                      reply(mess.levelon)
                 } else if (args[0] === '0') {
-                    _leveling.splice(groupId 1)
+                    _leveling.splice(groupId, 1)
                     fs.writeFileSync('./database/json/leveling.json', JSON.stringify(_leveling))
                      reply(mess.leveloff)
                 } else {
