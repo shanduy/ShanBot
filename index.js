@@ -1407,13 +1407,13 @@ break
                 if (!isGroup) return reply(mess.only.group)
                 if (!isGroupAdmins) return reply(mess.only.admin)
                 if (args.length < 1) return reply('Digita 1 para ativar el recurso')
-                if (args[0] === 1) {
+                if (args[0] === '1') {
                     if (isLevelingOn) return reply('*La función de nivel ya estaba activa*')
                     _leveling.push(groupId)
                     fs.writeFileSync('./database/json/leveling.json', JSON.stringify(_leveling))
                      reply(mess.levelon)
-                } else if (args[0] === 0) {
-                    _leveling.splice(groupId)
+                } else if (args[0] === '0') {
+                    _leveling.splice(groupId 1)
                     fs.writeFileSync('./database/json/leveling.json', JSON.stringify(_leveling))
                      reply(mess.leveloff)
                 } else {
