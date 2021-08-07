@@ -106,7 +106,7 @@ message: {
         }
 
  const fakestatus = (teks) => {
-            turbo.sendMessage(from, teks, text, {
+            client.sendMessage(from, teks, text, {
                 quoted: {
                     key: {
                         fromMe: false,
