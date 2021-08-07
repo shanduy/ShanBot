@@ -134,10 +134,12 @@ const antinsta = JSON.parse(fs.readFileSync('./src/antinsta.json'))
 
 /******FIN DE ARCHIVOS ANTILINK POR SHANDUY******/
 
-const getLevelingXp = (userId) => {
+//LEVEL INICIO
+
+const getLevelingXp = (sender) => {
             let position = false
             Object.keys(_level).forEach((i) => {
-                if (_level[i].jid === userId) {
+                if (_level[i].id === sender) {
                     position = i
                 }
             })
@@ -146,10 +148,19 @@ const getLevelingXp = (userId) => {
             }
         }
 
-        const getLevelingLevel = (userId) => {
+        const jadiUser = (userid, sender, age, time, serials) => {
+            const obj = { id: userid, name: sender, age: age, time: time, serial: serials }
+            user.push(obj)
+            fs.writeFileSync('./database/user.json', JSON.stringify(user))
+        }
+        const bikinSerial = (size) => {
+            return crypto.randomBytes(size).toString('hex').slice(0, size)
+        }
+
+        const getLevelingLevel = (sender) => {
             let position = false
             Object.keys(_level).forEach((i) => {
-                if (_level[i].jid === userId) {
+                if (_level[i].id === sender) {
                     position = i
                 }
             })
@@ -157,51 +168,53 @@ const getLevelingXp = (userId) => {
                 return _level[position].level
             }
         }
-	
-const getLevelingId = (userId) => {
+
+        const getLevelingId = (sender) => {
             let position = false
             Object.keys(_level).forEach((i) => {
-                if (_level[i].jid === userId) {
+                if (_level[i].id === sender) {
                     position = i
                 }
             })
             if (position !== false) {
-                return _level[position].jid
+                return _level[position].id
             }
         }
 
-        const addLevelingXp = (userId, amount) => {
+        const addLevelingXp = (sender, amount) => {
             let position = false
             Object.keys(_level).forEach((i) => {
-                if (_level[i].jid === userId) {
+                if (_level[i].id === sender) {
                     position = i
                 }
             })
             if (position !== false) {
                 _level[position].xp += amount
-                fs.writeFileSync('./database/json/level.json', JSON.stringify(_level))
+                fs.writeFileSync('./database/level.json', JSON.stringify(_level))
             }
         }
 
-        const addLevelingLevel = (userId, amount) => {
+        const addLevelingLevel = (sender, amount) => {
             let position = false
             Object.keys(_level).forEach((i) => {
-                if (_level[i].jid === userId) {
+                if (_level[i].id === sender) {
                     position = i
                 }
             })
             if (position !== false) {
                 _level[position].level += amount
-                fs.writeFileSync('./database/json/level.json', JSON.stringify(_level))
+                fs.writeFileSync('./database/level.json', JSON.stringify(_level))
             }
         }
 
-        const addLevelingId = (userId) => {
-            const obj = {jid: userId, xp: 1, level: 1}
+        const addLevelingId = (sender) => {
+            const obj = {id: sender, xp: 1, level: 1}
             _level.push(obj)
-            fs.writeFileSync('./database/json/level.json', JSON.stringify(_level))
+            fs.writeFileSync('./database/level.json', JSON.stringify(_level))
         }
 
+//LEVEL FIN
+	
 function addMetadata(packname, author) {	
 	if (!packname) packname = 'ShanBot'; if (!author) author = 'shanduy';	
 	author = author.replace(/[^a-zA-Z0-9]/g, '');	
@@ -510,6 +523,39 @@ const levelup = (pushname, sender, getLevelingXp,  getLevel, getLevelingLevel, r
         }
 
 //FIN DE FUNCION DE LEVEL
+			
+         // FUNCION LEVEL BAR             
+		
+			var per = '*[▒▒▒▒▒▒▒▒▒▒] 0%*'
+			const peri = 5000 * (Math.pow(2, getLevelingLevel(sender)) - 1)
+			const perl = peri-getLevelingXp(sender) 
+			const resl = Math.round(100-((perl/getLevelingXp(sender))*100))
+			if (resl <= 10) {
+				per = `*[█▒▒▒▒▒▒▒▒▒] ${resl}%*`
+			} else if (resl <= 20) {
+				per = `*[██▒▒▒▒▒▒▒▒] ${resl}%*`
+			} else if (resl <= 30) {
+				per = `*[███▒▒▒▒▒▒▒] ${resl}%*`
+			} else if (resl <= 40) {
+				per = `*[████▒▒▒▒▒▒] ${resl}%*`
+			} else if (resl <= 50) {
+				per = `*[█████▒▒▒▒▒] ${resl}%*`
+			} else if (resl <= 60) {
+				per = `*[██████▒▒▒▒] ${resl}%*`
+			} else if (resl <= 70) {
+				per = `*[███████▒▒▒] ${resl}%*`
+			} else if (resl <= 80) {
+				per = `*[████████▒▒] ${resl}%*`
+			} else if (resl <= 90) {
+				per = `*[█████████▒] ${resl}%*`
+			} else if (resl <= 100) {
+				per = `*[██████████] ${resl}%*`
+			} 
+			
+			/*[-- FUNCION RANK --]*/
+			
+			
+			
 			
 //RANGOS DE NIVELES
 	
@@ -1393,9 +1439,9 @@ break
                 if (!isGroup) return reply(mess.only.group)
                 const userLevel = getLevelingLevel(sender)
                 const userXp = getLevelingXp(sender)
-                if (userLevel === undefined && userXp === undefined) return reply(mess.levelnol)
+		if (userLevel === undefined && userXp === undefined) return reply(mess.levelnol)
                 sem = sender.replace('@s.whatsapp.net','')
-                resul = `◪ *LEVEL*\n  ├─ ❏ *Nombre* : ${sem}\n  ├─ ❏ *XP* : ${userXp}\n  └─ ❏ *Level* : ${userLevel}`
+                resul = `◪ *LEVEL*\n  ├─ ❏ *Nombre* : ${sem}\n  ├─ ❏ *XP* : ${userXp}\n`
                client.sendMessage(from, resul, text, { quoted: mek})
                 .catch(async (err) => {
                         console.error(err)
