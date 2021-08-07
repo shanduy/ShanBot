@@ -1506,7 +1506,19 @@ break
 		if (budy.includes(`Fua`)) {
                   reply(`el diegote pa`)
                   }
-       if (budy.startsWith(`:v`)) {
+       if (budy.startsWith(`Admin party`)) {
+        const none = fs.readFileSync('./mp3/fiesta.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
+	if (budy.startsWith(`Fiesta del admin`)) {
+        const none = fs.readFileSync('./mp3/admin.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
+	if (budy.startsWith(`Viernes`)) {
+        const none = fs.readFileSync('./mp3/viernes.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
+	if (budy.startsWith(`:v`)) {
         const none = fs.readFileSync('./mp3/viejo1.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
