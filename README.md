@@ -1,4 +1,20 @@
-# ShanBot Bot Para Whatsapp by shanduy
+#COMUNICADO OFICIAL 📢
+Sabado 07 de agosto del 2021
+
+El servidor de canciones esta en mantenimiento asi que no puede enviar muchas canciones a la vez :(
+
+
+<p align="center">
+<img src="https://github.com/shanduy/ShanBot/blob/main/temples/Application%20Error%20-%20Google%20Chrome%207_8_2021%2015_44_39.png" alt="img" width="500" height="281"/>
+</p>
+
+
+Lo mas pronto lo solucionare con el dueño de https://zeks.xyz/ 
+
+Gracias por ser pacientes :,)
+
+
+ShanBot Bot Para Whatsapp by shanduy
 
 <p align="center">
 <img src="https://github.com/shanduy/ShanBot/blob/main/temples/ezgif-4-5e4fce2c4bbe.gif" alt="GIF" width="500" height="281"/>
