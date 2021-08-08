@@ -11,6 +11,8 @@ const help = (prefix) => {
 
 
 ◉ *NUEVOS COMANDOS*
+○ ${prefix}levelmenu
+Level para tus grupos
 ○ ${prefix}antimenu
 Su nombre lo dice todo (antilink)
 ○ ${prefix}otak
