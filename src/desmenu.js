@@ -12,23 +12,14 @@ Una alternativa por si *play llego a su limite de canciones
 ${prefix}play
 Coloca el nombre de la cancion, o el link del video YT
 
-${prefix}ytmp3
-Coloca el link del video YT
-
-*Ejemplo*
 
 ${prefix}play https://www.youtube.com/xxxxxxxxxxxxx
 
 ══════════════
 
-*VIDEO*
+*COMUNICADO*
 
-${prefix}ytmp4
-Coloca el link del video YT
-
-*Ejemplo*
-
-${prefix}ytmp4 https://www.youtube.com/xxxxxxxxxxxxx
+*ytmp4 y *ytmp3 estan en mantenimiento, muy pronto sacare una actualizacion de esos comandos mas renovado :)
 
 ══════════════
     
