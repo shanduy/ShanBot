@@ -1,7 +1,7 @@
 const levelmenu = (prefix, pushname) => {
     return `
 
-*Comandos De Level*
+*Comandos De Level 🆕 beta*
  
 ══════════════
 
