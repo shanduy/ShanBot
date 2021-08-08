@@ -4,7 +4,7 @@ const levelmenu = (prefix, pushname) => {
  
 ══════════════
 
-*_PARA ACTIVARLO EL BOT NECESITA DE ADMINISTRACIÓN_
+_PARA ACTIVARLO EL BOT NECESITA DE ADMINISTRACIÓN_
 
 *PARA ACTIVAR LEVEL*
 *leveling 1
@@ -13,6 +13,7 @@ const levelmenu = (prefix, pushname) => {
 *leveling 0
 
 ══════════════
+
 _PARA VER TU XP EN TIEMPO REAL_
 
 *level
