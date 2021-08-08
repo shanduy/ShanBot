@@ -1,4 +1,4 @@
-const levelmenu = (prefix, pushname) => {
+const lemenu = (prefix, pushname) => {
     return `
 
 *Comandos De Level*
@@ -31,4 +31,4 @@ PARA VER TU XP EN TIEMPO REAL
 
 }
 
-exports.levelmenu = levelmenu
+exports.lemenu = lemenu
