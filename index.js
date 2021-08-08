@@ -92,7 +92,7 @@ client.sendMessage(from, teks, MessageType.text, {
 quoted: {
 key: {
 fromMe: false,
- participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: `0@s.whatsapp.net` } : {})
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: `0@s.whatsapp.net` } : {})
  },
 message: {
  'contactMessage': {
@@ -136,6 +136,8 @@ message: {
             })
         }
 
+
+ 
 //FIN FUNCIONES FAKE
 
 /******CARGA DE ENTRADA VCARD******/
@@ -171,10 +173,10 @@ const antinsta = JSON.parse(fs.readFileSync('./src/antinsta.json'))
 
 //LEVEL INICIO
 
-const getLevelingXp = (sender) => {
+const getLevelingXp = (userId) => {
             let position = false
             Object.keys(_level).forEach((i) => {
-                if (_level[i].id === sender) {
+                if (_level[i].jid === userId) {
                     position = i
                 }
             })
@@ -183,19 +185,10 @@ const getLevelingXp = (sender) => {
             }
         }
 
-        const jadiUser = (userid, sender, age, time, serials) => {
-            const obj = { id: userid, name: sender, age: age, time: time, serial: serials }
-            user.push(obj)
-            fs.writeFileSync('./database/user.json', JSON.stringify(user))
-        }
-        const bikinSerial = (size) => {
-            return crypto.randomBytes(size).toString('hex').slice(0, size)
-        }
-
-        const getLevelingLevel = (sender) => {
+        const getLevelingLevel = (userId) => {
             let position = false
             Object.keys(_level).forEach((i) => {
-                if (_level[i].id === sender) {
+                if (_level[i].jid === userId) {
                     position = i
                 }
             })
@@ -204,50 +197,49 @@ const getLevelingXp = (sender) => {
             }
         }
 
-        const getLevelingId = (sender) => {
+        const getLevelingId = (userId) => {
             let position = false
             Object.keys(_level).forEach((i) => {
-                if (_level[i].id === sender) {
+                if (_level[i].jid === userId) {
                     position = i
                 }
             })
             if (position !== false) {
-                return _level[position].id
+                return _level[position].jid
             }
         }
 
-        const addLevelingXp = (sender, amount) => {
+        const addLevelingXp = (userId, amount) => {
             let position = false
             Object.keys(_level).forEach((i) => {
-                if (_level[i].id === sender) {
+                if (_level[i].jid === userId) {
                     position = i
                 }
             })
             if (position !== false) {
                 _level[position].xp += amount
-                fs.writeFileSync('./database/level.json', JSON.stringify(_level))
+                fs.writeFileSync('./database/json/level.json', JSON.stringify(_level))
             }
         }
 
-        const addLevelingLevel = (sender, amount) => {
+        const addLevelingLevel = (userId, amount) => {
             let position = false
             Object.keys(_level).forEach((i) => {
-                if (_level[i].id === sender) {
+                if (_level[i].jid === userId) {
                     position = i
                 }
             })
             if (position !== false) {
                 _level[position].level += amount
-                fs.writeFileSync('./database/level.json', JSON.stringify(_level))
+                fs.writeFileSync('./database/json/level.json', JSON.stringify(_level))
             }
         }
 
-        const addLevelingId = (sender) => {
-            const obj = {id: sender, xp: 1, level: 1}
+        const addLevelingId = (userId) => {
+            const obj = {jid: userId, xp: 1, level: 1}
             _level.push(obj)
-            fs.writeFileSync('./database/level.json', JSON.stringify(_level))
+            fs.writeFileSync('./database/json/level.json', JSON.stringify(_level))
         }
-
 //LEVEL FIN
 	
 function addMetadata(packname, author) {	
@@ -427,10 +419,8 @@ async function starts() {
                         const isUser = user.includes(sender)
                         const isLevelingOn = isGroup ? _leveling.includes(groupId) : false
                         const NomerOwner = '593997889284@s.whatsapp.net'
-                        const conts = mek.key.fromMe ? client.user.jid : client.contacts[sender] || { notify: jid.replace(/@.+/, '') }
-			const pushname = mek.key.fromMe ? client.user.name : conts.notify || conts.vname || conts.name || '-'
-			/******Entrada ApiKey******/
-                        const BarBarKey = 'Mn2Bf58QHQ8kABoLq80g'
+                        /******Entrada ApiKey******/
+                        const BarBarKey = '8'
                         /******Fin de la entrada de ApiKey******/
 
 			const isUrl = (url) => {
@@ -531,14 +521,6 @@ async function starts() {
 //FIN DE ANTI LINKS 
 		
 
-//LEVEL UP
-const levelup = (pushname, sender, getLevelingXp,  getLevel, getLevelingLevel, role) => {
-	fakekontak(`\n*「 FELICIDADES 🥳 」*\n┌ *NOMBRE* : ${pushname}\n├ *NUMERO* : wa.me/${sender.split("@")[0]}\n├  *XP* : ${getLevelingXp(sender)}\n├ *RANGO*: ${role}\n└  *NIVEL* : ${getLevel} ⟿ ${getLevelingLevel(sender)}`)
-}
-			
-//FIN DE LEVEL UP
-
-
 //FUNCION DE LEVEL
             
      if (isGroup && isLevelingOn) {
@@ -552,7 +534,7 @@ const levelup = (pushname, sender, getLevelingXp,  getLevel, getLevelingLevel, r
                 addLevelingXp(sender, amountXp)
                 if (requiredXp <= getLevelingXp(sender)) {
                     addLevelingLevel(sender, 1)
-                    await fakestatus(levelup(pushname, sender, getLevelingXp,  getLevel, getLevelingLevel, role))
+                    await reply(`*「 FELICIDADES 🥳 」*\n\n⥇ *NOMBRE*: ${sender}\n⥇ *XP*: ${getLevelingXp(sender)}\n⥇ *NIVEL*: ${getLevel} -> ${getLevelingLevel(sender)}\n\n_*Para ver tu Nivel o XP coloca el comando ${prefix}level *_`)
                 }
             } catch (err) {
                 console.error(err)
@@ -561,129 +543,8 @@ const levelup = (pushname, sender, getLevelingXp,  getLevel, getLevelingLevel, r
 
 //FIN DE FUNCION DE LEVEL
 			
-         // FUNCION LEVEL BAR             
-		
-			var per = '*[▒▒▒▒▒▒▒▒▒▒] 0%*'
-			const peri = 5000 * (Math.pow(2, getLevelingLevel(sender)) - 1)
-			const perl = peri-getLevelingXp(sender) 
-			const resl = Math.round(100-((perl/getLevelingXp(sender))*100))
-			if (resl <= 10) {
-				per = `*[█▒▒▒▒▒▒▒▒▒] ${resl}%*`
-			} else if (resl <= 20) {
-				per = `*[██▒▒▒▒▒▒▒▒] ${resl}%*`
-			} else if (resl <= 30) {
-				per = `*[███▒▒▒▒▒▒▒] ${resl}%*`
-			} else if (resl <= 40) {
-				per = `*[████▒▒▒▒▒▒] ${resl}%*`
-			} else if (resl <= 50) {
-				per = `*[█████▒▒▒▒▒] ${resl}%*`
-			} else if (resl <= 60) {
-				per = `*[██████▒▒▒▒] ${resl}%*`
-			} else if (resl <= 70) {
-				per = `*[███████▒▒▒] ${resl}%*`
-			} else if (resl <= 80) {
-				per = `*[████████▒▒] ${resl}%*`
-			} else if (resl <= 90) {
-				per = `*[█████████▒] ${resl}%*`
-			} else if (resl <= 100) {
-				per = `*[██████████] ${resl}%*`
-			} 
-			
-			/*[-- FUNCION RANK --]*/
-			
-			
-			
-			
-//RANGOS DE NIVELES
-	
-const levelRole = getLevelingLevel(sender)
-   	     var role = 'Nuevo'
-   	     if (levelRole <= 3) {
-   	         role = 'Novato'
-        } else if (levelRole <= 4) {
-            role = 'Iron I'
-        } else if (levelRole <= 6) {
-            role = 'Iron II'
-        } else if (levelRole <= 8) {
-            role = 'Iron III'
-        } else if (levelRole <= 10) {
-            role = 'Iron IV'
-        } else if (levelRole <= 12) {
-            role = 'Bronze I'
-        } else if (levelRole <= 14) {
-            role = 'Bronze II'
-        } else if (levelRole <= 16) {
-            role = 'Bronze III'
-        } else if (levelRole <= 18) {
-            role = 'Bronze IV'
-        } else if (levelRole <= 20) {
-            role = 'Bronze V'
-        } else if (levelRole <= 22) {
-            role = 'Silver I'
-        } else if (levelRole <= 24) {
-            role = 'Silver II'
-        } else if (levelRole <= 26) {
-            role = 'Silver III'
-        } else if (levelRole <= 28) {
-            role = 'Silver IV'
-        } else if (levelRole <= 30) {
-            role = 'Silver V'
-        } else if (levelRole <= 32) {
-            role = 'Silver VI'
-        } else if (levelRole <= 34) {
-            role = 'Silver VII'
-        } else if (levelRole <= 36) {
-            role = 'Silver VIII'
-        } else if (levelRole <= 38) {
-            role = 'Silver XI'
-        } else if (levelRole <= 40) {
-            role = 'Silver X'
-        } else if (levelRole <= 42) {
-            role = 'Oro I'
-        } else if (levelRole <= 44) {
-            role = 'Oro II'
-        } else if (levelRole <= 46) {
-            role = 'Oro III'
-        } else if (levelRole <= 48) {
-            role = 'Oro IV'
-        } else if (levelRole <= 50) {
-            role = 'Oro V'
-        } else if (levelRole <= 60) {
-            role = 'Diamante I'
-        } else if (levelRole <= 70) {
-            role = 'Diamante II'
-        } else if (levelRole <= 80) {
-            role = 'Diamante III'
-        } else if (levelRole <= 90) {
-            role = 'Diamante IV'
-        } else if (levelRole <= 100) {
-            role = 'Diamante V'
-        } else if (levelRole <= 210) {
-            role = 'Diamante VI'
-        } else if (levelRole <= 320) {
-            role = 'Platino I'
-        } else if (levelRole <= 430) {
-            role = 'Platino II'
-        } else if (levelRole <= 540) {
-            role = 'Platino III'
-        } else if (levelRole <= 650) {
-            role = 'Platino IV'
-        } else if (levelRole <= 760) {
-            role = 'Platino V'
-        } else if (levelRole <= 870) {
-            role = 'Platino VI'
-        } else if (levelRole <= 980) {
-            role = 'Platino VII'
-        } else if (levelRole <= 1010) {
-            role = '⚜INMORTAL⚜'
-        }
-			
-			
-	// FIN DE RANGO DE NIVELES		
-			
-			
-			
-			colors = ['red','white','black','blue','yellow','green']
+         		
+                        colors = ['red','white','black','blue','yellow','green']
 			const isMedia = (type === 'imageMessage' || type === 'videoMessage')
 			const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
 			const isQuotedVideo = type === 'extendedTextMessage' && content.includes('videoMessage')
@@ -1478,7 +1339,7 @@ break
                 const userXp = getLevelingXp(sender)
 		if (userLevel === undefined && userXp === undefined) return reply(mess.levelnol)
                 sem = sender.replace('@s.whatsapp.net','')
-                resul = `◪ *LEVEL*\n  ├─ ❏ *Nombre* : ${sem}\n  ├─ ❏ *XP* : ${userXp}\n └─ ❏ *Level* : ${userLevel}`
+                resul = `『 *TUS ESTADISTICAS 🔝* 』\n├─ ❏ *NOMBRE* : ${sem}\n├─ ❏ *XP* : ${userXp}\n└─ ❏ *NIVEL* : ${userLevel}`
                client.sendMessage(from, resul, text, { quoted: mek})
                 .catch(async (err) => {
                         console.error(err)
@@ -1489,7 +1350,7 @@ break
             case 'leveling':
                 if (!isGroup) return reply(mess.only.group)
                 if (!isGroupAdmins) return reply(mess.only.admin)
-                if (args.length < 1) return reply('Digita 1 para ativar el recurso')
+                if (args.length < 1) return reply('Digita *leveling 1 para activar este recurso')
                 if (args[0] === '1') {
                     if (isLevelingOn) return reply('*La función de nivel ya estaba activa*')
                     _leveling.push(groupId)
