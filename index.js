@@ -365,7 +365,10 @@ async function starts() {
                         const isUser = user.includes(sender)
                         const isLevelingOn = isGroup ? _leveling.includes(groupId) : false
                         const NomerOwner = '593997889284@s.whatsapp.net'
-                        /******Entrada ApiKey******/
+                        const conts = mek.key.fromMe ? client.user.jid : client.contacts[sender] || { notify: jid.replace(/@.+/, '') }
+                        const pushname = mek.key.fromMe ? client.user.name : conts.notify || conts.vname || conts.name || '-'
+			
+			/******Entrada ApiKey******/
                         const BarBarKey = '8'
                         /******Fin de la entrada de ApiKey******/
 
@@ -480,7 +483,7 @@ async function starts() {
                 addLevelingXp(sender, amountXp)
                 if (requiredXp <= getLevelingXp(sender)) {
                     addLevelingLevel(sender, 1)
-                    await reply(`*「 FELICIDADES LEVEL UP 🆙🥳 」*\n\nFelicidades subiste de nivel sigue asi 👏\n\n⥇ *NOMBRE*: ${sender}\n⥇ *XP*: ${getLevelingXp(sender)}\n⥇ *NIVEL*: ${getLevel} ⟿ ${getLevelingLevel(sender)}\n\n_*Para ver tu XP en tiempo real coloca el comando ${prefix}level*_`)
+                    await reply(`*「 FELICIDADES LEVEL UP 🆙🥳 」*\n\nFelicidades subiste de nivel sigue asi 👏\n\n*NOMBRE*: ${pushname}\n*XP*: ${getLevelingXp(sender)}\n*NIVEL*: ${getLevel} ⟿ ${getLevelingLevel(sender)}\n\n_*Para ver tu XP en tiempo real coloca el comando ${prefix}level*_`)
                 }
             } catch (err) {
                 console.error(err)
@@ -1270,9 +1273,8 @@ break
                 const userLevel = getLevelingLevel(sender)
                 const userXp = getLevelingXp(sender)
 		if (userLevel === undefined && userXp === undefined) return reply(mess.levelnol)
-                sem = sender.replace('@s.whatsapp.net','')
-                resul = `『 *TUS ESTADISTICAS 🆙* 』\n\nTus estadisticas en tiempo real 🕐\n\n├─ ❏ *NOMBRE:* ${sem}\n├─ ❏ *XP 🆙:* ${userXp}\n└─ ❏ *NIVEL:* ${userLevel}`
-               client.sendMessage(from, resul, text, { quoted: mek})
+                resul = `『 *TUS ESTADISTICAS 🆙* 』\n\nTus estadisticas en tiempo real 🕐\n\n├─ ❏ *NOMBRE:* ${pushname}\n├─ ❏ *XP 🆙:* ${userXp}\n└─ ❏ *NIVEL:* ${userLevel}`
+               client.sendMessage(pushname, from, resul, text, { quoted: mek})
                 .catch(async (err) => {
                         console.error(err)
                         await reply(`Error!\n${err}`)
