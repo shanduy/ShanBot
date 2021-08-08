@@ -534,7 +534,7 @@ async function starts() {
                 addLevelingXp(sender, amountXp)
                 if (requiredXp <= getLevelingXp(sender)) {
                     addLevelingLevel(sender, 1)
-                    await reply(`*「 FELICIDADES 🥳 」*\n\n⥇ *NOMBRE*: ${sender}\n⥇ *XP*: ${getLevelingXp(sender)}\n⥇ *NIVEL*: ${getLevel} -> ${getLevelingLevel(sender)}\n\n_*Para ver tu Nivel o XP coloca el comando ${prefix}level *_`)
+                    await reply(`*「 FELICIDADES LEVEL UP 🥳 」*\n\nFelicidades subiste de nivel sigue asi 👏\n\n⥇ *NOMBRE*: ${sender}\n⥇ *XP*: ${getLevelingXp(sender)}\n⥇ *NIVEL*: ${getLevel} ⟿ ${getLevelingLevel(sender)}\n\n_*Para ver tu XP en tiempo real coloca el comando ${prefix}level*_`)
                 }
             } catch (err) {
                 console.error(err)
@@ -1339,7 +1339,7 @@ break
                 const userXp = getLevelingXp(sender)
 		if (userLevel === undefined && userXp === undefined) return reply(mess.levelnol)
                 sem = sender.replace('@s.whatsapp.net','')
-                resul = `『 *TUS ESTADISTICAS 🔝* 』\n├─ ❏ *NOMBRE* : ${sem}\n├─ ❏ *XP* : ${userXp}\n└─ ❏ *NIVEL* : ${userLevel}`
+                resul = `『 *TUS ESTADISTICAS 🔝* 』\n\nTus estadisticas en tiempo real\n├─ ❏ *NOMBRE* : ${sem}\n├─ ❏ *XP* : ${userXp}\n└─ ❏ *NIVEL* : ${userLevel}`
                client.sendMessage(from, resul, text, { quoted: mek})
                 .catch(async (err) => {
                         console.error(err)
