@@ -1176,11 +1176,11 @@ break
 					break
                 
 		case 'play':   
-	        if (args.length < 1) return reply('Donde esta el nombre de la canción?')
+	        if (args.length < 1) return reply('Donde esta el nombre de la canción?\n\nEjemplo: *play2 Industry Baby Lil Nas X')
 		if (!isUser) return reply(mess.only.daftarB)
                 reply(mess.only.musica)
                 play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.xyz/api/ytmp3/2?q=${play}&apikey=hamilton40`)
+                anu = await fetchJson(`https://api.zeks.xyz/api/ytmp3?q=${play}&apikey=hamilton40`)
                if (anu.error) return reply(anu.error)
                  infomp3 = `*⌈ Canción Encontrada ✅ ⌉*\n◉ *Título* : ${anu.result.title}\nFuente : ${anu.result.source}\nTamaño : ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*`
                 buffer = await getBuffer(anu.result.thumbnail)
@@ -1189,11 +1189,11 @@ break
                 client.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
                 break
 		case 'play2':   
-	        if (args.length < 1) return reply('Donde esta el nombre de la canción?')
+	        if (args.length < 1) return reply('Donde esta el nombre de la canción?\n\nEjemplo: *play2 Industry Baby Lil Nas X')
 		if (!isUser) return reply(mess.only.daftarB)
                 reply(mess.only.musica2)
                 play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.xyz/api/ytmp3/2?q=${play}&apikey=shanduy40`)
+                anu = await fetchJson(`https://api.zeks.xyz/api/ytmp3?q=${play}&apikey=shanduy40`)
                if (anu.error) return reply(anu.error)
                  infomp3 = `*⌈ Canción Encontrada ✅ ⌉*\n◉ *Título* : ${anu.result.title}\nFuente : ${anu.result.source}\nTamaño : ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*`
                 buffer = await getBuffer(anu.result.thumbnail)
@@ -1288,7 +1288,7 @@ break
                 const userXp = getLevelingXp(sender)
 		if (userLevel === undefined && userXp === undefined) return reply(mess.levelnol)
                 sem = sender.replace('@s.whatsapp.net','')
-                resul = `『 *TUS ESTADISTICAS 🔝* 』\n\nTus estadisticas en tiempo real\n├─ ❏ *NOMBRE* : ${sem}\n├─ ❏ *XP* : ${userXp}\n└─ ❏ *NIVEL* : ${userLevel}`
+                resul = `『 *TUS ESTADISTICAS 🔝* 』\n\nTus estadisticas en tiempo real\n\n├─ ❏ *NOMBRE* : ${sem}\n├─ ❏ *XP* : ${userXp}\n└─ ❏ *NIVEL* : ${userLevel}`
                client.sendMessage(from, resul, text, { quoted: mek})
                 .catch(async (err) => {
                         console.error(err)
