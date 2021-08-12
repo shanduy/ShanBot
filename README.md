@@ -1,3 +1,22 @@
+# SERVICIO DE MUSICA EN MANTENIMIENTO
+
+12 de Agosto del 2021
+
+Perdon por estos inconvenientes el server de musica esta en mantenimiento gracias por ser pacientes :(
+
+
+
+<p align="center">
+<img src="https://github.com/shanduy/ShanBot/blob/main/temples/Application%20Error%20-%20Google%20Chrome%207_8_2021%2015_44_39.png" alt="img" width="1080" height="720"/>
+</p>
+
+
+
+
+Lo arreglare lo mas antes posible :(
+
+
+
 # ShanBot Bot Para Whatsapp by shanduy
 
 <p align="center">
