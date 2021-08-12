@@ -7,7 +7,7 @@ Perdon por estos inconvenientes el server de musica esta en mantenimiento gracia
 
 
 <p align="center">
-<img src="https://github.com/shanduy/ShanBot/blob/main/temples/Application%20Error%20-%20Google%20Chrome%207_8_2021%2015_44_39.png" alt="img" width="1080" height="720"/>
+<img src="https://github.com/shanduy/ShanBot/blob/main/temples/Application%20Error%20-%20Google%20Chrome%207_8_2021%2015_44_39.png" alt="img" width="1366" height="728"/>
 </p>
 
 
