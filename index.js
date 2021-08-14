@@ -766,7 +766,7 @@ break
 					client.updatePresence(from, Presence.composing) 
                                         if (!isUser) return reply(mess.only.daftarB)
 					if (!isGroup) return reply(mess.only.group)
-					teks = `*Lista De Nefastos Del Grupo*\n${groupMetadata.subject}*\nTotal${groupAdmins.length}\n\n`
+					teks = `*Lista De Administradores Del Grupo*\n\n${groupMetadata.subject}\n\nTotal:${groupAdmins.length}\n\n`
 					no = 0
 					for (let admon of groupAdmins) {
 						no += 1
@@ -1617,6 +1617,10 @@ break
                   }
 	if (budy.startsWith(`Buenas noches`)) {
         const none = fs.readFileSync('./mp3/gaspi15.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
+        if (budy.startsWith(`Peruano`)) {
+        const none = fs.readFileSync('./mp3/gaspi16.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
 	if (budy.startsWith(`Alto temazo`)) {
