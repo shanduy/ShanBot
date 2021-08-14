@@ -53,6 +53,17 @@ ${prefix}antitube 1
 *PARA DESACTIVAR EL ANTILINK*
 ${prefix}antitube 0
 
+══════════════
+
+_*Antilink De Kwai*_
+
+*PARA ACTIVAR EL ANTILINK*
+${prefix}antikwai 1
+
+*PARA DESACTIVAR EL ANTILINK*
+${prefix}antikwai 0
+ 
+══════════════
 
 _Para activar estos comandos el bot necesita tener admin en el grupo y esta funcion solo la activan los admins del grupo_
 
