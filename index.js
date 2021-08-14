@@ -354,6 +354,7 @@ async function starts() {
 			const isAntInsta = isGroup ? antinsta.includes(from) : false
 			const isAntiTik = isGroup ? antitik.includes(from) : false
 			const isAntiFace = isGroup ? antiface.includes(from) : false
+			const isAntiKwai = isGroup ? antikwai.includes(from) : false
 			const groupId = isGroup ? groupMetadata.jid : ''
 			const groupMembers = isGroup ? groupMetadata.participants : ''
                         const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
@@ -916,7 +917,7 @@ break
 					if (!isGroupAdmins) return reply(mess.only.ownerG)
 					if (args.length < 1) return reply('Coloque *antimenu para ver los comandos de activación de los antilinks')
 					if (Number(args[0]) === 1) {
-						if (isAntKwai) return reply('El antilink de Instagram ya esta activo')
+						if (isAntiKwai) return reply('El antilink de Instagram ya esta activo')
 						antikwai.push(from)
 						fs.writeFileSync('./src/antinsta.json', JSON.stringify(antikwai))
 						reply('❬ ✅ ❭ La funcion de antilink de Kwai esta habilitada en este grupo')
