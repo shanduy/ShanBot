@@ -2,8 +2,8 @@ const version = (prefix, pushname) => {
     return `
 *ѕнαηвσт ву ѕнαη∂υу*
 
-*Actualizado:* 08 de Agosto del 2021
-*Versión actual:* 3.4
+*Actualizado:* 14 de Agosto del 2021
+*Versión actual:* 3.5
 *Ofrecida por:* ѕнαη∂υу™
 
 
@@ -15,7 +15,7 @@ Cambiare la apikey pasando un mes o si veo muchos atercados o robos
 Si vez a alguien que robo mi bot comunicate conmigo con el comando *creador
 
 
-*BLOG DE SHANBOT*
+*COMO ACTUALIZAR*
 
 https://cutt.ly/jmSF2RN
 
