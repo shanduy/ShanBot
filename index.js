@@ -120,7 +120,7 @@ const antikwai = JSON.parse(fs.readFileSync('./src/antikwai.json'))
 
 //FUNCIONES PARA WHATSAPP
 
-const { type, id, from, t, sender, author, isGroupMsg, chat, chatId, caption, isMedia, mimetype, quotedMsg, quotedMsgObj, mentionedJidList } = message
+const { type, id, from, t, sender, isGroupMsg, chat, chatId, caption, isMedia, mimetype, quotedMsg, quotedMsgObj, mentionedJidList } = message
 let { body } = message
 const ownerNumber = config.owner
 
