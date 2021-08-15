@@ -695,7 +695,7 @@ case 'besar':
 if (isGroupMsg && args.length == 1 && mentionedJidList.length !== 0) {
 await client.sendGiphyAsSticker(from, 'https://media.giphy.com/media/jR22gdcPiOLaE/giphy.gif')
 await client.sendTextWithMentions(from, `OH DIOS 😱!!!!\n@${author.replace('@c.us', '')} dio un beso a ${arqs[1]}!`)
-} else return await client..reply(from, 'Marca a la persona que quieres besar\nEjemplo: *besar @xxxxx', id)
+} else return await client.reply(from, 'Marca a la persona que quieres besar\nEjemplo: *besar @xxxxx', id)
 break	
 
 					
