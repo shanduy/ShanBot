@@ -79,6 +79,8 @@ Registrate con el comando ${prefix}daftar y tu nombre
   ╠ Quitar el admin
   ╠ ○ ${prefix}linkgc
   ╠ Link del grupo
+  ╠ ○ ${prefix}adminlist
+  ╠ Nombra a los admins del grupo
   ╠ ○ ${prefix}todos
   ╚ Nombra a todos los del grupo
 
