@@ -118,6 +118,15 @@ const antikwai = JSON.parse(fs.readFileSync('./src/antikwai.json'))
 
 /******FIN DE ARCHIVOS ANTILINK POR SHANDUY******/
 
+//FUNCIONES PARA WHATSAPP
+
+const { type, id, from, t, sender, author, isGroupMsg, chat, chatId, caption, isMedia, mimetype, quotedMsg, quotedMsgObj, mentionedJidList } = message
+let { body } = message
+const ownerNumber = config.owner
+
+//FUNCIONES PARA WHATSAPP
+
+
 //LEVEL INICIO
 
 const getLevelingXp = (userId) => {
@@ -355,7 +364,9 @@ async function starts() {
 			const isAntiTik = isGroup ? antitik.includes(from) : false
 			const isAntiFace = isGroup ? antiface.includes(from) : false
 			const isAntiKwai = isGroup ? antikwai.includes(from) : false
+			const groupId = isGroupMsg ? chat.groupMetadata.id : ''
 			const groupId = isGroup ? groupMetadata.jid : ''
+			const isGroupOwner = isGroupMsg && user === chat.groupMetadata.id
 			const groupMembers = isGroup ? groupMetadata.participants : ''
                         const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
 			const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
