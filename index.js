@@ -118,14 +118,6 @@ const antikwai = JSON.parse(fs.readFileSync('./src/antikwai.json'))
 
 /******FIN DE ARCHIVOS ANTILINK POR SHANDUY******/
 
-//FUNCIONES PARA WHATSAPP
-
-const { type, id, from, t, sender, isGroupMsg, chat, chatId, caption, isMedia, mimetype, quotedMsg, quotedMsgObj, mentionedJidList } = message
-let { body } = message
-const ownerNumber = config.owner
-
-//FUNCIONES PARA WHATSAPP
-
 
 //LEVEL INICIO
 
