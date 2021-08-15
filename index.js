@@ -692,9 +692,9 @@ reply('Hubo un error intentalo nuevamente :/')
 break				
 				
 case 'besar':
-if (isGroup && args.length == 1 && mentionedJidList.length !== 0) {
+if (isGroup && args.length == 1 && mentionedJid.length !== 0) {
 await client.sendGiphyAsSticker(from, 'https://media.giphy.com/media/jR22gdcPiOLaE/giphy.gif')
-await client.sendTextWithMentions(from, `OH DIOS 😱!!!!\n@${author.replace('@c.us', '')} dio un beso a ${arqs[1]}!`)
+await client.sendTextWithMentions(from, `OH DIOS 😱!!!!\n@${sender.split("@s.whatsapp.net")[0]} dio un beso a ${arqs[1]}!`)
 } else return await client.reply(from, 'Marca a la persona que quieres besar\nEjemplo: *besar @xxxxx', id)
 break	
 
@@ -707,7 +707,7 @@ break
 				  case 'wame':
   client.updatePresence(from, Presence.composing) 
       options = {
-          text: `「 *LINK WHATSAPP* 」\n\n_Solicitado por_ : *@${sender.split("@s.whatsapp.net")[0]}\n\nSu link de Whatsapp : *https://wa.me/${sender.split("@s.whatsapp.net")[0]}*\n*O ( / )*\n*https://api.whatsapp.com/send?phone=${sender.split("@")[0]}*`,
+          text: `「 *LINK WHATSAPP* 」\n\n_Solicitado por_ : @${sender.split("@s.whatsapp.net")[0]}\n\nSu link de Whatsapp : *https://wa.me/${sender.split("@s.whatsapp.net")[0]}*\n*O ( / )*\n*https://api.whatsapp.com/send?phone=${sender.split("@")[0]}*`,
           contextInfo: { mentionedJid: [sender] }
     }
     client.sendMessage(from, options, text, { quoted: mek } )
