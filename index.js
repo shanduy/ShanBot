@@ -118,18 +118,8 @@ const antikwai = JSON.parse(fs.readFileSync('./src/antikwai.json'))
 
 /******FIN DE ARCHIVOS ANTILINK POR SHANDUY******/
 
-
-
-
-const { type, id, from, t, sender, isGroupMsg, chat, chatId, caption, isMedia, mimetype, quotedMsg, quotedMsgObj, mentionedJidList } = message
-	let { body } = message
-	const ownerNumber = config.owner
-
 	
-	
-	
-	//LEVEL INICIO
-
+//LEVEL INICIO
 const getLevelingXp = (userId) => {
             let position = false
             Object.keys(_level).forEach((i) => {
