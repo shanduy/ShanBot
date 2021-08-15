@@ -691,15 +691,7 @@ reply('Hubo un error intentalo nuevamente :/')
 }
 break				
 				
-case 'besar':
-if (isGroup && args.length == 1 && mentionedJid.length !== 0) {
-await client.sendGiphyAsSticker(from, 'https://media.giphy.com/media/jR22gdcPiOLaE/giphy.gif')
-await client.sendTextWithMentions(from, `OH DIOS 😱!!!!\n@${sender.split("@s.whatsapp.net")[0]} dio un beso a ${arqs[1]}!`)
-} else return await client.reply(from, 'Marca a la persona que quieres besar\nEjemplo: *besar @xxxxx', id)
-break	
-
-					
-					
+								
 /******JUEGOS SHANDUY LA PUTA MADRE NO TE OLVIDES******/					
 					
 					
