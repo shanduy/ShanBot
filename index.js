@@ -691,8 +691,18 @@ reply('Hubo un error intentalo nuevamente :/')
 }
 break				
 				
-	
-				  
+case 'besar':
+if (isGroupMsg && args.length == 1 && mentionedJidList.length !== 0) {
+await client.sendGiphyAsSticker(from, 'https://media.giphy.com/media/jR22gdcPiOLaE/giphy.gif')
+await client.sendTextWithMentions(from, `OH DIOS 😱!!!!\n@${author.replace('@c.us', '')} dio un beso a ${arqs[1]}!`)
+} else return await client..reply(from, 'Marca a la persona que quieres besar\nEjemplo: *besar @xxxxx', id)
+break	
+
+					
+					
+/******JUEGOS SHANDUY LA PUTA MADRE NO TE OLVIDES******/					
+					
+					
        				case 'wa.me':
 				  case 'wame':
   client.updatePresence(from, Presence.composing) 
@@ -1525,9 +1535,7 @@ break
 					})
 					break
                 default:
-                if (budy.includes(`Hola`)) {
-                  reply(`wtf y este random?`)
-                  }
+                
 		if (budy.includes(`Todo bien`)) {
                   reply(`Si amigo todo bien, vite`)
                   }
@@ -1545,7 +1553,7 @@ break
                   }
 
 		if (budy.includes(`Bien gracias y tu?`)) {
-                  reply(`wtf y esta random?`)
+                  reply(`Opa yazmin te extrañe :(`)
                   }
 					
 		if (budy.includes(`opa`)) {
