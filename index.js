@@ -356,7 +356,6 @@ async function starts() {
 			const isAntiFace = isGroup ? antiface.includes(from) : false
 			const isAntiKwai = isGroup ? antikwai.includes(from) : false
 			const groupId = isGroup ? groupMetadata.jid : ''
-			const isGroupOwner = isGroupMsg && user === chat.groupMetadata.id
 			const groupMembers = isGroup ? groupMetadata.participants : ''
                         const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
 			const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
@@ -693,7 +692,7 @@ reply('Hubo un error intentalo nuevamente :/')
 break				
 				
 case 'besar':
-if (isGroupMsg && args.length == 1 && mentionedJidList.length !== 0) {
+if (isGroup && args.length == 1 && mentionedJidList.length !== 0) {
 await client.sendGiphyAsSticker(from, 'https://media.giphy.com/media/jR22gdcPiOLaE/giphy.gif')
 await client.sendTextWithMentions(from, `OH DIOS 😱!!!!\n@${author.replace('@c.us', '')} dio un beso a ${arqs[1]}!`)
 } else return await client.reply(from, 'Marca a la persona que quieres besar\nEjemplo: *besar @xxxxx', id)
