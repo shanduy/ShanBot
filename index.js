@@ -768,7 +768,7 @@ break
 					client.updatePresence(from, Presence.composing) 
                                         if (!isUser) return reply(mess.only.daftarB)
 					if (!isGroup) return reply(mess.only.group)
-					teks = `*Lista De Administradores Del Grupo*\n\n${groupMetadata.subject}\n\nTotal:${groupAdmins.length}\n\n`
+					teks = `*Lista De Administradores Del Grupo*\n\n${groupMetadata.subject}\n\nTotal: ${groupAdmins.length}\n\n`
 					no = 0
 					for (let admon of groupAdmins) {
 						no += 1
@@ -1209,7 +1209,7 @@ break
 		if (!isUser) return reply(mess.only.daftarB)
                 reply(mess.only.musica)
                 play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.xyz/api/ytmp3/2?q=${play}&apikey=hamilton43`)
+                anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3/2?q=${play}&apikey=hamilton44`)
                 if (anu.error) return reply(anu.error)
                 infomp3 = `*⌈ Canción Encontrada ✅ ⌉*\n◉ *Título:* ${anu.result.title}\n◉ *Fuente:* ${anu.result.source}\n◉ *Tamaño:* ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*`
                 buffer = await getBuffer(anu.result.thumbnail)
@@ -1223,7 +1223,7 @@ break
 		if (!isUser) return reply(mess.only.daftarB)
                 reply(mess.only.musica2)
                 play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.xyz/api/ytmp3/2?q=${play}&apikey=shanduy43`)
+                anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3/2?q=${play}&apikey=shanduy44`)
                 if (anu.error) return reply(anu.error)
                 infomp3 = `*⌈ Canción Encontrada ✅ ⌉*\n◉ *Título:* ${anu.result.title}\n◉ *Fuente:* ${anu.result.source}\n◉ *Tamaño:* ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*`
                 buffer = await getBuffer(anu.result.thumbnail)
@@ -1245,7 +1245,7 @@ break
 					var nombre = reg.split("|")[0];
                                                 user.push(sender)
 						fs.writeFileSync('./database/json/user.json', JSON.stringify(user))
-						client.sendMessage(from, `\`\`\`REGISTRADO ✅\`\`\`\n\n\`\`\`DNI: EPICO 🥸\`\`\`\n\n\`\`\`Hora EC: ${time}\`\`\`\n\n\`\`\`Fecha: ${date}\`\`\`\n\n\`\`\`[Usuario]: ${nombre}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\`\`\`Para usar el bot\`\`\`\n\`\`\`Por favor\`\`\`\n\`\`\`enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários ${user.length}\`\`\``, text, {quoted: mek})
+						client.sendMessage(from, `\`\`\`REGISTRADO ✅\`\`\`\n\n\`\`\`DNI: MALASO 🥸\`\`\`\n\n\`\`\`Hora EC: ${time}\`\`\`\n\n\`\`\`Fecha: ${date}\`\`\`\n\n\`\`\`[Usuario]: ${nombre}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\n\`\`\`Para usar el bot\`\`\`\n\`\`\`Por favor\`\`\`\n\`\`\`enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários ${user.length}\`\`\``, text, {quoted: mek})
 					break
                                 case 'welcome':
 					if (!isGroup) return reply(mess.only.group)
@@ -1510,7 +1510,7 @@ break
                                         const latensi = speed() - timestamp
                                         client.updatePresence(from, Presence.composing) 
 				        uptime = process.uptime()
-                                        client.sendMessage(from, `Velocidad: *${latensi.toFixed(4)} _Second_*\nDevice: *Alcatel Pixi 4*\nRAM: *6Mb*\nData: *10GB*\nJaringan: *2G*\nStatus: *Bateria Baja*`, text, { quoted: mek})
+                                        client.sendMessage(from, `Velocidad: *${latensi.toFixed(4)} _Second_*\nDevice: *Alcatel Pixi 4*\nRAM: *6Mb*\nData: *10GB*\nRed: *2G*\nEstado: *Bateria Baja*`, text, { quoted: mek})
                                         break
                                 case 'ttp':
 					if (args.length < 1) return reply('Y el texto flaco?')
