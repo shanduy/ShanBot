@@ -13,7 +13,7 @@ ${prefix}play
 Coloca el nombre de la cancion, o el link del video YT
 
 
-${prefix}play Industry Baby Lil Nas X
+${prefix}play Industry Baby - Lil Nas X
 
 ══════════════
 
