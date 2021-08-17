@@ -22,13 +22,13 @@ Interactua con el bot
 
 ◉ *NUEVOS MENUS*
 ○ ${prefix}juegos
-Divierte con tus amigos :)
+Diviértete con tus amigos :)
 ○ ${prefix}desmenu
-Descargar musica y videos de YT
+Descargar musica ( videos próximamente )
 ○ ${prefix}version
 Conoce la versión de tu bot
 ○ ${prefix}welmenu
-Comandos de bienvedia a grupos
+Comando de bienvenida solo grupos
 
 ◉ *PARA USAR EL BOT*
 Registrate con el comando ${prefix}daftar y tu nombre
