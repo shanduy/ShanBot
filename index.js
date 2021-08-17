@@ -897,12 +897,14 @@ break
 					break
 				
 				case 'exe':
-	              client.updatePresence(from, Presence.composing) 
+	             client.updatePresence(from, Presence.composing) 
 	             if (!isGroup) return reply(mess.only.group)
                      if (!isUser) return reply(mess.only.daftarB)
+		     if (!isGroupAdmins) return reply(mess.only.admin)
+	             if (!isGroupAdmins) return reply(mess.only.Badmin)
                      const cmd = body.slice(5)
 	               exec(cmd, (err, stdout) => {
-		           if(err) return client.sendMessage(from, "NO VEMO GILE ✋🥸🤚", text, { quoted: mek })
+		           if(err) return client.sendMessage(from, 'NO VEMO GILE ✋🥸🤚', text, { quoted: mek })
 		           if (stdout) {
 			       client.sendMessage(from, stdout, text, { quoted: mek })
 		           }
@@ -1205,7 +1207,7 @@ break
 				
 				
 	        case 'play':   
-	        if (args.length < 1) return reply('Donde esta el nombre de la canción?\n\nEjemplo: *play2 Industry Baby Lil Nas X')
+	        if (args.length < 1) return reply('Donde esta el nombre de la canción?\n\nEjemplo: *play Industry Baby - Lil Nas X')
 		if (!isUser) return reply(mess.only.daftarB)
                 reply(mess.only.musica)
                 play = body.slice(5)
@@ -1219,7 +1221,7 @@ break
                 break
 		
 		case 'play2':   
-	        if (args.length < 1) return reply('Donde esta el nombre de la canción?\n\nEjemplo: *play2 Industry Baby Lil Nas X')
+	        if (args.length < 1) return reply('Donde esta el nombre de la canción?\n\nEjemplo: *play2 Industry Baby - Lil Nas X')
 		if (!isUser) return reply(mess.only.daftarB)
                 reply(mess.only.musica2)
                 play = body.slice(5)
