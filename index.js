@@ -318,9 +318,8 @@ async function starts() {
 				levelnol: '*Nivel* 0 ',
 				error: {
 					stick: '[❎] Falló, se produjo un error al convertir la imagen en una pegatina',
-					Iv: 'Este no es un link de youtube',
-					Tv: 'NO SE PERMITE LINKS DE YOUTUBE\n\nNombre de la cancion y el artista\nEjemplo: *play2 Industry Baby - Lil Nas X'
-				},
+					Iv: 'Este no es un link de youtube'
+					},
 				only: {
 					group: '[❗] Este comando es solo para grupos',
 					ownerG: '[❗] Este comando solo puede ser utilizado por un admins del grupo',
@@ -1211,8 +1210,7 @@ break
 	        case 'play':   
 	        if (args.length < 1) return reply('Donde esta el nombre de la canción?\n\nEjemplo: *play Industry Baby - Lil Nas X')
 		if (!isUser) return reply(mess.only.daftarB)
-                if(!isUrl(args[0]) && !args[0].includes('ejem')) return reply(mess.error.Tv)
-		reply(mess.only.musica)
+                reply(mess.only.musica)
                 play = body.slice(5)
                 anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=hamilton44`)
                 if (anu.error) return reply(anu.error)
@@ -1226,8 +1224,7 @@ break
 		case 'play2':   
 	        if (args.length < 1) return reply('Donde esta el nombre de la canción?\n\nEjemplo: *play2 Industry Baby - Lil Nas X')
 		if (!isUser) return reply(mess.only.daftarB)
-		if(!isUrl(args[0]) && !args[0].includes('ejem')) return reply(mess.error.Tv)
-                reply(mess.only.musica2)
+	        reply(mess.only.musica2)
                 play = body.slice(5)
                 anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=shanduy44`)
                 if (anu.error) return reply(anu.error)
@@ -1242,7 +1239,7 @@ break
 		if (args.length < 1) return reply('Donde esta la URL?\n\nEjemplo: *ytmp4 www.youtube.com/xxxxxxxx')
 		if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
 		reply(mess.only.mpv)
-		anu = await fetchJson(`https://st4rz.herokuapp.com/api/ytv2?url=${args[0]}`, {method: 'get'})
+		anu = await fetchJson(`https://st4rz.herokuapp.com/api/ytv?url=${args[0]}`, {method: 'get'})
 		if (anu.error) return reply(anu.error)
 		teks = `*⌈ Video Encontrado ✅ ⌉*\n◉ *Título* : ${anu.title}\n\n*ESPERE ENVIANDO SU ARCHIVO MP4 ⚠*`
 		thumb = await getBuffer(anu.thumb)
@@ -1576,11 +1573,7 @@ break
         const none = fs.readFileSync('./mp3/fiesta.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
-	if (budy.startsWith(`*kick @`)) {
-        const none = fs.readFileSync('./mp3/baneado.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  }
-	if (budy.startsWith(`Fiesta del admin`)) {
+        if (budy.startsWith(`Fiesta del admin`)) {
         const none = fs.readFileSync('./mp3/admin.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
