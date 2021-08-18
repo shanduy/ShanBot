@@ -887,6 +887,7 @@ break
 						mentions(teks, mentioned, true)
 						client.groupRemove(from, mentioned)
 					} else {
+					mentions(`@${mentioned[0].split('@')[0]}`, mentioned, true)
                                         client.groupRemove(from, mentioned)
 				        const none = fs.readFileSync('./mp3/baneado.mp3');
 		                        client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
