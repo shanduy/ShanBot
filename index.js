@@ -318,7 +318,8 @@ async function starts() {
 				levelnol: '*Nivel* 0 ',
 				error: {
 					stick: '[❎] Falló, se produjo un error al convertir la imagen en una pegatina',
-					Iv: '❌ Link inválido ❌'
+					Iv: 'Este no es un link de youtube',
+					Tv: 'NO SE PERMITE LINKS DE YOUTUBE\n\nNombre de la cancion y el artista\nEjemplo: *play2 Industry Baby - Lil Nas X'
 				},
 				only: {
 					group: '[❗] Este comando es solo para grupos',
@@ -1210,7 +1211,8 @@ break
 	        case 'play':   
 	        if (args.length < 1) return reply('Donde esta el nombre de la canción?\n\nEjemplo: *play Industry Baby - Lil Nas X')
 		if (!isUser) return reply(mess.only.daftarB)
-                reply(mess.only.musica)
+                if(!isUrl(args[0]) && !args[0].includes('ejem')) return reply(mess.error.Tv)
+		reply(mess.only.musica)
                 play = body.slice(5)
                 anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=hamilton44`)
                 if (anu.error) return reply(anu.error)
@@ -1224,6 +1226,7 @@ break
 		case 'play2':   
 	        if (args.length < 1) return reply('Donde esta el nombre de la canción?\n\nEjemplo: *play2 Industry Baby - Lil Nas X')
 		if (!isUser) return reply(mess.only.daftarB)
+		if(!isUrl(args[0]) && !args[0].includes('ejem')) return reply(mess.error.Tv)
                 reply(mess.only.musica2)
                 play = body.slice(5)
                 anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=shanduy44`)
