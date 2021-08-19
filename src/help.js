@@ -11,6 +11,8 @@ const help = (prefix) => {
 
 
 ◉ *NUEVOS COMANDOS*
+○ ${prefix}banmenu
+Banear a personas el uso del bot
 ○ ${prefix}levelmenu
 Level para tus grupos
 ○ ${prefix}antimenu
