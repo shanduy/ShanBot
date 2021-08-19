@@ -48,6 +48,7 @@ const speed = require('performance-now')
 /******COMIENZO DE LA ENTRADA JSON******/
 const welkom = JSON.parse(fs.readFileSync('./database/json/welkom.json'))
 const nsfw = JSON.parse(fs.readFileSync('./database/json/nsfw.json'))
+const ban = JSON.parse(fs.readFileSync('./database/banned.json'))
 const samih = JSON.parse(fs.readFileSync('./database/json/simi.json'))
 const user = JSON.parse(fs.readFileSync('./database/json/user.json'))
 const _leveling = JSON.parse(fs.readFileSync('./database/json/leveling.json'))
@@ -348,6 +349,7 @@ async function starts() {
 			const totalchat = await client.chats.all()
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
+			const isBanned = ban.includes(sender)
 			const groupName = isGroup ? groupMetadata.subject : ''
 			const isAntiLink = isGroup ? antilink.includes(from) : false
 			const isAntiTube = isGroup ? antitube.includes(from) : false
@@ -387,6 +389,42 @@ async function starts() {
 				(id == null || id == undefined || id == false) ? client.sendMessage(from, teks.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
 			}
            
+
+//FUNCIONES DE BAN Y DESBAN			
+			
+case 'ban':
+if (!isGroup) return reply(mess.only.group)
+if (!mek.key.fromMe) return fakestatus('Esta funcion solo la usa ShanBot')
+if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return 
+mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+pru = '*\n'
+for (let _ of mentioned) {
+pru += `@${_.split('@')[0]}\n`
+}
+ban.push(`${mentioned}`)
+fs.writeFileSync('./database/banned.json', JSON.stringify(ban))
+susp = `『 BANEADO 🚫 』\n\n◉Nombre: @${mentioned[0].split('@')[0]}\n◉Razon: Spam\n\n*Usted a sido baneado del uso del bot, no podra usar el bot hasta nuevo aviso*`
+mentions(`${susp}`, mentioned, true)   
+break
+
+case 'desban':
+if (!isGroup) return reply(mess.only.group)
+if (!mek.key.fromMe) return fakestatus('Esta funcion solo la usa ShanBot')
+if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return 
+mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+pru = '*\n'
+for (let _ of mentioned) {
+pru += `@${_.split('@')[0]}\n`
+}
+ban.splice(`${mentioned}`)
+fs.writeFileSync('./database/banned.json', JSON.stringify(ban))
+susp = `『 DESBANEADO ✅ 』\n\n◉Nombre: @${mentioned[0].split('@')[0]}\n*Se te a retirado el BAN ya puedes usar el bot*`
+mentions(`${susp}`, mentioned, true)   
+break		
+			
+//FIN DE FUNCIONES BAN Y DESBAN
+			
+			
 //FUNCION ANTILINK
 	     	
 	if (budy.includes("https://s.kwai.app/")){
@@ -712,10 +750,9 @@ break
                 if (!isUser) return reply(mess.only.daftarB)
                 client.sendMessage(from, data, image, {quoted: mek, caption: body.slice(8)})
                 break*/
+	
 	case 'creador':
-	    case 'owner':
-                case 'creator':
-                client.sendMessage(from, {displayname: "Shan", vcard: vcard}, MessageType.contact, { quoted: mek})
+	       client.sendMessage(from, {displayname: "Shan 🥸", vcard: vcard}, MessageType.contact, { quoted: mek})
 		client.sendMessage(from, 'Arriba está el número del creador del bot <ѕнαηвσт ву ѕнαη∂υу>\n\nNO SOY UN BOT LPM 🥸\n\nAhi puedes resolver tus preguntas y errores :)\n\nEste no es el numero del propietario del bot que estas usando ahora mismo. Si no, del creador de la base de datos del bot o sea Shan\n\nву ѕнαη∂υу',MessageType.text, { quoted: mek} )
                 const none = fs.readFileSync('./mp3/shan.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
@@ -1042,7 +1079,7 @@ break
 					break
 			        
 				
-				//FIN DE ANTILINK
+				//FIN DE ANTILINK HECHO POR SHANDUY
 				
 				
 		                case 'linkgroup':
@@ -1053,7 +1090,7 @@ break
                                      if (!isUser) return reply(mess.only.daftarB)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 					linkgc = await client.groupInviteCode (from)
-					yeh = `Aqui esta el link del grupo 🤑\n\nhttps://chat.whatsapp.com/${linkgc}\n\nLink Del Grupo *${groupName}*`
+					yeh = `Aqui esta el link del grupo\n\nhttps://chat.whatsapp.com/${linkgc}\n\nLink Del Grupo *${groupName}*`
 					client.sendMessage(from, yeh, text, {quoted: mek, detectLinks: false})
 					break
                 case 'qrcode':
