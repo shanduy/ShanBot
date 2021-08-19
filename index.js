@@ -531,7 +531,7 @@ async function starts() {
     	if (!isGroup && isCmd) console.log('\x1b[1;37m>', '[ \x1b[1;36mMensaje\x1b[1;37m ]', time, color(command), 'De', color(sender.split('@')[0]))
         if (isCmd && isGroup) console.log('\x1b[1;37m>', '[ \x1b[1;36mMensaje\x1b[1;37m ]', time, color(command), 'De', color(sender.split('@')[0]), 'En', color(groupName))
 
-******ENTRADA FIN DE FUNCIONES******/
+/******ENTRADA FIN DE FUNCIONES******/
 			function addMetadata(packname, author) {	
 				if (!packname) packname = 'ShanBot'; if (!author) author = 'Shanduy';	
 				author = author.replace(/[^a-zA-Z0-9]/g, '');	
