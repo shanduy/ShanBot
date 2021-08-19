@@ -2,8 +2,8 @@ const version = (prefix, pushname) => {
     return `
 *ѕнαηвσт ву ѕнαη∂υу*
 
-*Actualizado:* 16 de Agosto del 2021
-*Versión actual:* 3.6
+*Actualizado:* 18 de Agosto del 2021
+*Versión actual:* 3.7
 *Ofrecida por:* ѕнαη∂υу™
 
 
