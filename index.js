@@ -351,6 +351,13 @@ async function starts() {
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
 			const isBanned = ban.includes(sender)
+			
+			const content = JSON.stringify(mek.message)
+			const type = Object.keys(mek.message)[0]
+                        body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption.startsWith(prefix) ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption.startsWith(prefix) ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text.startsWith(prefix) ? mek.message.extendedTextMessage.text : ''
+                        var pes = (type === 'conversation' && mek.message.conversation) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text ? mek.message.extendedTextMessage.text : ''
+		        budy = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
+			
 			const groupName = isGroup ? groupMetadata.subject : ''
 			const isAntiLink = isGroup ? antilink.includes(from) : false
 			const isAntiTube = isGroup ? antitube.includes(from) : false
@@ -412,7 +419,7 @@ async function starts() {
                             "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=",
                             "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69",
                             "mediaKeyTimestamp": "1610993486",
-                            "jpegThumbnail": fs.readFileSync('./stik/thumb.jpeg'),
+                            "jpegThumbnail": fs.readFileSync('./banner/shanbaner.jpg'),
                             "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="
                         }
                     },
