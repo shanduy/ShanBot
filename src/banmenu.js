@@ -17,7 +17,7 @@ Ejemplo: *ban @xxxxxxx
 
 *PARA DESBANEAR*
 
-*desban + a la persona que deseas banear
+*desban + a la persona que deseas desbanear
 
 Ejemplo: *desban @xxxxxxx
 
