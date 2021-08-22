@@ -1620,7 +1620,11 @@ break
 		if (budy.includes(`Fua`)) {
                   reply(`el diegote pa`)
                   }
-       if (budy.startsWith(`Admin party`)) {
+        if (budy.startsWith(`Cuentate un chiste`)) {
+        const none = fs.readFileSync('./mp3/dylan2.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
+	if (budy.startsWith(`Admin party`)) {
         const none = fs.readFileSync('./mp3/fiesta.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
