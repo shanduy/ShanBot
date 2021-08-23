@@ -1348,7 +1348,7 @@ break
                                 
 		case 'ytmp4':
 		if (args.length < 1) return reply('Donde esta la URL?\n\nEjemplo: *ytmp4 www.youtube.com/xxxxxxxx')
-		if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
+		if(!isUrl(args[0]) && !args[0].includes('youtu.be')) return reply(mess.error.Iv)
 		reply(mess.only.mpv)
 		anu = await fetchJson(`https://api.zeks.me/api/ytmp4?url=${args[0]}&apikey=shanduy46`, {method: 'get'})
 		if (anu.error) return reply(anu.error)
