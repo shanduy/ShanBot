@@ -119,6 +119,7 @@ const antitube = JSON.parse(fs.readFileSync('./src/antitube.json'))
 const antitik = JSON.parse(fs.readFileSync('./src/antitik.json'))
 const antinsta = JSON.parse(fs.readFileSync('./src/antinsta.json'))
 const antikwai = JSON.parse(fs.readFileSync('./src/antikwai.json'))
+const antidiscord = JSON.parse(fs.readFileSync('./src/antidiscord.json'))
 
 /******FIN DE ARCHIVOS ANTILINK POR SHANDUY******/
 
@@ -355,6 +356,7 @@ async function starts() {
 			const isBanned = ban.includes(sender)
 			const groupName = isGroup ? groupMetadata.subject : ''
 			const isAntiLink = isGroup ? antilink.includes(from) : false
+			const isAntiDiscord = isGroup ? antidiscord.includes(from) : false
 			const isAntiTube = isGroup ? antitube.includes(from) : false
 			const isAntInsta = isGroup ? antinsta.includes(from) : false
 			const isAntiTik = isGroup ? antitik.includes(from) : false
@@ -393,8 +395,61 @@ async function starts() {
 			}
            
 	
+//ANTILINKS FACEBOOK GRUPOS PERFILES PUBLICACIONES
+			
+if (budy.includes("https://www.facebook.com/")){
+		if (!isGroup) return
+		if (!isAntiFace) return
+                if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
+		client.updatePresence(from, Presence.composing)
+		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		reply(`*LINK DE FACEBOOK DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
+		setTimeout( () => {
+			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
+		}, 0)
+		setTimeout( () => {
+			client.updatePresence(from, Presence.composing)
+			reply("Adios mi loco")
+		}, 0)
+	}			
+			
+if (budy.includes("https://m.facebook.com/")){
+		if (!isGroup) return
+		if (!isAntiFace) return
+                if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
+		client.updatePresence(from, Presence.composing)
+		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		reply(`*LINK DE FACEBOOK DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
+		setTimeout( () => {
+			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
+		}, 0)
+		setTimeout( () => {
+			client.updatePresence(from, Presence.composing)
+			reply("Adios mi loco")
+		}, 0)
+	}
+			
+			
+//FIN ANTILINKS FACEBOOK GRUPOS PERFILES PUBLICACIONES			
+			
 //FUNCION ANTILINK
 	     	
+	if (budy.includes("https://discord.com/")){
+		if (!isGroup) return
+		if (!isAntiDiscord) return
+                if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
+		client.updatePresence(from, Presence.composing)
+		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		reply(`*LINK DE DISCORD DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
+		setTimeout( () => {
+			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
+		}, 0)
+		setTimeout( () => {
+			client.updatePresence(from, Presence.composing)
+			reply("Adios mi loco")
+		}, 0)
+	}
+			
 	if (budy.includes("https://s.kwai.app/")){
 		if (!isGroup) return
 		if (!isAntiKwai) return
@@ -410,22 +465,6 @@ async function starts() {
 			reply("Adios mi loco")
 		}, 0)
 	}
-			
-	if (budy.includes("https://www.facebook.com/")){
-		if (!isGroup) return
-		if (!isAntiFace) return
-                if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
-		client.updatePresence(from, Presence.composing)
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		reply(`*LINK DE FACEBOOK DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
-		setTimeout( () => {
-			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
-		}, 0)
-		setTimeout( () => {
-			client.updatePresence(from, Presence.composing)
-			reply("Adios mi loco")
-		}, 0)
-	}	
 			
 	if (budy.includes("https://youtu.be/")){
 		if (!isGroup) return
@@ -966,6 +1005,27 @@ break
 				
 			//ANTILINKS DE REDES SOCIALES	
 				
+				case 'antidiscord':
+                                        if (!isGroup) return reply(mess.only.group)
+					if (!isUser) return reply(mess.only.daftarB)
+					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+					if (!isGroupAdmins) return reply(mess.only.ownerG)
+					if (args.length < 1) return reply('Coloque *antimenu para ver los comandos de activación de los antilinks')
+					if (Number(args[0]) === 1) {
+						if (isAntiDiscord) return reply('El antilink de Instagram ya esta activo')
+						antidiscord.push(from)
+						fs.writeFileSync('./src/antidiscord.json', JSON.stringify(antidiscord))
+						reply('❬ ✅ ❭ La funcion de antilink de Discord esta habilitada en este grupo')
+						client.sendMessage(from,`Atención a todos los miembros activos de este grupo 📣\n\nDesde ahora cualquier participante que envie un link de *Discord* a este grupo sera expulsado de inmediato\n\n_*Razones: Spam*_`, text)
+					} else if (Number(args[0]) === 0) {
+						antidiscord.splice(from)
+						fs.writeFileSync('./src/antidiscord.json', JSON.stringify(antidiscord))
+						reply('❬ ✅ ❭ La funcion de antilink de Discord esta deshabilitada en este grupo')
+					} else {
+						reply('Coloque *antimenu para ver los comandos de activación de los antilinks')
+					}
+					break
+				
 				case 'antikwai':
                                         if (!isGroup) return reply(mess.only.group)
 					if (!isUser) return reply(mess.only.daftarB)
@@ -1263,7 +1323,7 @@ break
 		if (!isUser) return reply(mess.only.daftarB)
                 reply(mess.only.musica)
                 play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=hamilton44`)
+                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3/2?q=${play}&apikey=hamilton46`)
                 if (anu.error) return reply(anu.error)
                 infomp3 = `*⌈ Canción Encontrada ✅ ⌉*\n◉ *Título:* ${anu.result.title}\n◉ *Fuente:* ${anu.result.source}\n◉ *Tamaño:* ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*`
                 buffer = await getBuffer(anu.result.thumbnail)
@@ -1277,7 +1337,7 @@ break
 		if (!isUser) return reply(mess.only.daftarB)
 	        reply(mess.only.musica2)
                 play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=shanduy44`)
+                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3/2?q=${play}&apikey=shanduy46`)
                 if (anu.error) return reply(anu.error)
                 infomp3 = `*⌈ Canción Encontrada ✅ ⌉*\n◉ *Título:* ${anu.result.title}\n◉ *Fuente:* ${anu.result.source}\n◉ *Tamaño:* ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*`
                 buffer = await getBuffer(anu.result.thumbnail)
