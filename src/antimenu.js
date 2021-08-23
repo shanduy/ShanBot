@@ -65,6 +65,17 @@ ${prefix}antikwai 0
  
 ══════════════
 
+
+_*Antilink De Discord*_
+
+*PARA ACTIVAR EL ANTILINK*
+${prefix}antidiscord 1
+
+*PARA DESACTIVAR EL ANTILINK*
+${prefix}antidiscord 0
+ 
+══════════════
+
 _Para activar estos comandos el bot necesita tener admin en el grupo y esta funcion solo la activan los admins del grupo_
 
 
