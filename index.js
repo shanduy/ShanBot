@@ -1310,8 +1310,9 @@ break
                                 
 		case 'ytmp4':
 		if (!isUser) return reply(mess.only.daftarB)
-		if(data.body == "") return data.reply('Donde esta la URL?\n\nEjemplo: *ytmp4 www.youtube.com/xxxxxxxx')
-                reply(mess.only.musica2)
+		if(args.length < 1) return data.reply('Donde esta la URL?\n\nEjemplo: *ytmp4 www.youtube.com/xxxxxxxx')
+		if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
+                reply(mess.only.mpv)
                 res = await axios.get(`${configs.apiUrl}/api/ytmp4/2?apikey=${configs.zeksKey}&url=${data.body}`)
                 if(res.data.status == false) data.reply(res.data.message)
                 ytm = res.data.result
