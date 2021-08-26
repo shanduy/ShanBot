@@ -1324,7 +1324,7 @@ break
 		} catch {
                 data.reply('Vaya, lo siento, el servidor tiene un error o tal vez el apikey no es válido')
             }
-        })
+        }
                 break	
 				
 				
