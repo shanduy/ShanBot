@@ -1309,16 +1309,18 @@ break
                 break
                                 
 		case 'ytmp4':
-		if (args.length < 1) return reply('Donde esta la URL?\n\nEjemplo: *ytmp4 www.youtube.com/xxxxxxxx')
-		if(!isUrl(args[0]) && !args[0].includes('youtu.be')) return reply(mess.error.Iv)
-		reply(mess.only.mpv)
-		anu = await fetchJson(`https://api.zeks.me/api/ytmp4?url=${args[0]}&apikey=shanduy46`, {method: 'get'})
-		if (anu.error) return reply(anu.error)
-		teks = `*⌈ Video Encontrado ✅ ⌉*\n◉ *Título* : ${anu.title}\n\n*ESPERE ENVIANDO SU ARCHIVO MP4 ⚠*`
-		thumb = await getBuffer(anu.thumb)
-		client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
-		buffer = await getBuffer(anu.result)
-		client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
+		if (!isUser) return reply(mess.only.daftarB)
+		if(data.body == "") return data.reply('Donde esta la URL?\n\nEjemplo: *ytmp4 www.youtube.com/xxxxxxxx')
+                reply(mess.only.musica2)
+                res = await axios.get(`${configs.apiUrl}/api/ytmp4/2?apikey=${configs.zeksKey}&url=${data.body}`)
+                if(res.data.status == false) data.reply(res.data.message)
+                ytm = res.data.result
+                teks = `*⌈ Video Encontrado ✅ ⌉*\n\n◉ *Título* : ${ytm.title}\n◉ *Tamaño* : ${ytm.size}\n◉ *Calidad* : ${ytm.quality}\n◉ *URL* : ${ytm.ext}\n\n*ESPERE ENVIANDO SU ARCHIVO MP4 ⚠*`
+                if(Number(ytm.size.split(' MB')[0]) >= 50.00) return Client.sendFileFromUrl(data.from, `${ytm.thumb}`, 'thumb.jpg', `*⌈ Video Encontrado ✅ ⌉*\n\n◉ *Título* : ${ytm.title}\n◉ *Tamaño* : ${ytm.size}\n◉ *Calidad* : ${ytm.quality}\n◉ *URL* : ${ytm.ext}\n\n*ESPERE ENVIANDO SU ARCHIVO MP4 ⚠*`, data.message)
+                client.sendFileFromUrl(data.from, `${ytm.thumb}`, 'thumb.jpg', teks, data.message)
+                client.sendFileFromUrl(data.from, `${ytm.link}`, `${ytm.title} - Download.mp4`, `Se envió el video @${data.sender.split('@')[0]}`, data.message)
+                } catch {
+                data.reply('Vaya, lo siento, el servidor tiene un error o tal vez el apikey no es válido')
 		break	
 				
 				
