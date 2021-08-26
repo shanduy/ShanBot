@@ -1319,11 +1319,7 @@ break
                 if(Number(ytm.size.split(' MB')[0]) >= 50.00) return client.sendFileFromUrl(data.from, `${ytm.thumb}`, 'thumb.jpg', `*⌈ Video Encontrado ✅ ⌉*\n\n◉ *Título* : ${ytm.title}\n◉ *Tamaño* : ${ytm.size}\n◉ *Calidad* : ${ytm.quality}\n◉ *URL* : ${ytm.ext}\n\n*ESPERE ENVIANDO SU ARCHIVO MP4 ⚠*`, data.message)
                 client.sendFileFromUrl(data.from, `${ytm.thumb}`, 'thumb.jpg', teks, data.message)
                 client.sendFileFromUrl(data.from, `${ytm.link}`, `${ytm.title} - Download.mp4`, `Se envió el video @${data.sender.split('@')[0]}`, data.message)
-                } catch {
-                data.reply('Vaya, lo siento, el servidor tiene un error o tal vez el apikey no es válido')
-		}
-                })
-		break	
+                break	
 				
 				
 	//FIN DE SERVICIO DE MUSICA Y VIDEO			
