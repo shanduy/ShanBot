@@ -1309,10 +1309,11 @@ break
                 break
                                 
 		case 'ytmp4':
+		async (data) => {
+		try {
 		if (!isUser) return reply(mess.only.daftarB)
-		if(args.length < 1) return data.reply('Donde esta la URL?\n\nEjemplo: *ytmp4 www.youtube.com/xxxxxxxx')
-		if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-                reply(mess.only.mpv)
+		if(data.body == "") return data.reply('Donde esta la URL?\n\nEjemplo: *ytmp4 www.youtube.com/xxxxxxxx')
+		reply(mess.only.mpv)
                 res = await axios.get(`${configs.apiUrl}/api/ytmp4/2?apikey=${configs.zeksKey}&url=${data.body}`)
                 if(res.data.status == false) data.reply(res.data.message)
                 ytm = res.data.result
@@ -1320,6 +1321,10 @@ break
                 if(Number(ytm.size.split(' MB')[0]) >= 50.00) return client.sendFileFromUrl(data.from, `${ytm.thumb}`, 'thumb.jpg', `*⌈ Video Encontrado ✅ ⌉*\n\n◉ *Título* : ${ytm.title}\n◉ *Tamaño* : ${ytm.size}\n◉ *Calidad* : ${ytm.quality}\n◉ *URL* : ${ytm.ext}\n\n*ESPERE ENVIANDO SU ARCHIVO MP4 ⚠*`, data.message)
                 client.sendFileFromUrl(data.from, `${ytm.thumb}`, 'thumb.jpg', teks, data.message)
                 client.sendFileFromUrl(data.from, `${ytm.link}`, `${ytm.title} - Download.mp4`, `Se envió el video @${data.sender.split('@')[0]}`, data.message)
+		} catch {
+                data.reply('Vaya, lo siento, el servidor tiene un error o tal vez el apikey no es válido')
+            }
+        })
                 break	
 				
 				
