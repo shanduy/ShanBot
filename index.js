@@ -1316,7 +1316,7 @@ break
                 if(res.data.status == false) data.reply(res.data.message)
                 ytm = res.data.result
                 teks = `*⌈ Video Encontrado ✅ ⌉*\n\n◉ *Título* : ${ytm.title}\n◉ *Tamaño* : ${ytm.size}\n◉ *Calidad* : ${ytm.quality}\n◉ *URL* : ${ytm.ext}\n\n*ESPERE ENVIANDO SU ARCHIVO MP4 ⚠*`
-                if(Number(ytm.size.split(' MB')[0]) >= 50.00) return Client.sendFileFromUrl(data.from, `${ytm.thumb}`, 'thumb.jpg', `*⌈ Video Encontrado ✅ ⌉*\n\n◉ *Título* : ${ytm.title}\n◉ *Tamaño* : ${ytm.size}\n◉ *Calidad* : ${ytm.quality}\n◉ *URL* : ${ytm.ext}\n\n*ESPERE ENVIANDO SU ARCHIVO MP4 ⚠*`, data.message)
+                if(Number(ytm.size.split(' MB')[0]) >= 50.00) return client.sendFileFromUrl(data.from, `${ytm.thumb}`, 'thumb.jpg', `*⌈ Video Encontrado ✅ ⌉*\n\n◉ *Título* : ${ytm.title}\n◉ *Tamaño* : ${ytm.size}\n◉ *Calidad* : ${ytm.quality}\n◉ *URL* : ${ytm.ext}\n\n*ESPERE ENVIANDO SU ARCHIVO MP4 ⚠*`, data.message)
                 client.sendFileFromUrl(data.from, `${ytm.thumb}`, 'thumb.jpg', teks, data.message)
                 client.sendFileFromUrl(data.from, `${ytm.link}`, `${ytm.title} - Download.mp4`, `Se envió el video @${data.sender.split('@')[0]}`, data.message)
                 } catch {
