@@ -793,7 +793,7 @@ break
 	
 	case 'creador':
 	       client.sendMessage(from, {displayname: "Shan 🥸", vcard: vcard}, MessageType.contact, { quoted: mek})
-		client.sendMessage(from, 'Hola 👋 te saluda Shan este es un mensaje predeterminado al igual que el audio\n\nArriba esta mi contacto por si tienen algun problema con las descargas o yo que se\nYo no soy dueño de esta bot ni tampoco lo controlo, yo solo cree la base de datos y le doy mantenimiento\nEl numero osea mi contacto de arriba no es un bot si tedio pereza escuchar el audio gordito trolo, bueno disfruten del bot y si quires me puedes seguir en instagram\n\n*Mi instagram:* https://www.instagram.com/thepavos\n\n*Como instalar el bot:* https://www.youtube.com/watch?v=2LQSzEbpJ-M\n\nву ѕнαη∂υу',MessageType.text, { quoted: mek} )
+		client.sendMessage(from, 'Hola 👋 te saluda Shan, este es un mensaje predeterminado al igual que el audio.\n\nArriba esta mi contacto por si tienen algun problema con las descargas o yo que se.\nYo no soy dueño de este bot ni tampoco lo controlo, yo solo cree la base de datos y le doy mantenimiento.\nEl numero osea mi contacto de arriba no es un bot, si te dio pereza escuchar el audio gordito trolo.\nBueno disfruten del bot y si quieres me puedes seguir en instagram.\n\n*Mi instagram:* https://www.instagram.com/thepavos\n\n*Como instalar el bot:* https://www.youtube.com/watch?v=2LQSzEbpJ-M\n\nву ѕнαη∂υу',MessageType.text, { quoted: mek} )
                 const none = fs.readFileSync('./mp3/shan.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                 break
@@ -1645,6 +1645,10 @@ break
                  
 		if (budy.includes(`Fua`)) {
                   reply(`el diegote pa`)
+                  }
+	if (budy.startsWith(`Hora del sexito`)) {
+        const none = fs.readFileSync('./mp3/maau1.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
         if (budy.startsWith(`Cuentate un chiste`)) {
         const none = fs.readFileSync('./mp3/dylan2.mp3');
