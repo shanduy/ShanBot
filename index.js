@@ -49,6 +49,7 @@ const speed = require('performance-now')
 const welkom = JSON.parse(fs.readFileSync('./database/json/welkom.json'))
 const nsfw = JSON.parse(fs.readFileSync('./database/json/nsfw.json'))
 const ban = JSON.parse(fs.readFileSync('./database/banned.json'))
+const setting = JSON.parse(fs.readFileSync('./src/settings.json'))
 const samih = JSON.parse(fs.readFileSync('./database/json/simi.json'))
 const user = JSON.parse(fs.readFileSync('./database/json/user.json'))
 const _leveling = JSON.parse(fs.readFileSync('./database/json/leveling.json'))
@@ -301,6 +302,7 @@ async function starts() {
 			global.prefix
 			global.blocked
 			const content = JSON.stringify(mek.message)
+			const apikey = setting.apikey
 			const from = mek.key.remoteJid
 			const type = Object.keys(mek.message)[0]
 			const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
@@ -348,7 +350,6 @@ async function starts() {
                         const kapankah = ['Otro día','Otra semana','Otro mes','Otro año']
 			const botNumber = client.user.jid
 			const ownerNumber = ["593997889284@s.whatsapp.net"] // replace this with your number
-			const apikey = setting.apikey
 			const nomorOwner = [ownerNumber]
 	                const isGroup = from.endsWith('@g.us')
 			const totalchat = await client.chats.all()
