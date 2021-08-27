@@ -322,6 +322,7 @@ async function starts() {
 				levelnol: '*Nivel* 0 ',
 				error: {
 					stick: '[❎] Falló, se produjo un error al convertir la imagen en una pegatina',
+					yt: 'Falló en el link o se produjo un error al momento de descargar el video',
 					Iv: 'Este no es un link de youtube'
 					},
 				only: {
