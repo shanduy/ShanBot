@@ -12,14 +12,18 @@ Una alternativa por si *play llego a su limite de canciones
 ${prefix}play
 Coloca el nombre de la cancion, o el link del video YT
 
-
+Ejemplo:
 ${prefix}play Industry Baby - Lil Nas X
 
 ══════════════
 
-*COMUNICADO*
+*VIDEO*
 
-*ytmp4 y *ytmp3 estan en mantenimiento, muy pronto sacare una actualizacion de esos comandos mas renovado :)
+${prefix}ytmp4
+Descarga videos de YouTube
+
+Ejemplo:
+${prefix}ytmp4 www.youtube.com/xxxxxxxx
 
 ══════════════
     
