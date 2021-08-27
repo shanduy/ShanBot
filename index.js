@@ -1319,9 +1319,10 @@ break
 		anu = await fetchJson(`https://api.zeks.me/api/ytmp4?apikey=${apikey}&url=${args[0]}`, {method: 'get'})
 		if (anu.error) return reply(anu.error.yt)
 		teks = `*⌈ Video Encontrada ✅ ⌉*\n◉ *Título:* ${anu.result.title} \n◉ *Tamaño:* ${anu.result.size}\n◉ *Url:* ${anu.result.url_video}\n\n*ESPERE ENVIANDO SU ARCHIVO MP4 ⚠*`
-		client.sendMessage(from, image, {quoted: mek, caption: teks})
-		buffer = await getBuffer(anu.result.url_video)
-		client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.title}.mp4`, quoted: mek})
+		thumb = await getBuffer(anu.thumb)
+		client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
+		buffer = await getBuffer(anu.result)
+		client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
 		break	
 			
 				
