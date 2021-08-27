@@ -1321,9 +1321,9 @@ break
 		teks = `*⌈ Video Encontrada ✅ ⌉*\n◉ *Título:* ${anu.result.title} \n◉ *Tamaño:* ${anu.result.size}\n◉ *Url:* ${anu.result.url_video}\n\n*ESPERE ENVIANDO SU ARCHIVO MP4 ⚠*`
 		thumb = await getBuffer(anu.thumb)
 		client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
-		buffer = await getBuffer(anu.result)
-		client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
-		break	
+		buffer = await getBuffer(anu.result.url_video)
+		client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.title}.mp4`, quoted: mek})
+		break
 			
 				
 	//FIN DE SERVICIO DE MUSICA Y VIDEO			
