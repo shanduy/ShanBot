@@ -322,7 +322,6 @@ async function starts() {
 				levelnol: '*Nivel* 0 ',
 				error: {
 					stick: '[❎] Falló, se produjo un error al convertir la imagen en una pegatina',
-					yt: '*Enlace inválido o fallo en descarga el video*',
 					Iv: 'Este no es un link de youtube'
 					},
 				only: {
@@ -348,6 +347,7 @@ async function starts() {
                         const kapankah = ['Otro día','Otra semana','Otro mes','Otro año']
 			const botNumber = client.user.jid
 			const ownerNumber = ["593997889284@s.whatsapp.net"] // replace this with your number
+			const apikey = setting.apikey
 			const nomorOwner = [ownerNumber]
 	                const isGroup = from.endsWith('@g.us')
 			const totalchat = await client.chats.all()
@@ -1309,7 +1309,18 @@ break
                 client.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
                 break
                                 
-			
+		case 'ytmp4':
+		if (args.length < 1) return reply('Donde esta la url del video?\n\nEjemplo: *ytmp4 www.youtube.com/xxxxxxxxx')
+		if (!isUser) return reply(mess.only.daftarB)
+		reply(mess.only.mpv)
+		if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
+		anu = await fetchJson(`https://api.zeks.me/api/ytmp4?apikey=${apikey}&url=${args[0]}`, {method: 'get'})
+		if (anu.error) return reply(anu.error.yt)
+		teks = `*⌈ Video Encontrada ✅ ⌉*\n◉ *Título:* ${anu.result.title} \n◉ *Tamaño:* ${anu.result.size}\n◉ *Url:* ${anu.result.url_video}\n\n*ESPERE ENVIANDO SU ARCHIVO MP4 ⚠*`
+		client.sendMessage(from, thumbnail, image, {quoted: mek, caption: teks})
+		buffer = await getBuffer(anu.result.url_video)
+		client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.title}.mp4`, quoted: mek})
+		break	
 			
 				
 	//FIN DE SERVICIO DE MUSICA Y VIDEO			
