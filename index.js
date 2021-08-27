@@ -1318,11 +1318,11 @@ break
 		if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
 		anu = await fetchJson(`https://api.zeks.me/api/ytmp4?apikey=${apikey}&url=${args[0]}`, {method: 'get'})
 		if (anu.error) return reply(anu.error.yt)
-		teks = `*⌈ Video Encontrada ✅ ⌉*\n◉ *Título:* ${anu.result.title} \n◉ *Tamaño:* ${anu.result.size}\n◉ *Url:* ${anu.result.url_video}\n\n*ESPERE ENVIANDO SU ARCHIVO MP4 ⚠*`
-		buffer = await getBuffer(anu.result.thumbnail)
-		lagu = await getBuffer(anu.result.url_video)
-		client.sendMessage(from, buffer, image, {quoted: mek, caption: teks})			
-		client.sendMessage(from, lagu, video, {mimetype: 'video/mp4', filename: `${anu.result.title}.mp4`, quoted: mek})
+		teks = `*⌈ Video Encontrada ✅ ⌉*\n◉ *Título:* ${anu.result.title} \n◉ *Tamaño:* ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP4 ⚠*`
+		lagu = await getBuffer(anu.result.thumbnail)
+                client.sendMessage(from, lagu, image, {quoted: mek, caption: teks})
+		buffer = await getBuffer(anu.result.url_video)
+		client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.title}.mp4`, quoted: mek})
 		break
 		break
 			
