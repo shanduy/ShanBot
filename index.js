@@ -1193,20 +1193,19 @@ case 'unir':
 if (!isGroup) return reply(mess.only.group)
 if (!isGroupAdmins) return reply(mess.only.admin)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-if (args.length < 1) return reply('Para emocion, para unir a una persona debes escribir el numero sin (+)\nEjamplo: *unir 52xxxxxxxxx')
-if (args[0].startsWith('00')) return reply('Por favor, colocar el codigo de area de el pais de la persona que desea unir\nEjemplo: *unir 52xxxxxxxxx')
+if (args.length < 1) return reply('Para emocion, para unir a una persona debes escribir el numero sin (+)\nEjemplo: *unir 52xxxxxxxxx')
+if (args[0].startsWith('+')) return reply('Por favor, colocar el codigo de area de el pais de la persona que desea unir\nEjemplo: *unir 52xxxxxxxxx')
 try {0
 num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
 client.groupAdd(from, [num])
 } catch (e) {
-console.log('Error :', e)
+console.log('Error:', e)
 reply('No se pudo agregar el destino, tal vez porque es privado')
 }
 break
 				
-case 'fgc': 
+case 'fotogr': 
 reply(mess.wait)
-if (!isOwner) return reply(mess.only.ownerB)
 if (!isGroup) return reply(mess.only.group)
 if (!isGroupAdmins) return reply(mess.only.admin)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
@@ -1215,21 +1214,21 @@ await client.updateProfilePicture (from, media)
 reply('*⌊✅⌉ El cambio de foto del grupo fue exitoso*')
 break						
 				
-case 'ngc':
-if (!isGroup) return reply(mess.only.group)
-if (!isGroupAdmins) return reply(mess.only.admin)
-if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-client.groupUpdateSubject(from, `${body.slice(10)}`)
-client.sendMessage(from, '*⌊✅⌉ El nombre del grupo fue cambiado*', text, {quoted: mek})
-break
+case 'nombregr':
+      if (!isGroup) return reply(mess.only.group)
+      if (!isGroupAdmins) return reply(mess.only.admin)
+      if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+      client.groupUpdateSubject(from, `${body.slice(9)}`)
+      client.sendMessage(from, '*⌊✅⌉ El nombre del grupo fue cambiado*', text, {quoted: mek})
+      break
 
-case 'dgc':
-if (!isGroup) return reply(mess.only.group)
-if (!isGroupAdmins) return reply(mess.only.admin)
-if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-client.groupUpdateDescription(from, `${body.slice(10)}`)
-client.sendMessage(from, '*⌊✅⌉ La descripción del grupo fue cambiado*', text, {quoted: mek})
-break
+case 'descrigr':
+      if (!isGroup) return reply(mess.only.group)
+      if (!isGroupAdmins) return reply(mess.only.admin)
+      if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+      client.groupUpdateDescription(from, `${body.slice(9)}`)
+      client.sendMessage(from, '*⌊✅⌉ La descripción del grupo fue cambiado*', text, {quoted: mek})
+      break
 
 case 'welcome':
 if (!isGroup) return reply(mess.only.group)
