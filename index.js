@@ -363,6 +363,7 @@ async function starts() {
 			const isAntInsta = isGroup ? antinsta.includes(from) : false
 			const isAntiTik = isGroup ? antitik.includes(from) : false
 			const isAntiFace = isGroup ? antiface.includes(from) : false
+			const isAntiTube = isGroup ? antitube.includes(from) : false
 			const isAntiKwai = isGroup ? antikwai.includes(from) : false
 			const groupId = isGroup ? groupMetadata.jid : ''
 			const groupMembers = isGroup ? groupMetadata.participants : ''
@@ -1193,8 +1194,8 @@ case 'unir':
 if (!isGroup) return reply(mess.only.group)
 if (!isGroupAdmins) return reply(mess.only.admin)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-if (args.length < 1) return reply('Para emocion, para unir a una persona debes escribir el numero sin (+)\nEjemplo: *unir 52xxxxxxxxx')
-if (args[0].startsWith('+')) return reply('Por favor, colocar el codigo de area de el pais de la persona que desea unir\nEjemplo: *unir 52xxxxxxxxx')
+if (args.length < 1) return reply('Para emocion, para unir a una persona debes escribir el numero sin (+)\n\nEjemplo: *unir 52xxxxxxxxx')
+if (args[0].startsWith('+')) return reply('Por favor, no coloques (+) solo pon el numero conel codigo de area de su pais\n\nEjemplo: *unir 52xxxxxxxxx')
 try {0
 num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
 client.groupAdd(from, [num])
@@ -1214,19 +1215,19 @@ await client.updateProfilePicture (from, media)
 reply('*⌊✅⌉ El cambio de foto del grupo fue exitoso*')
 break						
 				
-case 'nombregr':
+case 'nombgr':
       if (!isGroup) return reply(mess.only.group)
       if (!isGroupAdmins) return reply(mess.only.admin)
       if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-      client.groupUpdateSubject(from, `${body.slice(9)}`)
+      client.groupUpdateSubject(from, `${body.slice(10)}`)
       client.sendMessage(from, '*⌊✅⌉ El nombre del grupo fue cambiado*', text, {quoted: mek})
       break
 
-case 'descrigr':
+case 'descégr':
       if (!isGroup) return reply(mess.only.group)
       if (!isGroupAdmins) return reply(mess.only.admin)
       if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-      client.groupUpdateDescription(from, `${body.slice(9)}`)
+      client.groupUpdateDescription(from, `${body.slice(10)}`)
       client.sendMessage(from, '*⌊✅⌉ La descripción del grupo fue cambiado*', text, {quoted: mek})
       break
 
@@ -1726,12 +1727,17 @@ break
                   reply(`Opa yazmin te extrañe :(`)
                   }
 					
-		if (budy.includes(`opa`)) {
+		if (budy.includes(`Opa`)) {
                   reply(`opaaaaa`)
                   }
                  
 		if (budy.includes(`Fua`)) {
                   reply(`el diegote pa`)
+                  }
+	if (messagesC.includes("Hola")){
+		client.updatePresence(from, Presence.composing) 
+	     	const d = fs.readFileSync('./mp3/gref.jpg');
+                client.sendMessage(from, d, sticker, {quoted: mek})
                   }
 	if (budy.startsWith(`Hora del sexito`)) {
         const none = fs.readFileSync('./mp3/maau1.mp3');
