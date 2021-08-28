@@ -321,6 +321,8 @@ async function starts() {
 				success: '✔️ Listo ✔️',
                                 levelon: '❬ ✅ ❭ *Level activado*',
 				leveloff: ' ❬ ✅ ❭  *Level desactivado*',
+				foto: 'Calmao estoy cambiando la foto del grupo\n\nPor favor no hacer spam👏\n\nву ѕнαη∂υу',
+				unir: 'Espere por favor 🕖\n\nEstoy tratando de unirlo\n\n*Recuerda, si no lo uno es por que el usuario tiene bloqueado la funcion para unirlo a grupos*\n\nву ѕнαη∂υу',
 				levelnoton: '❬ ❎ ❭ *Level no esta activado*',
 				levelnol: '*Nivel* 0 ',
 				error: {
@@ -1191,11 +1193,12 @@ client.sendMessage(from, open, text, {quoted: mek})
 break
 				                
 case 'unir':
+reply(mess.unir)
 if (!isGroup) return reply(mess.only.group)
 if (!isGroupAdmins) return reply(mess.only.admin)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 if (args.length < 1) return reply('Para emocion, para unir a una persona debes escribir el numero sin (+)\n\nEjemplo: *unir 52xxxxxxxxx')
-if (args[0].startsWith('+')) return reply('Por favor, no coloques (+) solo pon el numero conel codigo de area de su pais\n\nEjemplo: *unir 52xxxxxxxxx')
+if (args[0].startsWith('+')) return reply('Por favor, no coloques (+) solo pon el numero con el codigo de area de su pais\n\nEjemplo: *unir 52xxxxxxxxx')
 try {0
 num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
 client.groupAdd(from, [num])
@@ -1206,7 +1209,7 @@ reply('No se pudo agregar el destino, tal vez porque es privado')
 break
 				
 case 'fotogr': 
-reply(mess.wait)
+reply(mess.foto)
 if (!isGroup) return reply(mess.only.group)
 if (!isGroupAdmins) return reply(mess.only.admin)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
