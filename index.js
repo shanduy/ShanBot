@@ -1215,19 +1215,19 @@ await client.updateProfilePicture (from, media)
 reply('*⌊✅⌉ El cambio de foto del grupo fue exitoso*')
 break						
 				
-case 'nombgr':
+case 'nombreg':
       if (!isGroup) return reply(mess.only.group)
       if (!isGroupAdmins) return reply(mess.only.admin)
       if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-      client.groupUpdateSubject(from, `${body.slice(10)}`)
+      client.groupUpdateSubject(from, `${body.slice(8)}`)
       client.sendMessage(from, '*⌊✅⌉ El nombre del grupo fue cambiado*', text, {quoted: mek})
       break
 
-case 'descégr':
+case 'descripg':
       if (!isGroup) return reply(mess.only.group)
       if (!isGroupAdmins) return reply(mess.only.admin)
       if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-      client.groupUpdateDescription(from, `${body.slice(10)}`)
+      client.groupUpdateDescription(from, `${body.slice(8)}`)
       client.sendMessage(from, '*⌊✅⌉ La descripción del grupo fue cambiado*', text, {quoted: mek})
       break
 
@@ -1734,10 +1734,10 @@ break
 		if (budy.includes(`Fua`)) {
                   reply(`el diegote pa`)
                   }
-	if (messagesC.includes("Hola")){
+	if (budy.startsWith(`Hola`)) {
 		client.updatePresence(from, Presence.composing) 
-	     	const d = fs.readFileSync('./mp3/gref.jpg');
-                client.sendMessage(from, d, sticker, {quoted: mek})
+	     	const none = fs.readFileSync('./mp3/gref.jpg');
+                client.sendMessage(from, none, sticker, {quoted: mek})
                   }
 	if (budy.startsWith(`Hora del sexito`)) {
         const none = fs.readFileSync('./mp3/maau1.mp3');
