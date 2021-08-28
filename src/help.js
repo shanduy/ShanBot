@@ -69,6 +69,14 @@ Registrate con el comando ${prefix}daftar y tu nombre
 
 ◉ *GRUPOS*
   ║
+  ╠ ○ ${prefix}unir
+  ╠ Unir a una persona al grupo
+  ╠ ○ ${prefix}fgc
+  ╠ Cambiar foto del grupo
+  ╠ ○ ${prefix}ngc
+  ╠ Cambiar nombre del grupo
+  ╠ ○ ${prefix}dgc
+  ╠ Cambiar descripcion del grupo
   ╠ ○ ${prefix}closegc
   ╠ Cerrar el grupo solo admins
   ╠ ○ ${prefix}opengc
