@@ -68,7 +68,6 @@ const { juegos } = require('./src/juegos')
 const { shantera } = require('./src/shantera')
 const { antimenu } = require('./src/antimenu')
 const { welmenu } = require('./src/welmenu')
-const { kickmenu } = require('./src/kickmenu')
 const { banmenu } = require('./src/banmenu')
 const { otak } = require('./src/otak')
 const { levelmenu } = require('./src/levelmenu')
@@ -381,10 +380,8 @@ async function starts() {
                         const conts = mek.key.fromMe ? client.user.jid : client.contacts[sender] || { notify: jid.replace(/@.+/, '') }
                         const pushname = mek.key.fromMe ? client.user.name : conts.notify || conts.vname || conts.name || '-'
 			
-			/******Entrada ApiKey******/
-                        const BarBarKey = '8'
-                        /******Fin de la entrada de ApiKey******/
-
+			//......................
+			
 			const isUrl = (url) => {
 			    return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
 			}
@@ -627,9 +624,6 @@ if (budy.includes("https://m.facebook.com/")){
 		break
 		case 'banmenu':
 		client.sendMessage(from, banmenu(prefix, sender), text, {quoted: mek})
-		break
-		case 'kickmenu':
-		client.sendMessage(from, kickmenu(prefix, sender), text, {quoted: mek})
 		break
 		case 'desmenu':
 		client.sendMessage(from, desmenu(prefix, sender), text, {quoted: mek})
