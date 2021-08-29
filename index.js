@@ -1693,14 +1693,10 @@ break
 		if (budy.includes(`Fua`)) {
                   reply(`el diegote pa`)
                   }
-	if (budy.startsWith(`Hola`)) {
-		client.updatePresence(from, Presence.composing) 
-	     	const none = fs.readFileSync('./mp3/gref.jpg');
-                client.sendMessage(from, none, MessageType.sticker, {quoted: mek, mimetype: 'image/jpg', ptt:true})
-                  }
+	
 	if (budy.startsWith(`Hora del sexito`)) {
         const none = fs.readFileSync('./mp3/maau1.mp3');
-		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp3', ptt:true})
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
         if (budy.startsWith(`Cuentate un chiste`)) {
         const none = fs.readFileSync('./mp3/dylan2.mp3');
