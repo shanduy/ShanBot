@@ -116,7 +116,6 @@ const {
 
 const antilink = JSON.parse(fs.readFileSync('./src/antilink.json'))
 const antiface = JSON.parse(fs.readFileSync('./src/antiface.json'))
-const antitube = JSON.parse(fs.readFileSync('./src/antitube.json'))
 const antitik = JSON.parse(fs.readFileSync('./src/antitik.json'))
 const antinsta = JSON.parse(fs.readFileSync('./src/antinsta.json'))
 const antikwai = JSON.parse(fs.readFileSync('./src/antikwai.json'))
@@ -366,7 +365,6 @@ async function starts() {
 			const isAntInsta = isGroup ? antinsta.includes(from) : false
 			const isAntiTik = isGroup ? antitik.includes(from) : false
 			const isAntiFace = isGroup ? antiface.includes(from) : false
-			const isAntiTube = isGroup ? antitube.includes(from) : false
 			const isAntiKwai = isGroup ? antikwai.includes(from) : false
 			const groupId = isGroup ? groupMetadata.jid : ''
 			const groupMembers = isGroup ? groupMetadata.participants : ''
@@ -472,23 +470,7 @@ if (budy.includes("https://m.facebook.com/")){
 		}, 0)
 	}
 
-	if (budy.includes("https://youtu.be/")){
-		if (!isGroup) return
-		if (!isAntiTube) return
-	        if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
-		client.updatePresence(from, Presence.composing)
-		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-		reply(`*LINK DE YOUTUBE DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
-		setTimeout( () => {
-			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
-		}, 0)
-		setTimeout( () => {
-			client.updatePresence(from, Presence.composing)
-			reply("Adios mi loco")
-		}, 0)
-	}		
-			
-        if (budy.includes("https://www.instagram.com/")){
+	if (budy.includes("https://www.instagram.com/")){
 		if (!isGroup) return
 		if (!isAntInsta) return
 	        if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
@@ -978,27 +960,7 @@ break
 					}
 					break
 				
-				case 'antitube':
-                                        if (!isGroup) return reply(mess.only.group)
-					if (!isUser) return reply(mess.only.daftarB)
-					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (!isGroupAdmins) return reply(mess.only.ownerG)
-					if (args.length < 1) return reply('Coloque *antimenu para ver los comandos de activación de los antilinks')
-					if (Number(args[0]) === 1) {
-						if (isAntiTube) return reply('El antilink de facebook ya esta activo')
-						antitube.push(from)
-						fs.writeFileSync('./src/antitube.json', JSON.stringify(antitube))
-						reply('❬ ✅ ❭ La funcion de antilink de YouTube esta habilitada en este grupo')
-						client.sendMessage(from,`Atención a todos los miembros activos de este grupo 📣\n\nDesde ahora cualquier participante que envia un link de *YouTube* o de su canal a este grupo sera expulsado de inmediato\n\n_*Razones: Spam*_`, text)
-					} else if (Number(args[0]) === 0) {
-						antitube.splice(from)
-						fs.writeFileSync('./src/antitube.json', JSON.stringify(antitube))
-						reply('❬ ✅ ❭ La funcion de antilink de YouTube esta deshabilitada en este grupo')
-					} else {
-						reply('Coloque *antimenu para ver los comandos de activación de los antilinks')
-					}
-					break
-				  
+				
                                   case 'antitik':
                                         if (!isGroup) return reply(mess.only.group)
 					if (!isUser) return reply(mess.only.daftarB)
@@ -1198,7 +1160,6 @@ if (!isGroup) return reply(mess.only.group)
 if (!isGroupAdmins) return reply(mess.only.admin)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 if (args.length < 1) return reply('Para emocion ✋, para unir a una persona debes escribir el numero sin (+)\n\nEjemplo: *unir 52xxxxxxxxx')
-reply(mess.unir)
 if (args[0].startsWith('+')) return reply(mess.unire)
 try {0
 num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
