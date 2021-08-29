@@ -71,22 +71,6 @@ const { welmenu } = require('./src/welmenu')
 const { banmenu } = require('./src/banmenu')
 const { otak } = require('./src/otak')
 const { levelmenu } = require('./src/levelmenu')
-/*const { mediamenu } = require('./database/menu/mediamenu')
-const { educationmenu } = require('./database/menu/educationmenu')
-const { downloadermenu } = require('./database/menu/downloadermenu')
-const { mememenu } = require('./database/menu/mememenu')
-const { kerangmenu } = require('./database/menu/kerangmenu')
-const { groupmenu } = require('./database/menu/groupmenu')
-const { soundmenu } = require('./database/menu/soundmenu')
-const { musicmenu } = require('./database/menu/musicmenu')
-const { islammenu } = require('./database/menu/islammenu')
-const { stalkmenu } = require('./database/menu/stalkmenu')
-const { wibumenu } = require('./database/menu/wibumenu')
-const { funmenu } = require('./database/menu/funmenu')
-const { informationmenu } = require('./database/menu/informationmenu')
-const { 18+menu } require('./database/menu/18+menu')
-const { ownermenu } require('./database/menu/ownermenu')
-const { othermenu } require('./database/menu/othermenu')*/
 /******FIN DE ENTRADA DEL MENÚ******/
 
 /******CARGA DE ENTRADA VCARD******/
@@ -744,11 +728,11 @@ break
 				if (data.error) return reply(data.error)
 				reply(data.result)
 				break
-		/*case 'tneon':
-                data = await await getBuffer(`https://api.zeks.xyz/api/text3dbox?apikey=tshanduyx&text=${body.slice(8)}`)
+		case 'tneon':
+                data = await await getBuffer(`https://api.zeks.me/api/gneon?apikey=hamilton48&text=${body.slice(8)}`)
                 if (!isUser) return reply(mess.only.daftarB)
                 client.sendMessage(from, data, image, {quoted: mek, caption: body.slice(8)})
-                break*/
+                break
 	
 	case 'creador':
 	       client.sendMessage(from, {displayname: "Shan 🥸", vcard: vcard}, MessageType.contact, { quoted: mek})
