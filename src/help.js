@@ -26,7 +26,7 @@ Interactua con el bot
 ○ ${prefix}juegos
 Diviértete con tus amigos :)
 ○ ${prefix}desmenu
-Descargar musica ( videos próximamente )
+Descargar musica y videos
 ○ ${prefix}version
 Conoce la versión de tu bot
 ○ ${prefix}welmenu
@@ -81,7 +81,7 @@ Registrate con el comando ${prefix}daftar y tu nombre
   ╠ Cerrar el grupo solo admins
   ╠ ○ ${prefix}opengc
   ╠ Abrir grupo solo admins
-  ╠ ○ ${prefix}kickmenu
+  ╠ ○ ${prefix}kick
   ╠ Eliminar a un miembro 
   ╠ ○ ${prefix}promote
   ╠ Dar admin a un miembro
