@@ -45,15 +45,6 @@ ${prefix}antitik 0
 
 ══════════════
 
-_*Antilink De Youtube*_
-
-*PARA ACTIVAR EL ANTILINK*
-${prefix}antitube 1
-
-*PARA DESACTIVAR EL ANTILINK*
-${prefix}antitube 0
-
-══════════════
 
 _*Antilink De Kwai*_
 
