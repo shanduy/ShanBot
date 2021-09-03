@@ -1137,7 +1137,7 @@ case 'unir':
 if (!isGroup) return reply(mess.only.group)
 if (!isGroupAdmins) return reply(mess.only.admin)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-if (args.length < 1) return reply('Para emocion ✋, para unir a una persona debes escribir el numero sin (+)\n\nEjemplo: *unir 52xxxxxxxxx')
+if (args.length < 1) return reply('Para emocion ✋\nPara unir a una persona debes escribir el numero sin (+)\n\nEjemplo: *unir 52xxxxxxxxx')
 if (args[0].startsWith('+')) return reply(mess.unire)
 try {0
 num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
@@ -1852,6 +1852,14 @@ break
                   }			
 		if (budy.startsWith(`Nefasto`)) {
         const none = fs.readFileSync('./mp3/gaspi1.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
+		if (budy.startsWith(`So`)) {
+        const none = fs.readFileSync('./mp3/colom1.mp3');
+		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                  }
+		if (budy.startsWith(`so`)) {
+        const none = fs.readFileSync('./mp3/colom1.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
 		if (budy.startsWith(`chica lgante`)) {
