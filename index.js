@@ -102,11 +102,14 @@ const antiface = JSON.parse(fs.readFileSync('./src/antiface.json'))
 const antitik = JSON.parse(fs.readFileSync('./src/antitik.json'))
 const antinsta = JSON.parse(fs.readFileSync('./src/antinsta.json'))
 const antikwai = JSON.parse(fs.readFileSync('./src/antikwai.json'))
+const antiwa = JSON.parse(fs.readFileSync('./src/antiwa.json'))
 const antidiscord = JSON.parse(fs.readFileSync('./src/antidiscord.json'))
 
 /******FIN DE ARCHIVOS ANTILINK POR SHANDUY******/
 
-	
+
+
+
 //LEVEL INICIO
 const getLevelingXp = (userId) => {
             let position = false
@@ -349,6 +352,7 @@ async function starts() {
 			const isAntiTik = isGroup ? antitik.includes(from) : false
 			const isAntiFace = isGroup ? antiface.includes(from) : false
 			const isAntiKwai = isGroup ? antikwai.includes(from) : false
+			const isAntiWa = isGroup ? antiwa.includes(from) : false
 			const groupId = isGroup ? groupMetadata.jid : ''
 			const groupMembers = isGroup ? groupMetadata.participants : ''
                         const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
@@ -379,7 +383,44 @@ async function starts() {
 				(id == null || id == undefined || id == false) ? client.sendMessage(from, teks.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
 			}
            
-	
+//LINKS DE WHATSAPP	
+
+if (budy.includes("https://wa.me/")){
+		if (!isGroup) return
+		if (!isAntiWa) return
+                if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
+		client.updatePresence(from, Presence.composing)
+		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		reply(`*LINK DE WHATSAPP DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
+		setTimeout( () => {
+			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
+		}, 0)
+		setTimeout( () => {
+			client.updatePresence(from, Presence.composing)
+			reply("Adios mi loco")
+		}, 0)
+	}
+			
+	if (budy.includes("wa.me")){
+		if (!isGroup) return
+		if (!isAntiWa) return
+                if (isGroupAdmins) return reply('Eres un administrador del grupo, así que no te prohibiré el uso de enlaces :)')
+		client.updatePresence(from, Presence.composing)
+		var kic = `${sender.split("@")[0]}@s.whatsapp.net`
+		reply(`*LINK DE WHATSAPP DETECTADO 📢* ${sender.split("@")[0]} Usted sera eliminado de este grupo`)
+		setTimeout( () => {
+			client.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
+		}, 0)
+		setTimeout( () => {
+			client.updatePresence(from, Presence.composing)
+			reply("Adios mi loco")
+		}, 0)
+	}
+			
+			
+//FIN DE LINKS DE WHATSAPP	
+			
+			
 //ANTILINKS FACEBOOK GRUPOS PERFILES PUBLICACIONES
 			
 if (budy.includes("https://www.facebook.com/")){
@@ -711,8 +752,7 @@ console.log(e)
 reply('Hubo un error intentalo nuevamente :/')
 }
 break				
-				
-								
+											
 /******JUEGOS SHANDUY LA PUTA MADRE NO TE OLVIDES******/					
 					
 					
@@ -728,11 +768,7 @@ break
 				if (data.error) return reply(data.error)
 				reply(data.result)
 				break
-		case 'tneon':
-                data = await await getBuffer(`https://api.zeks.me/api/gneon?apikey=hamilton48&text=${body.slice(8)}`)
-                if (!isUser) return reply(mess.only.daftarB)
-                client.sendMessage(from, data, image, {quoted: mek, caption: body.slice(8)})
-                break
+		
 	
 	case 'creador':
 	       client.sendMessage(from, {displayname: "Shan 🥸", vcard: vcard}, MessageType.contact, { quoted: mek})
@@ -740,6 +776,7 @@ break
                 const none = fs.readFileSync('./mp3/shan.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                 break
+	
 	
 	case 'hidetag':
                 client.updatePresence(from, Presence.composing) 
@@ -873,8 +910,29 @@ break
 		
                                        
 				
-			//ANTILINKS DE REDES SOCIALES	
+			//ANTILINKS DE REDES SOCIALES FLACO ACEPTALO SOLO LO ESTAS EDITANDO REALMENTE SHANDUY TE HIZO TODO ESTO	
 				
+				case 'antiwa':
+                                        if (!isGroup) return reply(mess.only.group)
+					if (!isUser) return reply(mess.only.daftarB)
+					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+					if (!isGroupAdmins) return reply(mess.only.ownerG)
+					if (args.length < 1) return reply('Coloque *antimenu para ver los comandos de activación de los antilinks')
+					if (Number(args[0]) === 1) {
+						if (isAntiWa) return reply('El antilink de Whatsapp ya esta activo')
+						antiwa.push(from)
+						fs.writeFileSync('./src/antidiscord.json', JSON.stringify(antiwa))
+						reply('❬ ✅ ❭ La funcion de antilink de Whatsapp esta habilitada en este grupo')
+						client.sendMessage(from,`Atención a todos los miembros activos de este grupo 📣\n\nDesde ahora cualquier participante que envie un link de *Discord* a este grupo sera expulsado de inmediato\n\n_*Razones: Spam*_`, text)
+					} else if (Number(args[0]) === 0) {
+						antiwa.splice(from)
+						fs.writeFileSync('./src/antidiscord.json', JSON.stringify(antiwa))
+						reply('❬ ✅ ❭ La funcion de antilink de Whatsapp esta deshabilitada en este grupo')
+					} else {
+						reply('Coloque *antimenu para ver los comandos de activación de los antilinks')
+					}
+					break
+					
 				case 'antidiscord':
                                         if (!isGroup) return reply(mess.only.group)
 					if (!isUser) return reply(mess.only.daftarB)
@@ -1333,7 +1391,7 @@ break
 		if (!isUser) return reply(mess.only.daftarB)
                 reply(mess.only.musica)
                 play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3?q=${play}&apikey=hamilton48`)
+                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3?q=${play}&apikey=hamilton49`)
                 if (anu.error) return reply(anu.error)
                 infomp3 = `*⌈ Canción Encontrada ✅ ⌉*\n◉ *Título:* ${anu.result.title}\n◉ *Fuente:* ${anu.result.source}\n◉ *Tamaño:* ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*`
                 buffer = await getBuffer(anu.result.thumbnail)
@@ -1347,7 +1405,7 @@ break
 		if (!isUser) return reply(mess.only.daftarB)
 	        reply(mess.only.musica2)
                 play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3?q=${play}&apikey=shanduy48`)
+                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3?q=${play}&apikey=shanduy49`)
                 if (anu.error) return reply(anu.error)
                 infomp3 = `*⌈ Canción Encontrada ✅ ⌉*\n◉ *Título:* ${anu.result.title}\n◉ *Fuente:* ${anu.result.source}\n◉ *Tamaño:* ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*`
                 buffer = await getBuffer(anu.result.thumbnail)
