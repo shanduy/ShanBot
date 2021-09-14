@@ -308,12 +308,12 @@ async function starts() {
 				leveloff: ' ❬ ✅ ❭  *Level desactivado*',
 				foto: 'Calmao estoy cambiando la foto del grupo\n\nPor favor no hacer spam👏\n\nву ѕнαη∂υу',
 				unir: 'Espere por favor 🕖\n\nEstoy tratando de unirlo\n\n*Recuerda, si no lo uno es por que el usuario tiene bloqueado la funcion para unirlo a grupos*\n\nву ѕнαη∂υу',
-				unire: 'Por favor, no coloques (+) solo pon el numero con el codigo de area de su pais\n\nEjemplo: *unir 52xxxxxxxxx',
-				levelnoton: '❬ ❎ ❭ *Level no esta activado*',
+                                levelnoton: '❬ ❎ ❭ *Level no esta activado*',
 				levelnol: '*Nivel* 0 ',
 				error: {
 					stick: '[❎] Falló, se produjo un error al convertir la imagen en una pegatina',
 					yt: 'Falló en el link o se produjo un error al momento de descargar el video',
+					unire: 'Por favor, no coloques (+) solo pon el numero con el codigo de area de su pais\n\nEjemplo: *unir 52xxxxxxxxx',
 					Iv: 'Este no es un link de youtube'
 					},
 				only: {
@@ -326,7 +326,7 @@ async function starts() {
 					attp: 'Calma crack estoy haciendo tu texto a sticker 👏\n\n*Esto puede demorar unos minutos*\n\nву ѕнαη∂υу',
 					imgs: 'Euu flaco 🥴\n\n*Convirtiendo tu Sticker a Imagen 🔄*\n\nby shanduy',
 					mpcancion: 'Calmaoooo estoy procesando 😎\n\n*Convirtiendo de MP4 a MP3 🔄*\n\nву ѕнαη∂υу',
-					mpa: 'Euu flaco 🥴\n\n*Estoy decargando tu cancion 🔄*\n\nAguarde un momento, por favor\n\nву ѕнαη∂υу',
+					mpa: 'Euu flaco 🥴\n\n*Estoy descargando tu cancion 🔄*\n\nAguarde un momento, por favor\n\nву ѕнαη∂υу',
                                         xn: 'Calmao pa 😎\n\n*Estoy descargando tu video 🔄*\n\nAguarde un momento, por favor\n\nву ѕнαη∂υу',
 					mpv: 'Calma ✋🥸🤚\n\n*Estoy descargando tu video 🔄*\n\nAguarde un momento, por favor\n\nву ѕнαη∂υу',
 					insta: 'Calmao 😎\n\n*Estoy descargando tu post 🔄*\n\nAguarde un momento, por favor\n\nву ѕнαη∂υу',
@@ -1196,7 +1196,7 @@ if (!isGroup) return reply(mess.only.group)
 if (!isGroupAdmins) return reply(mess.only.admin)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 if (args.length < 1) return reply('Para emocion ✋\nPara unir a una persona debes escribir el numero sin (+)\n\nEjemplo: *unir 52xxxxxxxxx')
-if (args[0].startsWith('+')) return reply(mess.unire)
+if (args[0].startsWith('+')) return reply(mess.error.unire)
 try {0
 num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
 client.groupAdd(from, [num])
@@ -1428,6 +1428,21 @@ break
 		client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.title}.mp4`, quoted: mek})
 		break
 			
+		case 'ytmp3':
+		if (args.length < 1) return reply('Donde esta la url del video?\n\nEjemplo: *ytmp3 www.youtube.com/xxxxxxxxx')
+		if (!isUser) return reply(mess.only.daftarB)
+		reply(mess.only.mpa)
+		if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
+		anu = await fetchJson(`https://api.zeks.me/api/ytmp3?apikey=${apikey}&url=${args[0]}`, {method: 'get'})
+		if (anu.error) return reply(anu.error.yt)
+		teks = `*⌈ Cancion Encontrada ✅ ⌉*\n◉ *Título:* ${anu.result.title} \n◉ *Tamaño:* ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*`
+		lagu = await getBuffer(anu.result.thumbnail)
+                client.sendMessage(from, lagu, image, {quoted: mek, caption: teks})
+		buffer = await getBuffer(anu.result.url_audio)
+		client.sendMessage(from, buffer, video, {mimetype: 'audio/mp4', filename: `${anu.result.title}.mp3`, quoted: mek})
+		break			
+					
+					
 				
 	//FIN DE SERVICIO DE MUSICA Y VIDEO			
 				
