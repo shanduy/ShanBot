@@ -1228,10 +1228,6 @@ case 'dgc':
       if (!isGroup) return reply(mess.only.group)
       if (!isGroupAdmins) return reply(mess.only.admin)
       if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-      dtt = body.slice(5)
-      dtt.length > 25
-      ? reply('Nombre para el grupo muy largo, se requieren minimo 25 caracteres')
-      : gtts.save(dtt, function() {
       client.groupUpdateDescription(from, `${body.slice(5)}`)
       client.sendMessage(from, '*⌊✅⌉ La descripción del grupo fue cambiado*', text, {quoted: mek})
       break
