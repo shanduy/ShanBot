@@ -107,36 +107,6 @@ const antidiscord = JSON.parse(fs.readFileSync('./src/antidiscord.json'))
 
 /******FIN DE ARCHIVOS ANTILINK POR SHANDUY******/
 
-//FAKE
-
-const faketokoforwaded = (teks) => {
-	anu = {
-	  key: {
-			fromMe: false,
-			participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
-		},
-		message: {
-			"productMessage": {
-				"product": {
-					"productImage":{
-						"mimetype": "image/jpeg",
-						"jpegThumbnail": fs.readFileSync(`./banner/shanlogo.jpg`)
-					},
-					"retailerId": "ShanBot",
-					"productImageCount": 1
-				},
-				"businessOwnerJid": `0@s.whatsapp.net`
-		}
-	}
-}
-	client.sendMessage(from, teks, text, {
-	  quoted: anu,
-	  contextInfo:{
-	    "forwardingScore": 999, "isForwarded": true
-	  }
-	})
-}
-
 
 //LEVEL INICIO
 const getLevelingXp = (userId) => {
