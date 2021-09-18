@@ -2,9 +2,9 @@ const version = (prefix, pushname) => {
     return `
 *ѕнαηвσт ву ѕнαη∂υу*
 
-*Actualizado:* 05 de Septiembre del 2021
-*Versión actual:* 3.9
-*Ofrecida por:* ѕнαη∂υу™
+*Actualizado:* 18 de Septiembre del 2021
+*Versión actual:* 4.0
+*Ofrecida por:* shanduy™
 
 
 *INFORME*
@@ -25,7 +25,7 @@ https://cutt.ly/dWp5uqE
 https://www.instagram.com/thepavos
 
 
-ву ѕнαη∂υу
+_*by shanduy*_
 `
 
 }
