@@ -106,7 +106,7 @@ Para activar los NSFW coloque el siguiente comando ${prefix}nsfw 1 y para desact
 No te olvides de seguirme en instagram flaco ;)
 
 
-ву ѕнαη∂υу
+_*by shanduy*_
 
 
 ⌜ *ごきげんよう :)* ⌟ 
