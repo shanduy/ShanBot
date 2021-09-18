@@ -9,6 +9,8 @@ const help = (prefix) => {
    ○ Como instalar el bot: https://www.youtube.com/watch?v=2LQSzEbpJ-M
    ○ Instagram: https://www.instagram.com/thepavos
 
+◉ *PARA USAR EL BOT*
+Registrate con el comando ${prefix}daftar y tu nombre
 
 ◉ *NUEVOS COMANDOS*
 ○ ${prefix}banmenu
@@ -31,9 +33,6 @@ Descargar musica y videos
 Conoce la versión de tu bot
 ○ ${prefix}welmenu
 Comando de bienvenida solo grupos
-
-◉ *PARA USAR EL BOT*
-Registrate con el comando ${prefix}daftar y tu nombre
 
 ◉ *RESUELVE TUS DUDAS*
   ║
