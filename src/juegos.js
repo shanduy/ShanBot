@@ -13,7 +13,8 @@ Prueba tu suerte en el medidor de fan de cuties 😱
 
 _*En futuras versiones colocare mas juegos :)*_
      
-ву ѕнαη∂υу`
+_*by shanduy*_
+`
 
 }
 
