@@ -1284,7 +1284,6 @@ break
 								console.log('Finish')
 								exec(`webpmux -set exif ${addMetadata(pack, author)} ${ran} -o ${ran}`, async (error) => {
 									 if (error) {
-											 reply(ind.stikga())
 											 fs.unlinkSync(media)	
 											 fs.unlinkSync(ran)
 											 }
@@ -1316,7 +1315,6 @@ break
 								console.log('Finish')
 								exec(`webpmux -set exif ${addMetadata(pack, author)} ${ran} -o ${ran}`, async (error) => {
 									if (error) {
-											 reply(ind.stikga())
 											 fs.unlinkSync(media)	
 											 fs.unlinkSync(ran)
 											 }
