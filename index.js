@@ -1283,7 +1283,7 @@ break
 							})
 							.on('end', function () {
 								console.log('Finish')
-								exec(`webpmux -set exif ${addMetadata(pack, autor)} ${ran} -o ${ran}`, async (error) => {
+								exec(`webpmux -set exif ${addMetadata(pack, author)} ${ran} -o ${ran}`, async (error) => {
 									 if (error) {    
 										         fs.unlinkSync(media)	
 											 fs.unlinkSync(ran)
