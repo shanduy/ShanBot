@@ -1,4 +1,9 @@
-# ShanBot Bot Para Whatsapp by shanduy
+#BOT EN MANTENIMIENTO
+
+PRONTO CORREGIRE EL ERROR DEL MOTOR
+GRACIAS POR LA ESPERA
+
+ShanBot Bot Para Whatsapp by shanduy
 
 <p align="center">
 <img src="https://github.com/shanduy/ShanBot/blob/main/temples/ezgif-4-5e4fce2c4bbe.gif" alt="GIF" width="500" height="281"/>
