@@ -1,6 +1,6 @@
 const group = (prefix, ownerBot, botName) => {
         return `
-「 *${botName}* 」
+「 *${botDragon}* 」
 
 ◪ *INFO*
   ❏ Prefix: 「  ${prefix}  」
