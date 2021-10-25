@@ -1,10 +1,15 @@
 const version = (prefix, pushname) => {
     return `
-*ѕнαηвσт ву ѕнαη∂υу*
+*ShanBot by shanduy*
 
-*Actualizado:* 18 de Septiembre del 2021
-*Versión actual:* 4.0
+*Actualizado:* 25 de Octubre del 2021
+*Versión actual:* 4.1
 *Ofrecida por:* shanduy™
+
+
+*COMUNICADO*
+
+La funcion *kick sigue en mantenimiento
 
 
 *INFORME*
