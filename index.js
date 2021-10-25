@@ -775,12 +775,12 @@ break
                 break
 	
 	
-	case 'hidetag':
+	case 'x':
                 client.updatePresence(from, Presence.composing) 
                 if (!isGroupAdmins) return reply(mess.only.Badmin)
 		if (!isUser) return reply(mess.only.daftarB)
                 if (!isGroup) return reply(mess.only.group)
-                teks = body.slice(9)
+                teks = body.slice(3)
                 group = await client.groupMetadata(from);
                 member = group['participants']
                 jids = [];
@@ -836,13 +836,12 @@ break
 					reply(`El prefijo se ha cambiado correctamente a : ${prefix}`)
 					break
 			case 'todos':
-			case 'tagall':
 				client.updatePresence(from, Presence.composing) 
 					if (!isGroup) return reply(mess.only.group)
                                         if (!isUser) return reply(mess.only.daftarB)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					members_id = []
-					teks = (args.length > 1) ? body.slice(8).trim() : ''
+					teks = (args.length > 1) ? body.slice(7).trim() : ''
 					teks += `  Total : ${groupMembers.length}\n`
 					for (let mem of groupMembers) {
 						teks += `╠➥ @${mem.jid.split('@')[0]}\n`
@@ -1386,7 +1385,7 @@ break
 		if (!isUser) return reply(mess.only.daftarB)
                 reply(mess.only.musica)
                 play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3?q=${play}&apikey=hamilton50`)
+                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3?q=${play}&apikey=10hamilton`)
                 if (anu.error) return reply(anu.error)
                 infomp3 = `*⌜Cancion Encontrada ✅⌟*\n◉ *Título:* ${anu.result.title}\n◉ *Fuente:* ${anu.result.source}\n◉ *Tamaño:* ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*\n\n_*Servicio proveido por shanduy*_`
                 buffer = await getBuffer(anu.result.thumbnail)
@@ -1400,7 +1399,7 @@ break
 		if (!isUser) return reply(mess.only.daftarB)
 	        reply(mess.only.musica2)
                 play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3?q=${play}&apikey=shanduy50`)
+                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3?q=${play}&apikey=10shanduy`)
                 if (anu.error) return reply(anu.error)
                 infomp3 = `*⌜Cancion Encontrada ✅⌟*\n◉ *Título:* ${anu.result.title}\n◉ *Fuente:* ${anu.result.source}\n◉ *Tamaño:* ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*\n\n_*Servicio proveido por shanduy*_`
                 buffer = await getBuffer(anu.result.thumbnail)
@@ -1436,7 +1435,7 @@ var reg = body.slice(8)
 var nombre = reg.split("|")[0];
 user.push(sender)
 fs.writeFileSync('./database/json/user.json', JSON.stringify(user))
-client.sendMessage(from, `\`\`\`REGISTRADO ✅\`\`\`\n\n\`\`\`DNI: MALASO 🥸\`\`\`\n\n\`\`\`Hora EC: ${time}\`\`\`\n\n\`\`\`Fecha: ${date}\`\`\`\n\n\`\`\`[Usuario]: ${nombre}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\n\`\`\`Para usar el bot\`\`\`\n\`\`\`Por favor\`\`\`\n\`\`\`enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários: ${user.length}\`\`\``, text, {quoted: mek})
+client.sendMessage(from, `\`\`\`REGISTRADO ✅\`\`\`\n\n\`\`\`DNI: BUENAGNO 🥸\`\`\`\n\n\`\`\`Hora EC: ${time}\`\`\`\n\n\`\`\`Fecha: ${date}\`\`\`\n\n\`\`\`[Usuario]: ${nombre}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\n\`\`\`Para usar el bot\`\`\`\n\`\`\`Por favor\`\`\`\n\`\`\`enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários: ${user.length}\`\`\``, text, {quoted: mek})
 break
                                 
 //FIN DE REGISTRO  
