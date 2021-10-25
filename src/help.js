@@ -1,13 +1,16 @@
 const help = (prefix) => {
 	return `
 
-⌜ *ѕнαηвσт ву ѕнαη∂υу* ⌟  
+⌜ _*ShanBot by shanduy*_ ⌟  
 
 ◉ *INFORMACION*
    ○ Comando: ⌜ ${prefix} ⌟
    ○ Creador: ѕнαη∂υу™ 
    ○ Como instalar el bot: https://www.youtube.com/watch?v=2LQSzEbpJ-M
    ○ Instagram: https://www.instagram.com/thepavos
+
+◉ *COMUNICADO*
+La función *kick esta en mantenimiento 
 
 ◉ *PARA USAR EL BOT*
 Registrate con el comando ${prefix}daftar y tu nombre
@@ -80,8 +83,6 @@ Comando de bienvenida solo grupos
   ╠ Cerrar el grupo solo admins
   ╠ ○ ${prefix}opengc
   ╠ Abrir grupo solo admins
-  ╠ ○ ${prefix}kick
-  ╠ Eliminar a un miembro 
   ╠ ○ ${prefix}promote
   ╠ Dar admin a un miembro
   ╠ ○ ${prefix}demote
