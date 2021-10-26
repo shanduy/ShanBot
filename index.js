@@ -1421,6 +1421,20 @@ break
 		buffer = await getBuffer(anu.result.url_video)
 		client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.title}.mp4`, quoted: mek})
 		break
+					
+		case 'ytmp4':
+		if (args.length < 1) return reply('Donde esta la url del video?\n\nEjemplo: *ytmp4 www.youtube.com/xxxxxxxxx')
+		if (!isUser) return reply(mess.only.daftarB)
+		reply(mess.only.mpv)
+		if(!isUrl(args[0]) && !args[0].includes('instagram')) return reply(mess.error.Iv)
+		anu = await fetchJson(`https://api.zeks.me/api/ig?apikey=${apikey}&url=${args[0]}`, {method: 'get'})
+		if (anu.error) return reply(anu.error.yt)
+		teks = `*⌜Publicación Encontrada ✅⌟*\n*ESPERE ENVIANDO SUS ARCHIVOS ⚠*\n\n_*Servicio proveido por shanduy*_`
+		lagu = await getBuffer(anu.result.thumbnail)
+                client.sendMessage(from, lagu, image, {quoted: mek, caption: teks})
+		buffer = await getBuffer(anu.result.url_video)
+		client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.title}.mp4`, quoted: mek})
+		break			
 						
 				
 	//FIN DE SERVICIO DE MUSICA Y VIDEO			
