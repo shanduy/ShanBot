@@ -1422,7 +1422,7 @@ break
 		client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.title}.mp4`, quoted: mek})
 		break
 					
-		case 'ytmp4':
+		case 'insta':
 		if (args.length < 1) return reply('Donde esta la url del video?\n\nEjemplo: *ytmp4 www.youtube.com/xxxxxxxxx')
 		if (!isUser) return reply(mess.only.daftarB)
 		reply(mess.only.mpv)
