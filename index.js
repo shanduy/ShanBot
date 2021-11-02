@@ -1604,7 +1604,7 @@ break
 				case 'nsfwass':
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await fetchJson(`'https://meme-api.herokuapp.com/gimme/animebooty`, {method: 'get'})
+							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animebooty`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Ese es el culo que querías?'})
 						} catch (e) {
@@ -1612,6 +1612,18 @@ break
 							reply('❌ *ERROR* ❌')
 						}
 						break
+					/*case 'nsfwass': (Bro no se si es comun pero vi que una comilla esta demas, no se lo revisas.., estas en el res = await FetchJson(´' Esta asi y creo que por eso no funciona ese,
+					Yo lo probe quitandoselo y si funciono)
+						try {
+							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
+							res = await fetchJson(`'https://meme-api.herokuapp.com/gimme/animebooty`, {method: 'get'})
+							buffer = await getBuffer(res.url)
+							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Ese es el culo que querías?'})
+						} catch (e) {
+							console.log(`Error :`, color(e,'red'))
+							reply('❌ *ERROR* ❌')
+						}
+						break*/
 					case 'nsfwsidebobs':
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
