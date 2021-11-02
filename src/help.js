@@ -10,7 +10,7 @@ const help = (prefix) => {
    ○ Instagram: https://www.instagram.com/thepavos
 
 ◉ *COMUNICADO*
-La función *kick esta en mantenimiento 
+La función *kick ya esta en funcionamiento
 
 ◉ *PARA USAR EL BOT*
 Registrate con el comando ${prefix}daftar y tu nombre
