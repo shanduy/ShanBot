@@ -5,7 +5,7 @@ const help = (prefix) => {
 
 ◉ *INFORMACION*
    ○ Comando: ⌜ ${prefix} ⌟
-   ○ Creador: ѕнαη∂υу™ 
+   ○ Creador: shanduy™ 
    ○ Como instalar el bot: https://www.youtube.com/watch?v=2LQSzEbpJ-M
    ○ Instagram: https://www.instagram.com/thepavos
 
