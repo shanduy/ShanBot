@@ -1085,15 +1085,19 @@ break
                                       
 case 'kick':
 case 'pafuera':
-if (!isOwner && !mek.key.fromMe && !isGroupAdmins) return reply('Funcion solo para grupos')
-if (!isBotGroupAdmins) return reply('El bot no es admin')
-if (!isGroup) return
-if (mek.message.extendedTextMessage === null || mek.message.extendedTextMessage === undefined) return;
+if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isGroupAdmins) return reply(mess.only.admin)
+if (!isGroup) return reply(mess.only.group)
+if (mek.message.extendedTextMessage === null || mek.message.extendedTextMessage === undefined) return reply('Marca al que vamos a funar')
 if (mek.message.extendedTextMessage.contextInfo.participant === undefined) {
 entah = mek.message.extendedTextMessage.contextInfo.mentionedJid
 if (entah.length > 1) {
 var mems_ids = []
 for (let ids of entah) {
+	teks += `@${_.split('@')[0]}\n`
+const none = fs.readFileSync('./mp3/baneado.mp3');
+client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+	}
 mems_ids.push(ids)
 }
 client.groupRemove(from, mems_ids)
@@ -1103,6 +1107,7 @@ client.groupRemove(from, [entah[0]])
 } else {
 entah = ridwan.message.extendedTextMessage.contextInfo.participant
 client.groupRemove(from, [entah])
+client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
 }
 break
 
