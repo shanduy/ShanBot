@@ -78,20 +78,9 @@ Una vez descargado termux colocas el siguiente comando
 
 
 ## Instalar El Bot
-Pasos para instalar el bot en termux
+Mira el vídeo de Youtube 🔽🔽
 
-```bash
-> pkg install git
-> pkg install ffmpeg
-> pkg install nodejs
-> pkg install wget
-> git clone https://github.com/shanduy/ShanBot
-> cd ShanBot
-> bash install.sh
-> npm start
-> Y escaneas el QR con tu Whatsapp
-```
-
+https://youtu.be/2LQSzEbpJ-M
 
 
 ## ❗Advertencia❗ NUNCA CIERRES LA SESION DE WHATSAPP WEB 🚫
