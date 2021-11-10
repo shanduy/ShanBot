@@ -1253,20 +1253,15 @@ break
 //CREACION DE STICKERS Y VARIOS				
 				
 				case 's':
-				case 'tucson':
-				case 'opa':
-				case 'shan':
-				case 'nefasto':
-				case 'stiker':
+                                case 'stiker':
 				case 'sticker':
 				case 'stickergif':
 				case 'stikergif':
-			        if (!isUser) return reply(mess.only.daftarB)
-				if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
+                               if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						const media = await client.downloadAndSaveMediaMessage(encmedia)
                                                 if (!isUser) return reply(mess.only.daftarB)
-						ran = getRandom('7728.webp')
+						ran = getRandom('.webp')
 						await ffmpeg(`./${media}`)
 							.input(media)
 							.on('start', function (cmd) {
@@ -1290,12 +1285,12 @@ break
 								})
 							})
 							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
-							.toFormat('7728.webp')
+							.toFormat('webp')
 							.save(ran)
 						} else if ((isMedia && mek.message.videoMessage.seconds < 11 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
 						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						const media = await client.downloadAndSaveMediaMessage(encmedia)
-						ran = getRandom('7728.webp')
+						ran = getRandom('.webp')
 						reply(mess.only.pegatina)
 						await ffmpeg(`./${media}`)
 							.inputFormat(media.split('.')[1])
@@ -1322,7 +1317,7 @@ break
 							})
 						})
 							.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
-							.toFormat('7728.webp')
+							.toFormat('webp')
 							.save(ran)
 						}
 						break
