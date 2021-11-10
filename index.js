@@ -1520,40 +1520,7 @@ break
                     reply(` *Digita el comando 1 para activar, 0 para desactivar *\n * Ejemplo: ${prefix}leveling 1*`)
                 }
             break
-                                /*case 'nsfwtrap':
-                                        try{
-                                                if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-                                                if (!isUser) return reply(mess.only.daftarB)
-                                                res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwtrap?apikey=APIKEYLU`, {method: 'get'})
-                                                buffer = await getBuffer(res.result)
-                                                client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Estas enfermo flaco NEFASTOOOOO'})
-                                        } catch (e) {
-                                                console.log(`*Error* :`, color(e,'red'))
-                                                reply('❌ *ERROR* ❌')
-                                        }
-										break*/
-										case 'randomhentaio': 
-						try {
-							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await fetchJson(`https://tobz-api.herokuapp.com/api/hentai?apikey=BotWeA`, {method: 'get'})
-							buffer = await getBuffer(res.result)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Otaku que se esperaba'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
-						break
-					/*case 'nsfwloli':
-						try {
-							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await fetchJson(`https://api.lolis.life/random?nsfw=true`, {method: 'get'})
-							buffer = await getBuffer(res.url)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Alto pedofilo socio'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
-						break*/
+                               
 					case 'nsfwbobs': 
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
@@ -1565,50 +1532,8 @@ break
 							reply('❌ *ERROR* ❌')
 						}
 						break
-					case 'nsfwblowjob':
-						try {
-							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwblowjob`, {method: 'get'})
-							buffer = await getBuffer(res.result)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'No antojen'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
-						break
-					case 'nsfwneko':
-						try {
-							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await fetchJson(`https://api.computerfreaker.cf/v1/neko`, {method: 'get'})
-							buffer = await getBuffer(res.result)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Pero que wea?'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
-						break
-					/*case 'nsfwyuri':
-						try {
-							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await fetchJson(`https://api.computerfreaker.cf/v1/yuri`, {method: 'get'})
-							buffer = await getBuffer(res.result)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'NEFASTOOOOOOO'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
-					break*/
-				case 'nsfwass':
-						try {
-							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await fetchJson(`'https://meme-api.herokuapp.com/gimme/animebooty`, {method: 'get'})
-							buffer = await getBuffer(res.url)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Ese es el culo que querías?'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
-						break
+					
+				
 					case 'nsfwsidebobs':
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
@@ -1620,6 +1545,7 @@ break
 							reply('❌ *ERROR* ❌')
 						}
 					    break
+					
 					case 'nsfwahegao':
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
@@ -1631,17 +1557,7 @@ break
 							reply('❌ *ERROR* ❌')
 						}
 						break
-					case 'nsfwthighs':
-						try {
-							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animethighss`, {method: 'get'})
-							buffer = await getBuffer(res.url)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Por que muslos?'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
-						break
+					
 					case 'nsfwfeets':
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
@@ -1653,28 +1569,8 @@ break
 							reply('❌ *ERROR* ❌') 
 						}
 						break
-					case 'nsfwarmpits':
-						try {
-							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animearmpits`, {method: 'get'})
-							buffer = await getBuffer(res.url)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'A?'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
-						break
-						case 'nsfwtoin':
-						try {
-							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await fetchJson(`https://tobz-api.herokuapp.com/nsfwtrap?apikey=BotWeA`, {method: 'get'})
-							buffer = await getBuffer(res.url)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Bro....'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
-						break
+				
+						
                                 case 'ping':    
 			   	        if (!isUser) return reply(mess.only.userB)
                                         const timestamp = speed();
