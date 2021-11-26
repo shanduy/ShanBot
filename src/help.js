@@ -7,10 +7,11 @@ const help = (prefix) => {
    ○ Comando: ⌜ ${prefix} ⌟
    ○ Creador: shanduy™ 
    ○ Como instalar el bot: https://www.youtube.com/watch?v=2LQSzEbpJ-M
-   ○ Instagram: https://www.instagram.com/thepavos
+   ○ Mi Instagram: https://www.instagram.com/thepavos
 
 ◉ *COMUNICADO*
-La función *kick ya esta en funcionamiento
+En unos dias subire un nuevo video actualizado para instalar el bot.
+YouTube: https://www.youtube.com/channel/UCbNOLyHAy-SL4D9iz9Oi0lw
 
 ◉ *PARA USAR EL BOT*
 Registrate con el comando ${prefix}daftar y tu nombre
