@@ -1,6 +1,4 @@
-# EN MANTENIMIENTO
-
-ShanBot Bot Para Whatsapp by shanduy
+# ShanBot Bot Para Whatsapp by shanduy
 
 <p align="center">
 <img src="https://github.com/shanduy/ShanBot/blob/main/temples/ezgif-4-5e4fce2c4bbe.gif" alt="GIF" width="500" height="281"/>
@@ -37,7 +35,7 @@ Mis Redes Sociales Y Mi Whatsapp Para Resolver Tus Problemas
 
 
 # ShanBot
-ULTIMA VERSION 4.0
+ULTIMA VERSION 4.3
 
 Pasos para instalar el bot via termux
 https://www.youtube.com/watch?v=2LQSzEbpJ-M
