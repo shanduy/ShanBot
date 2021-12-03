@@ -37,6 +37,8 @@ Mis Redes Sociales Y Mi Whatsapp Para Resolver Tus Problemas
 # ShanBot
 ULTIMA VERSION 4.3
 
+Video actualizado: https://youtu.be/HxZYNgW9aI8
+
 Pasos para instalar el bot via termux
 https://www.youtube.com/watch?v=2LQSzEbpJ-M
 
