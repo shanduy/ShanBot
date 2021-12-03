@@ -6,12 +6,14 @@ const help = (prefix) => {
 ◉ *INFORMACION*
    ○ Comando: ⌜ ${prefix} ⌟
    ○ Creador: shanduy™ 
-   ○ Como instalar el bot: https://www.youtube.com/watch?v=2LQSzEbpJ-M
+   ○ Cómo instalar el bot : https://youtu.be/HxZYNgW9aI8
+   ○ Como instalar el bot 2: https://www.youtube.com/watch?v=2LQSzEbpJ-M
    ○ Mi Instagram: https://www.instagram.com/thepavos
 
 ◉ *COMUNICADO*
-En unos dias subire un nuevo video actualizado para instalar el bot.
-YouTube: https://www.youtube.com/channel/UCbNOLyHAy-SL4D9iz9Oi0lw
+Nuevo video de cómo instalar el bot :)
+https://youtu.be/HxZYNgW9aI8
+
 
 ◉ *PARA USAR EL BOT*
 Registrate con el comando ${prefix}daftar y tu nombre
