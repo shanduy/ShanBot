@@ -7,7 +7,6 @@ const help = (prefix) => {
    ○ Comando: ⌜ ${prefix} ⌟
    ○ Creador: shanduy™ 
    ○ Cómo instalar el bot: https://youtu.be/HxZYNgW9aI8
-   ○ Como instalar el bot 2: https://www.youtube.com/watch?v=2LQSzEbpJ-M
    ○ Mi Instagram: https://www.instagram.com/thepavos
 
 ◉ *COMUNICADO*
