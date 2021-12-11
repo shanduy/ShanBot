@@ -13,6 +13,7 @@ Cualquier copia que utilize mi ApiKey sera dado de baja
 const {
     WAConnection,
     MessageType,
+    ReconnectMode,
     Presence,
     Mimetype,
     rugaapi,
@@ -233,7 +234,8 @@ function kyun(seconds){
 
 async function starts() {
 	const client = new WAConnection()
-	client.version = [2, 2142, 12]
+	client.version = [2, 2147, 14]
+	client.autoReconnect = ReconnectMode.onConnectionLost;
         client.logger.level = 'warn'
 	console.log(banner.string)
 	client.on('qr', () => {
