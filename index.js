@@ -65,6 +65,7 @@ const { menuadmin } = require('./src/menuadmin')
 const { nsfwmenu } = require('./src/nsfwmenu')
 const { desmenu } = require('./src/desmenu')
 const { version } = require('./src/version')
+const { fbDown } = require('./lib/fb.js')
 const { juegos } = require('./src/juegos')
 const { shantera } = require('./src/shantera')
 const { antimenu } = require('./src/antimenu')
@@ -314,7 +315,8 @@ async function starts() {
 					stick: '[❎] Falló, se produjo un error al convertir la imagen en una pegatina',
 					yt: 'Falló en el link o se produjo un error al momento de descargar el video',
 					unire: 'Por favor, no coloques (+) solo pon el numero con el codigo de area de su pais\n\nEjemplo: *unir 52xxxxxxxxx',
-					Iv: 'Este no es un link de youtube'
+					Iv: 'Este no es un link de youtube',
+					Fb: 'Este no es un link de facebook'
 					},
 				only: {
 					group: '[❗] Este comando es solo para grupos',
@@ -725,12 +727,23 @@ break
 
 case 'cuties':
 if (!isUser) return reply(mess.only.daftarB)
-rate = body.slice(9)
+rate = body.slice(5)
 client.updatePresence(from, Presence.composing) 
 random = `${Math.floor(Math.random() * 100)}`
 cuties = random
 if (cuties < 20 ) {cu = 'Mi loco usted va para el cielo 👏'} else if (cuties == 21 ) {cu = 'Te salvaste ramirez 😎'} else if (cuties == 23 ) {cu = 'Te salvaste ramirez 😎'} else if (cuties == 24 ) {cu = 'Te salvaste ramirez 😎'} else if (cuties == 25 ) {cu = 'Te salvaste ramirez 😎'} else if (cuties == 26 ) {cu = 'Te salvaste ramirez 😎'} else if (cuties == 27 ) {cu = 'Te salvaste ramirez 😎'} else if (cuties == 28 ) {cu = 'Te salvaste ramirez 😎'} else if (cuties == 29 ) {cu = 'Te salvaste ramirez 😎'} else if (cuties == 30 ) {cu = 'Te salvaste ramirez 😎'} else if (cuties == 31 ) {cu = 'Ramirez que hace viendo cuties 🤔'} else if (cuties == 32 ) {cu = 'Ramirez que hace viendo cuties 🤔'} else if (cuties == 33 ) {cu = 'Ramirez que hace viendo cuties 🤔'} else if (cuties == 34 ) {cu = 'Ramirez que hace viendo cuties 🤔'} else if (cuties == 35 ) {cu = 'Ramirez que hace viendo cuties 🤔'} else if (cuties == 36 ) {cu = 'Ramirez que hace viendo cuties 🤔'} else if (cuties == 37 ) {cu = 'Ramirez que hace viendo cuties 🤔'} else if (cuties == 38 ) {cu = 'Ramirez que hace viendo cuties 🤔'} else if (cuties == 39 ) {cu = 'Ramirez que hace viendo cuties 🤔'} else if (cuties == 40 ) {cu = 'Ramirez que hace viendo cuties 🤔'} else if (cuties == 41 ) {cu = 'Mmm sospechoso ramirez 🧐'} else if (cuties == 42 ) {cu = 'Mmm sospechoso ramirez 🧐'} else if (cuties == 43 ) {cu = 'Mmm sospechoso ramirez 🧐'} else if (cuties == 44 ) {cu = 'Mmm sospechoso ramirez 🧐'} else if (cuties == 45 ) {cu = 'Mmm sospechoso ramirez 🧐'} else if (cuties == 46 ) {cu = 'Mmm sospechoso ramirez 🧐'} else if (cuties == 47 ) {cu = 'Mmm sospechoso ramirez 🧐'} else if (cuties == 48 ) {cu = 'Mmm sospechoso ramirez 🧐'} else if (cuties == 49 ) {cu = 'Mmm sospechoso ramirez 🧐'} else if (cuties == 50 ) {cu = 'Mmm sospechoso ramirez 🧐'} else if (cuties > 51) {cu = 'Señores un autentico FAN DE CUTIES esta en el grupo 🥸'}
-hasil = `${rate}Resultado ${random}% fan de cuties\n\n${cu}`
+hasil = `${rate}Usted es ${random}% fan de cuties\n\n${cu}`
+reply(hasil)
+break
+					
+case 'racista':
+if (!isUser) return reply(mess.only.daftarB)
+rate = body.slice(5)
+client.updatePresence(from, Presence.composing) 
+random = `${Math.floor(Math.random() * 100)}`
+cuties = random
+if (cuties < 20 ) {cu = 'Tu no eres racista 👏'} else if (cuties == 21 ) {cu = 'Mmm tengos mi dudas 🧐'} else if (cuties == 23 ) {cu = 'Mmm tengos mi dudas 🧐'} else if (cuties == 24 ) {cu = 'Mmm tengos mi dudas 🧐'} else if (cuties == 25 ) {cu = 'Mmm tengos mi dudas 🧐'} else if (cuties == 26 ) {cu = 'Mmm tengos mi dudas 🧐'} else if (cuties == 27 ) {cu = 'Mmm tengos mi dudas 🧐'} else if (cuties == 28 ) {cu = 'Mmm tengos mi dudas 🧐'} else if (cuties == 29 ) {cu = 'Mmm tengos mi dudas 🧐'} else if (cuties == 30 ) {cu = 'Mmm tengos mi dudas 🧐'} else if (cuties == 31 ) {cu = 'Eres racista en secreto 🙀'} else if (cuties == 32 ) {cu = 'Eres racista en secreto 🙀'} else if (cuties == 33 ) {cu = 'Eres racista en secreto 🙀'} else if (cuties == 34 ) {cu = 'Eres racista en secreto 🙀'} else if (cuties == 35 ) {cu = 'Eres racista en secreto 🙀'} else if (cuties == 36 ) {cu = 'Eres racista en secreto 🙀'} else if (cuties == 37 ) {cu = 'Eres racista en secreto 🙀'} else if (cuties == 38 ) {cu = 'Eres racista en secreto 🙀'} else if (cuties == 39 ) {cu = 'Eres racista en secreto 🙀'} else if (cuties == 40 ) {cu = 'Eres racista en secreto 🙀'} else if (cuties == 41 ) {cu = 'Ojito '} else if (cuties == 42 ) {cu = 'Fuck men alto racista 😡'} else if (cuties == 43 ) {cu = 'Fuck men alto racista 😡'} else if (cuties == 44 ) {cu = 'Fuck men alto racista 😡'} else if (cuties == 45 ) {cu = 'Fuck men alto racista 😡'} else if (cuties == 46 ) {cu = 'Fuck men alto racista 😡'} else if (cuties == 47 ) {cu = 'Fuck men alto racista 😡'} else if (cuties == 48 ) {cu = 'Fuck men alto racista 😡'} else if (cuties == 49 ) {cu = 'Fuck men alto racista 😡'} else if (cuties == 50 ) {cu = 'Fuck men alto racista 😡'} else if (cuties > 51) {cu = 'UN AUTENTICO RACISTA 🥸'}
+hasil = `${rate}Usted es ${random}% racista\n\n${cu}`
 reply(hasil)
 break
 				  
@@ -1415,7 +1428,20 @@ break
 		buffer = await getBuffer(anu.result.url_video)
 		client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.title}.mp4`, quoted: mek})
 		break
-					
+				
+                case 'fb':
+                if (args.length < 1) return reply('Donde esta el link de facebook?')
+                if(!isUrl(args[0]) && !args[0].includes('facebook')) return reply(mess.error.Fb)
+                teks = args.join(' ')
+                reply(mess.only.insta)
+                res = await fbDown(teks).catch(e => {
+                  reply(mess.only.insta)
+                })
+                a = res[0]
+                result = `*⌜Post Encontrado ✅⌟*\n◉*Titulo:* ${a.judul} \n◉ *Fuente:* ${a.source} \n◉ *Tamaño:* ${a.size} \n◉ *Calidad:* ${a.quality} \n◉ *Tipo:* ${a.type} \n◉ *Nombre del archivo:* ${a.judul}.${a.type}\n\n*ESPERE ENVIANDO SU POST ⚠*\n\n_*Servicio proveido por shanduy*_`
+                sendFileFromUrl(a.thumb, image, {caption: result, quoted: sam})
+                sendFileFromUrl(a.link, video, { mimetype: 'video/mp4',quoted: sam, filename: `${a.judul}.${a.type}`})
+                break
 														
 	//FIN DE SERVICIO DE MUSICA Y VIDEO			
 				
@@ -1602,6 +1628,10 @@ break
 
 		if (budy.includes(`Bot gay`)) {
                   reply(`Miren a este boludito`)
+                  }
+					
+		if (budy.includes(`Che messi vo le preguntaste?`)) {
+                  reply(`No`)
                   }
 
 		if (budy.includes(`Gracias`)) {
