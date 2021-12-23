@@ -727,7 +727,7 @@ break
 
 case 'cuties':
 if (!isUser) return reply(mess.only.daftarB)
-rate = body.slice(5)
+rate = body.slice(8)
 client.updatePresence(from, Presence.composing) 
 random = `${Math.floor(Math.random() * 100)}`
 cuties = random
@@ -738,12 +738,12 @@ break
 					
 case 'racista':
 if (!isUser) return reply(mess.only.daftarB)
-rate = body.slice(5)
+rate = body.slice(9)
 client.updatePresence(from, Presence.composing) 
 random = `${Math.floor(Math.random() * 100)}`
-cuties = random
-if (cuties < 20 ) {cu = 'Tu no eres racista 👏'} else if (cuties == 21 ) {cu = 'Mmm tengos mi dudas 🧐'} else if (cuties == 23 ) {cu = 'Mmm tengos mi dudas 🧐'} else if (cuties == 24 ) {cu = 'Mmm tengos mi dudas 🧐'} else if (cuties == 25 ) {cu = 'Mmm tengos mi dudas 🧐'} else if (cuties == 26 ) {cu = 'Mmm tengos mi dudas 🧐'} else if (cuties == 27 ) {cu = 'Mmm tengos mi dudas 🧐'} else if (cuties == 28 ) {cu = 'Mmm tengos mi dudas 🧐'} else if (cuties == 29 ) {cu = 'Mmm tengos mi dudas 🧐'} else if (cuties == 30 ) {cu = 'Mmm tengos mi dudas 🧐'} else if (cuties == 31 ) {cu = 'Eres racista en secreto 🙀'} else if (cuties == 32 ) {cu = 'Eres racista en secreto 🙀'} else if (cuties == 33 ) {cu = 'Eres racista en secreto 🙀'} else if (cuties == 34 ) {cu = 'Eres racista en secreto 🙀'} else if (cuties == 35 ) {cu = 'Eres racista en secreto 🙀'} else if (cuties == 36 ) {cu = 'Eres racista en secreto 🙀'} else if (cuties == 37 ) {cu = 'Eres racista en secreto 🙀'} else if (cuties == 38 ) {cu = 'Eres racista en secreto 🙀'} else if (cuties == 39 ) {cu = 'Eres racista en secreto 🙀'} else if (cuties == 40 ) {cu = 'Eres racista en secreto 🙀'} else if (cuties == 41 ) {cu = 'Ojito '} else if (cuties == 42 ) {cu = 'Fuck men alto racista 😡'} else if (cuties == 43 ) {cu = 'Fuck men alto racista 😡'} else if (cuties == 44 ) {cu = 'Fuck men alto racista 😡'} else if (cuties == 45 ) {cu = 'Fuck men alto racista 😡'} else if (cuties == 46 ) {cu = 'Fuck men alto racista 😡'} else if (cuties == 47 ) {cu = 'Fuck men alto racista 😡'} else if (cuties == 48 ) {cu = 'Fuck men alto racista 😡'} else if (cuties == 49 ) {cu = 'Fuck men alto racista 😡'} else if (cuties == 50 ) {cu = 'Fuck men alto racista 😡'} else if (cuties > 51) {cu = 'UN AUTENTICO RACISTA 🥸'}
-hasil = `${rate}Usted es ${random}% racista\n\n${cu}`
+racista = random
+if (racista < 20 ) {ra = 'Tu no eres racista 👏'} else if (racista == 21 ) { = 'Mmm tengos mi dudas 🧐'} else if (racista == 23 ) {ra = 'Mmm tengos mi dudas 🧐'} else if (racista == 24 ) {ra = 'Mmm tengos mi dudas 🧐'} else if (racista == 25 ) {ra = 'Mmm tengos mi dudas 🧐'} else if (racista == 26 ) {ra = 'Mmm tengos mi dudas 🧐'} else if (racista == 27 ) {ra = 'Mmm tengos mi dudas 🧐'} else if (racista == 28 ) {ra = 'Mmm tengos mi dudas 🧐'} else if (racista == 29 ) {ra = 'Mmm tengos mi dudas 🧐'} else if (racista == 30 ) {ra = 'Mmm tengos mi dudas 🧐'} else if (racista == 31 ) {ra = 'Eres racista en secreto 🙀'} else if (racista == 32 ) {ra = 'Eres racista en secreto 🙀'} else if (racista == 33 ) {ra = 'Eres racista en secreto 🙀'} else if (racista == 34 ) {ra = 'Eres racista en secreto 🙀'} else if (racista == 35 ) {ra = 'Eres racista en secreto 🙀'} else if (racista == 36 ) {ra = 'Eres racista en secreto 🙀'} else if (racista == 37 ) {ra = 'Eres racista en secreto 🙀'} else if (racista == 38 ) {ra = 'Eres racista en secreto 🙀'} else if (racista == 39 ) {ra = 'Eres racista en secreto 🙀'} else if (racista == 40 ) {ra = 'Eres racista en secreto 🙀'} else if (racista == 41 ) {ra = 'Ojito '} else if (racista == 42 ) {ra = 'Fuck men alto racista 😡'} else if (racista == 43 ) {ra = 'Fuck men alto racista 😡'} else if (racista == 44 ) {ra = 'Fuck men alto racista 😡'} else if (racista == 45 ) {ra = 'Fuck men alto racista 😡'} else if (racista == 46 ) {ra = 'Fuck men alto racista 😡'} else if (racista == 47 ) {ra = 'Fuck men alto racista 😡'} else if (racista == 48 ) {ra = 'Fuck men alto racista 😡'} else if (racista == 49 ) {ra = 'Fuck men alto racista 😡'} else if (racista == 50 ) {ra = 'Fuck men alto racista 😡'} else if (racista > 51) {ra = 'UN AUTENTICO RACISTA 🥸'}
+hasil = `${rate}Usted es ${random}% racista\n\n${ra}`
 reply(hasil)
 break
 				  
@@ -1429,7 +1429,7 @@ break
 		client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.title}.mp4`, quoted: mek})
 		break
 				
-                case 'fb':
+                case 'fa':
                 if (args.length < 1) return reply('Donde esta el link de facebook?')
                 if(!isUrl(args[0]) && !args[0].includes('facebook')) return reply(mess.error.Fb)
                 teks = args.join(' ')
