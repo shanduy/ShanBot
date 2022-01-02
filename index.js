@@ -1388,18 +1388,15 @@ break
 	
 	case 'gi':
 	if (!isUser) return reply(mess.only.daftarB)
-	try{
-        if(isLimit(data.sender)) return data.reply(mess.limit)
-        if(data.body == "") return data.reply(`Por favor enviar el comando como se muestra\nComando: *gi "ejemplo"\n\nEjemplo: *gi coches`)
-        data.reply(mess.wait)
+	if (args.length < 1) return reply(`Por favor enviar el comando como se muestra\nComando: *gi "ejemplo"\n\nEjemplo: *gi coches`)
+        reply(mess.wait)
         res = await axios.get(`${configs.apiUrl}/api/gimg?apikey=${configs.zeksKey}&q=${data.body}`)
-        n = res.data.data
         image = n[Math.floor(Math.random() * n.length)]
         Client.sendFileFromUrl(from, image, 'p.jpg', `*Resultado de tu búsqueda* : ${data.body}`, message)
         } catch {
-            data.reply(`error`)
+         reply(`error`)
         }
-        break
+	break
 								
 	//GOOGLE IMAGENES				
 					
