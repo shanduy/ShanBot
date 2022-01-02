@@ -65,7 +65,6 @@ const { menuadmin } = require('./src/menuadmin')
 const { nsfwmenu } = require('./src/nsfwmenu')
 const { desmenu } = require('./src/desmenu')
 const { version } = require('./src/version')
-const { fbDown } = require('./lib/fb.js')
 const { juegos } = require('./src/juegos')
 const { shantera } = require('./src/shantera')
 const { antimenu } = require('./src/antimenu')
@@ -784,7 +783,7 @@ break
 	
 	case 'creador':
 	       client.sendMessage(from, {displayname: "Shan 🥸", vcard: vcard}, MessageType.contact, { quoted: mek})
-		client.sendMessage(from, 'Hola 👋 te saluda Shan, este es un mensaje predeterminado al igual que el audio.\n\nArriba esta mi contacto por si tienen algun problema con las descargas o yo que se.\nYo no soy dueño de este bot ni tampoco lo controlo, yo solo cree la base de datos y le doy mantenimiento.\nEl numero osea mi contacto de arriba no es un bot, si te dio pereza escuchar el audio gordito trolo.\nBueno disfruten del bot y si quieres me puedes seguir en instagram.\n\n*Mi instagram:* https://www.instagram.com/thepavos\n\n*Como instalar el bot:* https://youtu.be/HxZYNgW9aI8\n\n_*by shanduy*_',MessageType.text, { quoted: mek} )
+		client.sendMessage(from, 'Hola 👋 te saluda Shan, este es un mensaje predeterminado al igual que el audio.\n\nArriba esta mi contacto por si tienen algun problema con las descargas o yo que se.\nYo no soy dueño de este bot ni tampoco lo controlo, yo solo cree la base de datos y le doy mantenimiento.\nSi quieres unir este bot a un grupo o yo que se, habla con este numero\nEl numero osea mi contacto de arriba no es un bot, si te dio pereza escuchar el audio gordito trolo.\nBueno disfruten del bot y si quieres me puedes seguir en instagram.\n\n*Mi instagram:* https://www.instagram.com/thepavos\n\n*Como instalar el bot:* https://www.youtube.com/watch?v=HxZYNgW9aI8\n\n_*by shanduy*_',MessageType.text, { quoted: mek} )
                 const none = fs.readFileSync('./mp3/shan.mp3');
 		client.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                 break
@@ -1384,6 +1383,25 @@ break
 					break
 //CREACION DE STICKERS Y VARIOS	            
 		
+	//GOOGLE IMAGENES
+	
+	case 'gi':
+	if (!isUser) return reply(mess.only.daftarB)
+	try{
+        if(isLimit(data.sender)) return data.reply(mess.limit)
+        if(data.body == "") return data.reply(`Por favor enviar el comando como se muestra\nComando: *gi "ejemplo"\n\nEjemplo: *gi coches`)
+        data.reply(mess.wait)
+        res = await axios.get(`${configs.apiUrl}/api/gimg?apikey=${configs.zeksKey}&q=${data.body}`)
+        n = res.data.data
+        image = n[Math.floor(Math.random() * n.length)]
+        Client.sendFileFromUrl(from, image, 'p.jpg', `*Resultado de tu búsqueda* : ${data.body}`, message)
+        } catch {
+            data.reply(`error`)
+        }
+        break
+								
+	//GOOGLE IMAGENES				
+					
 	//SERVICIO DE MUSICA Y VIDEO 			
 				
 				
@@ -1429,20 +1447,7 @@ break
 		client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.title}.mp4`, quoted: mek})
 		break
 				
-                case 'fa':
-                if (args.length < 1) return reply('Donde esta el link de facebook?')
-                if(!isUrl(args[0]) && !args[0].includes('facebook')) return reply(mess.error.Fb)
-                teks = args.join(' ')
-                reply(mess.only.insta)
-                res = await fbDown(teks).catch(e => {
-                  reply(mess.only.insta)
-                })
-                a = res[0]
-                result = `*⌜Post Encontrado ✅⌟*\n◉*Titulo:* ${a.judul} \n◉ *Fuente:* ${a.source} \n◉ *Tamaño:* ${a.size} \n◉ *Calidad:* ${a.quality} \n◉ *Tipo:* ${a.type} \n◉ *Nombre del archivo:* ${a.judul}.${a.type}\n\n*ESPERE ENVIANDO SU POST ⚠*\n\n_*Servicio proveido por shanduy*_`
-                sendFileFromUrl(a.thumb, image, {caption: result, quoted: sam})
-                sendFileFromUrl(a.link, video, { mimetype: 'video/mp4',quoted: sam, filename: `${a.judul}.${a.type}`})
-                break
-														
+             											
 	//FIN DE SERVICIO DE MUSICA Y VIDEO			
 				
 //REGISTRO				
