@@ -19,6 +19,9 @@ Si vez a alguien que robo mi bot comunicate conmigo con el comando *creador
 
 https://cutt.ly/dWp5uqE
 
+*COMO INSTALAR EL BOT*
+
+https://www.youtube.com/watch?v=HxZYNgW9aI8
 
 *SIGUEME EN INSTAGRAM 🥸🧉*
 
