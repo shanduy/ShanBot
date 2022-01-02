@@ -1393,10 +1393,7 @@ break
         res = await axios.get(`${configs.apiUrl}/api/gimg?apikey=${configs.zeksKey}&q=${data.body}`)
         image = n[Math.floor(Math.random() * n.length)]
         Client.sendFileFromUrl(from, image, 'p.jpg', `*Resultado de tu búsqueda* : ${data.body}`, message)
-        } catch {
-         reply(`error`)
-        }
-	break
+   	break
 								
 	//GOOGLE IMAGENES				
 					
