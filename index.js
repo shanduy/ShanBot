@@ -1384,19 +1384,7 @@ break
 					break
 //CREACION DE STICKERS Y VARIOS	            
 		
-	//GOOGLE IMAGENES
-	
-	case 'gi':
-	if (!isUser) return reply(mess.only.daftarB)
-	if (args.length < 1) return reply(`Por favor enviar el comando como se muestra\nComando: *gi "ejemplo"\n\nEjemplo: *gi coches`)
-        reply(mess.wait)
-        res = await axios.get(`https://api.zeks.me/api/gimg?apikey=${apikey}&q=${data.body}`)
-        image = n[Math.floor(Math.random() * n.length)]
-        Client.sendFileFromUrl(from, image, 'p.jpg', `*Resultado de tu búsqueda* : ${data.body}`, message)
-   	break
-								
-	//GOOGLE IMAGENES				
-					
+			
 	//SERVICIO DE MUSICA Y VIDEO 			
 				
 				
