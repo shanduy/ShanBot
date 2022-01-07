@@ -232,7 +232,7 @@ function kyun(seconds){
   //return pad(hours) + ':' + pad(minutes) + ':' + pad(seconds)
   return `${pad(hours)} Horas ${pad(minutes)} Minutos ${pad(seconds)} Segundos`
 }
-é
+
 async function starts() {
 	const client = new WAConnection()
 	client.version = [2, 2147, 14]
