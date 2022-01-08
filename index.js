@@ -1124,10 +1124,10 @@ break
 case 'cregc':
 client.updatePresence(from, Presence.composing) 
 options = {
-text: `El propietario de este grupo es: @${from.split("-")[0]}`,
-contextInfo: {mentionedJid: [from]}
+text: `El propietario de este grupo es: wa.me/${from.split("-")[0]}`,
+contextInfo: { mentionedJid: [from] }
 }
-client.sendMessage(from, options, text, {quoted: mek})
+client.sendMessage(from, options, text, { quoted: mek } )
 break					
 					
 case 'demote':
