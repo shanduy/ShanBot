@@ -1091,10 +1091,10 @@ break
 case 'grupocr':
 client.updatePresence(from, Presence.composing) 
 options = {
-text: `El creador de este grupo es: @${from.split("-")[0]}`, 
-contextInfo: { mentionedJid: [from] }
+text: `El creador de este grupo es: wa.me/${from.split("-")[0]}`, 
+contextInfo: {mentionedJid: [from]}
 }
-client.sendMessage(from, options, text, { quoted: mek } )
+client.sendMessage(from, options, text, {quoted: mek})
 break
                                       
 case 'kick':
@@ -1125,9 +1125,9 @@ case 'cregc':
 client.updatePresence(from, Presence.composing) 
 options = {
 text: `El propietario de este grupo es: @${from.split("-")[0]}`,
-contextInfo: { mentionedJid: [from] }
+contextInfo: {mentionedJid: [from]}
 }
-client.sendMessage(from, options, text, { quoted: mek } )
+client.sendMessage(from, options, text, {quoted: mek})
 break					
 					
 case 'demote':
@@ -1452,7 +1452,7 @@ var reg = body.slice(8)
 var nombre = reg.split("|")[0];
 user.push(sender)
 fs.writeFileSync('./database/json/user.json', JSON.stringify(user))
-client.sendMessage(from, `◉ REGISTRADO EN SHANBOT ✅\n\n◉ Usuario: ${nombre}\n◉ DNI: ║▌│█║▌│█║▌│█│║▌║\n◉ Hora 🇪🇨: ${time}\n◉ Fecha: ${date}\n◉ Número: wa.me/${sender.split("@")[0]}\n◉ Total de usuários: ${user.length}\n◉ Nombre del grupo: ${groupName}\n\n-------------------\n\nPara verlos comandos del bot enviar el comando\n${prefix}help`, text, {quoted: mek})
+client.sendMessage(from, `*REGISTRADO EN SHANBOT ✅*\n\n-------------------\n\n◉ *Usuario:* ${nombre}\n◉ *Hora 🇪🇨:* ${time}\n◉ *Fecha:* ${date}\n◉ *Número:* wa.me/${sender.split("@")[0]}\n◉ *Nombre del grupo:* ${groupName}◉ *Total de usuários:* ${user.length}\n\n-------------------\n\n*Para verlos comandos del bot enviar el comando*\n\n**help*`, text, {quoted: mek})
 break
                                 
 //FIN DE REGISTRO  
