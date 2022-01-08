@@ -1452,7 +1452,7 @@ var reg = body.slice(8)
 var nombre = reg.split("|")[0];
 user.push(sender)
 fs.writeFileSync('./database/json/user.json', JSON.stringify(user))
-client.sendMessage(from, `*REGISTRADO EN SHANBOT ✅*\n\n-------------------\n\n◉ *Usuario:* ${nombre}\n◉ *Hora 🇪🇨:* ${time}\n◉ *Fecha:* ${date}\n◉ *Número:* wa.me/${sender.split("@")[0]}\n◉ *Nombre del grupo:* ${groupName}◉ *Total de usuários:* ${user.length}\n\n-------------------\n\n*Para verlos comandos del bot enviar el comando*\n\n**help*`, text, {quoted: mek})
+client.sendMessage(from, `*REGISTRADO EN SHANBOT ✅*\n\n-------------------\n\n◉ *Usuario:* ${nombre}\n◉ *Hora 🇪🇨:* ${time}\n◉ *Fecha:* ${date}\n◉ *Número:* wa.me/${sender.split("@")[0]}\n◉ *Nombre del grupo:* ${groupName}\n◉ *Total de usuários:* ${user.length}\n\n-------------------\n\n*Para verlos comandos del bot enviar el comando*\n\n**help*`, text, {quoted: mek})
 break
                                 
 //FIN DE REGISTRO  
