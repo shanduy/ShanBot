@@ -870,14 +870,13 @@ break
 					var pesan = pc.split("|")[1];
 					client.sendMessage(nomor+'@s.whatsapp.net', pesan, text)
 					break
-				case 'sb':
+				case 'bf':
 				client.updatePresence(from, Presence.composing) 
-				if (!isQuotedImage) return reply(`Sube una foto con el comando ${prefix}`)
-					if (!isOwner) return reply(mess.only.ownerB)
+				if (!isQuotedImage) return reply(`Primero envie una foto y responda con el comando *sb`)
 					enmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					media = await client.downloadAndSaveMediaMessage(enmedia)
 					await client.updateProfilePicture(botNumber, media)
-					reply('Gracias por el nuevo perfil')
+					reply('Gracias por la nueva foto de perfil :)')
 					break
 				case 'bc':
 					client.updatePresence(from, Presence.composing) 
@@ -1122,6 +1121,15 @@ client.groupRemove(from, [entah])
 }
 break
 
+case 'cregc':
+client.updatePresence(from, Presence.composing) 
+options = {
+text: `El propietario de este grupo es: @${from.split("-")[0]}`,
+contextInfo: { mentionedJid: [from] }
+}
+client.sendMessage(from, options, text, { quoted: mek } )
+break					
+					
 case 'demote':
 if (!isGroup) return reply(mess.only.group)
 if (!isGroupAdmins) return reply(mess.only.admin)
@@ -1439,12 +1447,12 @@ break
 case 'daftar':
 client.updatePresence(from, Presence.composing)
 if (isUser) return reply('Ya estas registrado 🧐')
-if (args.length < 1) return reply(`Incorrecto ❎\nComando: ${prefix}daftar Nombre\n\nEjemplo: ${prefix}daftar shanduy`)
+if (args.length < 1) return reply(`Incorrecto ❎\nEl comando de registo es\nComando: ${prefix}daftar Nombre\n\nEjemplo: ${prefix}daftar shanduy`)
 var reg = body.slice(8)
 var nombre = reg.split("|")[0];
 user.push(sender)
 fs.writeFileSync('./database/json/user.json', JSON.stringify(user))
-client.sendMessage(from, `\`\`\`REGISTRADO ✅\`\`\`\n\n\`\`\`DNI: BUENAGNO 🥸\`\`\`\n\n\`\`\`Hora EC: ${time}\`\`\`\n\n\`\`\`Fecha: ${date}\`\`\`\n\n\`\`\`[Usuario]: ${nombre}\`\`\`\n\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n\n\`\`\`Para usar el bot\`\`\`\n\`\`\`Por favor\`\`\`\n\`\`\`enviar ${prefix}help\`\`\`\n\`\`\`\nTotal de usuários: ${user.length}\`\`\``, text, {quoted: mek})
+client.sendMessage(from, `◉ REGISTRADO EN SHANBOT ✅\n\n◉ Usuario: ${nombre}\n◉ DNI: ║▌│█║▌│█║▌│█│║▌║\n◉ Hora 🇪🇨: ${time}\n◉ Fecha: ${date}\n◉ Número: wa.me/${sender.split("@")[0]}\n◉ Total de usuários: ${user.length}\n◉ Nombre del grupo: ${groupName}\n\n-------------------\n\nPara verlos comandos del bot enviar el comando\n${prefix}help`, text, {quoted: mek})
 break
                                 
 //FIN DE REGISTRO  
