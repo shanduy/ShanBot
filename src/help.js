@@ -88,6 +88,8 @@ Comando de bienvenida solo grupos
   ╠ Dar admin a un miembro
   ╠ ○ ${prefix}demote
   ╠ Quitar el admin
+  ╠ ○ ${prefix}kick
+  ╠ Agrega a la persona que deseás eliminar
   ╠ ○ ${prefix}linkgc
   ╠ Link del grupo
   ╠ ○ ${prefix}adminlist
