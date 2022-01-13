@@ -1385,7 +1385,7 @@ break
 		if (!isUser) return reply(mess.only.daftarB)
                 reply(mess.only.musica)
                 play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp4?q=${play}&apikey=24hamilton`)
+                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3?q=${play}&apikey=24hamilton`)
                 if (anu.error) return reply(anu.error)
                 infomp3 = `*⌜Cancion Encontrada ✅⌟*\n◉ *Título:* ${anu.result.title}\n◉ *Fuente:* ${anu.result.source}\n◉ *Tamaño:* ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*\n\n_*Servicio proveido por shanduy*_`
                 buffer = await getBuffer(anu.result.thumbnail)
@@ -1399,7 +1399,7 @@ break
 		if (!isUser) return reply(mess.only.daftarB)
 	        reply(mess.only.musica2)
                 play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp4?q=${play}&apikey=24shanduy`)
+                anu = await fetchJson(`https://api.zeks.me/api/ytplaymp3?q=${play}&apikey=24shanduy`)
                 if (anu.error) return reply(anu.error)
                 infomp3 = `*⌜Cancion Encontrada ✅⌟*\n◉ *Título:* ${anu.result.title}\n◉ *Fuente:* ${anu.result.source}\n◉ *Tamaño:* ${anu.result.size}\n\n*ESPERE ENVIANDO SU ARCHIVO MP3 ⚠*\n\n_*Servicio proveido por shanduy*_`
                 buffer = await getBuffer(anu.result.thumbnail)
@@ -1436,32 +1436,22 @@ var reg = body.slice(8)
 var nombre = reg.split("|")[0];
 user.push(sender)
 fs.writeFileSync('./database/json/user.json', JSON.stringify(user))
-client.sendMessage(from, `*REGISTRADO EN SHANBOT ✅*\n\n◉ *Usuario:* ${nombre}\n◉ *Hora 🇪🇨:* ${time}\n◉ *Fecha:* ${date}\n◉ *Número:* wa.me/${sender.split("@")[0]}\n◉ *Nombre del grupo:* ${groupName}\n◉ *Total de usuários:* ${user.length}\n\n*Para verlos comandos del bot enviar el comando*\n\n**help*`, text, {quoted: mek})
+client.sendMessage(from, `*REGISTRADO EN SHANBOT ✅*\n\n◉ *Usuario:* ${nombre}\n◉ *Hora 🇪🇨:* ${time}\n◉ *Fecha:* ${date}\n◉ *Número:* wa.me/${sender.split("@")[0]}\n◉ *Nombre del grupo:*\n${groupName}\n◉ *Total de usuários:* ${user.length}\n\n*Para verlos comandos del bot enviar el comando*\n\n**help*`, text, {quoted: mek})
 break
                                 
 //FIN DE REGISTRO  
 				
-				case 'nsfwneko':
-				    try{
-						if (!isNsfw) return reply('❌ *NSFW NO ESTA ACTIVADO* ❌')
-                                                if (!isUser) return reply(mess.only.daftarB)
-						res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwneko?apikey=BotWeA`, {method: 'get'})
-						buffer = await getBuffer(res.result)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'mesum'})
-					} catch (e) {
-						console.log(`Error :`, color(e,'red'))
-						reply('❌ *ERROR* ❌')
-					}
-					break
-                              	case 'nsfw':
+	//NSFW ACTIVAR			
+                             
+				case 'nsfw':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (args.length < 1) return reply('Digita 1 para activar los NSFW')
+					if (args.length < 1) return reply('Para activar los NSFW enviar el comando\n\n*nsfw 1')
 					if (Number(args[0]) === 1) {
 						if (isNsfw) return reply('Recursos Activados ✅')
 						nsfw.push(from)
 						fs.writeFileSync('./database/json/nsfw.json', JSON.stringify(nsfw))
-						reply('❬ ✅ ❭ La funcion NSFW esta habilitado en este grupo')
+						reply('❬ ✅ ❭ La funcion NSFW esta habilitado en este grupo\n\nPara ver las opciones de nsfw enviar el comando *nsfwmenu')
 					} else if (Number(args[0]) === 0) {
 						nsfw.splice(from, 1)
 						fs.writeFileSync('./database/json/nsfw.json', JSON.stringify(nsfw))
@@ -1470,6 +1460,9 @@ break
 						reply('Digite 1 para activarlo, 0 para desactivarlo')
 					}
 					break	
+				
+	//NSFW ACTIVAR 				
+		
 				case 'waifu':
 					gatauda = body.slice(7)
 					reply(mess.wait)
@@ -1478,6 +1471,7 @@ break
 					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, image,{quoted: mek})
 					break
+				
 				case 'randomanime':
 					gatauda = body.slice(13)
 					reply(mess.wait)
@@ -1527,7 +1521,19 @@ break
 					
 //NSFW FUNCIONES
                                
-					case 'culos': 
+					case 'neko': 
+						try {
+							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
+							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/Nekogirl`, {method: 'get'})
+							buffer = await getBuffer(res.url)
+							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Grrrr dame pene'})
+						} catch (e) {
+							console.log(`Error :`, color(e,'red'))
+							reply('❌ *ERROR* ❌')
+						}
+						break
+				
+				        case 'culos': 
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/biganimetiddies`, {method: 'get'})
@@ -1593,7 +1599,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/ecchi`, {method: 'get'})
 							buffer = await getBuffer(res.url)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Que culardo'})
+							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Uff pa una pajita'})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌') 
@@ -1605,7 +1611,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/yaoi`, {method: 'get'})
 							buffer = await getBuffer(res.url)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Que culardo'})
+							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Ay 😈'})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌') 
@@ -1654,11 +1660,7 @@ break
 		if (budy.includes(`Che messi vo le preguntaste?`)) {
                   reply(`No`)
                   }
-
-		if (budy.includes(`Gracias`)) {
-                  reply(`De nada padre`)
-                  }
-				
+		
 		if (budy.includes(`Opa`)) {
                   reply(`opaaaaa`)
                   }
