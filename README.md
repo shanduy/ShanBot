@@ -35,7 +35,7 @@ Mis Redes Sociales Y Mi Whatsapp Para Resolver Tus Problemas
 
 
 # ShanBot
-ULTIMA VERSION 4.5
+ULTIMA VERSION 4.6
 
 Video actualizado: https://youtu.be/HxZYNgW9aI8
 
