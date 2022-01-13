@@ -46,8 +46,6 @@ Comando de bienvenida solo grupos
 ◉ *CREAR STICKERS*
   ║
   ╠ ○ ${prefix}sticker
-  ╠ ○ ${prefix}attp
-  ╠ Mas un texto corto
   ╠ ○ ${prefix}stickergif
   ╚ 6 segundos de video
 
@@ -94,6 +92,8 @@ Comando de bienvenida solo grupos
   ╠ Link del grupo
   ╠ ○ ${prefix}adminlist
   ╠ Nombra a los admins del grupo
+  ╠ ○ ${prefix}x
+  ╠ Envia un texto para nombrar a todos
   ╠ ○ ${prefix}todos
   ╚ Nombra a todos los del grupo
 
