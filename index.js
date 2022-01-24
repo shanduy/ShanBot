@@ -18,7 +18,7 @@ const {
     Mimetype,
     rugaapi,
     GroupSettingChange
-} = require('github:adiwajshing/baileys')
+} = require ('@adiwajshing/baileys-md')
 
 /******COMIENZO DE LA ENTRADA DEL ARCHIVO******/
 const { color, bgcolor } = require('./lib/color')
