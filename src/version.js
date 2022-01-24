@@ -2,8 +2,8 @@ const version = (prefix, pushname) => {
     return `
 *ShanBot by shanduy*
 
-*Actualizado:* 13 de Enero del 2022
-*Versión actual:* 4.6
+*Actualizado:* 24 de Enero del 2022
+*Versión actual:* 4.7
 *Ofrecida por:* shanduy™
 
 
@@ -18,14 +18,6 @@ Si vez a alguien que robo mi bot comunicate conmigo con el comando *creador
 *COMO ACTUALIZAR EL BOT*
 
 https://cutt.ly/dWp5uqE
-
-*COMO INSTALAR EL BOT*
-
-https://www.youtube.com/watch?v=HxZYNgW9aI8
-
-*SIGUEME EN INSTAGRAM 🥸🧉*
-
-https://www.instagram.com/thepavos
 
 
 _*by shanduy*_
