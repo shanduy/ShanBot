@@ -46,6 +46,8 @@ Comando de bienvenida solo grupos
 ◉ *CREAR STICKERS*
   ║
   ╠ ○ ${prefix}sticker
+  ╠ ○ ${prefix}attp
+  ╠ Coloca un texto pero sin emojis no tildes
   ╠ ○ ${prefix}stickergif
   ╚ 6 segundos de video
 
