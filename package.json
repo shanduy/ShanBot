@@ -1,6 +1,6 @@
 {
-  "name": "shanbot",
-  "version": "0.0.2",
+  "name": "ShanBot",
+  "version": "4.7",
   "description": "Only termux",
   "main": "index.js",
   "directories": {
@@ -20,7 +20,7 @@
   "author": "Shan",
   "license": "ISC",
   "dependencies": {
-    "@adiwajshing/baileys": "^3.5.3",
+    "@adiwajshing/baileys": "^v4.0.0",
     "@kagchi/kag-api": "^2.0.0",
     "async": "^3.2.1",
     "axios": "^0.21.1",
