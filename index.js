@@ -17,7 +17,7 @@ const { WAConnection,
        Mimetype, 
        rugaapi, 
        GroupSettingChange 
-      } = require('@adiwajshing/baileys')
+      } = import makeWASocket from '@adiwajshing/baileys'
 
 /******COMIENZO DE LA ENTRADA DEL ARCHIVO******/
 const { color, bgcolor } = require('./lib/color')
