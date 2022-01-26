@@ -20,7 +20,7 @@
   "author": "Shan",
   "license": "ISC",
   "dependencies": {
-    "@adiwajshing/baileys-md": "github:adiwajshing/baileys#multi-device",
+    "@adiwajshing/baileys": "github:adiwajshing/baileys",
     "@kagchi/kag-api": "^2.0.0",
     "async": "^3.2.1",
     "axios": "^0.21.1",
