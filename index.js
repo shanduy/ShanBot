@@ -10,14 +10,15 @@ Cualquier copia que utilize mi ApiKey sera dado de baja
 * Nada
 */
 
-const { WAConnection, 
+const { 
+       WAConnection, 
        MessageType, 
        ReconnectMode, 
        Presence, 
        Mimetype, 
        rugaapi, 
        GroupSettingChange 
-      } = require('@adiwajshing/baileys')
+} = require('@adiwajshing/baileys')
 
 /******COMIENZO DE LA ENTRADA DEL ARCHIVO******/
 const { color, bgcolor } = require('./lib/color')
