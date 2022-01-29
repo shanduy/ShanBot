@@ -11,7 +11,7 @@ Cualquier copia que utilize mi ApiKey sera dado de baja
 */
 
 const { 
-       WAConnection: 
+       WAConnection,
        MessageType, 
        ReconnectMode, 
        Presence, 
