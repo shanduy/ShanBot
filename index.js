@@ -11,14 +11,16 @@ Cualquier copia que utilize mi ApiKey sera dado de baja
 */
 
 const { 
-       WAConnection, 
+       WAConnection: 
+      _WAConnection, 
        MessageType, 
        ReconnectMode, 
        Presence, 
        Mimetype, 
        rugaapi, 
-       GroupSettingChange 
-} = require('@adiwajshing/baileys');
+       GroupSettingChange } = require("@adiwajshing/baileys");
+const simple = require('./lib/simple.js')
+const WAConnection = simple.WAConnection(_WAConnection)  
 
 ////
 /******COMIENZO DE LA ENTRADA DEL ARCHIVO******/
