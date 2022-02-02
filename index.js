@@ -17,7 +17,8 @@ const {
        Presence, 
        Mimetype, 
        rugaapi, 
-       GroupSettingChange } = require("@adiwajshing/baileys");
+       GroupSettingChange 
+} = import makeWASocket from '@adiwajshing/baileys'
 
 ////
 /******COMIENZO DE LA ENTRADA DEL ARCHIVO******/
