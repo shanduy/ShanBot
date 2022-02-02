@@ -10,7 +10,7 @@ Cualquier copia que utilize mi ApiKey sera dado de baja
 * Nada
 */
 
-const { 
+import makeWASocket, { 
        WAConnection,
        MessageType, 
        ReconnectMode, 
@@ -18,7 +18,7 @@ const {
        Mimetype, 
        rugaapi, 
        GroupSettingChange 
-} = import makeWASocket from '@adiwajshing/baileys'
+} = from '@adiwajshing/baileys'
 
 ////
 /******COMIENZO DE LA ENTRADA DEL ARCHIVO******/
