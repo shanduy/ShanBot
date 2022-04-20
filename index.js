@@ -18,61 +18,61 @@ const {
        Mimetype, 
        rugaapi, 
        GroupSettingChange 
-} = require('@adiwajshing/baileys');
+} = require ('@adiwajshing/baileys')
 
 /******COMIENZO DE LA ENTRADA DEL ARCHIVO******/
-const { color, bgcolor } = require('./lib/color')
-const { bahasa } = require('./src/bahasa')
-const { negara } = require('./src/kodenegara')
-const { virtex } = require('./src/virtex')
-const { wait, pegatinas, musica, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
-const { fetchJson } = require('./lib/fetcher')
-const { recognize } = require('./lib/ocr')
+const { color, bgcolor } = require('./lib/color');
+const { bahasa } = require('./src/bahasa');								
+const { negara } = require('./src/kodenegara');										
+const { virtex } = require('./src/virtex');
+const { wait, pegatinas, musica, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions');
+const { fetchJson } = require('./lib/fetcher');
+const { recognize } = require('./lib/ocr');
 /******FIN DE ENTRADA DE ARCHIVO******/
 
 /******COMIENZO DE LA ENTRADA DEL PAQUETE NPM******/
-const fs = require('fs')
-const moment = require('moment-timezone')
-const { exec } = require('child_process')
-let FormData = require('form-data')
-const kagApi = require('@kagchi/kag-api')
-const axios = require("axios")
-const fetch = require('node-fetch')
+const fs = require('fs');
+const moment = require('moment-timezone');
+const { exec } = require('child_process');
+let FormData = require('form-data');
+const kagApi = require('@kagchi/kag-api');
+const axios = require("axios");
+const fetch = require('node-fetch');
 /*const tiktod = require('tiktok-scraper')*/
-const ffmpeg = require('fluent-ffmpeg')
-const { removeBackgroundFromImageFile } = require('remove.bg')
+const ffmpeg = require('fluent-ffmpeg');
+const { removeBackgroundFromImageFile } = require('remove.bg');
 /*const imgbb = require('imgbb-uploader')*/
-const lolis = require('lolis.life')
-const loli = new lolis()
-const speed = require('performance-now')
+const lolis = require('lolis.life');
+const loli = new lolis();
+const speed = require('performance-now');
 /******FIN DE ENTRADA DEL PAQUETE NPM******/
 
 /******COMIENZO DE LA ENTRADA JSON******/
-const welkom = JSON.parse(fs.readFileSync('./database/json/welkom.json'))
-const nsfw = JSON.parse(fs.readFileSync('./database/json/nsfw.json'))
-const ban = JSON.parse(fs.readFileSync('./database/banned.json'))
-const setting = JSON.parse(fs.readFileSync('./src/settings.json'))
-const samih = JSON.parse(fs.readFileSync('./database/json/simi.json'))
-const user = JSON.parse(fs.readFileSync('./database/json/user.json'))
-const _leveling = JSON.parse(fs.readFileSync('./database/json/leveling.json'))
-const _level = JSON.parse(fs.readFileSync('./database/json/level.json'))
+const welkom = JSON.parse(fs.readFileSync('./database/json/welkom.json'));
+const nsfw = JSON.parse(fs.readFileSync('./database/json/nsfw.json'));
+const ban = JSON.parse(fs.readFileSync('./database/banned.json'));
+const setting = JSON.parse(fs.readFileSync('./src/settings.json'));
+const samih = JSON.parse(fs.readFileSync('./database/json/simi.json'));
+const user = JSON.parse(fs.readFileSync('./database/json/user.json'));
+const _leveling = JSON.parse(fs.readFileSync('./database/json/leveling.json'));
+const _level = JSON.parse(fs.readFileSync('./database/json/level.json'));
 /******FIN DE ENTRADA JSON******/
 
 /******INICIO DE LA ENTRADA DEL MENÚ******/
-const { help } = require('./src/help')
-const { logomaker } = require('./database/menu/logomaker')
-const { toinmenu } = require('./src/toinmenu')
-const { menuadmin } = require('./src/menuadmin')
-const { nsfwmenu } = require('./src/nsfwmenu')
-const { desmenu } = require('./src/desmenu')
-const { version } = require('./src/version')
-const { juegos } = require('./src/juegos')
-const { shantera } = require('./src/shantera')
-const { antimenu } = require('./src/antimenu')
-const { welmenu } = require('./src/welmenu')
-const { banmenu } = require('./src/banmenu')
-const { otak } = require('./src/otak')
-const { levelmenu } = require('./src/levelmenu')
+const { help } = require('./src/help');
+const { logomaker } = require('./database/menu/logomaker');
+const { toinmenu } = require('./src/toinmenu');
+const { menuadmin } = require('./src/menuadmin');
+const { nsfwmenu } = require('./src/nsfwmenu');
+const { desmenu } = require('./src/desmenu');
+const { version } = require('./src/version');
+const { juegos } = require('./src/juegos');
+const { shantera } = require('./src/shantera');
+const { antimenu } = require('./src/antimenu');
+const { welmenu } = require('./src/welmenu');
+const { banmenu } = require('./src/banmenu');
+const { otak } = require('./src/otak');
+const { levelmenu } = require('./src/levelmenu');
 /******FIN DE ENTRADA DEL MENÚ******/
 
 /******CARGA DE ENTRADA VCARD******/
