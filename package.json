@@ -21,11 +21,11 @@
   "license": "ISC",
   "dependencies": {
     "type": "module",
-    "@adiwajshing/baileys": "^4.1.0",
+    "@adiwajshing/baileys": "^4.4.0",
     "@kagchi/kag-api": "^2.0.0",
     "async": "^3.2.1",
     "axios": "^0.21.1",
-    "cfonts": "^2.9.2",
+    "cfonts": "^2.9.0",
     "fake-useragent": "^1.0.1",
     "fluent-ffmpeg": "^2.1.2",
     "lolis.life": "^4.0.0",
