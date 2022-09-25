@@ -233,8 +233,8 @@ function kyun(seconds){
   return `${pad(hours)} Horas ${pad(minutes)} Minutos ${pad(seconds)} Segundos`
 }
 
-        async function connectToWhatsApp() {
-	const client = makeWASocket()
+ async function starts() {
+	const client = new WAConnection()
 	client.version = [2, 2147, 16]
 	client.autoReconnect = ReconnectMode.onConnectionLost;
         client.logger.level = 'warn'
@@ -252,7 +252,7 @@ function kyun(seconds){
 	})
 	await client.connect({timeoutMs: 30*1000})
         fs.writeFileSync('./Nazwa.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
-
+	 
 	client.on('group-participants-update', async (anu) => {
 		if (!welkom.includes(anu.jid)) return
 		try {
@@ -1862,4 +1862,4 @@ break
 	})
 }
 
-connectToWhatsApp()
+starts()
