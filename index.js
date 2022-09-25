@@ -233,11 +233,8 @@ function kyun(seconds){
   return `${pad(hours)} Horas ${pad(minutes)} Minutos ${pad(seconds)} Segundos`
 }
 
-async function connectToWhatsApp () {
-    const sock = makeWASocket({
-        // can provide additional config here
-        printQRInTerminal: true
-    })
+        async function connectToWhatsApp() {
+	const client = makeWASocket()
 	client.version = [2, 2147, 16]
 	client.autoReconnect = ReconnectMode.onConnectionLost;
         client.logger.level = 'warn'
@@ -1864,4 +1861,5 @@ break
 		}
 	})
 }
-starts()
+
+connectToWhatsApp()
