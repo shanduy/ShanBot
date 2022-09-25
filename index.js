@@ -17,7 +17,7 @@ const {
        Presence, 
        Mimetype, 
        rugaapi, 
-       GroupSettingChange 
+       GroupSettingChange, 
 } = require ('@adiwajshing/baileys');
 
 /******COMIENZO DE LA ENTRADA DEL ARCHIVO******/
