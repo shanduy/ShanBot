@@ -10,15 +10,7 @@ Cualquier copia que utilize mi ApiKey sera dado de baja
 * Nada
 */
 
-const { 
-       WAConnection,
-       MessageType, 
-       ReconnectMode, 
-       Presence, 
-       Mimetype, 
-       rugaapi, 
-       GroupSettingChange, 
-} = require ('@adiwajshing/baileys');
+const { WAConnection } = require('@adiwajshing/baileys');
 
 /******COMIENZO DE LA ENTRADA DEL ARCHIVO******/
 const { color, bgcolor } = require('./lib/color');
@@ -234,7 +226,7 @@ function kyun(seconds){
 }
 
  async function starts() {
-	const client = new WAConnection()
+	const client = new WAConnection();
 	client.version = [2, 2147, 16]
 	client.autoReconnect = ReconnectMode.onConnectionLost;
         client.logger.level = 'warn'
